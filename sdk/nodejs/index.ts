@@ -5,6 +5,41 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
+export { CmAccountArgs, CmAccountState } from "./cmAccount";
+export type CmAccount = import("./cmAccount").CmAccount;
+export const CmAccount: typeof import("./cmAccount").CmAccount = null as any;
+utilities.lazyLoad(exports, ["CmAccount"], () => require("./cmAccount"));
+
+export { CmCatalogArgs, CmCatalogState } from "./cmCatalog";
+export type CmCatalog = import("./cmCatalog").CmCatalog;
+export const CmCatalog: typeof import("./cmCatalog").CmCatalog = null as any;
+utilities.lazyLoad(exports, ["CmCatalog"], () => require("./cmCatalog"));
+
+export { CmObjectArgs, CmObjectState } from "./cmObject";
+export type CmObject = import("./cmObject").CmObject;
+export const CmObject: typeof import("./cmObject").CmObject = null as any;
+utilities.lazyLoad(exports, ["CmObject"], () => require("./cmObject"));
+
+export { CmOfferingArgs, CmOfferingState } from "./cmOffering";
+export type CmOffering = import("./cmOffering").CmOffering;
+export const CmOffering: typeof import("./cmOffering").CmOffering = null as any;
+utilities.lazyLoad(exports, ["CmOffering"], () => require("./cmOffering"));
+
+export { CmOfferingInstanceArgs, CmOfferingInstanceState } from "./cmOfferingInstance";
+export type CmOfferingInstance = import("./cmOfferingInstance").CmOfferingInstance;
+export const CmOfferingInstance: typeof import("./cmOfferingInstance").CmOfferingInstance = null as any;
+utilities.lazyLoad(exports, ["CmOfferingInstance"], () => require("./cmOfferingInstance"));
+
+export { CmValidationArgs, CmValidationState } from "./cmValidation";
+export type CmValidation = import("./cmValidation").CmValidation;
+export const CmValidation: typeof import("./cmValidation").CmValidation = null as any;
+utilities.lazyLoad(exports, ["CmValidation"], () => require("./cmValidation"));
+
+export { CmVersionArgs, CmVersionState } from "./cmVersion";
+export type CmVersion = import("./cmVersion").CmVersion;
+export const CmVersion: typeof import("./cmVersion").CmVersion = null as any;
+utilities.lazyLoad(exports, ["CmVersion"], () => require("./cmVersion"));
+
 export { ComputeAutoscaleGroupArgs, ComputeAutoscaleGroupState } from "./computeAutoscaleGroup";
 export type ComputeAutoscaleGroup = import("./computeAutoscaleGroup").ComputeAutoscaleGroup;
 export const ComputeAutoscaleGroup: typeof import("./computeAutoscaleGroup").ComputeAutoscaleGroup = null as any;
@@ -104,6 +139,41 @@ export { CosBucketWebsiteConfigurationArgs, CosBucketWebsiteConfigurationState }
 export type CosBucketWebsiteConfiguration = import("./cosBucketWebsiteConfiguration").CosBucketWebsiteConfiguration;
 export const CosBucketWebsiteConfiguration: typeof import("./cosBucketWebsiteConfiguration").CosBucketWebsiteConfiguration = null as any;
 utilities.lazyLoad(exports, ["CosBucketWebsiteConfiguration"], () => require("./cosBucketWebsiteConfiguration"));
+
+export { GetCmAccountResult } from "./getCmAccount";
+export const getCmAccount: typeof import("./getCmAccount").getCmAccount = null as any;
+export const getCmAccountOutput: typeof import("./getCmAccount").getCmAccountOutput = null as any;
+utilities.lazyLoad(exports, ["getCmAccount","getCmAccountOutput"], () => require("./getCmAccount"));
+
+export { GetCmCatalogArgs, GetCmCatalogResult, GetCmCatalogOutputArgs } from "./getCmCatalog";
+export const getCmCatalog: typeof import("./getCmCatalog").getCmCatalog = null as any;
+export const getCmCatalogOutput: typeof import("./getCmCatalog").getCmCatalogOutput = null as any;
+utilities.lazyLoad(exports, ["getCmCatalog","getCmCatalogOutput"], () => require("./getCmCatalog"));
+
+export { GetCmObjectArgs, GetCmObjectResult, GetCmObjectOutputArgs } from "./getCmObject";
+export const getCmObject: typeof import("./getCmObject").getCmObject = null as any;
+export const getCmObjectOutput: typeof import("./getCmObject").getCmObjectOutput = null as any;
+utilities.lazyLoad(exports, ["getCmObject","getCmObjectOutput"], () => require("./getCmObject"));
+
+export { GetCmOfferingArgs, GetCmOfferingResult, GetCmOfferingOutputArgs } from "./getCmOffering";
+export const getCmOffering: typeof import("./getCmOffering").getCmOffering = null as any;
+export const getCmOfferingOutput: typeof import("./getCmOffering").getCmOfferingOutput = null as any;
+utilities.lazyLoad(exports, ["getCmOffering","getCmOfferingOutput"], () => require("./getCmOffering"));
+
+export { GetCmOfferingInstanceArgs, GetCmOfferingInstanceResult, GetCmOfferingInstanceOutputArgs } from "./getCmOfferingInstance";
+export const getCmOfferingInstance: typeof import("./getCmOfferingInstance").getCmOfferingInstance = null as any;
+export const getCmOfferingInstanceOutput: typeof import("./getCmOfferingInstance").getCmOfferingInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getCmOfferingInstance","getCmOfferingInstanceOutput"], () => require("./getCmOfferingInstance"));
+
+export { GetCmPresetArgs, GetCmPresetResult, GetCmPresetOutputArgs } from "./getCmPreset";
+export const getCmPreset: typeof import("./getCmPreset").getCmPreset = null as any;
+export const getCmPresetOutput: typeof import("./getCmPreset").getCmPresetOutput = null as any;
+utilities.lazyLoad(exports, ["getCmPreset","getCmPresetOutput"], () => require("./getCmPreset"));
+
+export { GetCmVersionArgs, GetCmVersionResult, GetCmVersionOutputArgs } from "./getCmVersion";
+export const getCmVersion: typeof import("./getCmVersion").getCmVersion = null as any;
+export const getCmVersionOutput: typeof import("./getCmVersion").getCmVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getCmVersion","getCmVersionOutput"], () => require("./getCmVersion"));
 
 export { GetComputeBareMetalArgs, GetComputeBareMetalResult, GetComputeBareMetalOutputArgs } from "./getComputeBareMetal";
 export const getComputeBareMetal: typeof import("./getComputeBareMetal").getComputeBareMetal = null as any;
@@ -1845,6 +1915,166 @@ export const getResourceTag: typeof import("./getResourceTag").getResourceTag = 
 export const getResourceTagOutput: typeof import("./getResourceTag").getResourceTagOutput = null as any;
 utilities.lazyLoad(exports, ["getResourceTag","getResourceTagOutput"], () => require("./getResourceTag"));
 
+export { GetSmArbitrarySecretArgs, GetSmArbitrarySecretResult, GetSmArbitrarySecretOutputArgs } from "./getSmArbitrarySecret";
+export const getSmArbitrarySecret: typeof import("./getSmArbitrarySecret").getSmArbitrarySecret = null as any;
+export const getSmArbitrarySecretOutput: typeof import("./getSmArbitrarySecret").getSmArbitrarySecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSmArbitrarySecret","getSmArbitrarySecretOutput"], () => require("./getSmArbitrarySecret"));
+
+export { GetSmArbitrarySecretMetadataArgs, GetSmArbitrarySecretMetadataResult, GetSmArbitrarySecretMetadataOutputArgs } from "./getSmArbitrarySecretMetadata";
+export const getSmArbitrarySecretMetadata: typeof import("./getSmArbitrarySecretMetadata").getSmArbitrarySecretMetadata = null as any;
+export const getSmArbitrarySecretMetadataOutput: typeof import("./getSmArbitrarySecretMetadata").getSmArbitrarySecretMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmArbitrarySecretMetadata","getSmArbitrarySecretMetadataOutput"], () => require("./getSmArbitrarySecretMetadata"));
+
+export { GetSmConfigurationsArgs, GetSmConfigurationsResult, GetSmConfigurationsOutputArgs } from "./getSmConfigurations";
+export const getSmConfigurations: typeof import("./getSmConfigurations").getSmConfigurations = null as any;
+export const getSmConfigurationsOutput: typeof import("./getSmConfigurations").getSmConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getSmConfigurations","getSmConfigurationsOutput"], () => require("./getSmConfigurations"));
+
+export { GetSmCustomCredentialsConfigurationArgs, GetSmCustomCredentialsConfigurationResult, GetSmCustomCredentialsConfigurationOutputArgs } from "./getSmCustomCredentialsConfiguration";
+export const getSmCustomCredentialsConfiguration: typeof import("./getSmCustomCredentialsConfiguration").getSmCustomCredentialsConfiguration = null as any;
+export const getSmCustomCredentialsConfigurationOutput: typeof import("./getSmCustomCredentialsConfiguration").getSmCustomCredentialsConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getSmCustomCredentialsConfiguration","getSmCustomCredentialsConfigurationOutput"], () => require("./getSmCustomCredentialsConfiguration"));
+
+export { GetSmCustomCredentialsSecretArgs, GetSmCustomCredentialsSecretResult, GetSmCustomCredentialsSecretOutputArgs } from "./getSmCustomCredentialsSecret";
+export const getSmCustomCredentialsSecret: typeof import("./getSmCustomCredentialsSecret").getSmCustomCredentialsSecret = null as any;
+export const getSmCustomCredentialsSecretOutput: typeof import("./getSmCustomCredentialsSecret").getSmCustomCredentialsSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSmCustomCredentialsSecret","getSmCustomCredentialsSecretOutput"], () => require("./getSmCustomCredentialsSecret"));
+
+export { GetSmCustomCredentialsSecretMetadataArgs, GetSmCustomCredentialsSecretMetadataResult, GetSmCustomCredentialsSecretMetadataOutputArgs } from "./getSmCustomCredentialsSecretMetadata";
+export const getSmCustomCredentialsSecretMetadata: typeof import("./getSmCustomCredentialsSecretMetadata").getSmCustomCredentialsSecretMetadata = null as any;
+export const getSmCustomCredentialsSecretMetadataOutput: typeof import("./getSmCustomCredentialsSecretMetadata").getSmCustomCredentialsSecretMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmCustomCredentialsSecretMetadata","getSmCustomCredentialsSecretMetadataOutput"], () => require("./getSmCustomCredentialsSecretMetadata"));
+
+export { GetSmEnRegistrationArgs, GetSmEnRegistrationResult, GetSmEnRegistrationOutputArgs } from "./getSmEnRegistration";
+export const getSmEnRegistration: typeof import("./getSmEnRegistration").getSmEnRegistration = null as any;
+export const getSmEnRegistrationOutput: typeof import("./getSmEnRegistration").getSmEnRegistrationOutput = null as any;
+utilities.lazyLoad(exports, ["getSmEnRegistration","getSmEnRegistrationOutput"], () => require("./getSmEnRegistration"));
+
+export { GetSmIamCredentialsConfigurationArgs, GetSmIamCredentialsConfigurationResult, GetSmIamCredentialsConfigurationOutputArgs } from "./getSmIamCredentialsConfiguration";
+export const getSmIamCredentialsConfiguration: typeof import("./getSmIamCredentialsConfiguration").getSmIamCredentialsConfiguration = null as any;
+export const getSmIamCredentialsConfigurationOutput: typeof import("./getSmIamCredentialsConfiguration").getSmIamCredentialsConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getSmIamCredentialsConfiguration","getSmIamCredentialsConfigurationOutput"], () => require("./getSmIamCredentialsConfiguration"));
+
+export { GetSmIamCredentialsSecretArgs, GetSmIamCredentialsSecretResult, GetSmIamCredentialsSecretOutputArgs } from "./getSmIamCredentialsSecret";
+export const getSmIamCredentialsSecret: typeof import("./getSmIamCredentialsSecret").getSmIamCredentialsSecret = null as any;
+export const getSmIamCredentialsSecretOutput: typeof import("./getSmIamCredentialsSecret").getSmIamCredentialsSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSmIamCredentialsSecret","getSmIamCredentialsSecretOutput"], () => require("./getSmIamCredentialsSecret"));
+
+export { GetSmIamCredentialsSecretMetadataArgs, GetSmIamCredentialsSecretMetadataResult, GetSmIamCredentialsSecretMetadataOutputArgs } from "./getSmIamCredentialsSecretMetadata";
+export const getSmIamCredentialsSecretMetadata: typeof import("./getSmIamCredentialsSecretMetadata").getSmIamCredentialsSecretMetadata = null as any;
+export const getSmIamCredentialsSecretMetadataOutput: typeof import("./getSmIamCredentialsSecretMetadata").getSmIamCredentialsSecretMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmIamCredentialsSecretMetadata","getSmIamCredentialsSecretMetadataOutput"], () => require("./getSmIamCredentialsSecretMetadata"));
+
+export { GetSmImportedCertificateArgs, GetSmImportedCertificateResult, GetSmImportedCertificateOutputArgs } from "./getSmImportedCertificate";
+export const getSmImportedCertificate: typeof import("./getSmImportedCertificate").getSmImportedCertificate = null as any;
+export const getSmImportedCertificateOutput: typeof import("./getSmImportedCertificate").getSmImportedCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getSmImportedCertificate","getSmImportedCertificateOutput"], () => require("./getSmImportedCertificate"));
+
+export { GetSmImportedCertificateMetadataArgs, GetSmImportedCertificateMetadataResult, GetSmImportedCertificateMetadataOutputArgs } from "./getSmImportedCertificateMetadata";
+export const getSmImportedCertificateMetadata: typeof import("./getSmImportedCertificateMetadata").getSmImportedCertificateMetadata = null as any;
+export const getSmImportedCertificateMetadataOutput: typeof import("./getSmImportedCertificateMetadata").getSmImportedCertificateMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmImportedCertificateMetadata","getSmImportedCertificateMetadataOutput"], () => require("./getSmImportedCertificateMetadata"));
+
+export { GetSmInstanceArgs, GetSmInstanceResult, GetSmInstanceOutputArgs } from "./getSmInstance";
+export const getSmInstance: typeof import("./getSmInstance").getSmInstance = null as any;
+export const getSmInstanceOutput: typeof import("./getSmInstance").getSmInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getSmInstance","getSmInstanceOutput"], () => require("./getSmInstance"));
+
+export { GetSmKvSecretArgs, GetSmKvSecretResult, GetSmKvSecretOutputArgs } from "./getSmKvSecret";
+export const getSmKvSecret: typeof import("./getSmKvSecret").getSmKvSecret = null as any;
+export const getSmKvSecretOutput: typeof import("./getSmKvSecret").getSmKvSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSmKvSecret","getSmKvSecretOutput"], () => require("./getSmKvSecret"));
+
+export { GetSmKvSecretMetadataArgs, GetSmKvSecretMetadataResult, GetSmKvSecretMetadataOutputArgs } from "./getSmKvSecretMetadata";
+export const getSmKvSecretMetadata: typeof import("./getSmKvSecretMetadata").getSmKvSecretMetadata = null as any;
+export const getSmKvSecretMetadataOutput: typeof import("./getSmKvSecretMetadata").getSmKvSecretMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmKvSecretMetadata","getSmKvSecretMetadataOutput"], () => require("./getSmKvSecretMetadata"));
+
+export { GetSmPrivateCertificateArgs, GetSmPrivateCertificateResult, GetSmPrivateCertificateOutputArgs } from "./getSmPrivateCertificate";
+export const getSmPrivateCertificate: typeof import("./getSmPrivateCertificate").getSmPrivateCertificate = null as any;
+export const getSmPrivateCertificateOutput: typeof import("./getSmPrivateCertificate").getSmPrivateCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPrivateCertificate","getSmPrivateCertificateOutput"], () => require("./getSmPrivateCertificate"));
+
+export { GetSmPrivateCertificateConfigurationIntermediateCaArgs, GetSmPrivateCertificateConfigurationIntermediateCaResult, GetSmPrivateCertificateConfigurationIntermediateCaOutputArgs } from "./getSmPrivateCertificateConfigurationIntermediateCa";
+export const getSmPrivateCertificateConfigurationIntermediateCa: typeof import("./getSmPrivateCertificateConfigurationIntermediateCa").getSmPrivateCertificateConfigurationIntermediateCa = null as any;
+export const getSmPrivateCertificateConfigurationIntermediateCaOutput: typeof import("./getSmPrivateCertificateConfigurationIntermediateCa").getSmPrivateCertificateConfigurationIntermediateCaOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPrivateCertificateConfigurationIntermediateCa","getSmPrivateCertificateConfigurationIntermediateCaOutput"], () => require("./getSmPrivateCertificateConfigurationIntermediateCa"));
+
+export { GetSmPrivateCertificateConfigurationRootCaArgs, GetSmPrivateCertificateConfigurationRootCaResult, GetSmPrivateCertificateConfigurationRootCaOutputArgs } from "./getSmPrivateCertificateConfigurationRootCa";
+export const getSmPrivateCertificateConfigurationRootCa: typeof import("./getSmPrivateCertificateConfigurationRootCa").getSmPrivateCertificateConfigurationRootCa = null as any;
+export const getSmPrivateCertificateConfigurationRootCaOutput: typeof import("./getSmPrivateCertificateConfigurationRootCa").getSmPrivateCertificateConfigurationRootCaOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPrivateCertificateConfigurationRootCa","getSmPrivateCertificateConfigurationRootCaOutput"], () => require("./getSmPrivateCertificateConfigurationRootCa"));
+
+export { GetSmPrivateCertificateConfigurationTemplateArgs, GetSmPrivateCertificateConfigurationTemplateResult, GetSmPrivateCertificateConfigurationTemplateOutputArgs } from "./getSmPrivateCertificateConfigurationTemplate";
+export const getSmPrivateCertificateConfigurationTemplate: typeof import("./getSmPrivateCertificateConfigurationTemplate").getSmPrivateCertificateConfigurationTemplate = null as any;
+export const getSmPrivateCertificateConfigurationTemplateOutput: typeof import("./getSmPrivateCertificateConfigurationTemplate").getSmPrivateCertificateConfigurationTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPrivateCertificateConfigurationTemplate","getSmPrivateCertificateConfigurationTemplateOutput"], () => require("./getSmPrivateCertificateConfigurationTemplate"));
+
+export { GetSmPrivateCertificateMetadataArgs, GetSmPrivateCertificateMetadataResult, GetSmPrivateCertificateMetadataOutputArgs } from "./getSmPrivateCertificateMetadata";
+export const getSmPrivateCertificateMetadata: typeof import("./getSmPrivateCertificateMetadata").getSmPrivateCertificateMetadata = null as any;
+export const getSmPrivateCertificateMetadataOutput: typeof import("./getSmPrivateCertificateMetadata").getSmPrivateCertificateMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPrivateCertificateMetadata","getSmPrivateCertificateMetadataOutput"], () => require("./getSmPrivateCertificateMetadata"));
+
+export { GetSmPublicCertificateArgs, GetSmPublicCertificateResult, GetSmPublicCertificateOutputArgs } from "./getSmPublicCertificate";
+export const getSmPublicCertificate: typeof import("./getSmPublicCertificate").getSmPublicCertificate = null as any;
+export const getSmPublicCertificateOutput: typeof import("./getSmPublicCertificate").getSmPublicCertificateOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPublicCertificate","getSmPublicCertificateOutput"], () => require("./getSmPublicCertificate"));
+
+export { GetSmPublicCertificateConfigurationCaLetsEncryptArgs, GetSmPublicCertificateConfigurationCaLetsEncryptResult, GetSmPublicCertificateConfigurationCaLetsEncryptOutputArgs } from "./getSmPublicCertificateConfigurationCaLetsEncrypt";
+export const getSmPublicCertificateConfigurationCaLetsEncrypt: typeof import("./getSmPublicCertificateConfigurationCaLetsEncrypt").getSmPublicCertificateConfigurationCaLetsEncrypt = null as any;
+export const getSmPublicCertificateConfigurationCaLetsEncryptOutput: typeof import("./getSmPublicCertificateConfigurationCaLetsEncrypt").getSmPublicCertificateConfigurationCaLetsEncryptOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPublicCertificateConfigurationCaLetsEncrypt","getSmPublicCertificateConfigurationCaLetsEncryptOutput"], () => require("./getSmPublicCertificateConfigurationCaLetsEncrypt"));
+
+export { GetSmPublicCertificateConfigurationDnsCisArgs, GetSmPublicCertificateConfigurationDnsCisResult, GetSmPublicCertificateConfigurationDnsCisOutputArgs } from "./getSmPublicCertificateConfigurationDnsCis";
+export const getSmPublicCertificateConfigurationDnsCis: typeof import("./getSmPublicCertificateConfigurationDnsCis").getSmPublicCertificateConfigurationDnsCis = null as any;
+export const getSmPublicCertificateConfigurationDnsCisOutput: typeof import("./getSmPublicCertificateConfigurationDnsCis").getSmPublicCertificateConfigurationDnsCisOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPublicCertificateConfigurationDnsCis","getSmPublicCertificateConfigurationDnsCisOutput"], () => require("./getSmPublicCertificateConfigurationDnsCis"));
+
+export { GetSmPublicCertificateConfigurationDnsClassicInfrastructureArgs, GetSmPublicCertificateConfigurationDnsClassicInfrastructureResult, GetSmPublicCertificateConfigurationDnsClassicInfrastructureOutputArgs } from "./getSmPublicCertificateConfigurationDnsClassicInfrastructure";
+export const getSmPublicCertificateConfigurationDnsClassicInfrastructure: typeof import("./getSmPublicCertificateConfigurationDnsClassicInfrastructure").getSmPublicCertificateConfigurationDnsClassicInfrastructure = null as any;
+export const getSmPublicCertificateConfigurationDnsClassicInfrastructureOutput: typeof import("./getSmPublicCertificateConfigurationDnsClassicInfrastructure").getSmPublicCertificateConfigurationDnsClassicInfrastructureOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPublicCertificateConfigurationDnsClassicInfrastructure","getSmPublicCertificateConfigurationDnsClassicInfrastructureOutput"], () => require("./getSmPublicCertificateConfigurationDnsClassicInfrastructure"));
+
+export { GetSmPublicCertificateMetadataArgs, GetSmPublicCertificateMetadataResult, GetSmPublicCertificateMetadataOutputArgs } from "./getSmPublicCertificateMetadata";
+export const getSmPublicCertificateMetadata: typeof import("./getSmPublicCertificateMetadata").getSmPublicCertificateMetadata = null as any;
+export const getSmPublicCertificateMetadataOutput: typeof import("./getSmPublicCertificateMetadata").getSmPublicCertificateMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmPublicCertificateMetadata","getSmPublicCertificateMetadataOutput"], () => require("./getSmPublicCertificateMetadata"));
+
+export { GetSmSecretGroupArgs, GetSmSecretGroupResult, GetSmSecretGroupOutputArgs } from "./getSmSecretGroup";
+export const getSmSecretGroup: typeof import("./getSmSecretGroup").getSmSecretGroup = null as any;
+export const getSmSecretGroupOutput: typeof import("./getSmSecretGroup").getSmSecretGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getSmSecretGroup","getSmSecretGroupOutput"], () => require("./getSmSecretGroup"));
+
+export { GetSmSecretGroupsArgs, GetSmSecretGroupsResult, GetSmSecretGroupsOutputArgs } from "./getSmSecretGroups";
+export const getSmSecretGroups: typeof import("./getSmSecretGroups").getSmSecretGroups = null as any;
+export const getSmSecretGroupsOutput: typeof import("./getSmSecretGroups").getSmSecretGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getSmSecretGroups","getSmSecretGroupsOutput"], () => require("./getSmSecretGroups"));
+
+export { GetSmSecretsArgs, GetSmSecretsResult, GetSmSecretsOutputArgs } from "./getSmSecrets";
+export const getSmSecrets: typeof import("./getSmSecrets").getSmSecrets = null as any;
+export const getSmSecretsOutput: typeof import("./getSmSecrets").getSmSecretsOutput = null as any;
+utilities.lazyLoad(exports, ["getSmSecrets","getSmSecretsOutput"], () => require("./getSmSecrets"));
+
+export { GetSmServiceCredentialsSecretArgs, GetSmServiceCredentialsSecretResult, GetSmServiceCredentialsSecretOutputArgs } from "./getSmServiceCredentialsSecret";
+export const getSmServiceCredentialsSecret: typeof import("./getSmServiceCredentialsSecret").getSmServiceCredentialsSecret = null as any;
+export const getSmServiceCredentialsSecretOutput: typeof import("./getSmServiceCredentialsSecret").getSmServiceCredentialsSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSmServiceCredentialsSecret","getSmServiceCredentialsSecretOutput"], () => require("./getSmServiceCredentialsSecret"));
+
+export { GetSmServiceCredentialsSecretMetadataArgs, GetSmServiceCredentialsSecretMetadataResult, GetSmServiceCredentialsSecretMetadataOutputArgs } from "./getSmServiceCredentialsSecretMetadata";
+export const getSmServiceCredentialsSecretMetadata: typeof import("./getSmServiceCredentialsSecretMetadata").getSmServiceCredentialsSecretMetadata = null as any;
+export const getSmServiceCredentialsSecretMetadataOutput: typeof import("./getSmServiceCredentialsSecretMetadata").getSmServiceCredentialsSecretMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmServiceCredentialsSecretMetadata","getSmServiceCredentialsSecretMetadataOutput"], () => require("./getSmServiceCredentialsSecretMetadata"));
+
+export { GetSmUsernamePasswordSecretArgs, GetSmUsernamePasswordSecretResult, GetSmUsernamePasswordSecretOutputArgs } from "./getSmUsernamePasswordSecret";
+export const getSmUsernamePasswordSecret: typeof import("./getSmUsernamePasswordSecret").getSmUsernamePasswordSecret = null as any;
+export const getSmUsernamePasswordSecretOutput: typeof import("./getSmUsernamePasswordSecret").getSmUsernamePasswordSecretOutput = null as any;
+utilities.lazyLoad(exports, ["getSmUsernamePasswordSecret","getSmUsernamePasswordSecretOutput"], () => require("./getSmUsernamePasswordSecret"));
+
+export { GetSmUsernamePasswordSecretMetadataArgs, GetSmUsernamePasswordSecretMetadataResult, GetSmUsernamePasswordSecretMetadataOutputArgs } from "./getSmUsernamePasswordSecretMetadata";
+export const getSmUsernamePasswordSecretMetadata: typeof import("./getSmUsernamePasswordSecretMetadata").getSmUsernamePasswordSecretMetadata = null as any;
+export const getSmUsernamePasswordSecretMetadataOutput: typeof import("./getSmUsernamePasswordSecretMetadata").getSmUsernamePasswordSecretMetadataOutput = null as any;
+utilities.lazyLoad(exports, ["getSmUsernamePasswordSecretMetadata","getSmUsernamePasswordSecretMetadataOutput"], () => require("./getSmUsernamePasswordSecretMetadata"));
+
 export { GetTgConnectionPrefixFilterArgs, GetTgConnectionPrefixFilterResult, GetTgConnectionPrefixFilterOutputArgs } from "./getTgConnectionPrefixFilter";
 export const getTgConnectionPrefixFilter: typeof import("./getTgConnectionPrefixFilter").getTgConnectionPrefixFilter = null as any;
 export const getTgConnectionPrefixFilterOutput: typeof import("./getTgConnectionPrefixFilter").getTgConnectionPrefixFilterOutput = null as any;
@@ -2818,6 +3048,121 @@ export type ResourceTag = import("./resourceTag").ResourceTag;
 export const ResourceTag: typeof import("./resourceTag").ResourceTag = null as any;
 utilities.lazyLoad(exports, ["ResourceTag"], () => require("./resourceTag"));
 
+export { SmAdminTokenArgs, SmAdminTokenState } from "./smAdminToken";
+export type SmAdminToken = import("./smAdminToken").SmAdminToken;
+export const SmAdminToken: typeof import("./smAdminToken").SmAdminToken = null as any;
+utilities.lazyLoad(exports, ["SmAdminToken"], () => require("./smAdminToken"));
+
+export { SmArbitrarySecretArgs, SmArbitrarySecretState } from "./smArbitrarySecret";
+export type SmArbitrarySecret = import("./smArbitrarySecret").SmArbitrarySecret;
+export const SmArbitrarySecret: typeof import("./smArbitrarySecret").SmArbitrarySecret = null as any;
+utilities.lazyLoad(exports, ["SmArbitrarySecret"], () => require("./smArbitrarySecret"));
+
+export { SmCustomCredentialsConfigurationArgs, SmCustomCredentialsConfigurationState } from "./smCustomCredentialsConfiguration";
+export type SmCustomCredentialsConfiguration = import("./smCustomCredentialsConfiguration").SmCustomCredentialsConfiguration;
+export const SmCustomCredentialsConfiguration: typeof import("./smCustomCredentialsConfiguration").SmCustomCredentialsConfiguration = null as any;
+utilities.lazyLoad(exports, ["SmCustomCredentialsConfiguration"], () => require("./smCustomCredentialsConfiguration"));
+
+export { SmCustomCredentialsSecretArgs, SmCustomCredentialsSecretState } from "./smCustomCredentialsSecret";
+export type SmCustomCredentialsSecret = import("./smCustomCredentialsSecret").SmCustomCredentialsSecret;
+export const SmCustomCredentialsSecret: typeof import("./smCustomCredentialsSecret").SmCustomCredentialsSecret = null as any;
+utilities.lazyLoad(exports, ["SmCustomCredentialsSecret"], () => require("./smCustomCredentialsSecret"));
+
+export { SmEnRegistrationArgs, SmEnRegistrationState } from "./smEnRegistration";
+export type SmEnRegistration = import("./smEnRegistration").SmEnRegistration;
+export const SmEnRegistration: typeof import("./smEnRegistration").SmEnRegistration = null as any;
+utilities.lazyLoad(exports, ["SmEnRegistration"], () => require("./smEnRegistration"));
+
+export { SmIamCredentialsConfigurationArgs, SmIamCredentialsConfigurationState } from "./smIamCredentialsConfiguration";
+export type SmIamCredentialsConfiguration = import("./smIamCredentialsConfiguration").SmIamCredentialsConfiguration;
+export const SmIamCredentialsConfiguration: typeof import("./smIamCredentialsConfiguration").SmIamCredentialsConfiguration = null as any;
+utilities.lazyLoad(exports, ["SmIamCredentialsConfiguration"], () => require("./smIamCredentialsConfiguration"));
+
+export { SmIamCredentialsSecretArgs, SmIamCredentialsSecretState } from "./smIamCredentialsSecret";
+export type SmIamCredentialsSecret = import("./smIamCredentialsSecret").SmIamCredentialsSecret;
+export const SmIamCredentialsSecret: typeof import("./smIamCredentialsSecret").SmIamCredentialsSecret = null as any;
+utilities.lazyLoad(exports, ["SmIamCredentialsSecret"], () => require("./smIamCredentialsSecret"));
+
+export { SmImportedCertificateArgs, SmImportedCertificateState } from "./smImportedCertificate";
+export type SmImportedCertificate = import("./smImportedCertificate").SmImportedCertificate;
+export const SmImportedCertificate: typeof import("./smImportedCertificate").SmImportedCertificate = null as any;
+utilities.lazyLoad(exports, ["SmImportedCertificate"], () => require("./smImportedCertificate"));
+
+export { SmKvSecretArgs, SmKvSecretState } from "./smKvSecret";
+export type SmKvSecret = import("./smKvSecret").SmKvSecret;
+export const SmKvSecret: typeof import("./smKvSecret").SmKvSecret = null as any;
+utilities.lazyLoad(exports, ["SmKvSecret"], () => require("./smKvSecret"));
+
+export { SmPrivateCertificateArgs, SmPrivateCertificateState } from "./smPrivateCertificate";
+export type SmPrivateCertificate = import("./smPrivateCertificate").SmPrivateCertificate;
+export const SmPrivateCertificate: typeof import("./smPrivateCertificate").SmPrivateCertificate = null as any;
+utilities.lazyLoad(exports, ["SmPrivateCertificate"], () => require("./smPrivateCertificate"));
+
+export { SmPrivateCertificateConfigurationActionSetSignedArgs, SmPrivateCertificateConfigurationActionSetSignedState } from "./smPrivateCertificateConfigurationActionSetSigned";
+export type SmPrivateCertificateConfigurationActionSetSigned = import("./smPrivateCertificateConfigurationActionSetSigned").SmPrivateCertificateConfigurationActionSetSigned;
+export const SmPrivateCertificateConfigurationActionSetSigned: typeof import("./smPrivateCertificateConfigurationActionSetSigned").SmPrivateCertificateConfigurationActionSetSigned = null as any;
+utilities.lazyLoad(exports, ["SmPrivateCertificateConfigurationActionSetSigned"], () => require("./smPrivateCertificateConfigurationActionSetSigned"));
+
+export { SmPrivateCertificateConfigurationActionSignCsrArgs, SmPrivateCertificateConfigurationActionSignCsrState } from "./smPrivateCertificateConfigurationActionSignCsr";
+export type SmPrivateCertificateConfigurationActionSignCsr = import("./smPrivateCertificateConfigurationActionSignCsr").SmPrivateCertificateConfigurationActionSignCsr;
+export const SmPrivateCertificateConfigurationActionSignCsr: typeof import("./smPrivateCertificateConfigurationActionSignCsr").SmPrivateCertificateConfigurationActionSignCsr = null as any;
+utilities.lazyLoad(exports, ["SmPrivateCertificateConfigurationActionSignCsr"], () => require("./smPrivateCertificateConfigurationActionSignCsr"));
+
+export { SmPrivateCertificateConfigurationIntermediateCaArgs, SmPrivateCertificateConfigurationIntermediateCaState } from "./smPrivateCertificateConfigurationIntermediateCa";
+export type SmPrivateCertificateConfigurationIntermediateCa = import("./smPrivateCertificateConfigurationIntermediateCa").SmPrivateCertificateConfigurationIntermediateCa;
+export const SmPrivateCertificateConfigurationIntermediateCa: typeof import("./smPrivateCertificateConfigurationIntermediateCa").SmPrivateCertificateConfigurationIntermediateCa = null as any;
+utilities.lazyLoad(exports, ["SmPrivateCertificateConfigurationIntermediateCa"], () => require("./smPrivateCertificateConfigurationIntermediateCa"));
+
+export { SmPrivateCertificateConfigurationRootCaArgs, SmPrivateCertificateConfigurationRootCaState } from "./smPrivateCertificateConfigurationRootCa";
+export type SmPrivateCertificateConfigurationRootCa = import("./smPrivateCertificateConfigurationRootCa").SmPrivateCertificateConfigurationRootCa;
+export const SmPrivateCertificateConfigurationRootCa: typeof import("./smPrivateCertificateConfigurationRootCa").SmPrivateCertificateConfigurationRootCa = null as any;
+utilities.lazyLoad(exports, ["SmPrivateCertificateConfigurationRootCa"], () => require("./smPrivateCertificateConfigurationRootCa"));
+
+export { SmPrivateCertificateConfigurationTemplateArgs, SmPrivateCertificateConfigurationTemplateState } from "./smPrivateCertificateConfigurationTemplate";
+export type SmPrivateCertificateConfigurationTemplate = import("./smPrivateCertificateConfigurationTemplate").SmPrivateCertificateConfigurationTemplate;
+export const SmPrivateCertificateConfigurationTemplate: typeof import("./smPrivateCertificateConfigurationTemplate").SmPrivateCertificateConfigurationTemplate = null as any;
+utilities.lazyLoad(exports, ["SmPrivateCertificateConfigurationTemplate"], () => require("./smPrivateCertificateConfigurationTemplate"));
+
+export { SmPublicCertificateArgs, SmPublicCertificateState } from "./smPublicCertificate";
+export type SmPublicCertificate = import("./smPublicCertificate").SmPublicCertificate;
+export const SmPublicCertificate: typeof import("./smPublicCertificate").SmPublicCertificate = null as any;
+utilities.lazyLoad(exports, ["SmPublicCertificate"], () => require("./smPublicCertificate"));
+
+export { SmPublicCertificateActionValidateManualDnsArgs, SmPublicCertificateActionValidateManualDnsState } from "./smPublicCertificateActionValidateManualDns";
+export type SmPublicCertificateActionValidateManualDns = import("./smPublicCertificateActionValidateManualDns").SmPublicCertificateActionValidateManualDns;
+export const SmPublicCertificateActionValidateManualDns: typeof import("./smPublicCertificateActionValidateManualDns").SmPublicCertificateActionValidateManualDns = null as any;
+utilities.lazyLoad(exports, ["SmPublicCertificateActionValidateManualDns"], () => require("./smPublicCertificateActionValidateManualDns"));
+
+export { SmPublicCertificateConfigurationCaLetsEncryptArgs, SmPublicCertificateConfigurationCaLetsEncryptState } from "./smPublicCertificateConfigurationCaLetsEncrypt";
+export type SmPublicCertificateConfigurationCaLetsEncrypt = import("./smPublicCertificateConfigurationCaLetsEncrypt").SmPublicCertificateConfigurationCaLetsEncrypt;
+export const SmPublicCertificateConfigurationCaLetsEncrypt: typeof import("./smPublicCertificateConfigurationCaLetsEncrypt").SmPublicCertificateConfigurationCaLetsEncrypt = null as any;
+utilities.lazyLoad(exports, ["SmPublicCertificateConfigurationCaLetsEncrypt"], () => require("./smPublicCertificateConfigurationCaLetsEncrypt"));
+
+export { SmPublicCertificateConfigurationDnsCisArgs, SmPublicCertificateConfigurationDnsCisState } from "./smPublicCertificateConfigurationDnsCis";
+export type SmPublicCertificateConfigurationDnsCis = import("./smPublicCertificateConfigurationDnsCis").SmPublicCertificateConfigurationDnsCis;
+export const SmPublicCertificateConfigurationDnsCis: typeof import("./smPublicCertificateConfigurationDnsCis").SmPublicCertificateConfigurationDnsCis = null as any;
+utilities.lazyLoad(exports, ["SmPublicCertificateConfigurationDnsCis"], () => require("./smPublicCertificateConfigurationDnsCis"));
+
+export { SmPublicCertificateConfigurationDnsClassicInfrastructureArgs, SmPublicCertificateConfigurationDnsClassicInfrastructureState } from "./smPublicCertificateConfigurationDnsClassicInfrastructure";
+export type SmPublicCertificateConfigurationDnsClassicInfrastructure = import("./smPublicCertificateConfigurationDnsClassicInfrastructure").SmPublicCertificateConfigurationDnsClassicInfrastructure;
+export const SmPublicCertificateConfigurationDnsClassicInfrastructure: typeof import("./smPublicCertificateConfigurationDnsClassicInfrastructure").SmPublicCertificateConfigurationDnsClassicInfrastructure = null as any;
+utilities.lazyLoad(exports, ["SmPublicCertificateConfigurationDnsClassicInfrastructure"], () => require("./smPublicCertificateConfigurationDnsClassicInfrastructure"));
+
+export { SmSecretGroupArgs, SmSecretGroupState } from "./smSecretGroup";
+export type SmSecretGroup = import("./smSecretGroup").SmSecretGroup;
+export const SmSecretGroup: typeof import("./smSecretGroup").SmSecretGroup = null as any;
+utilities.lazyLoad(exports, ["SmSecretGroup"], () => require("./smSecretGroup"));
+
+export { SmServiceCredentialsSecretArgs, SmServiceCredentialsSecretState } from "./smServiceCredentialsSecret";
+export type SmServiceCredentialsSecret = import("./smServiceCredentialsSecret").SmServiceCredentialsSecret;
+export const SmServiceCredentialsSecret: typeof import("./smServiceCredentialsSecret").SmServiceCredentialsSecret = null as any;
+utilities.lazyLoad(exports, ["SmServiceCredentialsSecret"], () => require("./smServiceCredentialsSecret"));
+
+export { SmUsernamePasswordSecretArgs, SmUsernamePasswordSecretState } from "./smUsernamePasswordSecret";
+export type SmUsernamePasswordSecret = import("./smUsernamePasswordSecret").SmUsernamePasswordSecret;
+export const SmUsernamePasswordSecret: typeof import("./smUsernamePasswordSecret").SmUsernamePasswordSecret = null as any;
+utilities.lazyLoad(exports, ["SmUsernamePasswordSecret"], () => require("./smUsernamePasswordSecret"));
+
 export { TgConnectionArgs, TgConnectionState } from "./tgConnection";
 export type TgConnection = import("./tgConnection").TgConnection;
 export const TgConnection: typeof import("./tgConnection").TgConnection = null as any;
@@ -2862,6 +3207,20 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "ibmcloud:index/cmAccount:CmAccount":
+                return new CmAccount(name, <any>undefined, { urn })
+            case "ibmcloud:index/cmCatalog:CmCatalog":
+                return new CmCatalog(name, <any>undefined, { urn })
+            case "ibmcloud:index/cmObject:CmObject":
+                return new CmObject(name, <any>undefined, { urn })
+            case "ibmcloud:index/cmOffering:CmOffering":
+                return new CmOffering(name, <any>undefined, { urn })
+            case "ibmcloud:index/cmOfferingInstance:CmOfferingInstance":
+                return new CmOfferingInstance(name, <any>undefined, { urn })
+            case "ibmcloud:index/cmValidation:CmValidation":
+                return new CmValidation(name, <any>undefined, { urn })
+            case "ibmcloud:index/cmVersion:CmVersion":
+                return new CmVersion(name, <any>undefined, { urn })
             case "ibmcloud:index/computeAutoscaleGroup:ComputeAutoscaleGroup":
                 return new ComputeAutoscaleGroup(name, <any>undefined, { urn })
             case "ibmcloud:index/computeAutoscalePolicy:ComputeAutoscalePolicy":
@@ -3274,6 +3633,52 @@ const _module = {
                 return new ResourceReclamationDelete(name, <any>undefined, { urn })
             case "ibmcloud:index/resourceTag:ResourceTag":
                 return new ResourceTag(name, <any>undefined, { urn })
+            case "ibmcloud:index/smAdminToken:SmAdminToken":
+                return new SmAdminToken(name, <any>undefined, { urn })
+            case "ibmcloud:index/smArbitrarySecret:SmArbitrarySecret":
+                return new SmArbitrarySecret(name, <any>undefined, { urn })
+            case "ibmcloud:index/smCustomCredentialsConfiguration:SmCustomCredentialsConfiguration":
+                return new SmCustomCredentialsConfiguration(name, <any>undefined, { urn })
+            case "ibmcloud:index/smCustomCredentialsSecret:SmCustomCredentialsSecret":
+                return new SmCustomCredentialsSecret(name, <any>undefined, { urn })
+            case "ibmcloud:index/smEnRegistration:SmEnRegistration":
+                return new SmEnRegistration(name, <any>undefined, { urn })
+            case "ibmcloud:index/smIamCredentialsConfiguration:SmIamCredentialsConfiguration":
+                return new SmIamCredentialsConfiguration(name, <any>undefined, { urn })
+            case "ibmcloud:index/smIamCredentialsSecret:SmIamCredentialsSecret":
+                return new SmIamCredentialsSecret(name, <any>undefined, { urn })
+            case "ibmcloud:index/smImportedCertificate:SmImportedCertificate":
+                return new SmImportedCertificate(name, <any>undefined, { urn })
+            case "ibmcloud:index/smKvSecret:SmKvSecret":
+                return new SmKvSecret(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPrivateCertificate:SmPrivateCertificate":
+                return new SmPrivateCertificate(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPrivateCertificateConfigurationActionSetSigned:SmPrivateCertificateConfigurationActionSetSigned":
+                return new SmPrivateCertificateConfigurationActionSetSigned(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPrivateCertificateConfigurationActionSignCsr:SmPrivateCertificateConfigurationActionSignCsr":
+                return new SmPrivateCertificateConfigurationActionSignCsr(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPrivateCertificateConfigurationIntermediateCa:SmPrivateCertificateConfigurationIntermediateCa":
+                return new SmPrivateCertificateConfigurationIntermediateCa(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPrivateCertificateConfigurationRootCa:SmPrivateCertificateConfigurationRootCa":
+                return new SmPrivateCertificateConfigurationRootCa(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPrivateCertificateConfigurationTemplate:SmPrivateCertificateConfigurationTemplate":
+                return new SmPrivateCertificateConfigurationTemplate(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPublicCertificate:SmPublicCertificate":
+                return new SmPublicCertificate(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPublicCertificateActionValidateManualDns:SmPublicCertificateActionValidateManualDns":
+                return new SmPublicCertificateActionValidateManualDns(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPublicCertificateConfigurationCaLetsEncrypt:SmPublicCertificateConfigurationCaLetsEncrypt":
+                return new SmPublicCertificateConfigurationCaLetsEncrypt(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPublicCertificateConfigurationDnsCis:SmPublicCertificateConfigurationDnsCis":
+                return new SmPublicCertificateConfigurationDnsCis(name, <any>undefined, { urn })
+            case "ibmcloud:index/smPublicCertificateConfigurationDnsClassicInfrastructure:SmPublicCertificateConfigurationDnsClassicInfrastructure":
+                return new SmPublicCertificateConfigurationDnsClassicInfrastructure(name, <any>undefined, { urn })
+            case "ibmcloud:index/smSecretGroup:SmSecretGroup":
+                return new SmSecretGroup(name, <any>undefined, { urn })
+            case "ibmcloud:index/smServiceCredentialsSecret:SmServiceCredentialsSecret":
+                return new SmServiceCredentialsSecret(name, <any>undefined, { urn })
+            case "ibmcloud:index/smUsernamePasswordSecret:SmUsernamePasswordSecret":
+                return new SmUsernamePasswordSecret(name, <any>undefined, { urn })
             case "ibmcloud:index/tgConnection:TgConnection":
                 return new TgConnection(name, <any>undefined, { urn })
             case "ibmcloud:index/tgConnectionAction:TgConnectionAction":
@@ -3291,6 +3696,13 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("ibmcloud", "index/cmAccount", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/cmCatalog", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/cmObject", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/cmOffering", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/cmOfferingInstance", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/cmValidation", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/cmVersion", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/computeAutoscaleGroup", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/computeAutoscalePolicy", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/computeBareMetal", _module)
@@ -3497,6 +3909,29 @@ pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceInstance", _mod
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceKey", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceReclamationDelete", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/resourceTag", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smAdminToken", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smArbitrarySecret", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smCustomCredentialsConfiguration", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smCustomCredentialsSecret", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smEnRegistration", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smIamCredentialsConfiguration", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smIamCredentialsSecret", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smImportedCertificate", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smKvSecret", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPrivateCertificate", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPrivateCertificateConfigurationActionSetSigned", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPrivateCertificateConfigurationActionSignCsr", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPrivateCertificateConfigurationIntermediateCa", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPrivateCertificateConfigurationRootCa", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPrivateCertificateConfigurationTemplate", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPublicCertificate", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPublicCertificateActionValidateManualDns", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPublicCertificateConfigurationCaLetsEncrypt", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPublicCertificateConfigurationDnsCis", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smPublicCertificateConfigurationDnsClassicInfrastructure", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smSecretGroup", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smServiceCredentialsSecret", _module)
+pulumi.runtime.registerResourceModule("ibmcloud", "index/smUsernamePasswordSecret", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnection", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnectionAction", _module)
 pulumi.runtime.registerResourceModule("ibmcloud", "index/tgConnectionPrefixFilter", _module)

@@ -101,7 +101,7 @@ export class IamAccountSettings extends pulumi.CustomResource {
     /**
      * List of users that are exempted from the MFA requirement of the account.
      */
-    declare public readonly userMfas: pulumi.Output<outputs.IamAccountSettingsUserMfa[]>;
+    declare public readonly userMfas: pulumi.Output<outputs.IamAccountSettingsUserMfa[] | undefined>;
 
     /**
      * Create a IamAccountSettings resource with the given unique name, arguments, and options.

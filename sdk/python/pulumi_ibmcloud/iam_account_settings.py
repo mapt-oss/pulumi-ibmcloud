@@ -880,7 +880,7 @@ class IamAccountSettings(pulumi.CustomResource):
 
     @_builtins.property
     @pulumi.getter(name="userMfas")
-    def user_mfas(self) -> pulumi.Output[Sequence['outputs.IamAccountSettingsUserMfa']]:
+    def user_mfas(self) -> pulumi.Output[Optional[Sequence['outputs.IamAccountSettingsUserMfa']]]:
         """
         List of users that are exempted from the MFA requirement of the account.
         """

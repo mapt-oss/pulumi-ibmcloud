@@ -15,6 +15,288 @@ else:
 from . import _utilities
 
 __all__ = [
+    'CmAccountAccountFiltersArgs',
+    'CmAccountAccountFiltersArgsDict',
+    'CmAccountAccountFiltersCategoryFilterArgs',
+    'CmAccountAccountFiltersCategoryFilterArgsDict',
+    'CmAccountAccountFiltersCategoryFilterFilterArgs',
+    'CmAccountAccountFiltersCategoryFilterFilterArgsDict',
+    'CmAccountAccountFiltersIdFilterArgs',
+    'CmAccountAccountFiltersIdFilterArgsDict',
+    'CmAccountAccountFiltersIdFilterExcludeArgs',
+    'CmAccountAccountFiltersIdFilterExcludeArgsDict',
+    'CmAccountAccountFiltersIdFilterIncludeArgs',
+    'CmAccountAccountFiltersIdFilterIncludeArgsDict',
+    'CmAccountTerraformEngineArgs',
+    'CmAccountTerraformEngineArgsDict',
+    'CmAccountTerraformEngineDaCreationArgs',
+    'CmAccountTerraformEngineDaCreationArgsDict',
+    'CmAccountTerraformEngineDaCreationPollingInfoArgs',
+    'CmAccountTerraformEngineDaCreationPollingInfoArgsDict',
+    'CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgs',
+    'CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgsDict',
+    'CmAccountTerraformEngineDaCreationPollingInfoScopeArgs',
+    'CmAccountTerraformEngineDaCreationPollingInfoScopeArgsDict',
+    'CmCatalogCatalogFilterArgs',
+    'CmCatalogCatalogFilterArgsDict',
+    'CmCatalogCatalogFilterCategoryFilterArgs',
+    'CmCatalogCatalogFilterCategoryFilterArgsDict',
+    'CmCatalogCatalogFilterCategoryFilterFilterArgs',
+    'CmCatalogCatalogFilterCategoryFilterFilterArgsDict',
+    'CmCatalogCatalogFilterIdFiltersArgs',
+    'CmCatalogCatalogFilterIdFiltersArgsDict',
+    'CmCatalogCatalogFilterIdFiltersExcludeArgs',
+    'CmCatalogCatalogFilterIdFiltersExcludeArgsDict',
+    'CmCatalogCatalogFilterIdFiltersIncludeArgs',
+    'CmCatalogCatalogFilterIdFiltersIncludeArgsDict',
+    'CmCatalogFeatureArgs',
+    'CmCatalogFeatureArgsDict',
+    'CmCatalogTargetAccountContextArgs',
+    'CmCatalogTargetAccountContextArgsDict',
+    'CmCatalogTargetAccountContextTrustedProfileArgs',
+    'CmCatalogTargetAccountContextTrustedProfileArgsDict',
+    'CmObjectPublishArgs',
+    'CmObjectPublishArgsDict',
+    'CmObjectStateArgs',
+    'CmObjectStateArgsDict',
+    'CmOfferingBadgeArgs',
+    'CmOfferingBadgeArgsDict',
+    'CmOfferingBadgeConstraintArgs',
+    'CmOfferingBadgeConstraintArgsDict',
+    'CmOfferingBadgeLearnMoreLinkArgs',
+    'CmOfferingBadgeLearnMoreLinkArgsDict',
+    'CmOfferingDeprecatePendingArgs',
+    'CmOfferingDeprecatePendingArgsDict',
+    'CmOfferingFeatureArgs',
+    'CmOfferingFeatureArgsDict',
+    'CmOfferingImagePullKeyArgs',
+    'CmOfferingImagePullKeyArgsDict',
+    'CmOfferingKindArgs',
+    'CmOfferingKindArgsDict',
+    'CmOfferingKindAdditionalFeatureArgs',
+    'CmOfferingKindAdditionalFeatureArgsDict',
+    'CmOfferingKindPlanArgs',
+    'CmOfferingKindPlanArgsDict',
+    'CmOfferingKindPlanAdditionalFeatureArgs',
+    'CmOfferingKindPlanAdditionalFeatureArgsDict',
+    'CmOfferingKindPlanDeploymentArgs',
+    'CmOfferingKindPlanDeploymentArgsDict',
+    'CmOfferingKindVersionArgs',
+    'CmOfferingKindVersionArgsDict',
+    'CmOfferingKindVersionConfigurationArgs',
+    'CmOfferingKindVersionConfigurationArgsDict',
+    'CmOfferingKindVersionConfigurationCustomConfigArgs',
+    'CmOfferingKindVersionConfigurationCustomConfigArgsDict',
+    'CmOfferingKindVersionConfigurationCustomConfigAssociationsArgs',
+    'CmOfferingKindVersionConfigurationCustomConfigAssociationsArgsDict',
+    'CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgs',
+    'CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgsDict',
+    'CmOfferingKindVersionDeprecatePendingArgs',
+    'CmOfferingKindVersionDeprecatePendingArgsDict',
+    'CmOfferingKindVersionEntitlementArgs',
+    'CmOfferingKindVersionEntitlementArgsDict',
+    'CmOfferingKindVersionFlavorArgs',
+    'CmOfferingKindVersionFlavorArgsDict',
+    'CmOfferingKindVersionIamPermissionArgs',
+    'CmOfferingKindVersionIamPermissionArgsDict',
+    'CmOfferingKindVersionIamPermissionResourceArgs',
+    'CmOfferingKindVersionIamPermissionResourceArgsDict',
+    'CmOfferingKindVersionInstallArgs',
+    'CmOfferingKindVersionInstallArgsDict',
+    'CmOfferingKindVersionLicenseArgs',
+    'CmOfferingKindVersionLicenseArgsDict',
+    'CmOfferingKindVersionMetadataArgs',
+    'CmOfferingKindVersionMetadataArgsDict',
+    'CmOfferingKindVersionMetadataFileArgs',
+    'CmOfferingKindVersionMetadataFileArgsDict',
+    'CmOfferingKindVersionMetadataImageArgs',
+    'CmOfferingKindVersionMetadataImageArgsDict',
+    'CmOfferingKindVersionMetadataModuleArgs',
+    'CmOfferingKindVersionMetadataModuleArgsDict',
+    'CmOfferingKindVersionMetadataModuleOfferingReferenceArgs',
+    'CmOfferingKindVersionMetadataModuleOfferingReferenceArgsDict',
+    'CmOfferingKindVersionMetadataOperatingSystemArgs',
+    'CmOfferingKindVersionMetadataOperatingSystemArgsDict',
+    'CmOfferingKindVersionMetadataVsiVpcArgs',
+    'CmOfferingKindVersionMetadataVsiVpcArgsDict',
+    'CmOfferingKindVersionMetadataVsiVpcFileArgs',
+    'CmOfferingKindVersionMetadataVsiVpcFileArgsDict',
+    'CmOfferingKindVersionMetadataVsiVpcImageArgs',
+    'CmOfferingKindVersionMetadataVsiVpcImageArgsDict',
+    'CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgs',
+    'CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgsDict',
+    'CmOfferingKindVersionOutputArgs',
+    'CmOfferingKindVersionOutputArgsDict',
+    'CmOfferingKindVersionPreInstallArgs',
+    'CmOfferingKindVersionPreInstallArgsDict',
+    'CmOfferingKindVersionRequiredResourceArgs',
+    'CmOfferingKindVersionRequiredResourceArgsDict',
+    'CmOfferingKindVersionSolutionInfoArgs',
+    'CmOfferingKindVersionSolutionInfoArgsDict',
+    'CmOfferingKindVersionSolutionInfoArchitectureDiagramArgs',
+    'CmOfferingKindVersionSolutionInfoArchitectureDiagramArgsDict',
+    'CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgs',
+    'CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgsDict',
+    'CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs',
+    'CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgsDict',
+    'CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgs',
+    'CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgsDict',
+    'CmOfferingKindVersionSolutionInfoDependencyArgs',
+    'CmOfferingKindVersionSolutionInfoDependencyArgsDict',
+    'CmOfferingKindVersionSolutionInfoFeatureArgs',
+    'CmOfferingKindVersionSolutionInfoFeatureArgsDict',
+    'CmOfferingKindVersionStateArgs',
+    'CmOfferingKindVersionStateArgsDict',
+    'CmOfferingKindVersionValidationArgs',
+    'CmOfferingKindVersionValidationArgsDict',
+    'CmOfferingMediaArgs',
+    'CmOfferingMediaArgsDict',
+    'CmOfferingMediaUrlProxyArgs',
+    'CmOfferingMediaUrlProxyArgsDict',
+    'CmOfferingProviderInfoArgs',
+    'CmOfferingProviderInfoArgsDict',
+    'CmOfferingRatingArgs',
+    'CmOfferingRatingArgsDict',
+    'CmOfferingRepoInfoArgs',
+    'CmOfferingRepoInfoArgsDict',
+    'CmOfferingSupportArgs',
+    'CmOfferingSupportArgsDict',
+    'CmOfferingSupportSupportDetailArgs',
+    'CmOfferingSupportSupportDetailArgsDict',
+    'CmOfferingSupportSupportDetailAvailabilityArgs',
+    'CmOfferingSupportSupportDetailAvailabilityArgsDict',
+    'CmOfferingSupportSupportDetailAvailabilityTimeArgs',
+    'CmOfferingSupportSupportDetailAvailabilityTimeArgsDict',
+    'CmOfferingSupportSupportDetailResponseWaitTimeArgs',
+    'CmOfferingSupportSupportDetailResponseWaitTimeArgsDict',
+    'CmOfferingSupportSupportEscalationArgs',
+    'CmOfferingSupportSupportEscalationArgsDict',
+    'CmOfferingSupportSupportEscalationEscalationWaitTimeArgs',
+    'CmOfferingSupportSupportEscalationEscalationWaitTimeArgsDict',
+    'CmOfferingSupportSupportEscalationResponseWaitTimeArgs',
+    'CmOfferingSupportSupportEscalationResponseWaitTimeArgsDict',
+    'CmValidationEnvironmentVariableArgs',
+    'CmValidationEnvironmentVariableArgsDict',
+    'CmValidationSchematicsArgs',
+    'CmValidationSchematicsArgsDict',
+    'CmVersionConfigurationArgs',
+    'CmVersionConfigurationArgsDict',
+    'CmVersionConfigurationCustomConfigArgs',
+    'CmVersionConfigurationCustomConfigArgsDict',
+    'CmVersionConfigurationCustomConfigAssociationsArgs',
+    'CmVersionConfigurationCustomConfigAssociationsArgsDict',
+    'CmVersionConfigurationCustomConfigAssociationsParameterArgs',
+    'CmVersionConfigurationCustomConfigAssociationsParameterArgsDict',
+    'CmVersionConfigurationValueConstraintArgs',
+    'CmVersionConfigurationValueConstraintArgsDict',
+    'CmVersionDeprecatePendingArgs',
+    'CmVersionDeprecatePendingArgsDict',
+    'CmVersionEntitlementArgs',
+    'CmVersionEntitlementArgsDict',
+    'CmVersionFlavorArgs',
+    'CmVersionFlavorArgsDict',
+    'CmVersionIamPermissionArgs',
+    'CmVersionIamPermissionArgsDict',
+    'CmVersionIamPermissionResourceArgs',
+    'CmVersionIamPermissionResourceArgsDict',
+    'CmVersionImportMetadataArgs',
+    'CmVersionImportMetadataArgsDict',
+    'CmVersionImportMetadataFileArgs',
+    'CmVersionImportMetadataFileArgsDict',
+    'CmVersionImportMetadataImageArgs',
+    'CmVersionImportMetadataImageArgsDict',
+    'CmVersionImportMetadataOperatingSystemArgs',
+    'CmVersionImportMetadataOperatingSystemArgsDict',
+    'CmVersionInstallArgs',
+    'CmVersionInstallArgsDict',
+    'CmVersionLicenseArgs',
+    'CmVersionLicenseArgsDict',
+    'CmVersionMetadataArgs',
+    'CmVersionMetadataArgsDict',
+    'CmVersionMetadataModuleArgs',
+    'CmVersionMetadataModuleArgsDict',
+    'CmVersionMetadataModuleOfferingReferenceArgs',
+    'CmVersionMetadataModuleOfferingReferenceArgsDict',
+    'CmVersionMetadataVsiVpcArgs',
+    'CmVersionMetadataVsiVpcArgsDict',
+    'CmVersionMetadataVsiVpcFileArgs',
+    'CmVersionMetadataVsiVpcFileArgsDict',
+    'CmVersionMetadataVsiVpcImageArgs',
+    'CmVersionMetadataVsiVpcImageArgsDict',
+    'CmVersionMetadataVsiVpcOperatingSystemArgs',
+    'CmVersionMetadataVsiVpcOperatingSystemArgsDict',
+    'CmVersionOutputArgs',
+    'CmVersionOutputArgsDict',
+    'CmVersionPreInstallArgs',
+    'CmVersionPreInstallArgsDict',
+    'CmVersionRequiredResourceArgs',
+    'CmVersionRequiredResourceArgsDict',
+    'CmVersionSolutionInfoArgs',
+    'CmVersionSolutionInfoArgsDict',
+    'CmVersionSolutionInfoArchitectureDiagramArgs',
+    'CmVersionSolutionInfoArchitectureDiagramArgsDict',
+    'CmVersionSolutionInfoArchitectureDiagramDiagramArgs',
+    'CmVersionSolutionInfoArchitectureDiagramDiagramArgsDict',
+    'CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs',
+    'CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgsDict',
+    'CmVersionSolutionInfoCostEstimateArgs',
+    'CmVersionSolutionInfoCostEstimateArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectArgs',
+    'CmVersionSolutionInfoCostEstimateProjectArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectBreakdownArgs',
+    'CmVersionSolutionInfoCostEstimateProjectBreakdownArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs',
+    'CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs',
+    'CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectDiffArgs',
+    'CmVersionSolutionInfoCostEstimateProjectDiffArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectDiffResourceArgs',
+    'CmVersionSolutionInfoCostEstimateProjectDiffResourceArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs',
+    'CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgs',
+    'CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs',
+    'CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs',
+    'CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgsDict',
+    'CmVersionSolutionInfoCostEstimateProjectSummaryArgs',
+    'CmVersionSolutionInfoCostEstimateProjectSummaryArgsDict',
+    'CmVersionSolutionInfoCostEstimateSummaryArgs',
+    'CmVersionSolutionInfoCostEstimateSummaryArgsDict',
+    'CmVersionSolutionInfoDependencyArgs',
+    'CmVersionSolutionInfoDependencyArgsDict',
+    'CmVersionSolutionInfoFeatureArgs',
+    'CmVersionSolutionInfoFeatureArgsDict',
+    'CmVersionStateArgs',
+    'CmVersionStateArgsDict',
+    'CmVersionValidationArgs',
+    'CmVersionValidationArgsDict',
     'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgs',
     'ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict',
     'ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVmArgs',
@@ -1253,6 +1535,80 @@ __all__ = [
     'PiVolumeOnboardingResultsVolumeOnboardingFailureArgsDict',
     'ResourceInstancePlanHistoryArgs',
     'ResourceInstancePlanHistoryArgsDict',
+    'SmCustomCredentialsConfigurationCodeEngineArgs',
+    'SmCustomCredentialsConfigurationCodeEngineArgsDict',
+    'SmCustomCredentialsConfigurationSchemaArgs',
+    'SmCustomCredentialsConfigurationSchemaArgsDict',
+    'SmCustomCredentialsConfigurationSchemaCredentialArgs',
+    'SmCustomCredentialsConfigurationSchemaCredentialArgsDict',
+    'SmCustomCredentialsConfigurationSchemaParameterArgs',
+    'SmCustomCredentialsConfigurationSchemaParameterArgsDict',
+    'SmCustomCredentialsSecretCredentialsContentArgs',
+    'SmCustomCredentialsSecretCredentialsContentArgsDict',
+    'SmCustomCredentialsSecretParametersArgs',
+    'SmCustomCredentialsSecretParametersArgsDict',
+    'SmCustomCredentialsSecretRotationArgs',
+    'SmCustomCredentialsSecretRotationArgsDict',
+    'SmIamCredentialsSecretRotationArgs',
+    'SmIamCredentialsSecretRotationArgsDict',
+    'SmImportedCertificateManagedCsrArgs',
+    'SmImportedCertificateManagedCsrArgsDict',
+    'SmImportedCertificateValidityArgs',
+    'SmImportedCertificateValidityArgsDict',
+    'SmPrivateCertificateConfigurationActionSignCsrDataArgs',
+    'SmPrivateCertificateConfigurationActionSignCsrDataArgsDict',
+    'SmPrivateCertificateConfigurationIntermediateCaCryptoKeyArgs',
+    'SmPrivateCertificateConfigurationIntermediateCaCryptoKeyArgsDict',
+    'SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgs',
+    'SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgsDict',
+    'SmPrivateCertificateConfigurationIntermediateCaDataArgs',
+    'SmPrivateCertificateConfigurationIntermediateCaDataArgsDict',
+    'SmPrivateCertificateConfigurationRootCaCryptoKeyArgs',
+    'SmPrivateCertificateConfigurationRootCaCryptoKeyArgsDict',
+    'SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgs',
+    'SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgsDict',
+    'SmPrivateCertificateConfigurationRootCaDataArgs',
+    'SmPrivateCertificateConfigurationRootCaDataArgsDict',
+    'SmPrivateCertificateRotationArgs',
+    'SmPrivateCertificateRotationArgsDict',
+    'SmPrivateCertificateValidityArgs',
+    'SmPrivateCertificateValidityArgsDict',
+    'SmPublicCertificateAkamaiArgs',
+    'SmPublicCertificateAkamaiArgsDict',
+    'SmPublicCertificateAkamaiConfigArgs',
+    'SmPublicCertificateAkamaiConfigArgsDict',
+    'SmPublicCertificateAkamaiEdgercArgs',
+    'SmPublicCertificateAkamaiEdgercArgsDict',
+    'SmPublicCertificateIssuanceInfoArgs',
+    'SmPublicCertificateIssuanceInfoArgsDict',
+    'SmPublicCertificateIssuanceInfoChallengeArgs',
+    'SmPublicCertificateIssuanceInfoChallengeArgsDict',
+    'SmPublicCertificateRotationArgs',
+    'SmPublicCertificateRotationArgsDict',
+    'SmPublicCertificateValidityArgs',
+    'SmPublicCertificateValidityArgsDict',
+    'SmServiceCredentialsSecretRotationArgs',
+    'SmServiceCredentialsSecretRotationArgsDict',
+    'SmServiceCredentialsSecretSourceServiceArgs',
+    'SmServiceCredentialsSecretSourceServiceArgsDict',
+    'SmServiceCredentialsSecretSourceServiceIamArgs',
+    'SmServiceCredentialsSecretSourceServiceIamArgsDict',
+    'SmServiceCredentialsSecretSourceServiceIamApikeyArgs',
+    'SmServiceCredentialsSecretSourceServiceIamApikeyArgsDict',
+    'SmServiceCredentialsSecretSourceServiceIamRoleArgs',
+    'SmServiceCredentialsSecretSourceServiceIamRoleArgsDict',
+    'SmServiceCredentialsSecretSourceServiceIamServiceidArgs',
+    'SmServiceCredentialsSecretSourceServiceIamServiceidArgsDict',
+    'SmServiceCredentialsSecretSourceServiceInstanceArgs',
+    'SmServiceCredentialsSecretSourceServiceInstanceArgsDict',
+    'SmServiceCredentialsSecretSourceServiceResourceKeyArgs',
+    'SmServiceCredentialsSecretSourceServiceResourceKeyArgsDict',
+    'SmServiceCredentialsSecretSourceServiceRoleArgs',
+    'SmServiceCredentialsSecretSourceServiceRoleArgsDict',
+    'SmUsernamePasswordSecretPasswordGenerationPolicyArgs',
+    'SmUsernamePasswordSecretPasswordGenerationPolicyArgsDict',
+    'SmUsernamePasswordSecretRotationArgs',
+    'SmUsernamePasswordSecretRotationArgsDict',
     'TgConnectionTunnelArgs',
     'TgConnectionTunnelArgsDict',
     'TgRouteReportConnectionArgs',
@@ -1278,6 +1634,14676 @@ __all__ = [
     'GetIsVirtualNetworkInterfaceFloatingIpDeletedArgs',
     'GetIsVirtualNetworkInterfaceFloatingIpDeletedArgsDict',
 ]
+
+class CmAccountAccountFiltersArgsDict(TypedDict):
+    category_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersCategoryFilterArgsDict']]]]]
+    """
+    Filter against offering categories with dynamic keys.
+    """
+    id_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterArgsDict']]]]]
+    """
+    Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+    """
+    include_all: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+    """
+
+@pulumi.input_type
+class CmAccountAccountFiltersArgs:
+    def __init__(__self__, *,
+                 category_filters: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersCategoryFilterArgs']]]] = None,
+                 id_filters: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterArgs']]]] = None,
+                 include_all: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmAccountAccountFiltersCategoryFilterArgs']]] category_filters: Filter against offering categories with dynamic keys.
+        :param pulumi.Input[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterArgs']]] id_filters: Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+        :param pulumi.Input[_builtins.bool] include_all: > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+        """
+        if category_filters is not None:
+            pulumi.set(__self__, "category_filters", category_filters)
+        if id_filters is not None:
+            pulumi.set(__self__, "id_filters", id_filters)
+        if include_all is not None:
+            pulumi.set(__self__, "include_all", include_all)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryFilters")
+    def category_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersCategoryFilterArgs']]]]:
+        """
+        Filter against offering categories with dynamic keys.
+        """
+        return pulumi.get(self, "category_filters")
+
+    @category_filters.setter
+    def category_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersCategoryFilterArgs']]]]):
+        pulumi.set(self, "category_filters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="idFilters")
+    def id_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterArgs']]]]:
+        """
+        Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+        """
+        return pulumi.get(self, "id_filters")
+
+    @id_filters.setter
+    def id_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterArgs']]]]):
+        pulumi.set(self, "id_filters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includeAll")
+    def include_all(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+        """
+        return pulumi.get(self, "include_all")
+
+    @include_all.setter
+    def include_all(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "include_all", value)
+
+
+class CmAccountAccountFiltersCategoryFilterArgsDict(TypedDict):
+    category_name: pulumi.Input[_builtins.str]
+    """
+    Name of this category
+    """
+    filter: NotRequired[pulumi.Input[Optional['CmAccountAccountFiltersCategoryFilterFilterArgsDict']]]
+    """
+    Filter terms related to the category.
+    """
+    include: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to include the category in the catalog filter.
+    """
+
+@pulumi.input_type
+class CmAccountAccountFiltersCategoryFilterArgs:
+    def __init__(__self__, *,
+                 category_name: pulumi.Input[_builtins.str],
+                 filter: pulumi.Input[Optional['CmAccountAccountFiltersCategoryFilterFilterArgs']] = None,
+                 include: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] category_name: Name of this category
+        :param pulumi.Input['CmAccountAccountFiltersCategoryFilterFilterArgs'] filter: Filter terms related to the category.
+        :param pulumi.Input[_builtins.bool] include: Whether to include the category in the catalog filter.
+        """
+        pulumi.set(__self__, "category_name", category_name)
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if include is not None:
+            pulumi.set(__self__, "include", include)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryName")
+    def category_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of this category
+        """
+        return pulumi.get(self, "category_name")
+
+    @category_name.setter
+    def category_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "category_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def filter(self) -> pulumi.Input[Optional['CmAccountAccountFiltersCategoryFilterFilterArgs']]:
+        """
+        Filter terms related to the category.
+        """
+        return pulumi.get(self, "filter")
+
+    @filter.setter
+    def filter(self, value: pulumi.Input[Optional['CmAccountAccountFiltersCategoryFilterFilterArgs']]):
+        pulumi.set(self, "filter", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def include(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to include the category in the catalog filter.
+        """
+        return pulumi.get(self, "include")
+
+    @include.setter
+    def include(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "include", value)
+
+
+class CmAccountAccountFiltersCategoryFilterFilterArgsDict(TypedDict):
+    filter_terms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of filter terms for the category.
+    """
+
+@pulumi.input_type
+class CmAccountAccountFiltersCategoryFilterFilterArgs:
+    def __init__(__self__, *,
+                 filter_terms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filter_terms: List of filter terms for the category.
+        """
+        if filter_terms is not None:
+            pulumi.set(__self__, "filter_terms", filter_terms)
+
+    @_builtins.property
+    @pulumi.getter(name="filterTerms")
+    def filter_terms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of filter terms for the category.
+        """
+        return pulumi.get(self, "filter_terms")
+
+    @filter_terms.setter
+    def filter_terms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "filter_terms", value)
+
+
+class CmAccountAccountFiltersIdFilterArgsDict(TypedDict):
+    excludes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterExcludeArgsDict']]]]]
+    """
+    Offering filter terms.
+    """
+    includes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterIncludeArgsDict']]]]]
+    """
+    Offering filter terms.
+    """
+
+@pulumi.input_type
+class CmAccountAccountFiltersIdFilterArgs:
+    def __init__(__self__, *,
+                 excludes: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterExcludeArgs']]]] = None,
+                 includes: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterIncludeArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterExcludeArgs']]] excludes: Offering filter terms.
+        :param pulumi.Input[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterIncludeArgs']]] includes: Offering filter terms.
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterExcludeArgs']]]]:
+        """
+        Offering filter terms.
+        """
+        return pulumi.get(self, "excludes")
+
+    @excludes.setter
+    def excludes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterExcludeArgs']]]]):
+        pulumi.set(self, "excludes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterIncludeArgs']]]]:
+        """
+        Offering filter terms.
+        """
+        return pulumi.get(self, "includes")
+
+    @includes.setter
+    def includes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountAccountFiltersIdFilterIncludeArgs']]]]):
+        pulumi.set(self, "includes", value)
+
+
+class CmAccountAccountFiltersIdFilterExcludeArgsDict(TypedDict):
+    filter_terms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+    """
+
+@pulumi.input_type
+class CmAccountAccountFiltersIdFilterExcludeArgs:
+    def __init__(__self__, *,
+                 filter_terms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filter_terms: List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        if filter_terms is not None:
+            pulumi.set(__self__, "filter_terms", filter_terms)
+
+    @_builtins.property
+    @pulumi.getter(name="filterTerms")
+    def filter_terms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        return pulumi.get(self, "filter_terms")
+
+    @filter_terms.setter
+    def filter_terms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "filter_terms", value)
+
+
+class CmAccountAccountFiltersIdFilterIncludeArgsDict(TypedDict):
+    filter_terms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+    """
+
+@pulumi.input_type
+class CmAccountAccountFiltersIdFilterIncludeArgs:
+    def __init__(__self__, *,
+                 filter_terms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filter_terms: List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        if filter_terms is not None:
+            pulumi.set(__self__, "filter_terms", filter_terms)
+
+    @_builtins.property
+    @pulumi.getter(name="filterTerms")
+    def filter_terms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        return pulumi.get(self, "filter_terms")
+
+    @filter_terms.setter
+    def filter_terms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "filter_terms", value)
+
+
+class CmAccountTerraformEngineArgsDict(TypedDict):
+    api_token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The api key used to access the engine instance.
+    """
+    da_creation: NotRequired[pulumi.Input[Optional['CmAccountTerraformEngineDaCreationArgsDict']]]
+    """
+    The settings that determines how deployable architectures are auto-created from workspaces in the terraform engine.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    User provided name for the specified engine.
+    """
+    private_endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The private endpoint for the engine instance.
+    """
+    public_endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The public endpoint for the engine instance.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The terraform engine type. The only one supported at the moment is terraform-enterprise.
+    """
+
+@pulumi.input_type
+class CmAccountTerraformEngineArgs:
+    def __init__(__self__, *,
+                 api_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 da_creation: pulumi.Input[Optional['CmAccountTerraformEngineDaCreationArgs']] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_token: The api key used to access the engine instance.
+        :param pulumi.Input['CmAccountTerraformEngineDaCreationArgs'] da_creation: The settings that determines how deployable architectures are auto-created from workspaces in the terraform engine.
+        :param pulumi.Input[_builtins.str] name: User provided name for the specified engine.
+        :param pulumi.Input[_builtins.str] private_endpoint: The private endpoint for the engine instance.
+        :param pulumi.Input[_builtins.str] public_endpoint: The public endpoint for the engine instance.
+        :param pulumi.Input[_builtins.str] type: The terraform engine type. The only one supported at the moment is terraform-enterprise.
+        """
+        if api_token is not None:
+            pulumi.set(__self__, "api_token", api_token)
+        if da_creation is not None:
+            pulumi.set(__self__, "da_creation", da_creation)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if private_endpoint is not None:
+            pulumi.set(__self__, "private_endpoint", private_endpoint)
+        if public_endpoint is not None:
+            pulumi.set(__self__, "public_endpoint", public_endpoint)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="apiToken")
+    def api_token(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The api key used to access the engine instance.
+        """
+        return pulumi.get(self, "api_token")
+
+    @api_token.setter
+    def api_token(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_token", value)
+
+    @_builtins.property
+    @pulumi.getter(name="daCreation")
+    def da_creation(self) -> pulumi.Input[Optional['CmAccountTerraformEngineDaCreationArgs']]:
+        """
+        The settings that determines how deployable architectures are auto-created from workspaces in the terraform engine.
+        """
+        return pulumi.get(self, "da_creation")
+
+    @da_creation.setter
+    def da_creation(self, value: pulumi.Input[Optional['CmAccountTerraformEngineDaCreationArgs']]):
+        pulumi.set(self, "da_creation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        User provided name for the specified engine.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpoint")
+    def private_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The private endpoint for the engine instance.
+        """
+        return pulumi.get(self, "private_endpoint")
+
+    @private_endpoint.setter
+    def private_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicEndpoint")
+    def public_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The public endpoint for the engine instance.
+        """
+        return pulumi.get(self, "public_endpoint")
+
+    @public_endpoint.setter
+    def public_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "public_endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The terraform engine type. The only one supported at the moment is terraform-enterprise.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class CmAccountTerraformEngineDaCreationArgsDict(TypedDict):
+    default_private_catalog_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Default private catalog to create the deployable architectures in.
+    """
+    enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether deployable architectures are auto-created from workspaces in the engine.
+    """
+    polling_info: NotRequired[pulumi.Input[Optional['CmAccountTerraformEngineDaCreationPollingInfoArgsDict']]]
+    """
+    Determines which workspace scope to query to auto-create deployable architectures from.
+    """
+
+@pulumi.input_type
+class CmAccountTerraformEngineDaCreationArgs:
+    def __init__(__self__, *,
+                 default_private_catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 polling_info: pulumi.Input[Optional['CmAccountTerraformEngineDaCreationPollingInfoArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] default_private_catalog_id: Default private catalog to create the deployable architectures in.
+        :param pulumi.Input[_builtins.bool] enabled: Determines whether deployable architectures are auto-created from workspaces in the engine.
+        :param pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoArgs'] polling_info: Determines which workspace scope to query to auto-create deployable architectures from.
+        """
+        if default_private_catalog_id is not None:
+            pulumi.set(__self__, "default_private_catalog_id", default_private_catalog_id)
+        if enabled is not None:
+            pulumi.set(__self__, "enabled", enabled)
+        if polling_info is not None:
+            pulumi.set(__self__, "polling_info", polling_info)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultPrivateCatalogId")
+    def default_private_catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Default private catalog to create the deployable architectures in.
+        """
+        return pulumi.get(self, "default_private_catalog_id")
+
+    @default_private_catalog_id.setter
+    def default_private_catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "default_private_catalog_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether deployable architectures are auto-created from workspaces in the engine.
+        """
+        return pulumi.get(self, "enabled")
+
+    @enabled.setter
+    def enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pollingInfo")
+    def polling_info(self) -> pulumi.Input[Optional['CmAccountTerraformEngineDaCreationPollingInfoArgs']]:
+        """
+        Determines which workspace scope to query to auto-create deployable architectures from.
+        """
+        return pulumi.get(self, "polling_info")
+
+    @polling_info.setter
+    def polling_info(self, value: pulumi.Input[Optional['CmAccountTerraformEngineDaCreationPollingInfoArgs']]):
+        pulumi.set(self, "polling_info", value)
+
+
+class CmAccountTerraformEngineDaCreationPollingInfoArgsDict(TypedDict):
+    last_polling_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgsDict']]]]]
+    """
+    Last polling status of the engine scope.
+    """
+    scopes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoScopeArgsDict']]]]]
+    """
+    List of scopes to auto-create deployable architectures from workspaces in the engine.
+    """
+
+@pulumi.input_type
+class CmAccountTerraformEngineDaCreationPollingInfoArgs:
+    def __init__(__self__, *,
+                 last_polling_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgs']]]] = None,
+                 scopes: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoScopeArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgs']]] last_polling_statuses: Last polling status of the engine scope.
+        :param pulumi.Input[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoScopeArgs']]] scopes: List of scopes to auto-create deployable architectures from workspaces in the engine.
+        """
+        if last_polling_statuses is not None:
+            pulumi.set(__self__, "last_polling_statuses", last_polling_statuses)
+        if scopes is not None:
+            pulumi.set(__self__, "scopes", scopes)
+
+    @_builtins.property
+    @pulumi.getter(name="lastPollingStatuses")
+    def last_polling_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgs']]]]:
+        """
+        Last polling status of the engine scope.
+        """
+        return pulumi.get(self, "last_polling_statuses")
+
+    @last_polling_statuses.setter
+    def last_polling_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgs']]]]):
+        pulumi.set(self, "last_polling_statuses", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def scopes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoScopeArgs']]]]:
+        """
+        List of scopes to auto-create deployable architectures from workspaces in the engine.
+        """
+        return pulumi.get(self, "scopes")
+
+    @scopes.setter
+    def scopes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmAccountTerraformEngineDaCreationPollingInfoScopeArgs']]]]):
+        pulumi.set(self, "scopes", value)
+
+
+class CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgsDict(TypedDict):
+    code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Status code of the last polling attempt.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Status message from the last polling attempt.
+    """
+
+@pulumi.input_type
+class CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatusArgs:
+    def __init__(__self__, *,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] code: Status code of the last polling attempt.
+        :param pulumi.Input[_builtins.str] message: Status message from the last polling attempt.
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Status code of the last polling attempt.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Status message from the last polling attempt.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+
+class CmAccountTerraformEngineDaCreationPollingInfoScopeArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Identifier for the specified type in the scope.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Scope to auto-create deployable architectures from. The supported scopes today are workspace, org, and project.
+    """
+
+@pulumi.input_type
+class CmAccountTerraformEngineDaCreationPollingInfoScopeArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Identifier for the specified type in the scope.
+        :param pulumi.Input[_builtins.str] type: Scope to auto-create deployable architectures from. The supported scopes today are workspace, org, and project.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifier for the specified type in the scope.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Scope to auto-create deployable architectures from. The supported scopes today are workspace, org, and project.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class CmCatalogCatalogFilterArgsDict(TypedDict):
+    category_filters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmCatalogCatalogFilterCategoryFilterArgsDict']]]]]
+    """
+    Filter against offering categories with dynamic keys.
+    """
+    id_filters: NotRequired[pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersArgsDict']]]
+    """
+    Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+    """
+    include_all: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+    """
+
+@pulumi.input_type
+class CmCatalogCatalogFilterArgs:
+    def __init__(__self__, *,
+                 category_filters: pulumi.Input[Optional[Sequence[pulumi.Input['CmCatalogCatalogFilterCategoryFilterArgs']]]] = None,
+                 id_filters: pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersArgs']] = None,
+                 include_all: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmCatalogCatalogFilterCategoryFilterArgs']]] category_filters: Filter against offering categories with dynamic keys.
+        :param pulumi.Input['CmCatalogCatalogFilterIdFiltersArgs'] id_filters: Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+        :param pulumi.Input[_builtins.bool] include_all: > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+        """
+        if category_filters is not None:
+            pulumi.set(__self__, "category_filters", category_filters)
+        if id_filters is not None:
+            pulumi.set(__self__, "id_filters", id_filters)
+        if include_all is not None:
+            pulumi.set(__self__, "include_all", include_all)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryFilters")
+    def category_filters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmCatalogCatalogFilterCategoryFilterArgs']]]]:
+        """
+        Filter against offering categories with dynamic keys.
+        """
+        return pulumi.get(self, "category_filters")
+
+    @category_filters.setter
+    def category_filters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmCatalogCatalogFilterCategoryFilterArgs']]]]):
+        pulumi.set(self, "category_filters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="idFilters")
+    def id_filters(self) -> pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersArgs']]:
+        """
+        Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+        """
+        return pulumi.get(self, "id_filters")
+
+    @id_filters.setter
+    def id_filters(self, value: pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersArgs']]):
+        pulumi.set(self, "id_filters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includeAll")
+    def include_all(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+        """
+        return pulumi.get(self, "include_all")
+
+    @include_all.setter
+    def include_all(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "include_all", value)
+
+
+class CmCatalogCatalogFilterCategoryFilterArgsDict(TypedDict):
+    category_name: pulumi.Input[_builtins.str]
+    """
+    Name of this category
+    """
+    filter: NotRequired[pulumi.Input[Optional['CmCatalogCatalogFilterCategoryFilterFilterArgsDict']]]
+    """
+    Filter terms related to the category.
+    """
+    include: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to include the category in the catalog filter.
+    """
+
+@pulumi.input_type
+class CmCatalogCatalogFilterCategoryFilterArgs:
+    def __init__(__self__, *,
+                 category_name: pulumi.Input[_builtins.str],
+                 filter: pulumi.Input[Optional['CmCatalogCatalogFilterCategoryFilterFilterArgs']] = None,
+                 include: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] category_name: Name of this category
+        :param pulumi.Input['CmCatalogCatalogFilterCategoryFilterFilterArgs'] filter: Filter terms related to the category.
+        :param pulumi.Input[_builtins.bool] include: Whether to include the category in the catalog filter.
+        """
+        pulumi.set(__self__, "category_name", category_name)
+        if filter is not None:
+            pulumi.set(__self__, "filter", filter)
+        if include is not None:
+            pulumi.set(__self__, "include", include)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryName")
+    def category_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of this category
+        """
+        return pulumi.get(self, "category_name")
+
+    @category_name.setter
+    def category_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "category_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def filter(self) -> pulumi.Input[Optional['CmCatalogCatalogFilterCategoryFilterFilterArgs']]:
+        """
+        Filter terms related to the category.
+        """
+        return pulumi.get(self, "filter")
+
+    @filter.setter
+    def filter(self, value: pulumi.Input[Optional['CmCatalogCatalogFilterCategoryFilterFilterArgs']]):
+        pulumi.set(self, "filter", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def include(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to include the category in the catalog filter.
+        """
+        return pulumi.get(self, "include")
+
+    @include.setter
+    def include(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "include", value)
+
+
+class CmCatalogCatalogFilterCategoryFilterFilterArgsDict(TypedDict):
+    filter_terms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of filter terms for the category.
+    """
+
+@pulumi.input_type
+class CmCatalogCatalogFilterCategoryFilterFilterArgs:
+    def __init__(__self__, *,
+                 filter_terms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filter_terms: List of filter terms for the category.
+        """
+        if filter_terms is not None:
+            pulumi.set(__self__, "filter_terms", filter_terms)
+
+    @_builtins.property
+    @pulumi.getter(name="filterTerms")
+    def filter_terms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of filter terms for the category.
+        """
+        return pulumi.get(self, "filter_terms")
+
+    @filter_terms.setter
+    def filter_terms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "filter_terms", value)
+
+
+class CmCatalogCatalogFilterIdFiltersArgsDict(TypedDict):
+    exclude: NotRequired[pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersExcludeArgsDict']]]
+    """
+    Offering filter terms.
+    """
+    include: NotRequired[pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersIncludeArgsDict']]]
+    """
+    Offering filter terms.
+    """
+
+@pulumi.input_type
+class CmCatalogCatalogFilterIdFiltersArgs:
+    def __init__(__self__, *,
+                 exclude: pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersExcludeArgs']] = None,
+                 include: pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersIncludeArgs']] = None):
+        """
+        :param pulumi.Input['CmCatalogCatalogFilterIdFiltersExcludeArgs'] exclude: Offering filter terms.
+        :param pulumi.Input['CmCatalogCatalogFilterIdFiltersIncludeArgs'] include: Offering filter terms.
+        """
+        if exclude is not None:
+            pulumi.set(__self__, "exclude", exclude)
+        if include is not None:
+            pulumi.set(__self__, "include", include)
+
+    @_builtins.property
+    @pulumi.getter
+    def exclude(self) -> pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersExcludeArgs']]:
+        """
+        Offering filter terms.
+        """
+        return pulumi.get(self, "exclude")
+
+    @exclude.setter
+    def exclude(self, value: pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersExcludeArgs']]):
+        pulumi.set(self, "exclude", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def include(self) -> pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersIncludeArgs']]:
+        """
+        Offering filter terms.
+        """
+        return pulumi.get(self, "include")
+
+    @include.setter
+    def include(self, value: pulumi.Input[Optional['CmCatalogCatalogFilterIdFiltersIncludeArgs']]):
+        pulumi.set(self, "include", value)
+
+
+class CmCatalogCatalogFilterIdFiltersExcludeArgsDict(TypedDict):
+    filter_terms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+    """
+
+@pulumi.input_type
+class CmCatalogCatalogFilterIdFiltersExcludeArgs:
+    def __init__(__self__, *,
+                 filter_terms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filter_terms: List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        if filter_terms is not None:
+            pulumi.set(__self__, "filter_terms", filter_terms)
+
+    @_builtins.property
+    @pulumi.getter(name="filterTerms")
+    def filter_terms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        return pulumi.get(self, "filter_terms")
+
+    @filter_terms.setter
+    def filter_terms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "filter_terms", value)
+
+
+class CmCatalogCatalogFilterIdFiltersIncludeArgsDict(TypedDict):
+    filter_terms: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+    """
+
+@pulumi.input_type
+class CmCatalogCatalogFilterIdFiltersIncludeArgs:
+    def __init__(__self__, *,
+                 filter_terms: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] filter_terms: List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        if filter_terms is not None:
+            pulumi.set(__self__, "filter_terms", filter_terms)
+
+    @_builtins.property
+    @pulumi.getter(name="filterTerms")
+    def filter_terms(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+        """
+        return pulumi.get(self, "filter_terms")
+
+    @filter_terms.setter
+    def filter_terms(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "filter_terms", value)
+
+
+class CmCatalogFeatureArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Feature description.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Heading.
+    """
+    title_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+
+@pulumi.input_type
+class CmCatalogFeatureArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 title_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Feature description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] title: Heading.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] title_i18n: A map of translated strings, by language code.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if title_i18n is not None:
+            pulumi.set(__self__, "title_i18n", title_i18n)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Feature description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Heading.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+    @_builtins.property
+    @pulumi.getter(name="titleI18n")
+    def title_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "title_i18n")
+
+    @title_i18n.setter
+    def title_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "title_i18n", value)
+
+
+class CmCatalogTargetAccountContextArgsDict(TypedDict):
+    api_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    API key of the target account.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Label for this target account context.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique identifier/name for this target account context.
+    """
+    project_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Project ID.
+    """
+    trusted_profile: NotRequired[pulumi.Input[Optional['CmCatalogTargetAccountContextTrustedProfileArgsDict']]]
+    """
+    Trusted profile information.
+    """
+
+@pulumi.input_type
+class CmCatalogTargetAccountContextArgs:
+    def __init__(__self__, *,
+                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_profile: pulumi.Input[Optional['CmCatalogTargetAccountContextTrustedProfileArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_key: API key of the target account.
+        :param pulumi.Input[_builtins.str] label: Label for this target account context.
+        :param pulumi.Input[_builtins.str] name: Unique identifier/name for this target account context.
+        :param pulumi.Input[_builtins.str] project_id: Project ID.
+        :param pulumi.Input['CmCatalogTargetAccountContextTrustedProfileArgs'] trusted_profile: Trusted profile information.
+        """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if trusted_profile is not None:
+            pulumi.set(__self__, "trusted_profile", trusted_profile)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        API key of the target account.
+        """
+        return pulumi.get(self, "api_key")
+
+    @api_key.setter
+    def api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Label for this target account context.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique identifier/name for this target account context.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project ID.
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustedProfile")
+    def trusted_profile(self) -> pulumi.Input[Optional['CmCatalogTargetAccountContextTrustedProfileArgs']]:
+        """
+        Trusted profile information.
+        """
+        return pulumi.get(self, "trusted_profile")
+
+    @trusted_profile.setter
+    def trusted_profile(self, value: pulumi.Input[Optional['CmCatalogTargetAccountContextTrustedProfileArgs']]):
+        pulumi.set(self, "trusted_profile", value)
+
+
+class CmCatalogTargetAccountContextTrustedProfileArgsDict(TypedDict):
+    catalog_crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    CRN of this catalog.
+    """
+    catalog_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of this catalog.
+    """
+    target_service_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Target service ID.
+    """
+    trusted_profile_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Trusted profile ID.
+    """
+
+@pulumi.input_type
+class CmCatalogTargetAccountContextTrustedProfileArgs:
+    def __init__(__self__, *,
+                 catalog_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 catalog_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 trusted_profile_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] catalog_crn: CRN of this catalog.
+        :param pulumi.Input[_builtins.str] catalog_name: Name of this catalog.
+        :param pulumi.Input[_builtins.str] target_service_id: Target service ID.
+        :param pulumi.Input[_builtins.str] trusted_profile_id: Trusted profile ID.
+        """
+        if catalog_crn is not None:
+            pulumi.set(__self__, "catalog_crn", catalog_crn)
+        if catalog_name is not None:
+            pulumi.set(__self__, "catalog_name", catalog_name)
+        if target_service_id is not None:
+            pulumi.set(__self__, "target_service_id", target_service_id)
+        if trusted_profile_id is not None:
+            pulumi.set(__self__, "trusted_profile_id", trusted_profile_id)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogCrn")
+    def catalog_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        CRN of this catalog.
+        """
+        return pulumi.get(self, "catalog_crn")
+
+    @catalog_crn.setter
+    def catalog_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "catalog_crn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogName")
+    def catalog_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of this catalog.
+        """
+        return pulumi.get(self, "catalog_name")
+
+    @catalog_name.setter
+    def catalog_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "catalog_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetServiceId")
+    def target_service_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Target service ID.
+        """
+        return pulumi.get(self, "target_service_id")
+
+    @target_service_id.setter
+    def target_service_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_service_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trustedProfileId")
+    def trusted_profile_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Trusted profile ID.
+        """
+        return pulumi.get(self, "trusted_profile_id")
+
+    @trusted_profile_id.setter
+    def trusted_profile_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "trusted_profile_id", value)
+
+
+class CmObjectPublishArgsDict(TypedDict):
+    ibm_approved: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates if this offering has been approved for use by all IBMers.
+    """
+    permit_ibm_public_publish: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Is it permitted to request publishing to IBM or Public.
+    """
+    portal_approval_record: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The portal's approval record ID.
+    """
+    portal_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The portal UI URL.
+    """
+    public_approved: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates if this offering has been approved for use by all IBM Cloud users.
+    """
+
+@pulumi.input_type
+class CmObjectPublishArgs:
+    def __init__(__self__, *,
+                 ibm_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+                 permit_ibm_public_publish: pulumi.Input[Optional[_builtins.bool]] = None,
+                 portal_approval_record: pulumi.Input[Optional[_builtins.str]] = None,
+                 portal_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 public_approved: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] ibm_approved: Indicates if this offering has been approved for use by all IBMers.
+        :param pulumi.Input[_builtins.bool] permit_ibm_public_publish: Is it permitted to request publishing to IBM or Public.
+        :param pulumi.Input[_builtins.str] portal_approval_record: The portal's approval record ID.
+        :param pulumi.Input[_builtins.str] portal_url: The portal UI URL.
+        :param pulumi.Input[_builtins.bool] public_approved: Indicates if this offering has been approved for use by all IBM Cloud users.
+        """
+        if ibm_approved is not None:
+            pulumi.set(__self__, "ibm_approved", ibm_approved)
+        if permit_ibm_public_publish is not None:
+            pulumi.set(__self__, "permit_ibm_public_publish", permit_ibm_public_publish)
+        if portal_approval_record is not None:
+            pulumi.set(__self__, "portal_approval_record", portal_approval_record)
+        if portal_url is not None:
+            pulumi.set(__self__, "portal_url", portal_url)
+        if public_approved is not None:
+            pulumi.set(__self__, "public_approved", public_approved)
+
+    @_builtins.property
+    @pulumi.getter(name="ibmApproved")
+    def ibm_approved(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates if this offering has been approved for use by all IBMers.
+        """
+        return pulumi.get(self, "ibm_approved")
+
+    @ibm_approved.setter
+    def ibm_approved(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "ibm_approved", value)
+
+    @_builtins.property
+    @pulumi.getter(name="permitIbmPublicPublish")
+    def permit_ibm_public_publish(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Is it permitted to request publishing to IBM or Public.
+        """
+        return pulumi.get(self, "permit_ibm_public_publish")
+
+    @permit_ibm_public_publish.setter
+    def permit_ibm_public_publish(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "permit_ibm_public_publish", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portalApprovalRecord")
+    def portal_approval_record(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The portal's approval record ID.
+        """
+        return pulumi.get(self, "portal_approval_record")
+
+    @portal_approval_record.setter
+    def portal_approval_record(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "portal_approval_record", value)
+
+    @_builtins.property
+    @pulumi.getter(name="portalUrl")
+    def portal_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The portal UI URL.
+        """
+        return pulumi.get(self, "portal_url")
+
+    @portal_url.setter
+    def portal_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "portal_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="publicApproved")
+    def public_approved(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates if this offering has been approved for use by all IBM Cloud users.
+        """
+        return pulumi.get(self, "public_approved")
+
+    @public_approved.setter
+    def public_approved(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "public_approved", value)
+
+
+class CmObjectStateArgsDict(TypedDict):
+    current: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+    current_entered: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of current request.
+    """
+    pending: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+    pending_requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of pending request.
+    """
+    previous: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+
+@pulumi.input_type
+class CmObjectStateArgs:
+    def __init__(__self__, *,
+                 current: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_entered: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_requested: pulumi.Input[Optional[_builtins.str]] = None,
+                 previous: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] current: one of: new, validated, account-published, ibm-published, public-published.
+        :param pulumi.Input[_builtins.str] current_entered: Date and time of current request.
+        :param pulumi.Input[_builtins.str] pending: one of: new, validated, account-published, ibm-published, public-published.
+        :param pulumi.Input[_builtins.str] pending_requested: Date and time of pending request.
+        :param pulumi.Input[_builtins.str] previous: one of: new, validated, account-published, ibm-published, public-published.
+        """
+        if current is not None:
+            pulumi.set(__self__, "current", current)
+        if current_entered is not None:
+            pulumi.set(__self__, "current_entered", current_entered)
+        if pending is not None:
+            pulumi.set(__self__, "pending", pending)
+        if pending_requested is not None:
+            pulumi.set(__self__, "pending_requested", pending_requested)
+        if previous is not None:
+            pulumi.set(__self__, "previous", previous)
+
+    @_builtins.property
+    @pulumi.getter
+    def current(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "current")
+
+    @current.setter
+    def current(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentEntered")
+    def current_entered(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of current request.
+        """
+        return pulumi.get(self, "current_entered")
+
+    @current_entered.setter
+    def current_entered(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current_entered", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def pending(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "pending")
+
+    @pending.setter
+    def pending(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingRequested")
+    def pending_requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of pending request.
+        """
+        return pulumi.get(self, "pending_requested")
+
+    @pending_requested.setter
+    def pending_requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending_requested", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def previous(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "previous")
+
+    @previous.setter
+    def previous(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "previous", value)
+
+
+class CmOfferingBadgeArgsDict(TypedDict):
+    authority: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Authority for the current badge.
+    """
+    constraints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeConstraintArgsDict']]]]]
+    """
+    An optional set of constraints indicating which versions in an Offering have this particular badge.
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Description of the current badge.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    icon: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Icon for the current badge.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the current badge.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Display name for the current badge.
+    """
+    label_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    learn_more_links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeLearnMoreLinkArgsDict']]]]]
+    """
+    Learn more links for a badge.
+    """
+    tag: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag for the current badge.
+    """
+
+@pulumi.input_type
+class CmOfferingBadgeArgs:
+    def __init__(__self__, *,
+                 authority: pulumi.Input[Optional[_builtins.str]] = None,
+                 constraints: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeConstraintArgs']]]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 icon: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 label_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 learn_more_links: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeLearnMoreLinkArgs']]]] = None,
+                 tag: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] authority: Authority for the current badge.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingBadgeConstraintArgs']]] constraints: An optional set of constraints indicating which versions in an Offering have this particular badge.
+        :param pulumi.Input[_builtins.str] description: Description of the current badge.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] icon: Icon for the current badge.
+        :param pulumi.Input[_builtins.str] id: ID of the current badge.
+        :param pulumi.Input[_builtins.str] label: Display name for the current badge.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] label_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingBadgeLearnMoreLinkArgs']]] learn_more_links: Learn more links for a badge.
+        :param pulumi.Input[_builtins.str] tag: Tag for the current badge.
+        """
+        if authority is not None:
+            pulumi.set(__self__, "authority", authority)
+        if constraints is not None:
+            pulumi.set(__self__, "constraints", constraints)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if icon is not None:
+            pulumi.set(__self__, "icon", icon)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if label_i18n is not None:
+            pulumi.set(__self__, "label_i18n", label_i18n)
+        if learn_more_links is not None:
+            pulumi.set(__self__, "learn_more_links", learn_more_links)
+        if tag is not None:
+            pulumi.set(__self__, "tag", tag)
+
+    @_builtins.property
+    @pulumi.getter
+    def authority(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Authority for the current badge.
+        """
+        return pulumi.get(self, "authority")
+
+    @authority.setter
+    def authority(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "authority", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def constraints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeConstraintArgs']]]]:
+        """
+        An optional set of constraints indicating which versions in an Offering have this particular badge.
+        """
+        return pulumi.get(self, "constraints")
+
+    @constraints.setter
+    def constraints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeConstraintArgs']]]]):
+        pulumi.set(self, "constraints", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Description of the current badge.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def icon(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Icon for the current badge.
+        """
+        return pulumi.get(self, "icon")
+
+    @icon.setter
+    def icon(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "icon", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the current badge.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Display name for the current badge.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter(name="labelI18n")
+    def label_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "label_i18n")
+
+    @label_i18n.setter
+    def label_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "label_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter(name="learnMoreLinks")
+    def learn_more_links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeLearnMoreLinkArgs']]]]:
+        """
+        Learn more links for a badge.
+        """
+        return pulumi.get(self, "learn_more_links")
+
+    @learn_more_links.setter
+    def learn_more_links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingBadgeLearnMoreLinkArgs']]]]):
+        pulumi.set(self, "learn_more_links", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tag(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag for the current badge.
+        """
+        return pulumi.get(self, "tag")
+
+    @tag.setter
+    def tag(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tag", value)
+
+
+class CmOfferingBadgeConstraintArgsDict(TypedDict):
+    rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Rule for the current constraint.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of the current constraint.
+    """
+
+@pulumi.input_type
+class CmOfferingBadgeConstraintArgs:
+    def __init__(__self__, *,
+                 rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] rule: Rule for the current constraint.
+        :param pulumi.Input[_builtins.str] type: Type of the current constraint.
+        """
+        if rule is not None:
+            pulumi.set(__self__, "rule", rule)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def rule(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Rule for the current constraint.
+        """
+        return pulumi.get(self, "rule")
+
+    @rule.setter
+    def rule(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rule", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of the current constraint.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class CmOfferingBadgeLearnMoreLinkArgsDict(TypedDict):
+    first_party: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    First party link.
+    """
+    third_party: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Third party link.
+    """
+
+@pulumi.input_type
+class CmOfferingBadgeLearnMoreLinkArgs:
+    def __init__(__self__, *,
+                 first_party: pulumi.Input[Optional[_builtins.str]] = None,
+                 third_party: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] first_party: First party link.
+        :param pulumi.Input[_builtins.str] third_party: Third party link.
+        """
+        if first_party is not None:
+            pulumi.set(__self__, "first_party", first_party)
+        if third_party is not None:
+            pulumi.set(__self__, "third_party", third_party)
+
+    @_builtins.property
+    @pulumi.getter(name="firstParty")
+    def first_party(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        First party link.
+        """
+        return pulumi.get(self, "first_party")
+
+    @first_party.setter
+    def first_party(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "first_party", value)
+
+    @_builtins.property
+    @pulumi.getter(name="thirdParty")
+    def third_party(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Third party link.
+        """
+        return pulumi.get(self, "third_party")
+
+    @third_party.setter
+    def third_party(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "third_party", value)
+
+
+class CmOfferingDeprecatePendingArgsDict(TypedDict):
+    deprecate_date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date of deprecation.
+    """
+    deprecate_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Deprecation state.
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class CmOfferingDeprecatePendingArgs:
+    def __init__(__self__, *,
+                 deprecate_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 deprecate_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] deprecate_date: Date of deprecation.
+        :param pulumi.Input[_builtins.str] deprecate_state: Deprecation state.
+        """
+        if deprecate_date is not None:
+            pulumi.set(__self__, "deprecate_date", deprecate_date)
+        if deprecate_state is not None:
+            pulumi.set(__self__, "deprecate_state", deprecate_state)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="deprecateDate")
+    def deprecate_date(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date of deprecation.
+        """
+        return pulumi.get(self, "deprecate_date")
+
+    @deprecate_date.setter
+    def deprecate_date(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deprecate_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deprecateState")
+    def deprecate_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Deprecation state.
+        """
+        return pulumi.get(self, "deprecate_state")
+
+    @deprecate_state.setter
+    def deprecate_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deprecate_state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
+class CmOfferingFeatureArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Feature description.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Heading.
+    """
+    title_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+
+@pulumi.input_type
+class CmOfferingFeatureArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 title_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Feature description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] title: Heading.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] title_i18n: A map of translated strings, by language code.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if title_i18n is not None:
+            pulumi.set(__self__, "title_i18n", title_i18n)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Feature description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Heading.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+    @_builtins.property
+    @pulumi.getter(name="titleI18n")
+    def title_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "title_i18n")
+
+    @title_i18n.setter
+    def title_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "title_i18n", value)
+
+
+class CmOfferingImagePullKeyArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Key description.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Key name.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Key value.
+    """
+
+@pulumi.input_type
+class CmOfferingImagePullKeyArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Key description.
+        :param pulumi.Input[_builtins.str] name: Key name.
+        :param pulumi.Input[_builtins.str] value: Key value.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Key description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Key name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Key value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class CmOfferingKindArgsDict(TypedDict):
+    additional_features: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindAdditionalFeatureArgsDict']]]]]
+    """
+    List of features associated with this offering.
+    """
+    created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date and time this catalog was created.
+    """
+    format_kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    content kind, e.g., helm, vm image.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique ID.
+    """
+    install_kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    install kind, e.g., helm, operator, terraform.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Open ended metadata information.
+    """
+    plans: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanArgsDict']]]]]
+    """
+    list of plans.
+    """
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of tags associated with this catalog.
+    """
+    target_kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    target cloud to install, e.g., iks, open_shift_iks.
+    """
+    updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date and time this catalog was last updated.
+    """
+    versions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionArgsDict']]]]]
+    """
+    list of versions.
+    """
+
+@pulumi.input_type
+class CmOfferingKindArgs:
+    def __init__(__self__, *,
+                 additional_features: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindAdditionalFeatureArgs']]]] = None,
+                 created: pulumi.Input[Optional[_builtins.str]] = None,
+                 format_kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 install_kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 plans: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanArgs']]]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 versions: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindAdditionalFeatureArgs']]] additional_features: List of features associated with this offering.
+        :param pulumi.Input[_builtins.str] created: The date and time this catalog was created.
+        :param pulumi.Input[_builtins.str] format_kind: content kind, e.g., helm, vm image.
+        :param pulumi.Input[_builtins.str] id: Unique ID.
+        :param pulumi.Input[_builtins.str] install_kind: install kind, e.g., helm, operator, terraform.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Open ended metadata information.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindPlanArgs']]] plans: list of plans.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of tags associated with this catalog.
+        :param pulumi.Input[_builtins.str] target_kind: target cloud to install, e.g., iks, open_shift_iks.
+        :param pulumi.Input[_builtins.str] updated: The date and time this catalog was last updated.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionArgs']]] versions: list of versions.
+        """
+        if additional_features is not None:
+            pulumi.set(__self__, "additional_features", additional_features)
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if format_kind is not None:
+            pulumi.set(__self__, "format_kind", format_kind)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if install_kind is not None:
+            pulumi.set(__self__, "install_kind", install_kind)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if plans is not None:
+            pulumi.set(__self__, "plans", plans)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if target_kind is not None:
+            pulumi.set(__self__, "target_kind", target_kind)
+        if updated is not None:
+            pulumi.set(__self__, "updated", updated)
+        if versions is not None:
+            pulumi.set(__self__, "versions", versions)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalFeatures")
+    def additional_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindAdditionalFeatureArgs']]]]:
+        """
+        List of features associated with this offering.
+        """
+        return pulumi.get(self, "additional_features")
+
+    @additional_features.setter
+    def additional_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindAdditionalFeatureArgs']]]]):
+        pulumi.set(self, "additional_features", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time this catalog was created.
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="formatKind")
+    def format_kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        content kind, e.g., helm, vm image.
+        """
+        return pulumi.get(self, "format_kind")
+
+    @format_kind.setter
+    def format_kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "format_kind", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique ID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="installKind")
+    def install_kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        install kind, e.g., helm, operator, terraform.
+        """
+        return pulumi.get(self, "install_kind")
+
+    @install_kind.setter
+    def install_kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "install_kind", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Open ended metadata information.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def plans(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanArgs']]]]:
+        """
+        list of plans.
+        """
+        return pulumi.get(self, "plans")
+
+    @plans.setter
+    def plans(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanArgs']]]]):
+        pulumi.set(self, "plans", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of tags associated with this catalog.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetKind")
+    def target_kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        target cloud to install, e.g., iks, open_shift_iks.
+        """
+        return pulumi.get(self, "target_kind")
+
+    @target_kind.setter
+    def target_kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_kind", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def updated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time this catalog was last updated.
+        """
+        return pulumi.get(self, "updated")
+
+    @updated.setter
+    def updated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "updated", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionArgs']]]]:
+        """
+        list of versions.
+        """
+        return pulumi.get(self, "versions")
+
+    @versions.setter
+    def versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionArgs']]]]):
+        pulumi.set(self, "versions", value)
+
+
+class CmOfferingKindAdditionalFeatureArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Feature description.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Heading.
+    """
+    title_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+
+@pulumi.input_type
+class CmOfferingKindAdditionalFeatureArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 title_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Feature description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] title: Heading.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] title_i18n: A map of translated strings, by language code.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if title_i18n is not None:
+            pulumi.set(__self__, "title_i18n", title_i18n)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Feature description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Heading.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+    @_builtins.property
+    @pulumi.getter(name="titleI18n")
+    def title_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "title_i18n")
+
+    @title_i18n.setter
+    def title_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "title_i18n", value)
+
+
+class CmOfferingKindPlanArgsDict(TypedDict):
+    additional_features: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanAdditionalFeatureArgsDict']]]]]
+    """
+    list of features associated with this offering.
+    """
+    created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    the date'time this catalog was created.
+    """
+    deployments: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanDeploymentArgsDict']]]]]
+    """
+    list of deployments.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    unique id.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Display Name in the requested language.
+    """
+    long_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Long description in the requested language.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    open ended metadata information.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The programmatic name of this offering.
+    """
+    short_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Short description in the requested language.
+    """
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    list of tags associated with this catalog.
+    """
+    updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    the date'time this catalog was last updated.
+    """
+
+@pulumi.input_type
+class CmOfferingKindPlanArgs:
+    def __init__(__self__, *,
+                 additional_features: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanAdditionalFeatureArgs']]]] = None,
+                 created: pulumi.Input[Optional[_builtins.str]] = None,
+                 deployments: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanDeploymentArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 updated: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindPlanAdditionalFeatureArgs']]] additional_features: list of features associated with this offering.
+        :param pulumi.Input[_builtins.str] created: the date'time this catalog was created.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindPlanDeploymentArgs']]] deployments: list of deployments.
+        :param pulumi.Input[_builtins.str] id: unique id.
+        :param pulumi.Input[_builtins.str] label: Display Name in the requested language.
+        :param pulumi.Input[_builtins.str] long_description: Long description in the requested language.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: open ended metadata information.
+        :param pulumi.Input[_builtins.str] name: The programmatic name of this offering.
+        :param pulumi.Input[_builtins.str] short_description: Short description in the requested language.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: list of tags associated with this catalog.
+        :param pulumi.Input[_builtins.str] updated: the date'time this catalog was last updated.
+        """
+        if additional_features is not None:
+            pulumi.set(__self__, "additional_features", additional_features)
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if deployments is not None:
+            pulumi.set(__self__, "deployments", deployments)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if long_description is not None:
+            pulumi.set(__self__, "long_description", long_description)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if short_description is not None:
+            pulumi.set(__self__, "short_description", short_description)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if updated is not None:
+            pulumi.set(__self__, "updated", updated)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalFeatures")
+    def additional_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanAdditionalFeatureArgs']]]]:
+        """
+        list of features associated with this offering.
+        """
+        return pulumi.get(self, "additional_features")
+
+    @additional_features.setter
+    def additional_features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanAdditionalFeatureArgs']]]]):
+        pulumi.set(self, "additional_features", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        the date'time this catalog was created.
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "created", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def deployments(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanDeploymentArgs']]]]:
+        """
+        list of deployments.
+        """
+        return pulumi.get(self, "deployments")
+
+    @deployments.setter
+    def deployments(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindPlanDeploymentArgs']]]]):
+        pulumi.set(self, "deployments", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        unique id.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Display Name in the requested language.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter(name="longDescription")
+    def long_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Long description in the requested language.
+        """
+        return pulumi.get(self, "long_description")
+
+    @long_description.setter
+    def long_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "long_description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        open ended metadata information.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The programmatic name of this offering.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shortDescription")
+    def short_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Short description in the requested language.
+        """
+        return pulumi.get(self, "short_description")
+
+    @short_description.setter
+    def short_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "short_description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        list of tags associated with this catalog.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def updated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        the date'time this catalog was last updated.
+        """
+        return pulumi.get(self, "updated")
+
+    @updated.setter
+    def updated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "updated", value)
+
+
+class CmOfferingKindPlanAdditionalFeatureArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Feature description.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Heading.
+    """
+    title_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+
+@pulumi.input_type
+class CmOfferingKindPlanAdditionalFeatureArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 title_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Feature description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] title: Heading.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] title_i18n: A map of translated strings, by language code.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if title_i18n is not None:
+            pulumi.set(__self__, "title_i18n", title_i18n)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Feature description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Heading.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+    @_builtins.property
+    @pulumi.getter(name="titleI18n")
+    def title_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "title_i18n")
+
+    @title_i18n.setter
+    def title_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "title_i18n", value)
+
+
+class CmOfferingKindPlanDeploymentArgsDict(TypedDict):
+    created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    the date'time this catalog was created.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    unique id.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Display Name in the requested language.
+    """
+    long_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Long description in the requested language.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    open ended metadata information.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The programmatic name of this offering.
+    """
+    short_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Short description in the requested language.
+    """
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    list of tags associated with this catalog.
+    """
+    updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    the date'time this catalog was last updated.
+    """
+
+@pulumi.input_type
+class CmOfferingKindPlanDeploymentArgs:
+    def __init__(__self__, *,
+                 created: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 short_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 updated: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] created: the date'time this catalog was created.
+        :param pulumi.Input[_builtins.str] id: unique id.
+        :param pulumi.Input[_builtins.str] label: Display Name in the requested language.
+        :param pulumi.Input[_builtins.str] long_description: Long description in the requested language.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: open ended metadata information.
+        :param pulumi.Input[_builtins.str] name: The programmatic name of this offering.
+        :param pulumi.Input[_builtins.str] short_description: Short description in the requested language.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: list of tags associated with this catalog.
+        :param pulumi.Input[_builtins.str] updated: the date'time this catalog was last updated.
+        """
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if long_description is not None:
+            pulumi.set(__self__, "long_description", long_description)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if short_description is not None:
+            pulumi.set(__self__, "short_description", short_description)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if updated is not None:
+            pulumi.set(__self__, "updated", updated)
+
+    @_builtins.property
+    @pulumi.getter
+    def created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        the date'time this catalog was created.
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "created", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        unique id.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Display Name in the requested language.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter(name="longDescription")
+    def long_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Long description in the requested language.
+        """
+        return pulumi.get(self, "long_description")
+
+    @long_description.setter
+    def long_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "long_description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        open ended metadata information.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The programmatic name of this offering.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shortDescription")
+    def short_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Short description in the requested language.
+        """
+        return pulumi.get(self, "short_description")
+
+    @short_description.setter
+    def short_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "short_description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        list of tags associated with this catalog.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def updated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        the date'time this catalog was last updated.
+        """
+        return pulumi.get(self, "updated")
+
+    @updated.setter
+    def updated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "updated", value)
+
+
+class CmOfferingKindVersionArgsDict(TypedDict):
+    catalog_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Catalog ID.
+    """
+    configurations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationArgsDict']]]]]
+    """
+    List of user solicited overrides.
+    """
+    created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date and time this version was created.
+    """
+    crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version's CRN.
+    """
+    deprecate_pendings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionDeprecatePendingArgsDict']]]]]
+    """
+    Deprecation information for a Version.
+    """
+    deprecated: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    read only field, indicating if this version is deprecated.
+    """
+    entitlement: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionEntitlementArgsDict']]]
+    """
+    Entitlement license info.
+    """
+    flavor: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionFlavorArgsDict']]]
+    """
+    Version Flavor Information.  Only supported for Product kind Solution.
+    """
+    iam_permissions: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionArgsDict']]]]]
+    """
+    List of IAM permissions that are required to consume this version.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique ID.
+    """
+    image_manifest_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    If set, denotes a url to a YAML file with list of container images used by this version.
+    """
+    image_pull_key_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the image pull key to use from Offering.ImagePullKeys.
+    """
+    install: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionInstallArgsDict']]]
+    """
+    Script information.
+    """
+    is_consumable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Is the version able to be shared.
+    """
+    kind_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Kind ID.
+    """
+    licenses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionLicenseArgsDict']]]]]
+    """
+    List of licenses the product was built with.
+    """
+    long_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Long description for version.
+    """
+    long_description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    metadata: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionMetadataArgsDict']]]
+    """
+    Generic data to be included with content being onboarded. Required for virtual server image for VPC.
+    """
+    offering_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Offering ID.
+    """
+    outputs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionOutputArgsDict']]]]]
+    """
+    List of output values for this version.
+    """
+    package_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version of the package used to create this version.
+    """
+    pre_installs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionPreInstallArgsDict']]]]]
+    """
+    Optional pre-install instructions.
+    """
+    repo_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Content's repo URL.
+    """
+    required_resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionRequiredResourceArgsDict']]]]]
+    """
+    Resource requirments for installation.
+    """
+    rev: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cloudant revision.
+    """
+    sha: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    hash of the content.
+    """
+    single_instance: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Denotes if single instance can be deployed to a given cluster.
+    """
+    solution_info: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArgsDict']]]
+    """
+    Version Solution Information.  Only supported for Product kind Solution.
+    """
+    source_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Content's source URL (e.g git repo).
+    """
+    state: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionStateArgsDict']]]
+    """
+    Offering state.
+    """
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of tags associated with this catalog.
+    """
+    tgz_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    File used to on-board this version.
+    """
+    updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date and time this version was last updated.
+    """
+    validation: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionValidationArgsDict']]]
+    """
+    Validation response.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version of content type.
+    """
+    version_locator: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A dotted value of `catalogID`.`versionID`.
+    """
+    whitelisted_accounts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Whitelisted accounts for version.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionArgs:
+    def __init__(__self__, *,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 configurations: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationArgs']]]] = None,
+                 created: pulumi.Input[Optional[_builtins.str]] = None,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 deprecate_pendings: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionDeprecatePendingArgs']]]] = None,
+                 deprecated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 entitlement: pulumi.Input[Optional['CmOfferingKindVersionEntitlementArgs']] = None,
+                 flavor: pulumi.Input[Optional['CmOfferingKindVersionFlavorArgs']] = None,
+                 iam_permissions: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_manifest_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_pull_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 install: pulumi.Input[Optional['CmOfferingKindVersionInstallArgs']] = None,
+                 is_consumable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 kind_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 licenses: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionLicenseArgs']]]] = None,
+                 long_description: pulumi.Input[Optional[_builtins.str]] = None,
+                 long_description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 metadata: pulumi.Input[Optional['CmOfferingKindVersionMetadataArgs']] = None,
+                 offering_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 outputs: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionOutputArgs']]]] = None,
+                 package_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 pre_installs: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionPreInstallArgs']]]] = None,
+                 repo_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 required_resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionRequiredResourceArgs']]]] = None,
+                 rev: pulumi.Input[Optional[_builtins.str]] = None,
+                 sha: pulumi.Input[Optional[_builtins.str]] = None,
+                 single_instance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 solution_info: pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArgs']] = None,
+                 source_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional['CmOfferingKindVersionStateArgs']] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 tgz_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 validation: pulumi.Input[Optional['CmOfferingKindVersionValidationArgs']] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_locator: pulumi.Input[Optional[_builtins.str]] = None,
+                 whitelisted_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] catalog_id: Catalog ID.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationArgs']]] configurations: List of user solicited overrides.
+        :param pulumi.Input[_builtins.str] created: The date and time this version was created.
+        :param pulumi.Input[_builtins.str] crn: Version's CRN.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionDeprecatePendingArgs']]] deprecate_pendings: Deprecation information for a Version.
+        :param pulumi.Input[_builtins.bool] deprecated: read only field, indicating if this version is deprecated.
+        :param pulumi.Input['CmOfferingKindVersionEntitlementArgs'] entitlement: Entitlement license info.
+        :param pulumi.Input['CmOfferingKindVersionFlavorArgs'] flavor: Version Flavor Information.  Only supported for Product kind Solution.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionArgs']]] iam_permissions: List of IAM permissions that are required to consume this version.
+        :param pulumi.Input[_builtins.str] id: Unique ID.
+        :param pulumi.Input[_builtins.str] image_manifest_url: If set, denotes a url to a YAML file with list of container images used by this version.
+        :param pulumi.Input[_builtins.str] image_pull_key_name: ID of the image pull key to use from Offering.ImagePullKeys.
+        :param pulumi.Input['CmOfferingKindVersionInstallArgs'] install: Script information.
+        :param pulumi.Input[_builtins.bool] is_consumable: Is the version able to be shared.
+        :param pulumi.Input[_builtins.str] kind_id: Kind ID.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionLicenseArgs']]] licenses: List of licenses the product was built with.
+        :param pulumi.Input[_builtins.str] long_description: Long description for version.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] long_description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input['CmOfferingKindVersionMetadataArgs'] metadata: Generic data to be included with content being onboarded. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] offering_id: Offering ID.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionOutputArgs']]] outputs: List of output values for this version.
+        :param pulumi.Input[_builtins.str] package_version: Version of the package used to create this version.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionPreInstallArgs']]] pre_installs: Optional pre-install instructions.
+        :param pulumi.Input[_builtins.str] repo_url: Content's repo URL.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionRequiredResourceArgs']]] required_resources: Resource requirments for installation.
+        :param pulumi.Input[_builtins.str] rev: Cloudant revision.
+        :param pulumi.Input[_builtins.str] sha: hash of the content.
+        :param pulumi.Input[_builtins.bool] single_instance: Denotes if single instance can be deployed to a given cluster.
+        :param pulumi.Input['CmOfferingKindVersionSolutionInfoArgs'] solution_info: Version Solution Information.  Only supported for Product kind Solution.
+        :param pulumi.Input[_builtins.str] source_url: Content's source URL (e.g git repo).
+        :param pulumi.Input['CmOfferingKindVersionStateArgs'] state: Offering state.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of tags associated with this catalog.
+        :param pulumi.Input[_builtins.str] tgz_url: File used to on-board this version.
+        :param pulumi.Input[_builtins.str] updated: The date and time this version was last updated.
+        :param pulumi.Input['CmOfferingKindVersionValidationArgs'] validation: Validation response.
+        :param pulumi.Input[_builtins.str] version: Version of content type.
+        :param pulumi.Input[_builtins.str] version_locator: A dotted value of `catalogID`.`versionID`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] whitelisted_accounts: Whitelisted accounts for version.
+        """
+        if catalog_id is not None:
+            pulumi.set(__self__, "catalog_id", catalog_id)
+        if configurations is not None:
+            pulumi.set(__self__, "configurations", configurations)
+        if created is not None:
+            pulumi.set(__self__, "created", created)
+        if crn is not None:
+            pulumi.set(__self__, "crn", crn)
+        if deprecate_pendings is not None:
+            pulumi.set(__self__, "deprecate_pendings", deprecate_pendings)
+        if deprecated is not None:
+            pulumi.set(__self__, "deprecated", deprecated)
+        if entitlement is not None:
+            pulumi.set(__self__, "entitlement", entitlement)
+        if flavor is not None:
+            pulumi.set(__self__, "flavor", flavor)
+        if iam_permissions is not None:
+            pulumi.set(__self__, "iam_permissions", iam_permissions)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if image_manifest_url is not None:
+            pulumi.set(__self__, "image_manifest_url", image_manifest_url)
+        if image_pull_key_name is not None:
+            pulumi.set(__self__, "image_pull_key_name", image_pull_key_name)
+        if install is not None:
+            pulumi.set(__self__, "install", install)
+        if is_consumable is not None:
+            pulumi.set(__self__, "is_consumable", is_consumable)
+        if kind_id is not None:
+            pulumi.set(__self__, "kind_id", kind_id)
+        if licenses is not None:
+            pulumi.set(__self__, "licenses", licenses)
+        if long_description is not None:
+            pulumi.set(__self__, "long_description", long_description)
+        if long_description_i18n is not None:
+            pulumi.set(__self__, "long_description_i18n", long_description_i18n)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if offering_id is not None:
+            pulumi.set(__self__, "offering_id", offering_id)
+        if outputs is not None:
+            pulumi.set(__self__, "outputs", outputs)
+        if package_version is not None:
+            pulumi.set(__self__, "package_version", package_version)
+        if pre_installs is not None:
+            pulumi.set(__self__, "pre_installs", pre_installs)
+        if repo_url is not None:
+            pulumi.set(__self__, "repo_url", repo_url)
+        if required_resources is not None:
+            pulumi.set(__self__, "required_resources", required_resources)
+        if rev is not None:
+            pulumi.set(__self__, "rev", rev)
+        if sha is not None:
+            pulumi.set(__self__, "sha", sha)
+        if single_instance is not None:
+            pulumi.set(__self__, "single_instance", single_instance)
+        if solution_info is not None:
+            pulumi.set(__self__, "solution_info", solution_info)
+        if source_url is not None:
+            pulumi.set(__self__, "source_url", source_url)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if tgz_url is not None:
+            pulumi.set(__self__, "tgz_url", tgz_url)
+        if updated is not None:
+            pulumi.set(__self__, "updated", updated)
+        if validation is not None:
+            pulumi.set(__self__, "validation", validation)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+        if version_locator is not None:
+            pulumi.set(__self__, "version_locator", version_locator)
+        if whitelisted_accounts is not None:
+            pulumi.set(__self__, "whitelisted_accounts", whitelisted_accounts)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogId")
+    def catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Catalog ID.
+        """
+        return pulumi.get(self, "catalog_id")
+
+    @catalog_id.setter
+    def catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "catalog_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def configurations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationArgs']]]]:
+        """
+        List of user solicited overrides.
+        """
+        return pulumi.get(self, "configurations")
+
+    @configurations.setter
+    def configurations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationArgs']]]]):
+        pulumi.set(self, "configurations", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time this version was created.
+        """
+        return pulumi.get(self, "created")
+
+    @created.setter
+    def created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "created", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version's CRN.
+        """
+        return pulumi.get(self, "crn")
+
+    @crn.setter
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "crn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deprecatePendings")
+    def deprecate_pendings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionDeprecatePendingArgs']]]]:
+        """
+        Deprecation information for a Version.
+        """
+        return pulumi.get(self, "deprecate_pendings")
+
+    @deprecate_pendings.setter
+    def deprecate_pendings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionDeprecatePendingArgs']]]]):
+        pulumi.set(self, "deprecate_pendings", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def deprecated(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        read only field, indicating if this version is deprecated.
+        """
+        return pulumi.get(self, "deprecated")
+
+    @deprecated.setter
+    def deprecated(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "deprecated", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def entitlement(self) -> pulumi.Input[Optional['CmOfferingKindVersionEntitlementArgs']]:
+        """
+        Entitlement license info.
+        """
+        return pulumi.get(self, "entitlement")
+
+    @entitlement.setter
+    def entitlement(self, value: pulumi.Input[Optional['CmOfferingKindVersionEntitlementArgs']]):
+        pulumi.set(self, "entitlement", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def flavor(self) -> pulumi.Input[Optional['CmOfferingKindVersionFlavorArgs']]:
+        """
+        Version Flavor Information.  Only supported for Product kind Solution.
+        """
+        return pulumi.get(self, "flavor")
+
+    @flavor.setter
+    def flavor(self, value: pulumi.Input[Optional['CmOfferingKindVersionFlavorArgs']]):
+        pulumi.set(self, "flavor", value)
+
+    @_builtins.property
+    @pulumi.getter(name="iamPermissions")
+    def iam_permissions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionArgs']]]]:
+        """
+        List of IAM permissions that are required to consume this version.
+        """
+        return pulumi.get(self, "iam_permissions")
+
+    @iam_permissions.setter
+    def iam_permissions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionArgs']]]]):
+        pulumi.set(self, "iam_permissions", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique ID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="imageManifestUrl")
+    def image_manifest_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        If set, denotes a url to a YAML file with list of container images used by this version.
+        """
+        return pulumi.get(self, "image_manifest_url")
+
+    @image_manifest_url.setter
+    def image_manifest_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "image_manifest_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="imagePullKeyName")
+    def image_pull_key_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the image pull key to use from Offering.ImagePullKeys.
+        """
+        return pulumi.get(self, "image_pull_key_name")
+
+    @image_pull_key_name.setter
+    def image_pull_key_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "image_pull_key_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def install(self) -> pulumi.Input[Optional['CmOfferingKindVersionInstallArgs']]:
+        """
+        Script information.
+        """
+        return pulumi.get(self, "install")
+
+    @install.setter
+    def install(self, value: pulumi.Input[Optional['CmOfferingKindVersionInstallArgs']]):
+        pulumi.set(self, "install", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isConsumable")
+    def is_consumable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Is the version able to be shared.
+        """
+        return pulumi.get(self, "is_consumable")
+
+    @is_consumable.setter
+    def is_consumable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_consumable", value)
+
+    @_builtins.property
+    @pulumi.getter(name="kindId")
+    def kind_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Kind ID.
+        """
+        return pulumi.get(self, "kind_id")
+
+    @kind_id.setter
+    def kind_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def licenses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionLicenseArgs']]]]:
+        """
+        List of licenses the product was built with.
+        """
+        return pulumi.get(self, "licenses")
+
+    @licenses.setter
+    def licenses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionLicenseArgs']]]]):
+        pulumi.set(self, "licenses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="longDescription")
+    def long_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Long description for version.
+        """
+        return pulumi.get(self, "long_description")
+
+    @long_description.setter
+    def long_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "long_description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="longDescriptionI18n")
+    def long_description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "long_description_i18n")
+
+    @long_description_i18n.setter
+    def long_description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "long_description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional['CmOfferingKindVersionMetadataArgs']]:
+        """
+        Generic data to be included with content being onboarded. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional['CmOfferingKindVersionMetadataArgs']]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="offeringId")
+    def offering_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Offering ID.
+        """
+        return pulumi.get(self, "offering_id")
+
+    @offering_id.setter
+    def offering_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "offering_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def outputs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionOutputArgs']]]]:
+        """
+        List of output values for this version.
+        """
+        return pulumi.get(self, "outputs")
+
+    @outputs.setter
+    def outputs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionOutputArgs']]]]):
+        pulumi.set(self, "outputs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="packageVersion")
+    def package_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version of the package used to create this version.
+        """
+        return pulumi.get(self, "package_version")
+
+    @package_version.setter
+    def package_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "package_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="preInstalls")
+    def pre_installs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionPreInstallArgs']]]]:
+        """
+        Optional pre-install instructions.
+        """
+        return pulumi.get(self, "pre_installs")
+
+    @pre_installs.setter
+    def pre_installs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionPreInstallArgs']]]]):
+        pulumi.set(self, "pre_installs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="repoUrl")
+    def repo_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Content's repo URL.
+        """
+        return pulumi.get(self, "repo_url")
+
+    @repo_url.setter
+    def repo_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "repo_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="requiredResources")
+    def required_resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionRequiredResourceArgs']]]]:
+        """
+        Resource requirments for installation.
+        """
+        return pulumi.get(self, "required_resources")
+
+    @required_resources.setter
+    def required_resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionRequiredResourceArgs']]]]):
+        pulumi.set(self, "required_resources", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rev(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cloudant revision.
+        """
+        return pulumi.get(self, "rev")
+
+    @rev.setter
+    def rev(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rev", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def sha(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        hash of the content.
+        """
+        return pulumi.get(self, "sha")
+
+    @sha.setter
+    def sha(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "sha", value)
+
+    @_builtins.property
+    @pulumi.getter(name="singleInstance")
+    def single_instance(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Denotes if single instance can be deployed to a given cluster.
+        """
+        return pulumi.get(self, "single_instance")
+
+    @single_instance.setter
+    def single_instance(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "single_instance", value)
+
+    @_builtins.property
+    @pulumi.getter(name="solutionInfo")
+    def solution_info(self) -> pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArgs']]:
+        """
+        Version Solution Information.  Only supported for Product kind Solution.
+        """
+        return pulumi.get(self, "solution_info")
+
+    @solution_info.setter
+    def solution_info(self, value: pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArgs']]):
+        pulumi.set(self, "solution_info", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUrl")
+    def source_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Content's source URL (e.g git repo).
+        """
+        return pulumi.get(self, "source_url")
+
+    @source_url.setter
+    def source_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional['CmOfferingKindVersionStateArgs']]:
+        """
+        Offering state.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional['CmOfferingKindVersionStateArgs']]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of tags associated with this catalog.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tgzUrl")
+    def tgz_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        File used to on-board this version.
+        """
+        return pulumi.get(self, "tgz_url")
+
+    @tgz_url.setter
+    def tgz_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tgz_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def updated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date and time this version was last updated.
+        """
+        return pulumi.get(self, "updated")
+
+    @updated.setter
+    def updated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "updated", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def validation(self) -> pulumi.Input[Optional['CmOfferingKindVersionValidationArgs']]:
+        """
+        Validation response.
+        """
+        return pulumi.get(self, "validation")
+
+    @validation.setter
+    def validation(self, value: pulumi.Input[Optional['CmOfferingKindVersionValidationArgs']]):
+        pulumi.set(self, "validation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version of content type.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionLocator")
+    def version_locator(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A dotted value of `catalogID`.`versionID`.
+        """
+        return pulumi.get(self, "version_locator")
+
+    @version_locator.setter
+    def version_locator(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_locator", value)
+
+    @_builtins.property
+    @pulumi.getter(name="whitelistedAccounts")
+    def whitelisted_accounts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Whitelisted accounts for version.
+        """
+        return pulumi.get(self, "whitelisted_accounts")
+
+    @whitelisted_accounts.setter
+    def whitelisted_accounts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "whitelisted_accounts", value)
+
+
+class CmOfferingKindVersionConfigurationArgsDict(TypedDict):
+    custom_config: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigArgsDict']]]
+    """
+    Render type.
+    """
+    default_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Key description.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Display name for configuration type.
+    """
+    hidden: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Hide values.
+    """
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Configuration key.
+    """
+    options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]]
+    """
+    List of options of type.
+    """
+    required: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Is key required to install.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Value type (string, boolean, int).
+    """
+    type_metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The original type, as found in the source being onboarded.
+    """
+    value_constraint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Constraint associated with value, e.g., for string type - regx:[a-z].
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionConfigurationArgs:
+    def __init__(__self__, *,
+                 custom_config: pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigArgs']] = None,
+                 default_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_constraint: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input['CmOfferingKindVersionConfigurationCustomConfigArgs'] custom_config: Render type.
+        :param pulumi.Input[_builtins.str] default_value: The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+        :param pulumi.Input[_builtins.str] description: Key description.
+        :param pulumi.Input[_builtins.str] display_name: Display name for configuration type.
+        :param pulumi.Input[_builtins.bool] hidden: Hide values.
+        :param pulumi.Input[_builtins.str] key: Configuration key.
+        :param pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] options: List of options of type.
+        :param pulumi.Input[_builtins.bool] required: Is key required to install.
+        :param pulumi.Input[_builtins.str] type: Value type (string, boolean, int).
+        :param pulumi.Input[_builtins.str] type_metadata: The original type, as found in the source being onboarded.
+        :param pulumi.Input[_builtins.str] value_constraint: Constraint associated with value, e.g., for string type - regx:[a-z].
+        """
+        if custom_config is not None:
+            pulumi.set(__self__, "custom_config", custom_config)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if hidden is not None:
+            pulumi.set(__self__, "hidden", hidden)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if required is not None:
+            pulumi.set(__self__, "required", required)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if type_metadata is not None:
+            pulumi.set(__self__, "type_metadata", type_metadata)
+        if value_constraint is not None:
+            pulumi.set(__self__, "value_constraint", value_constraint)
+
+    @_builtins.property
+    @pulumi.getter(name="customConfig")
+    def custom_config(self) -> pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigArgs']]:
+        """
+        Render type.
+        """
+        return pulumi.get(self, "custom_config")
+
+    @custom_config.setter
+    def custom_config(self, value: pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigArgs']]):
+        pulumi.set(self, "custom_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+        """
+        return pulumi.get(self, "default_value")
+
+    @default_value.setter
+    def default_value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "default_value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Key description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Display name for configuration type.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def hidden(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Hide values.
+        """
+        return pulumi.get(self, "hidden")
+
+    @hidden.setter
+    def hidden(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "hidden", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Configuration key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+        """
+        List of options of type.
+        """
+        return pulumi.get(self, "options")
+
+    @options.setter
+    def options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+        pulumi.set(self, "options", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def required(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Is key required to install.
+        """
+        return pulumi.get(self, "required")
+
+    @required.setter
+    def required(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "required", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Value type (string, boolean, int).
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="typeMetadata")
+    def type_metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The original type, as found in the source being onboarded.
+        """
+        return pulumi.get(self, "type_metadata")
+
+    @type_metadata.setter
+    def type_metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type_metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueConstraint")
+    def value_constraint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Constraint associated with value, e.g., for string type - regx:[a-z].
+        """
+        return pulumi.get(self, "value_constraint")
+
+    @value_constraint.setter
+    def value_constraint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value_constraint", value)
+
+
+class CmOfferingKindVersionConfigurationCustomConfigArgsDict(TypedDict):
+    associations: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigAssociationsArgsDict']]]
+    """
+    List of parameters that are associated with this configuration.
+    """
+    config_constraints: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Map of constraint parameters that will be passed to the custom widget.
+    """
+    grouping: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+    """
+    grouping_index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Determines the order that this configuration item shows in that particular grouping.
+    """
+    original_grouping: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the widget type.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionConfigurationCustomConfigArgs:
+    def __init__(__self__, *,
+                 associations: pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigAssociationsArgs']] = None,
+                 config_constraints: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 grouping: pulumi.Input[Optional[_builtins.str]] = None,
+                 grouping_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 original_grouping: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input['CmOfferingKindVersionConfigurationCustomConfigAssociationsArgs'] associations: List of parameters that are associated with this configuration.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] config_constraints: Map of constraint parameters that will be passed to the custom widget.
+        :param pulumi.Input[_builtins.str] grouping: Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+        :param pulumi.Input[_builtins.int] grouping_index: Determines the order that this configuration item shows in that particular grouping.
+        :param pulumi.Input[_builtins.str] original_grouping: Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+        :param pulumi.Input[_builtins.str] type: ID of the widget type.
+        """
+        if associations is not None:
+            pulumi.set(__self__, "associations", associations)
+        if config_constraints is not None:
+            pulumi.set(__self__, "config_constraints", config_constraints)
+        if grouping is not None:
+            pulumi.set(__self__, "grouping", grouping)
+        if grouping_index is not None:
+            pulumi.set(__self__, "grouping_index", grouping_index)
+        if original_grouping is not None:
+            pulumi.set(__self__, "original_grouping", original_grouping)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def associations(self) -> pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigAssociationsArgs']]:
+        """
+        List of parameters that are associated with this configuration.
+        """
+        return pulumi.get(self, "associations")
+
+    @associations.setter
+    def associations(self, value: pulumi.Input[Optional['CmOfferingKindVersionConfigurationCustomConfigAssociationsArgs']]):
+        pulumi.set(self, "associations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configConstraints")
+    def config_constraints(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Map of constraint parameters that will be passed to the custom widget.
+        """
+        return pulumi.get(self, "config_constraints")
+
+    @config_constraints.setter
+    def config_constraints(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "config_constraints", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def grouping(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+        """
+        return pulumi.get(self, "grouping")
+
+    @grouping.setter
+    def grouping(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "grouping", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupingIndex")
+    def grouping_index(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Determines the order that this configuration item shows in that particular grouping.
+        """
+        return pulumi.get(self, "grouping_index")
+
+    @grouping_index.setter
+    def grouping_index(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "grouping_index", value)
+
+    @_builtins.property
+    @pulumi.getter(name="originalGrouping")
+    def original_grouping(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+        """
+        return pulumi.get(self, "original_grouping")
+
+    @original_grouping.setter
+    def original_grouping(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "original_grouping", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the widget type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class CmOfferingKindVersionConfigurationCustomConfigAssociationsArgsDict(TypedDict):
+    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgsDict']]]]]
+    """
+    Parameters for this association.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionConfigurationCustomConfigAssociationsArgs:
+    def __init__(__self__, *,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgs']]] parameters: Parameters for this association.
+        """
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @_builtins.property
+    @pulumi.getter
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgs']]]]:
+        """
+        Parameters for this association.
+        """
+        return pulumi.get(self, "parameters")
+
+    @parameters.setter
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgs']]]]):
+        pulumi.set(self, "parameters", value)
+
+
+class CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of this parameter.
+    """
+    options_refresh: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Refresh options.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionConfigurationCustomConfigAssociationsParameterArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 options_refresh: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of this parameter.
+        :param pulumi.Input[_builtins.bool] options_refresh: Refresh options.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if options_refresh is not None:
+            pulumi.set(__self__, "options_refresh", options_refresh)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of this parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="optionsRefresh")
+    def options_refresh(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Refresh options.
+        """
+        return pulumi.get(self, "options_refresh")
+
+    @options_refresh.setter
+    def options_refresh(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "options_refresh", value)
+
+
+class CmOfferingKindVersionDeprecatePendingArgsDict(TypedDict):
+    deprecate_date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date of deprecation.
+    """
+    deprecate_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Deprecation state.
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class CmOfferingKindVersionDeprecatePendingArgs:
+    def __init__(__self__, *,
+                 deprecate_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 deprecate_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] deprecate_date: Date of deprecation.
+        :param pulumi.Input[_builtins.str] deprecate_state: Deprecation state.
+        """
+        if deprecate_date is not None:
+            pulumi.set(__self__, "deprecate_date", deprecate_date)
+        if deprecate_state is not None:
+            pulumi.set(__self__, "deprecate_state", deprecate_state)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="deprecateDate")
+    def deprecate_date(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date of deprecation.
+        """
+        return pulumi.get(self, "deprecate_date")
+
+    @deprecate_date.setter
+    def deprecate_date(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deprecate_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deprecateState")
+    def deprecate_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Deprecation state.
+        """
+        return pulumi.get(self, "deprecate_state")
+
+    @deprecate_state.setter
+    def deprecate_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deprecate_state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
+class CmOfferingKindVersionEntitlementArgsDict(TypedDict):
+    image_repo_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Image repository name.
+    """
+    part_numbers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+    """
+    product_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Product ID.
+    """
+    provider_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Provider ID.
+    """
+    provider_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Provider name.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionEntitlementArgs:
+    def __init__(__self__, *,
+                 image_repo_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 part_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] image_repo_name: Image repository name.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] part_numbers: list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+        :param pulumi.Input[_builtins.str] product_id: Product ID.
+        :param pulumi.Input[_builtins.str] provider_id: Provider ID.
+        :param pulumi.Input[_builtins.str] provider_name: Provider name.
+        """
+        if image_repo_name is not None:
+            pulumi.set(__self__, "image_repo_name", image_repo_name)
+        if part_numbers is not None:
+            pulumi.set(__self__, "part_numbers", part_numbers)
+        if product_id is not None:
+            pulumi.set(__self__, "product_id", product_id)
+        if provider_id is not None:
+            pulumi.set(__self__, "provider_id", provider_id)
+        if provider_name is not None:
+            pulumi.set(__self__, "provider_name", provider_name)
+
+    @_builtins.property
+    @pulumi.getter(name="imageRepoName")
+    def image_repo_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Image repository name.
+        """
+        return pulumi.get(self, "image_repo_name")
+
+    @image_repo_name.setter
+    def image_repo_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "image_repo_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="partNumbers")
+    def part_numbers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+        """
+        return pulumi.get(self, "part_numbers")
+
+    @part_numbers.setter
+    def part_numbers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "part_numbers", value)
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Product ID.
+        """
+        return pulumi.get(self, "product_id")
+
+    @product_id.setter
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "product_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="providerId")
+    def provider_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Provider ID.
+        """
+        return pulumi.get(self, "provider_id")
+
+    @provider_id.setter
+    def provider_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "provider_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="providerName")
+    def provider_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Provider name.
+        """
+        return pulumi.get(self, "provider_name")
+
+    @provider_name.setter
+    def provider_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "provider_name", value)
+
+
+class CmOfferingKindVersionFlavorArgsDict(TypedDict):
+    index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Order that this flavor should appear when listed for a single version.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Label for this flavor.
+    """
+    label_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic name for this flavor.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionFlavorArgs:
+    def __init__(__self__, *,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 label_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] index: Order that this flavor should appear when listed for a single version.
+        :param pulumi.Input[_builtins.str] label: Label for this flavor.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] label_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] name: Programmatic name for this flavor.
+        """
+        if index is not None:
+            pulumi.set(__self__, "index", index)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if label_i18n is not None:
+            pulumi.set(__self__, "label_i18n", label_i18n)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def index(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Order that this flavor should appear when listed for a single version.
+        """
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "index", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Label for this flavor.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter(name="labelI18n")
+    def label_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "label_i18n")
+
+    @label_i18n.setter
+    def label_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "label_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic name for this flavor.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmOfferingKindVersionIamPermissionArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionResourceArgsDict']]]]]
+    """
+    Resources for this permission.
+    """
+    role_crns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Role CRNs for this permission.
+    """
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Service name.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionIamPermissionArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionResourceArgs']]]] = None,
+                 role_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionResourceArgs']]] resources: Resources for this permission.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] role_crns: Role CRNs for this permission.
+        :param pulumi.Input[_builtins.str] service_name: Service name.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if role_crns is not None:
+            pulumi.set(__self__, "role_crns", role_crns)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionResourceArgs']]]]:
+        """
+        Resources for this permission.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionIamPermissionResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="roleCrns")
+    def role_crns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Role CRNs for this permission.
+        """
+        return pulumi.get(self, "role_crns")
+
+    @role_crns.setter
+    def role_crns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "role_crns", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Service name.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "service_name", value)
+
+
+class CmOfferingKindVersionIamPermissionResourceArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource description.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+    role_crns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Role CRNs for this permission.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionIamPermissionResourceArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Resource description.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] role_crns: Role CRNs for this permission.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if role_crns is not None:
+            pulumi.set(__self__, "role_crns", role_crns)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="roleCrns")
+    def role_crns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Role CRNs for this permission.
+        """
+        return pulumi.get(self, "role_crns")
+
+    @role_crns.setter
+    def role_crns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "role_crns", value)
+
+
+class CmOfferingKindVersionInstallArgsDict(TypedDict):
+    delete_script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that if run will remove the installed version.
+    """
+    instructions: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+    """
+    instructions_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    scope: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional value indicating if this script is scoped to a namespace or the entire cluster.
+    """
+    script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that needs to be run post any pre-condition script.
+    """
+    script_permission: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional iam permissions that are required on the target cluster to run this script.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionInstallArgs:
+    def __init__(__self__, *,
+                 delete_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_permission: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] delete_script: Optional script that if run will remove the installed version.
+        :param pulumi.Input[_builtins.str] instructions: Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] instructions_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] scope: Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        :param pulumi.Input[_builtins.str] script: Optional script that needs to be run post any pre-condition script.
+        :param pulumi.Input[_builtins.str] script_permission: Optional iam permissions that are required on the target cluster to run this script.
+        """
+        if delete_script is not None:
+            pulumi.set(__self__, "delete_script", delete_script)
+        if instructions is not None:
+            pulumi.set(__self__, "instructions", instructions)
+        if instructions_i18n is not None:
+            pulumi.set(__self__, "instructions_i18n", instructions_i18n)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if script is not None:
+            pulumi.set(__self__, "script", script)
+        if script_permission is not None:
+            pulumi.set(__self__, "script_permission", script_permission)
+
+    @_builtins.property
+    @pulumi.getter(name="deleteScript")
+    def delete_script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that if run will remove the installed version.
+        """
+        return pulumi.get(self, "delete_script")
+
+    @delete_script.setter
+    def delete_script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "delete_script", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def instructions(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        """
+        return pulumi.get(self, "instructions")
+
+    @instructions.setter
+    def instructions(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instructions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instructionsI18n")
+    def instructions_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "instructions_i18n")
+
+    @instructions_i18n.setter
+    def instructions_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "instructions_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that needs to be run post any pre-condition script.
+        """
+        return pulumi.get(self, "script")
+
+    @script.setter
+    def script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scriptPermission")
+    def script_permission(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional iam permissions that are required on the target cluster to run this script.
+        """
+        return pulumi.get(self, "script_permission")
+
+    @script_permission.setter
+    def script_permission(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script_permission", value)
+
+
+class CmOfferingKindVersionLicenseArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    License description.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    License ID.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    license name.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    type of license e.g., Apache xxx.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL for the license text.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionLicenseArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: License description.
+        :param pulumi.Input[_builtins.str] id: License ID.
+        :param pulumi.Input[_builtins.str] name: license name.
+        :param pulumi.Input[_builtins.str] type: type of license e.g., Apache xxx.
+        :param pulumi.Input[_builtins.str] url: URL for the license text.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        License description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        License ID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        license name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        type of license e.g., Apache xxx.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL for the license text.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class CmOfferingKindVersionMetadataArgsDict(TypedDict):
+    end_deploy_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The time validation ended.
+    """
+    est_deploy_time: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The estimated time validation takes.
+    """
+    example_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Working directory of source files.
+    """
+    file: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionMetadataFileArgsDict']]]
+    """
+    Details for the stored image file. Required for virtual server image for VPC.
+    """
+    images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataImageArgsDict']]]]]
+    """
+    Image operating system. Required for virtual server image for VPC.
+    """
+    minimum_provisioned_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+    """
+    modules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleArgsDict']]]]]
+    """
+    Terraform modules.
+    """
+    operating_system: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionMetadataOperatingSystemArgsDict']]]
+    """
+    Operating system included in this image. Required for virtual server image for VPC.
+    """
+    source_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version source URL.
+    """
+    start_deploy_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The time validation started.
+    """
+    terraform_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Terraform version.
+    """
+    usage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Usage text for the version.
+    """
+    usage_template: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Usage text for the version.
+    """
+    validated_terraform_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version name.
+    """
+    version_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version name.
+    """
+    vsi_vpcs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcArgsDict']]]]]
+    """
+    VSI VPC version information
+    """
+    working_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Working directory of source files.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataArgs:
+    def __init__(__self__, *,
+                 end_deploy_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 est_deploy_time: pulumi.Input[Optional[_builtins.float]] = None,
+                 example_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 file: pulumi.Input[Optional['CmOfferingKindVersionMetadataFileArgs']] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataImageArgs']]]] = None,
+                 minimum_provisioned_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 modules: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleArgs']]]] = None,
+                 operating_system: pulumi.Input[Optional['CmOfferingKindVersionMetadataOperatingSystemArgs']] = None,
+                 source_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_deploy_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 terraform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 validated_terraform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsi_vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcArgs']]]] = None,
+                 working_directory: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] end_deploy_time: The time validation ended.
+        :param pulumi.Input[_builtins.float] est_deploy_time: The estimated time validation takes.
+        :param pulumi.Input[_builtins.str] example_name: Working directory of source files.
+        :param pulumi.Input['CmOfferingKindVersionMetadataFileArgs'] file: Details for the stored image file. Required for virtual server image for VPC.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionMetadataImageArgs']]] images: Image operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.int] minimum_provisioned_size: Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleArgs']]] modules: Terraform modules.
+        :param pulumi.Input['CmOfferingKindVersionMetadataOperatingSystemArgs'] operating_system: Operating system included in this image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] source_url: Version source URL.
+        :param pulumi.Input[_builtins.str] start_deploy_time: The time validation started.
+        :param pulumi.Input[_builtins.str] terraform_version: Terraform version.
+        :param pulumi.Input[_builtins.str] usage: Usage text for the version.
+        :param pulumi.Input[_builtins.str] usage_template: Usage text for the version.
+        :param pulumi.Input[_builtins.str] validated_terraform_version: Version name.
+        :param pulumi.Input[_builtins.str] version_name: Version name.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcArgs']]] vsi_vpcs: VSI VPC version information
+        :param pulumi.Input[_builtins.str] working_directory: Working directory of source files.
+        """
+        if end_deploy_time is not None:
+            pulumi.set(__self__, "end_deploy_time", end_deploy_time)
+        if est_deploy_time is not None:
+            pulumi.set(__self__, "est_deploy_time", est_deploy_time)
+        if example_name is not None:
+            pulumi.set(__self__, "example_name", example_name)
+        if file is not None:
+            pulumi.set(__self__, "file", file)
+        if images is not None:
+            pulumi.set(__self__, "images", images)
+        if minimum_provisioned_size is not None:
+            pulumi.set(__self__, "minimum_provisioned_size", minimum_provisioned_size)
+        if modules is not None:
+            pulumi.set(__self__, "modules", modules)
+        if operating_system is not None:
+            pulumi.set(__self__, "operating_system", operating_system)
+        if source_url is not None:
+            pulumi.set(__self__, "source_url", source_url)
+        if start_deploy_time is not None:
+            pulumi.set(__self__, "start_deploy_time", start_deploy_time)
+        if terraform_version is not None:
+            pulumi.set(__self__, "terraform_version", terraform_version)
+        if usage is not None:
+            pulumi.set(__self__, "usage", usage)
+        if usage_template is not None:
+            pulumi.set(__self__, "usage_template", usage_template)
+        if validated_terraform_version is not None:
+            pulumi.set(__self__, "validated_terraform_version", validated_terraform_version)
+        if version_name is not None:
+            pulumi.set(__self__, "version_name", version_name)
+        if vsi_vpcs is not None:
+            pulumi.set(__self__, "vsi_vpcs", vsi_vpcs)
+        if working_directory is not None:
+            pulumi.set(__self__, "working_directory", working_directory)
+
+    @_builtins.property
+    @pulumi.getter(name="endDeployTime")
+    def end_deploy_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time validation ended.
+        """
+        return pulumi.get(self, "end_deploy_time")
+
+    @end_deploy_time.setter
+    def end_deploy_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "end_deploy_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="estDeployTime")
+    def est_deploy_time(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The estimated time validation takes.
+        """
+        return pulumi.get(self, "est_deploy_time")
+
+    @est_deploy_time.setter
+    def est_deploy_time(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "est_deploy_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="exampleName")
+    def example_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Working directory of source files.
+        """
+        return pulumi.get(self, "example_name")
+
+    @example_name.setter
+    def example_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "example_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def file(self) -> pulumi.Input[Optional['CmOfferingKindVersionMetadataFileArgs']]:
+        """
+        Details for the stored image file. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "file")
+
+    @file.setter
+    def file(self, value: pulumi.Input[Optional['CmOfferingKindVersionMetadataFileArgs']]):
+        pulumi.set(self, "file", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataImageArgs']]]]:
+        """
+        Image operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "images")
+
+    @images.setter
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataImageArgs']]]]):
+        pulumi.set(self, "images", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minimumProvisionedSize")
+    def minimum_provisioned_size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "minimum_provisioned_size")
+
+    @minimum_provisioned_size.setter
+    def minimum_provisioned_size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "minimum_provisioned_size", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def modules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleArgs']]]]:
+        """
+        Terraform modules.
+        """
+        return pulumi.get(self, "modules")
+
+    @modules.setter
+    def modules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleArgs']]]]):
+        pulumi.set(self, "modules", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> pulumi.Input[Optional['CmOfferingKindVersionMetadataOperatingSystemArgs']]:
+        """
+        Operating system included in this image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "operating_system")
+
+    @operating_system.setter
+    def operating_system(self, value: pulumi.Input[Optional['CmOfferingKindVersionMetadataOperatingSystemArgs']]):
+        pulumi.set(self, "operating_system", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUrl")
+    def source_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version source URL.
+        """
+        return pulumi.get(self, "source_url")
+
+    @source_url.setter
+    def source_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="startDeployTime")
+    def start_deploy_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time validation started.
+        """
+        return pulumi.get(self, "start_deploy_time")
+
+    @start_deploy_time.setter
+    def start_deploy_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "start_deploy_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="terraformVersion")
+    def terraform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Terraform version.
+        """
+        return pulumi.get(self, "terraform_version")
+
+    @terraform_version.setter
+    def terraform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "terraform_version", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def usage(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Usage text for the version.
+        """
+        return pulumi.get(self, "usage")
+
+    @usage.setter
+    def usage(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "usage", value)
+
+    @_builtins.property
+    @pulumi.getter(name="usageTemplate")
+    def usage_template(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Usage text for the version.
+        """
+        return pulumi.get(self, "usage_template")
+
+    @usage_template.setter
+    def usage_template(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "usage_template", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validatedTerraformVersion")
+    def validated_terraform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version name.
+        """
+        return pulumi.get(self, "validated_terraform_version")
+
+    @validated_terraform_version.setter
+    def validated_terraform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "validated_terraform_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionName")
+    def version_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version name.
+        """
+        return pulumi.get(self, "version_name")
+
+    @version_name.setter
+    def version_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vsiVpcs")
+    def vsi_vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcArgs']]]]:
+        """
+        VSI VPC version information
+        """
+        return pulumi.get(self, "vsi_vpcs")
+
+    @vsi_vpcs.setter
+    def vsi_vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcArgs']]]]):
+        pulumi.set(self, "vsi_vpcs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="workingDirectory")
+    def working_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Working directory of source files.
+        """
+        return pulumi.get(self, "working_directory")
+
+    @working_directory.setter
+    def working_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "working_directory", value)
+
+
+class CmOfferingKindVersionMetadataFileArgsDict(TypedDict):
+    size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataFileArgs:
+    def __init__(__self__, *,
+                 size: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] size: Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "size", value)
+
+
+class CmOfferingKindVersionMetadataImageArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic ID of virtual server image. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic name of virtual server image. Required for virtual server image for VPC.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Region the virtual server image is available in. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataImageArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Programmatic name of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] region: Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic name of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+
+class CmOfferingKindVersionMetadataModuleArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the module.
+    """
+    offering_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleOfferingReferenceArgsDict']]]]]
+    """
+    Terraform modules.
+    """
+    source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Source of the module.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataModuleArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 offering_references: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleOfferingReferenceArgs']]]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of the module.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleOfferingReferenceArgs']]] offering_references: Terraform modules.
+        :param pulumi.Input[_builtins.str] source: Source of the module.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if offering_references is not None:
+            pulumi.set(__self__, "offering_references", offering_references)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the module.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="offeringReferences")
+    def offering_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleOfferingReferenceArgs']]]]:
+        """
+        Terraform modules.
+        """
+        return pulumi.get(self, "offering_references")
+
+    @offering_references.setter
+    def offering_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataModuleOfferingReferenceArgs']]]]):
+        pulumi.set(self, "offering_references", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Source of the module.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+
+class CmOfferingKindVersionMetadataModuleOfferingReferenceArgsDict(TypedDict):
+    catalog_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Catalog ID of the module reference.
+    """
+    flavor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Flavor of the module.
+    """
+    flavors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Flavors of the module.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the offering module.
+    """
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Kind of the offeringmodule.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Metadata of the module.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the offering module.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version of the offering module.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataModuleOfferingReferenceArgs:
+    def __init__(__self__, *,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavor: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] catalog_id: Catalog ID of the module reference.
+        :param pulumi.Input[_builtins.str] flavor: Flavor of the module.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] flavors: Flavors of the module.
+        :param pulumi.Input[_builtins.str] id: ID of the offering module.
+        :param pulumi.Input[_builtins.str] kind: Kind of the offeringmodule.
+        :param pulumi.Input[_builtins.str] metadata: Metadata of the module.
+        :param pulumi.Input[_builtins.str] name: Name of the offering module.
+        :param pulumi.Input[_builtins.str] version: Version of the offering module.
+        """
+        if catalog_id is not None:
+            pulumi.set(__self__, "catalog_id", catalog_id)
+        if flavor is not None:
+            pulumi.set(__self__, "flavor", flavor)
+        if flavors is not None:
+            pulumi.set(__self__, "flavors", flavors)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogId")
+    def catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Catalog ID of the module reference.
+        """
+        return pulumi.get(self, "catalog_id")
+
+    @catalog_id.setter
+    def catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "catalog_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def flavor(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Flavor of the module.
+        """
+        return pulumi.get(self, "flavor")
+
+    @flavor.setter
+    def flavor(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "flavor", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def flavors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Flavors of the module.
+        """
+        return pulumi.get(self, "flavors")
+
+    @flavors.setter
+    def flavors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "flavors", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the offering module.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Kind of the offeringmodule.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Metadata of the module.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the offering module.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version of the offering module.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmOfferingKindVersionMetadataOperatingSystemArgsDict(TypedDict):
+    architecture: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Operating system architecture. Required for virtual server image for VPC.
+    """
+    dedicated_host_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+    """
+    family: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Software family for this operating system. Required for virtual server image for VPC.
+    """
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL for this operating system. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Globally unique name for this operating system Required for virtual server image for VPC.
+    """
+    vendor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Vendor of the operating system. Required for virtual server image for VPC.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Major release version of this operating system. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataOperatingSystemArgs:
+    def __init__(__self__, *,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 family: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] architecture: Operating system architecture. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.bool] dedicated_host_only: Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] display_name: Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] family: Software family for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] href: URL for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Globally unique name for this operating system Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] vendor: Vendor of the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] version: Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if dedicated_host_only is not None:
+            pulumi.set(__self__, "dedicated_host_only", dedicated_host_only)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if family is not None:
+            pulumi.set(__self__, "family", family)
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if vendor is not None:
+            pulumi.set(__self__, "vendor", vendor)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Operating system architecture. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "architecture", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dedicatedHostOnly")
+    def dedicated_host_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "dedicated_host_only")
+
+    @dedicated_host_only.setter
+    def dedicated_host_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "dedicated_host_only", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def family(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Software family for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "family")
+
+    @family.setter
+    def family(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "family", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Globally unique name for this operating system Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vendor(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Vendor of the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "vendor")
+
+    @vendor.setter
+    def vendor(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vendor", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmOfferingKindVersionMetadataVsiVpcArgsDict(TypedDict):
+    file: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcFileArgsDict']]]
+    """
+    Details for the stored image file. Required for virtual server image for VPC.
+    """
+    images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcImageArgsDict']]]]]
+    """
+    Image operating system. Required for virtual server image for VPC.
+    """
+    minimum_provisioned_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+    """
+    operating_system: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgsDict']]]
+    """
+    Operating system included in this image. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataVsiVpcArgs:
+    def __init__(__self__, *,
+                 file: pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcFileArgs']] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcImageArgs']]]] = None,
+                 minimum_provisioned_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 operating_system: pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgs']] = None):
+        """
+        :param pulumi.Input['CmOfferingKindVersionMetadataVsiVpcFileArgs'] file: Details for the stored image file. Required for virtual server image for VPC.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcImageArgs']]] images: Image operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.int] minimum_provisioned_size: Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        :param pulumi.Input['CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgs'] operating_system: Operating system included in this image. Required for virtual server image for VPC.
+        """
+        if file is not None:
+            pulumi.set(__self__, "file", file)
+        if images is not None:
+            pulumi.set(__self__, "images", images)
+        if minimum_provisioned_size is not None:
+            pulumi.set(__self__, "minimum_provisioned_size", minimum_provisioned_size)
+        if operating_system is not None:
+            pulumi.set(__self__, "operating_system", operating_system)
+
+    @_builtins.property
+    @pulumi.getter
+    def file(self) -> pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcFileArgs']]:
+        """
+        Details for the stored image file. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "file")
+
+    @file.setter
+    def file(self, value: pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcFileArgs']]):
+        pulumi.set(self, "file", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcImageArgs']]]]:
+        """
+        Image operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "images")
+
+    @images.setter
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionMetadataVsiVpcImageArgs']]]]):
+        pulumi.set(self, "images", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minimumProvisionedSize")
+    def minimum_provisioned_size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "minimum_provisioned_size")
+
+    @minimum_provisioned_size.setter
+    def minimum_provisioned_size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "minimum_provisioned_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgs']]:
+        """
+        Operating system included in this image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "operating_system")
+
+    @operating_system.setter
+    def operating_system(self, value: pulumi.Input[Optional['CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgs']]):
+        pulumi.set(self, "operating_system", value)
+
+
+class CmOfferingKindVersionMetadataVsiVpcFileArgsDict(TypedDict):
+    size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataVsiVpcFileArgs:
+    def __init__(__self__, *,
+                 size: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] size: Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "size", value)
+
+
+class CmOfferingKindVersionMetadataVsiVpcImageArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic ID of virtual server image. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic name of virtual server image. Required for virtual server image for VPC.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Region the virtual server image is available in. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataVsiVpcImageArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Programmatic name of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] region: Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic name of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+
+class CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgsDict(TypedDict):
+    architecture: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Operating system architecture. Required for virtual server image for VPC.
+    """
+    dedicated_host_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+    """
+    family: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Software family for this operating system. Required for virtual server image for VPC.
+    """
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL for this operating system. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Globally unique name for this operating system Required for virtual server image for VPC.
+    """
+    vendor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Vendor of the operating system. Required for virtual server image for VPC.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Major release version of this operating system. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionMetadataVsiVpcOperatingSystemArgs:
+    def __init__(__self__, *,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 family: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] architecture: Operating system architecture. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.bool] dedicated_host_only: Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] display_name: Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] family: Software family for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] href: URL for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Globally unique name for this operating system Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] vendor: Vendor of the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] version: Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if dedicated_host_only is not None:
+            pulumi.set(__self__, "dedicated_host_only", dedicated_host_only)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if family is not None:
+            pulumi.set(__self__, "family", family)
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if vendor is not None:
+            pulumi.set(__self__, "vendor", vendor)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Operating system architecture. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "architecture", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dedicatedHostOnly")
+    def dedicated_host_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "dedicated_host_only")
+
+    @dedicated_host_only.setter
+    def dedicated_host_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "dedicated_host_only", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def family(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Software family for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "family")
+
+    @family.setter
+    def family(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "family", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Globally unique name for this operating system Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vendor(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Vendor of the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "vendor")
+
+    @vendor.setter
+    def vendor(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vendor", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmOfferingKindVersionOutputArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Output description.
+    """
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Output key.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionOutputArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Output description.
+        :param pulumi.Input[_builtins.str] key: Output key.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Output description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Output key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+
+class CmOfferingKindVersionPreInstallArgsDict(TypedDict):
+    delete_script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that if run will remove the installed version.
+    """
+    instructions: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+    """
+    instructions_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    scope: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional value indicating if this script is scoped to a namespace or the entire cluster.
+    """
+    script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that needs to be run post any pre-condition script.
+    """
+    script_permission: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional iam permissions that are required on the target cluster to run this script.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionPreInstallArgs:
+    def __init__(__self__, *,
+                 delete_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_permission: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] delete_script: Optional script that if run will remove the installed version.
+        :param pulumi.Input[_builtins.str] instructions: Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] instructions_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] scope: Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        :param pulumi.Input[_builtins.str] script: Optional script that needs to be run post any pre-condition script.
+        :param pulumi.Input[_builtins.str] script_permission: Optional iam permissions that are required on the target cluster to run this script.
+        """
+        if delete_script is not None:
+            pulumi.set(__self__, "delete_script", delete_script)
+        if instructions is not None:
+            pulumi.set(__self__, "instructions", instructions)
+        if instructions_i18n is not None:
+            pulumi.set(__self__, "instructions_i18n", instructions_i18n)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if script is not None:
+            pulumi.set(__self__, "script", script)
+        if script_permission is not None:
+            pulumi.set(__self__, "script_permission", script_permission)
+
+    @_builtins.property
+    @pulumi.getter(name="deleteScript")
+    def delete_script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that if run will remove the installed version.
+        """
+        return pulumi.get(self, "delete_script")
+
+    @delete_script.setter
+    def delete_script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "delete_script", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def instructions(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        """
+        return pulumi.get(self, "instructions")
+
+    @instructions.setter
+    def instructions(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instructions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instructionsI18n")
+    def instructions_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "instructions_i18n")
+
+    @instructions_i18n.setter
+    def instructions_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "instructions_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that needs to be run post any pre-condition script.
+        """
+        return pulumi.get(self, "script")
+
+    @script.setter
+    def script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scriptPermission")
+    def script_permission(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional iam permissions that are required on the target cluster to run this script.
+        """
+        return pulumi.get(self, "script_permission")
+
+    @script_permission.setter
+    def script_permission(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script_permission", value)
+
+
+class CmOfferingKindVersionRequiredResourceArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of requirement.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionRequiredResourceArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of requirement.
+        :param pulumi.Input[_builtins.str] value: mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of requirement.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class CmOfferingKindVersionSolutionInfoArgsDict(TypedDict):
+    architecture_diagrams: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoArchitectureDiagramArgsDict']]]]]
+    """
+    Architecture diagrams for this solution.
+    """
+    cost_estimates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateArgsDict']]]]]
+    """
+    Cost estimate definition.
+    """
+    dependencies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoDependencyArgsDict']]]]]
+    """
+    Dependencies for this solution.
+    """
+    features: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoFeatureArgsDict']]]]]
+    """
+    Features - titles only.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoArgs:
+    def __init__(__self__, *,
+                 architecture_diagrams: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoArchitectureDiagramArgs']]]] = None,
+                 cost_estimates: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateArgs']]]] = None,
+                 dependencies: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoDependencyArgs']]]] = None,
+                 features: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoFeatureArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoArchitectureDiagramArgs']]] architecture_diagrams: Architecture diagrams for this solution.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateArgs']]] cost_estimates: Cost estimate definition.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoDependencyArgs']]] dependencies: Dependencies for this solution.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoFeatureArgs']]] features: Features - titles only.
+        """
+        if architecture_diagrams is not None:
+            pulumi.set(__self__, "architecture_diagrams", architecture_diagrams)
+        if cost_estimates is not None:
+            pulumi.set(__self__, "cost_estimates", cost_estimates)
+        if dependencies is not None:
+            pulumi.set(__self__, "dependencies", dependencies)
+        if features is not None:
+            pulumi.set(__self__, "features", features)
+
+    @_builtins.property
+    @pulumi.getter(name="architectureDiagrams")
+    def architecture_diagrams(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoArchitectureDiagramArgs']]]]:
+        """
+        Architecture diagrams for this solution.
+        """
+        return pulumi.get(self, "architecture_diagrams")
+
+    @architecture_diagrams.setter
+    def architecture_diagrams(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoArchitectureDiagramArgs']]]]):
+        pulumi.set(self, "architecture_diagrams", value)
+
+    @_builtins.property
+    @pulumi.getter(name="costEstimates")
+    def cost_estimates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateArgs']]]]:
+        """
+        Cost estimate definition.
+        """
+        return pulumi.get(self, "cost_estimates")
+
+    @cost_estimates.setter
+    def cost_estimates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateArgs']]]]):
+        pulumi.set(self, "cost_estimates", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def dependencies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoDependencyArgs']]]]:
+        """
+        Dependencies for this solution.
+        """
+        return pulumi.get(self, "dependencies")
+
+    @dependencies.setter
+    def dependencies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoDependencyArgs']]]]):
+        pulumi.set(self, "dependencies", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoFeatureArgs']]]]:
+        """
+        Features - titles only.
+        """
+        return pulumi.get(self, "features")
+
+    @features.setter
+    def features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoFeatureArgs']]]]):
+        pulumi.set(self, "features", value)
+
+
+class CmOfferingKindVersionSolutionInfoArchitectureDiagramArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Description of this diagram.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    diagram: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgsDict']]]
+    """
+    Offering Media information.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoArchitectureDiagramArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 diagram: pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Description of this diagram.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgs'] diagram: Offering Media information.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if diagram is not None:
+            pulumi.set(__self__, "diagram", diagram)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Description of this diagram.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def diagram(self) -> pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgs']]:
+        """
+        Offering Media information.
+        """
+        return pulumi.get(self, "diagram")
+
+    @diagram.setter
+    def diagram(self, value: pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgs']]):
+        pulumi.set(self, "diagram", value)
+
+
+class CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgsDict(TypedDict):
+    api_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    CM API specific URL of the specified media item.
+    """
+    caption: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Caption for this media item.
+    """
+    caption_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    thumbnail_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Thumbnail URL for this media item.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of this media item.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL of the specified media item.
+    """
+    url_proxy: NotRequired[pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgsDict']]]
+    """
+    Offering URL proxy information.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramArgs:
+    def __init__(__self__, *,
+                 api_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 caption: pulumi.Input[Optional[_builtins.str]] = None,
+                 caption_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 thumbnail_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_proxy: pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_url: CM API specific URL of the specified media item.
+        :param pulumi.Input[_builtins.str] caption: Caption for this media item.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] caption_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] thumbnail_url: Thumbnail URL for this media item.
+        :param pulumi.Input[_builtins.str] type: Type of this media item.
+        :param pulumi.Input[_builtins.str] url: URL of the specified media item.
+        :param pulumi.Input['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs'] url_proxy: Offering URL proxy information.
+        """
+        if api_url is not None:
+            pulumi.set(__self__, "api_url", api_url)
+        if caption is not None:
+            pulumi.set(__self__, "caption", caption)
+        if caption_i18n is not None:
+            pulumi.set(__self__, "caption_i18n", caption_i18n)
+        if thumbnail_url is not None:
+            pulumi.set(__self__, "thumbnail_url", thumbnail_url)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if url_proxy is not None:
+            pulumi.set(__self__, "url_proxy", url_proxy)
+
+    @_builtins.property
+    @pulumi.getter(name="apiUrl")
+    def api_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        CM API specific URL of the specified media item.
+        """
+        return pulumi.get(self, "api_url")
+
+    @api_url.setter
+    def api_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def caption(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Caption for this media item.
+        """
+        return pulumi.get(self, "caption")
+
+    @caption.setter
+    def caption(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "caption", value)
+
+    @_builtins.property
+    @pulumi.getter(name="captionI18n")
+    def caption_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "caption_i18n")
+
+    @caption_i18n.setter
+    def caption_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "caption_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter(name="thumbnailUrl")
+    def thumbnail_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Thumbnail URL for this media item.
+        """
+        return pulumi.get(self, "thumbnail_url")
+
+    @thumbnail_url.setter
+    def thumbnail_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "thumbnail_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of this media item.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL of the specified media item.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="urlProxy")
+    def url_proxy(self) -> pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs']]:
+        """
+        Offering URL proxy information.
+        """
+        return pulumi.get(self, "url_proxy")
+
+    @url_proxy.setter
+    def url_proxy(self, value: pulumi.Input[Optional['CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs']]):
+        pulumi.set(self, "url_proxy", value)
+
+
+class CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgsDict(TypedDict):
+    sha: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    SHA256 fingerprint of image.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL of the specified media item being proxied.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs:
+    def __init__(__self__, *,
+                 sha: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] sha: SHA256 fingerprint of image.
+        :param pulumi.Input[_builtins.str] url: URL of the specified media item being proxied.
+        """
+        if sha is not None:
+            pulumi.set(__self__, "sha", sha)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def sha(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        SHA256 fingerprint of image.
+        """
+        return pulumi.get(self, "sha")
+
+    @sha.setter
+    def sha(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "sha", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL of the specified media item being proxied.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateArgsDict(TypedDict):
+    currency: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost estimate currency.
+    """
+    diff_total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Difference in total hourly cost.
+    """
+    diff_total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Difference in total monthly cost.
+    """
+    past_total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Past total hourly cost.
+    """
+    past_total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Past total monthly cost.
+    """
+    projects: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectArgsDict']]]]]
+    """
+    Cost estimate projects.
+    """
+    summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgsDict']]]]]
+    """
+    Cost summary definition.
+    """
+    time_generated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    When this estimate was generated.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost estimate version.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateArgs:
+    def __init__(__self__, *,
+                 currency: pulumi.Input[Optional[_builtins.str]] = None,
+                 diff_total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 diff_total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 past_total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 past_total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 projects: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectArgs']]]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgs']]]] = None,
+                 time_generated: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] currency: Cost estimate currency.
+        :param pulumi.Input[_builtins.str] diff_total_hourly_cost: Difference in total hourly cost.
+        :param pulumi.Input[_builtins.str] diff_total_monthly_cost: Difference in total monthly cost.
+        :param pulumi.Input[_builtins.str] past_total_hourly_cost: Past total hourly cost.
+        :param pulumi.Input[_builtins.str] past_total_monthly_cost: Past total monthly cost.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectArgs']]] projects: Cost estimate projects.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgs']]] summaries: Cost summary definition.
+        :param pulumi.Input[_builtins.str] time_generated: When this estimate was generated.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        :param pulumi.Input[_builtins.str] version: Cost estimate version.
+        """
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if diff_total_hourly_cost is not None:
+            pulumi.set(__self__, "diff_total_hourly_cost", diff_total_hourly_cost)
+        if diff_total_monthly_cost is not None:
+            pulumi.set(__self__, "diff_total_monthly_cost", diff_total_monthly_cost)
+        if past_total_hourly_cost is not None:
+            pulumi.set(__self__, "past_total_hourly_cost", past_total_hourly_cost)
+        if past_total_monthly_cost is not None:
+            pulumi.set(__self__, "past_total_monthly_cost", past_total_monthly_cost)
+        if projects is not None:
+            pulumi.set(__self__, "projects", projects)
+        if summaries is not None:
+            pulumi.set(__self__, "summaries", summaries)
+        if time_generated is not None:
+            pulumi.set(__self__, "time_generated", time_generated)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost estimate currency.
+        """
+        return pulumi.get(self, "currency")
+
+    @currency.setter
+    def currency(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "currency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="diffTotalHourlyCost")
+    def diff_total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Difference in total hourly cost.
+        """
+        return pulumi.get(self, "diff_total_hourly_cost")
+
+    @diff_total_hourly_cost.setter
+    def diff_total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "diff_total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="diffTotalMonthlyCost")
+    def diff_total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Difference in total monthly cost.
+        """
+        return pulumi.get(self, "diff_total_monthly_cost")
+
+    @diff_total_monthly_cost.setter
+    def diff_total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "diff_total_monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pastTotalHourlyCost")
+    def past_total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Past total hourly cost.
+        """
+        return pulumi.get(self, "past_total_hourly_cost")
+
+    @past_total_hourly_cost.setter
+    def past_total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "past_total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pastTotalMonthlyCost")
+    def past_total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Past total monthly cost.
+        """
+        return pulumi.get(self, "past_total_monthly_cost")
+
+    @past_total_monthly_cost.setter
+    def past_total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "past_total_monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectArgs']]]]:
+        """
+        Cost estimate projects.
+        """
+        return pulumi.get(self, "projects")
+
+    @projects.setter
+    def projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectArgs']]]]):
+        pulumi.set(self, "projects", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgs']]]]:
+        """
+        Cost summary definition.
+        """
+        return pulumi.get(self, "summaries")
+
+    @summaries.setter
+    def summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgs']]]]):
+        pulumi.set(self, "summaries", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeGenerated")
+    def time_generated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When this estimate was generated.
+        """
+        return pulumi.get(self, "time_generated")
+
+    @time_generated.setter
+    def time_generated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_generated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost estimate version.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectArgsDict(TypedDict):
+    breakdowns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgsDict']]]]]
+    """
+    Cost breakdown definition.
+    """
+    diffs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgsDict']]]]]
+    """
+    Cost breakdown definition.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Project metadata.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Project name.
+    """
+    past_breakdowns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgsDict']]]]]
+    """
+    Cost breakdown definition.
+    """
+    summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgsDict']]]]]
+    """
+    Cost summary definition.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectArgs:
+    def __init__(__self__, *,
+                 breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgs']]]] = None,
+                 diffs: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgs']]]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 past_breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgs']]] breakdowns: Cost breakdown definition.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgs']]] diffs: Cost breakdown definition.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Project metadata.
+        :param pulumi.Input[_builtins.str] name: Project name.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]] past_breakdowns: Cost breakdown definition.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgs']]] summaries: Cost summary definition.
+        """
+        if breakdowns is not None:
+            pulumi.set(__self__, "breakdowns", breakdowns)
+        if diffs is not None:
+            pulumi.set(__self__, "diffs", diffs)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if past_breakdowns is not None:
+            pulumi.set(__self__, "past_breakdowns", past_breakdowns)
+        if summaries is not None:
+            pulumi.set(__self__, "summaries", summaries)
+
+    @_builtins.property
+    @pulumi.getter
+    def breakdowns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgs']]]]:
+        """
+        Cost breakdown definition.
+        """
+        return pulumi.get(self, "breakdowns")
+
+    @breakdowns.setter
+    def breakdowns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgs']]]]):
+        pulumi.set(self, "breakdowns", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def diffs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgs']]]]:
+        """
+        Cost breakdown definition.
+        """
+        return pulumi.get(self, "diffs")
+
+    @diffs.setter
+    def diffs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgs']]]]):
+        pulumi.set(self, "diffs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Project metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pastBreakdowns")
+    def past_breakdowns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]]]:
+        """
+        Cost breakdown definition.
+        """
+        return pulumi.get(self, "past_breakdowns")
+
+    @past_breakdowns.setter
+    def past_breakdowns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]]]):
+        pulumi.set(self, "past_breakdowns", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgs']]]]:
+        """
+        Cost summary definition.
+        """
+        return pulumi.get(self, "summaries")
+
+    @summaries.setter
+    def summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgs']]]]):
+        pulumi.set(self, "summaries", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgsDict']]]]]
+    """
+    Resources.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]] resources: Resources.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]]]:
+        """
+        Resources.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgsDict(TypedDict):
+    cost_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgsDict']]]]]
+    """
+    Cost components.
+    """
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Hourly cost.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Resource metadata.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Monthly cost.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs:
+    def __init__(__self__, *,
+                 cost_components: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]]] = None,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]] cost_components: Cost components.
+        :param pulumi.Input[_builtins.str] hourly_cost: Hourly cost.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Resource metadata.
+        :param pulumi.Input[_builtins.str] monthly_cost: Monthly cost.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        """
+        if cost_components is not None:
+            pulumi.set(__self__, "cost_components", cost_components)
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="costComponents")
+    def cost_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]]]:
+        """
+        Cost components.
+        """
+        return pulumi.get(self, "cost_components")
+
+    @cost_components.setter
+    def cost_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]]]):
+        pulumi.set(self, "cost_components", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Monthly cost.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgsDict(TypedDict):
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly cost.
+    """
+    hourly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly quantity.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly cist.
+    """
+    monthly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly quantity.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component name.
+    """
+    price: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component price.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component unit.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs:
+    def __init__(__self__, *,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 price: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] hourly_cost: Cost component hourly cost.
+        :param pulumi.Input[_builtins.str] hourly_quantity: Cost component hourly quantity.
+        :param pulumi.Input[_builtins.str] monthly_cost: Cost component monthly cist.
+        :param pulumi.Input[_builtins.str] monthly_quantity: Cost component monthly quantity.
+        :param pulumi.Input[_builtins.str] name: Cost component name.
+        :param pulumi.Input[_builtins.str] price: Cost component price.
+        :param pulumi.Input[_builtins.str] unit: Cost component unit.
+        """
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if hourly_quantity is not None:
+            pulumi.set(__self__, "hourly_quantity", hourly_quantity)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if monthly_quantity is not None:
+            pulumi.set(__self__, "monthly_quantity", monthly_quantity)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if price is not None:
+            pulumi.set(__self__, "price", price)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyQuantity")
+    def hourly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly quantity.
+        """
+        return pulumi.get(self, "hourly_quantity")
+
+    @hourly_quantity.setter
+    def hourly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly cist.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyQuantity")
+    def monthly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly quantity.
+        """
+        return pulumi.get(self, "monthly_quantity")
+
+    @monthly_quantity.setter
+    def monthly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def price(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component price.
+        """
+        return pulumi.get(self, "price")
+
+    @price.setter
+    def price(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "price", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component unit.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgsDict']]]]]
+    """
+    Resources.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]] resources: Resources.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]]]:
+        """
+        Resources.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgsDict(TypedDict):
+    cost_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgsDict']]]]]
+    """
+    Cost components.
+    """
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Hourly cost.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Resource metadata.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Monthly cost.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceArgs:
+    def __init__(__self__, *,
+                 cost_components: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]]] = None,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]] cost_components: Cost components.
+        :param pulumi.Input[_builtins.str] hourly_cost: Hourly cost.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Resource metadata.
+        :param pulumi.Input[_builtins.str] monthly_cost: Monthly cost.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        """
+        if cost_components is not None:
+            pulumi.set(__self__, "cost_components", cost_components)
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="costComponents")
+    def cost_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]]]:
+        """
+        Cost components.
+        """
+        return pulumi.get(self, "cost_components")
+
+    @cost_components.setter
+    def cost_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]]]):
+        pulumi.set(self, "cost_components", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Monthly cost.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgsDict(TypedDict):
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly cost.
+    """
+    hourly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly quantity.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly cist.
+    """
+    monthly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly quantity.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component name.
+    """
+    price: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component price.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component unit.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs:
+    def __init__(__self__, *,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 price: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] hourly_cost: Cost component hourly cost.
+        :param pulumi.Input[_builtins.str] hourly_quantity: Cost component hourly quantity.
+        :param pulumi.Input[_builtins.str] monthly_cost: Cost component monthly cist.
+        :param pulumi.Input[_builtins.str] monthly_quantity: Cost component monthly quantity.
+        :param pulumi.Input[_builtins.str] name: Cost component name.
+        :param pulumi.Input[_builtins.str] price: Cost component price.
+        :param pulumi.Input[_builtins.str] unit: Cost component unit.
+        """
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if hourly_quantity is not None:
+            pulumi.set(__self__, "hourly_quantity", hourly_quantity)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if monthly_quantity is not None:
+            pulumi.set(__self__, "monthly_quantity", monthly_quantity)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if price is not None:
+            pulumi.set(__self__, "price", price)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyQuantity")
+    def hourly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly quantity.
+        """
+        return pulumi.get(self, "hourly_quantity")
+
+    @hourly_quantity.setter
+    def hourly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly cist.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyQuantity")
+    def monthly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly quantity.
+        """
+        return pulumi.get(self, "monthly_quantity")
+
+    @monthly_quantity.setter
+    def monthly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def price(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component price.
+        """
+        return pulumi.get(self, "price")
+
+    @price.setter
+    def price(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "price", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component unit.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgsDict']]]]]
+    """
+    Resources.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]] resources: Resources.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]]]:
+        """
+        Resources.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgsDict(TypedDict):
+    cost_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgsDict']]]]]
+    """
+    Cost components.
+    """
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Hourly cost.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Resource metadata.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Monthly cost.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs:
+    def __init__(__self__, *,
+                 cost_components: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]]] = None,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]] cost_components: Cost components.
+        :param pulumi.Input[_builtins.str] hourly_cost: Hourly cost.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Resource metadata.
+        :param pulumi.Input[_builtins.str] monthly_cost: Monthly cost.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        """
+        if cost_components is not None:
+            pulumi.set(__self__, "cost_components", cost_components)
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="costComponents")
+    def cost_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]]]:
+        """
+        Cost components.
+        """
+        return pulumi.get(self, "cost_components")
+
+    @cost_components.setter
+    def cost_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]]]):
+        pulumi.set(self, "cost_components", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Monthly cost.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgsDict(TypedDict):
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly cost.
+    """
+    hourly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly quantity.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly cist.
+    """
+    monthly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly quantity.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component name.
+    """
+    price: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component price.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component unit.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs:
+    def __init__(__self__, *,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 price: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] hourly_cost: Cost component hourly cost.
+        :param pulumi.Input[_builtins.str] hourly_quantity: Cost component hourly quantity.
+        :param pulumi.Input[_builtins.str] monthly_cost: Cost component monthly cist.
+        :param pulumi.Input[_builtins.str] monthly_quantity: Cost component monthly quantity.
+        :param pulumi.Input[_builtins.str] name: Cost component name.
+        :param pulumi.Input[_builtins.str] price: Cost component price.
+        :param pulumi.Input[_builtins.str] unit: Cost component unit.
+        """
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if hourly_quantity is not None:
+            pulumi.set(__self__, "hourly_quantity", hourly_quantity)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if monthly_quantity is not None:
+            pulumi.set(__self__, "monthly_quantity", monthly_quantity)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if price is not None:
+            pulumi.set(__self__, "price", price)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyQuantity")
+    def hourly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly quantity.
+        """
+        return pulumi.get(self, "hourly_quantity")
+
+    @hourly_quantity.setter
+    def hourly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly cist.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyQuantity")
+    def monthly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly quantity.
+        """
+        return pulumi.get(self, "monthly_quantity")
+
+    @monthly_quantity.setter
+    def monthly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def price(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component price.
+        """
+        return pulumi.get(self, "price")
+
+    @price.setter
+    def price(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "price", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component unit.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgsDict(TypedDict):
+    no_price_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    No price resource counts.
+    """
+    total_detected_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total detected resources.
+    """
+    total_no_price_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total no price resources.
+    """
+    total_supported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total supported resources.
+    """
+    total_unsupported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total unsupported resources.
+    """
+    total_usage_based_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total usage based resources.
+    """
+    unsupported_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Unsupported resource counts.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateProjectSummaryArgs:
+    def __init__(__self__, *,
+                 no_price_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 total_detected_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_no_price_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_supported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_unsupported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_usage_based_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 unsupported_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] no_price_resource_counts: No price resource counts.
+        :param pulumi.Input[_builtins.int] total_detected_resources: Total detected resources.
+        :param pulumi.Input[_builtins.int] total_no_price_resources: Total no price resources.
+        :param pulumi.Input[_builtins.int] total_supported_resources: Total supported resources.
+        :param pulumi.Input[_builtins.int] total_unsupported_resources: Total unsupported resources.
+        :param pulumi.Input[_builtins.int] total_usage_based_resources: Total usage based resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] unsupported_resource_counts: Unsupported resource counts.
+        """
+        if no_price_resource_counts is not None:
+            pulumi.set(__self__, "no_price_resource_counts", no_price_resource_counts)
+        if total_detected_resources is not None:
+            pulumi.set(__self__, "total_detected_resources", total_detected_resources)
+        if total_no_price_resources is not None:
+            pulumi.set(__self__, "total_no_price_resources", total_no_price_resources)
+        if total_supported_resources is not None:
+            pulumi.set(__self__, "total_supported_resources", total_supported_resources)
+        if total_unsupported_resources is not None:
+            pulumi.set(__self__, "total_unsupported_resources", total_unsupported_resources)
+        if total_usage_based_resources is not None:
+            pulumi.set(__self__, "total_usage_based_resources", total_usage_based_resources)
+        if unsupported_resource_counts is not None:
+            pulumi.set(__self__, "unsupported_resource_counts", unsupported_resource_counts)
+
+    @_builtins.property
+    @pulumi.getter(name="noPriceResourceCounts")
+    def no_price_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        No price resource counts.
+        """
+        return pulumi.get(self, "no_price_resource_counts")
+
+    @no_price_resource_counts.setter
+    def no_price_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "no_price_resource_counts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalDetectedResources")
+    def total_detected_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total detected resources.
+        """
+        return pulumi.get(self, "total_detected_resources")
+
+    @total_detected_resources.setter
+    def total_detected_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_detected_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalNoPriceResources")
+    def total_no_price_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total no price resources.
+        """
+        return pulumi.get(self, "total_no_price_resources")
+
+    @total_no_price_resources.setter
+    def total_no_price_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_no_price_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSupportedResources")
+    def total_supported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total supported resources.
+        """
+        return pulumi.get(self, "total_supported_resources")
+
+    @total_supported_resources.setter
+    def total_supported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_supported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUnsupportedResources")
+    def total_unsupported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total unsupported resources.
+        """
+        return pulumi.get(self, "total_unsupported_resources")
+
+    @total_unsupported_resources.setter
+    def total_unsupported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_unsupported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUsageBasedResources")
+    def total_usage_based_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total usage based resources.
+        """
+        return pulumi.get(self, "total_usage_based_resources")
+
+    @total_usage_based_resources.setter
+    def total_usage_based_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_usage_based_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unsupportedResourceCounts")
+    def unsupported_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Unsupported resource counts.
+        """
+        return pulumi.get(self, "unsupported_resource_counts")
+
+    @unsupported_resource_counts.setter
+    def unsupported_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "unsupported_resource_counts", value)
+
+
+class CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgsDict(TypedDict):
+    no_price_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    No price resource counts.
+    """
+    total_detected_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total detected resources.
+    """
+    total_no_price_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total no price resources.
+    """
+    total_supported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total supported resources.
+    """
+    total_unsupported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total unsupported resources.
+    """
+    total_usage_based_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total usage based resources.
+    """
+    unsupported_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Unsupported resource counts.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoCostEstimateSummaryArgs:
+    def __init__(__self__, *,
+                 no_price_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 total_detected_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_no_price_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_supported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_unsupported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_usage_based_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 unsupported_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] no_price_resource_counts: No price resource counts.
+        :param pulumi.Input[_builtins.int] total_detected_resources: Total detected resources.
+        :param pulumi.Input[_builtins.int] total_no_price_resources: Total no price resources.
+        :param pulumi.Input[_builtins.int] total_supported_resources: Total supported resources.
+        :param pulumi.Input[_builtins.int] total_unsupported_resources: Total unsupported resources.
+        :param pulumi.Input[_builtins.int] total_usage_based_resources: Total usage based resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] unsupported_resource_counts: Unsupported resource counts.
+        """
+        if no_price_resource_counts is not None:
+            pulumi.set(__self__, "no_price_resource_counts", no_price_resource_counts)
+        if total_detected_resources is not None:
+            pulumi.set(__self__, "total_detected_resources", total_detected_resources)
+        if total_no_price_resources is not None:
+            pulumi.set(__self__, "total_no_price_resources", total_no_price_resources)
+        if total_supported_resources is not None:
+            pulumi.set(__self__, "total_supported_resources", total_supported_resources)
+        if total_unsupported_resources is not None:
+            pulumi.set(__self__, "total_unsupported_resources", total_unsupported_resources)
+        if total_usage_based_resources is not None:
+            pulumi.set(__self__, "total_usage_based_resources", total_usage_based_resources)
+        if unsupported_resource_counts is not None:
+            pulumi.set(__self__, "unsupported_resource_counts", unsupported_resource_counts)
+
+    @_builtins.property
+    @pulumi.getter(name="noPriceResourceCounts")
+    def no_price_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        No price resource counts.
+        """
+        return pulumi.get(self, "no_price_resource_counts")
+
+    @no_price_resource_counts.setter
+    def no_price_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "no_price_resource_counts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalDetectedResources")
+    def total_detected_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total detected resources.
+        """
+        return pulumi.get(self, "total_detected_resources")
+
+    @total_detected_resources.setter
+    def total_detected_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_detected_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalNoPriceResources")
+    def total_no_price_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total no price resources.
+        """
+        return pulumi.get(self, "total_no_price_resources")
+
+    @total_no_price_resources.setter
+    def total_no_price_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_no_price_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSupportedResources")
+    def total_supported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total supported resources.
+        """
+        return pulumi.get(self, "total_supported_resources")
+
+    @total_supported_resources.setter
+    def total_supported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_supported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUnsupportedResources")
+    def total_unsupported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total unsupported resources.
+        """
+        return pulumi.get(self, "total_unsupported_resources")
+
+    @total_unsupported_resources.setter
+    def total_unsupported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_unsupported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUsageBasedResources")
+    def total_usage_based_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total usage based resources.
+        """
+        return pulumi.get(self, "total_usage_based_resources")
+
+    @total_usage_based_resources.setter
+    def total_usage_based_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_usage_based_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unsupportedResourceCounts")
+    def unsupported_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Unsupported resource counts.
+        """
+        return pulumi.get(self, "unsupported_resource_counts")
+
+    @unsupported_resource_counts.setter
+    def unsupported_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "unsupported_resource_counts", value)
+
+
+class CmOfferingKindVersionSolutionInfoDependencyArgsDict(TypedDict):
+    catalog_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional - If not specified, assumes the Public Catalog.
+    """
+    flavors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Optional - List of dependent flavors in the specified range.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional - Offering ID - not required if name is set.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional - Programmatic Offering name.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Required - Semver value or range.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoDependencyArgs:
+    def __init__(__self__, *,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] catalog_id: Optional - If not specified, assumes the Public Catalog.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] flavors: Optional - List of dependent flavors in the specified range.
+        :param pulumi.Input[_builtins.str] id: Optional - Offering ID - not required if name is set.
+        :param pulumi.Input[_builtins.str] name: Optional - Programmatic Offering name.
+        :param pulumi.Input[_builtins.str] version: Required - Semver value or range.
+        """
+        if catalog_id is not None:
+            pulumi.set(__self__, "catalog_id", catalog_id)
+        if flavors is not None:
+            pulumi.set(__self__, "flavors", flavors)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogId")
+    def catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional - If not specified, assumes the Public Catalog.
+        """
+        return pulumi.get(self, "catalog_id")
+
+    @catalog_id.setter
+    def catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "catalog_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def flavors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Optional - List of dependent flavors in the specified range.
+        """
+        return pulumi.get(self, "flavors")
+
+    @flavors.setter
+    def flavors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "flavors", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional - Offering ID - not required if name is set.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional - Programmatic Offering name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Required - Semver value or range.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmOfferingKindVersionSolutionInfoFeatureArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Feature description.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Heading.
+    """
+    title_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionSolutionInfoFeatureArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 title_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Feature description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] title: Heading.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] title_i18n: A map of translated strings, by language code.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if title_i18n is not None:
+            pulumi.set(__self__, "title_i18n", title_i18n)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Feature description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Heading.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+    @_builtins.property
+    @pulumi.getter(name="titleI18n")
+    def title_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "title_i18n")
+
+    @title_i18n.setter
+    def title_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "title_i18n", value)
+
+
+class CmOfferingKindVersionStateArgsDict(TypedDict):
+    current: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+    current_entered: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of current request.
+    """
+    pending: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+    pending_requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of pending request.
+    """
+    previous: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionStateArgs:
+    def __init__(__self__, *,
+                 current: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_entered: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_requested: pulumi.Input[Optional[_builtins.str]] = None,
+                 previous: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] current: one of: new, validated, account-published, ibm-published, public-published.
+        :param pulumi.Input[_builtins.str] current_entered: Date and time of current request.
+        :param pulumi.Input[_builtins.str] pending: one of: new, validated, account-published, ibm-published, public-published.
+        :param pulumi.Input[_builtins.str] pending_requested: Date and time of pending request.
+        :param pulumi.Input[_builtins.str] previous: one of: new, validated, account-published, ibm-published, public-published.
+        """
+        if current is not None:
+            pulumi.set(__self__, "current", current)
+        if current_entered is not None:
+            pulumi.set(__self__, "current_entered", current_entered)
+        if pending is not None:
+            pulumi.set(__self__, "pending", pending)
+        if pending_requested is not None:
+            pulumi.set(__self__, "pending_requested", pending_requested)
+        if previous is not None:
+            pulumi.set(__self__, "previous", previous)
+
+    @_builtins.property
+    @pulumi.getter
+    def current(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "current")
+
+    @current.setter
+    def current(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentEntered")
+    def current_entered(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of current request.
+        """
+        return pulumi.get(self, "current_entered")
+
+    @current_entered.setter
+    def current_entered(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current_entered", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def pending(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "pending")
+
+    @pending.setter
+    def pending(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingRequested")
+    def pending_requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of pending request.
+        """
+        return pulumi.get(self, "pending_requested")
+
+    @pending_requested.setter
+    def pending_requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending_requested", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def previous(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "previous")
+
+    @previous.setter
+    def previous(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "previous", value)
+
+
+class CmOfferingKindVersionValidationArgsDict(TypedDict):
+    last_operation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Last operation (e.g. submit_deployment, generate_installer, install_offering.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Any message needing to be conveyed as part of the validation job.
+    """
+    requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of last validation was requested.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Current validation state - <empty>, in_progress, valid, invalid, expired.
+    """
+    target: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+    """
+    validated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of last successful validation.
+    """
+
+@pulumi.input_type
+class CmOfferingKindVersionValidationArgs:
+    def __init__(__self__, *,
+                 last_operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 requested: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 validated: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] last_operation: Last operation (e.g. submit_deployment, generate_installer, install_offering.
+        :param pulumi.Input[_builtins.str] message: Any message needing to be conveyed as part of the validation job.
+        :param pulumi.Input[_builtins.str] requested: Date and time of last validation was requested.
+        :param pulumi.Input[_builtins.str] state: Current validation state - <empty>, in_progress, valid, invalid, expired.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] target: Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+        :param pulumi.Input[_builtins.str] validated: Date and time of last successful validation.
+        """
+        if last_operation is not None:
+            pulumi.set(__self__, "last_operation", last_operation)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if requested is not None:
+            pulumi.set(__self__, "requested", requested)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if validated is not None:
+            pulumi.set(__self__, "validated", validated)
+
+    @_builtins.property
+    @pulumi.getter(name="lastOperation")
+    def last_operation(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Last operation (e.g. submit_deployment, generate_installer, install_offering.
+        """
+        return pulumi.get(self, "last_operation")
+
+    @last_operation.setter
+    def last_operation(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "last_operation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Any message needing to be conveyed as part of the validation job.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of last validation was requested.
+        """
+        return pulumi.get(self, "requested")
+
+    @requested.setter
+    def requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "requested", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Current validation state - <empty>, in_progress, valid, invalid, expired.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "target", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def validated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of last successful validation.
+        """
+        return pulumi.get(self, "validated")
+
+    @validated.setter
+    def validated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "validated", value)
+
+
+class CmOfferingMediaArgsDict(TypedDict):
+    api_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    CM API specific URL of the specified media item.
+    """
+    caption: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Caption for this media item.
+    """
+    caption_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    thumbnail_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Thumbnail URL for this media item.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of this media item.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL of the specified media item.
+    """
+    url_proxy: NotRequired[pulumi.Input[Optional['CmOfferingMediaUrlProxyArgsDict']]]
+    """
+    Offering URL proxy information.
+    """
+
+@pulumi.input_type
+class CmOfferingMediaArgs:
+    def __init__(__self__, *,
+                 api_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 caption: pulumi.Input[Optional[_builtins.str]] = None,
+                 caption_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 thumbnail_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_proxy: pulumi.Input[Optional['CmOfferingMediaUrlProxyArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_url: CM API specific URL of the specified media item.
+        :param pulumi.Input[_builtins.str] caption: Caption for this media item.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] caption_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] thumbnail_url: Thumbnail URL for this media item.
+        :param pulumi.Input[_builtins.str] type: Type of this media item.
+        :param pulumi.Input[_builtins.str] url: URL of the specified media item.
+        :param pulumi.Input['CmOfferingMediaUrlProxyArgs'] url_proxy: Offering URL proxy information.
+        """
+        if api_url is not None:
+            pulumi.set(__self__, "api_url", api_url)
+        if caption is not None:
+            pulumi.set(__self__, "caption", caption)
+        if caption_i18n is not None:
+            pulumi.set(__self__, "caption_i18n", caption_i18n)
+        if thumbnail_url is not None:
+            pulumi.set(__self__, "thumbnail_url", thumbnail_url)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if url_proxy is not None:
+            pulumi.set(__self__, "url_proxy", url_proxy)
+
+    @_builtins.property
+    @pulumi.getter(name="apiUrl")
+    def api_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        CM API specific URL of the specified media item.
+        """
+        return pulumi.get(self, "api_url")
+
+    @api_url.setter
+    def api_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def caption(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Caption for this media item.
+        """
+        return pulumi.get(self, "caption")
+
+    @caption.setter
+    def caption(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "caption", value)
+
+    @_builtins.property
+    @pulumi.getter(name="captionI18n")
+    def caption_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "caption_i18n")
+
+    @caption_i18n.setter
+    def caption_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "caption_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter(name="thumbnailUrl")
+    def thumbnail_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Thumbnail URL for this media item.
+        """
+        return pulumi.get(self, "thumbnail_url")
+
+    @thumbnail_url.setter
+    def thumbnail_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "thumbnail_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of this media item.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL of the specified media item.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="urlProxy")
+    def url_proxy(self) -> pulumi.Input[Optional['CmOfferingMediaUrlProxyArgs']]:
+        """
+        Offering URL proxy information.
+        """
+        return pulumi.get(self, "url_proxy")
+
+    @url_proxy.setter
+    def url_proxy(self, value: pulumi.Input[Optional['CmOfferingMediaUrlProxyArgs']]):
+        pulumi.set(self, "url_proxy", value)
+
+
+class CmOfferingMediaUrlProxyArgsDict(TypedDict):
+    sha: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    SHA256 fingerprint of image.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL of the specified media item being proxied.
+    """
+
+@pulumi.input_type
+class CmOfferingMediaUrlProxyArgs:
+    def __init__(__self__, *,
+                 sha: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] sha: SHA256 fingerprint of image.
+        :param pulumi.Input[_builtins.str] url: URL of the specified media item being proxied.
+        """
+        if sha is not None:
+            pulumi.set(__self__, "sha", sha)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def sha(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        SHA256 fingerprint of image.
+        """
+        return pulumi.get(self, "sha")
+
+    @sha.setter
+    def sha(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "sha", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL of the specified media item being proxied.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class CmOfferingProviderInfoArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The id of this provider.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of this provider.
+    """
+
+@pulumi.input_type
+class CmOfferingProviderInfoArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: The id of this provider.
+        :param pulumi.Input[_builtins.str] name: The name of this provider.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The id of this provider.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of this provider.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmOfferingRatingArgsDict(TypedDict):
+    four_star_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Four start rating.
+    """
+    one_star_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    One start rating.
+    """
+    three_star_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Three start rating.
+    """
+    two_star_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Two start rating.
+    """
+
+@pulumi.input_type
+class CmOfferingRatingArgs:
+    def __init__(__self__, *,
+                 four_star_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 one_star_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 three_star_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 two_star_count: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] four_star_count: Four start rating.
+        :param pulumi.Input[_builtins.int] one_star_count: One start rating.
+        :param pulumi.Input[_builtins.int] three_star_count: Three start rating.
+        :param pulumi.Input[_builtins.int] two_star_count: Two start rating.
+        """
+        if four_star_count is not None:
+            pulumi.set(__self__, "four_star_count", four_star_count)
+        if one_star_count is not None:
+            pulumi.set(__self__, "one_star_count", one_star_count)
+        if three_star_count is not None:
+            pulumi.set(__self__, "three_star_count", three_star_count)
+        if two_star_count is not None:
+            pulumi.set(__self__, "two_star_count", two_star_count)
+
+    @_builtins.property
+    @pulumi.getter(name="fourStarCount")
+    def four_star_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Four start rating.
+        """
+        return pulumi.get(self, "four_star_count")
+
+    @four_star_count.setter
+    def four_star_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "four_star_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="oneStarCount")
+    def one_star_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        One start rating.
+        """
+        return pulumi.get(self, "one_star_count")
+
+    @one_star_count.setter
+    def one_star_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "one_star_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="threeStarCount")
+    def three_star_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Three start rating.
+        """
+        return pulumi.get(self, "three_star_count")
+
+    @three_star_count.setter
+    def three_star_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "three_star_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="twoStarCount")
+    def two_star_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Two start rating.
+        """
+        return pulumi.get(self, "two_star_count")
+
+    @two_star_count.setter
+    def two_star_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "two_star_count", value)
+
+
+class CmOfferingRepoInfoArgsDict(TypedDict):
+    token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Token for private repos.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Public or enterprise GitHub.
+    """
+
+@pulumi.input_type
+class CmOfferingRepoInfoArgs:
+    def __init__(__self__, *,
+                 token: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] token: Token for private repos.
+        :param pulumi.Input[_builtins.str] type: Public or enterprise GitHub.
+        """
+        if token is not None:
+            pulumi.set(__self__, "token", token)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def token(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Token for private repos.
+        """
+        return pulumi.get(self, "token")
+
+    @token.setter
+    def token(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "token", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Public or enterprise GitHub.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class CmOfferingSupportArgsDict(TypedDict):
+    locations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    A list of country codes indicating where support is provided.
+    """
+    process: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Support process as provided by an ISV.
+    """
+    process_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    support_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailArgsDict']]]]]
+    """
+    A list of support options (e.g. email, phone, slack, other).
+    """
+    support_escalations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationArgsDict']]]]]
+    """
+    Support escalation policy.
+    """
+    support_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Support type for this product.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL to be displayed in the Consumption UI for getting support on this offering.
+    """
+
+@pulumi.input_type
+class CmOfferingSupportArgs:
+    def __init__(__self__, *,
+                 locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 process: pulumi.Input[Optional[_builtins.str]] = None,
+                 process_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 support_details: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailArgs']]]] = None,
+                 support_escalations: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationArgs']]]] = None,
+                 support_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] locations: A list of country codes indicating where support is provided.
+        :param pulumi.Input[_builtins.str] process: Support process as provided by an ISV.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] process_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingSupportSupportDetailArgs']]] support_details: A list of support options (e.g. email, phone, slack, other).
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationArgs']]] support_escalations: Support escalation policy.
+        :param pulumi.Input[_builtins.str] support_type: Support type for this product.
+        :param pulumi.Input[_builtins.str] url: URL to be displayed in the Consumption UI for getting support on this offering.
+        """
+        if locations is not None:
+            pulumi.set(__self__, "locations", locations)
+        if process is not None:
+            pulumi.set(__self__, "process", process)
+        if process_i18n is not None:
+            pulumi.set(__self__, "process_i18n", process_i18n)
+        if support_details is not None:
+            pulumi.set(__self__, "support_details", support_details)
+        if support_escalations is not None:
+            pulumi.set(__self__, "support_escalations", support_escalations)
+        if support_type is not None:
+            pulumi.set(__self__, "support_type", support_type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def locations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of country codes indicating where support is provided.
+        """
+        return pulumi.get(self, "locations")
+
+    @locations.setter
+    def locations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "locations", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def process(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Support process as provided by an ISV.
+        """
+        return pulumi.get(self, "process")
+
+    @process.setter
+    def process(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "process", value)
+
+    @_builtins.property
+    @pulumi.getter(name="processI18n")
+    def process_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "process_i18n")
+
+    @process_i18n.setter
+    def process_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "process_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportDetails")
+    def support_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailArgs']]]]:
+        """
+        A list of support options (e.g. email, phone, slack, other).
+        """
+        return pulumi.get(self, "support_details")
+
+    @support_details.setter
+    def support_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailArgs']]]]):
+        pulumi.set(self, "support_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportEscalations")
+    def support_escalations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationArgs']]]]:
+        """
+        Support escalation policy.
+        """
+        return pulumi.get(self, "support_escalations")
+
+    @support_escalations.setter
+    def support_escalations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationArgs']]]]):
+        pulumi.set(self, "support_escalations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="supportType")
+    def support_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Support type for this product.
+        """
+        return pulumi.get(self, "support_type")
+
+    @support_type.setter
+    def support_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "support_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL to be displayed in the Consumption UI for getting support on this offering.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class CmOfferingSupportSupportDetailArgsDict(TypedDict):
+    availabilities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityArgsDict']]]]]
+    """
+    Times when support is available.
+    """
+    contact: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Contact for the current support detail.
+    """
+    response_wait_times: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailResponseWaitTimeArgsDict']]]]]
+    """
+    Time descriptor.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of the current support detail.
+    """
+
+@pulumi.input_type
+class CmOfferingSupportSupportDetailArgs:
+    def __init__(__self__, *,
+                 availabilities: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityArgs']]]] = None,
+                 contact: pulumi.Input[Optional[_builtins.str]] = None,
+                 response_wait_times: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailResponseWaitTimeArgs']]]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityArgs']]] availabilities: Times when support is available.
+        :param pulumi.Input[_builtins.str] contact: Contact for the current support detail.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingSupportSupportDetailResponseWaitTimeArgs']]] response_wait_times: Time descriptor.
+        :param pulumi.Input[_builtins.str] type: Type of the current support detail.
+        """
+        if availabilities is not None:
+            pulumi.set(__self__, "availabilities", availabilities)
+        if contact is not None:
+            pulumi.set(__self__, "contact", contact)
+        if response_wait_times is not None:
+            pulumi.set(__self__, "response_wait_times", response_wait_times)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def availabilities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityArgs']]]]:
+        """
+        Times when support is available.
+        """
+        return pulumi.get(self, "availabilities")
+
+    @availabilities.setter
+    def availabilities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityArgs']]]]):
+        pulumi.set(self, "availabilities", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def contact(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Contact for the current support detail.
+        """
+        return pulumi.get(self, "contact")
+
+    @contact.setter
+    def contact(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "contact", value)
+
+    @_builtins.property
+    @pulumi.getter(name="responseWaitTimes")
+    def response_wait_times(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailResponseWaitTimeArgs']]]]:
+        """
+        Time descriptor.
+        """
+        return pulumi.get(self, "response_wait_times")
+
+    @response_wait_times.setter
+    def response_wait_times(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailResponseWaitTimeArgs']]]]):
+        pulumi.set(self, "response_wait_times", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of the current support detail.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class CmOfferingSupportSupportDetailAvailabilityArgsDict(TypedDict):
+    always_available: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Is this support always available.
+    """
+    times: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityTimeArgsDict']]]]]
+    """
+    A list of support times.
+    """
+    timezone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Timezone (e.g. America/New_York).
+    """
+
+@pulumi.input_type
+class CmOfferingSupportSupportDetailAvailabilityArgs:
+    def __init__(__self__, *,
+                 always_available: pulumi.Input[Optional[_builtins.bool]] = None,
+                 times: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityTimeArgs']]]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] always_available: Is this support always available.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityTimeArgs']]] times: A list of support times.
+        :param pulumi.Input[_builtins.str] timezone: Timezone (e.g. America/New_York).
+        """
+        if always_available is not None:
+            pulumi.set(__self__, "always_available", always_available)
+        if times is not None:
+            pulumi.set(__self__, "times", times)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
+
+    @_builtins.property
+    @pulumi.getter(name="alwaysAvailable")
+    def always_available(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Is this support always available.
+        """
+        return pulumi.get(self, "always_available")
+
+    @always_available.setter
+    def always_available(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "always_available", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def times(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityTimeArgs']]]]:
+        """
+        A list of support times.
+        """
+        return pulumi.get(self, "times")
+
+    @times.setter
+    def times(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportDetailAvailabilityTimeArgs']]]]):
+        pulumi.set(self, "times", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Timezone (e.g. America/New_York).
+        """
+        return pulumi.get(self, "timezone")
+
+    @timezone.setter
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "timezone", value)
+
+
+class CmOfferingSupportSupportDetailAvailabilityTimeArgsDict(TypedDict):
+    day: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The day of the week, represented as an integer.
+    """
+    end_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+    """
+    start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+    """
+
+@pulumi.input_type
+class CmOfferingSupportSupportDetailAvailabilityTimeArgs:
+    def __init__(__self__, *,
+                 day: pulumi.Input[Optional[_builtins.int]] = None,
+                 end_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_time: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] day: The day of the week, represented as an integer.
+        :param pulumi.Input[_builtins.str] end_time: HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+        :param pulumi.Input[_builtins.str] start_time: HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+        """
+        if day is not None:
+            pulumi.set(__self__, "day", day)
+        if end_time is not None:
+            pulumi.set(__self__, "end_time", end_time)
+        if start_time is not None:
+            pulumi.set(__self__, "start_time", start_time)
+
+    @_builtins.property
+    @pulumi.getter
+    def day(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The day of the week, represented as an integer.
+        """
+        return pulumi.get(self, "day")
+
+    @day.setter
+    def day(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "day", value)
+
+    @_builtins.property
+    @pulumi.getter(name="endTime")
+    def end_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+        """
+        return pulumi.get(self, "end_time")
+
+    @end_time.setter
+    def end_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "end_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="startTime")
+    def start_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+        """
+        return pulumi.get(self, "start_time")
+
+    @start_time.setter
+    def start_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "start_time", value)
+
+
+class CmOfferingSupportSupportDetailResponseWaitTimeArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Valid values are hour or day.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Amount of time to wait in unit 'type'.
+    """
+
+@pulumi.input_type
+class CmOfferingSupportSupportDetailResponseWaitTimeArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Valid values are hour or day.
+        :param pulumi.Input[_builtins.int] value: Amount of time to wait in unit 'type'.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Valid values are hour or day.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Amount of time to wait in unit 'type'.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "value", value)
+
+
+class CmOfferingSupportSupportEscalationArgsDict(TypedDict):
+    contact: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Escalation contact.
+    """
+    escalation_wait_times: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationEscalationWaitTimeArgsDict']]]]]
+    """
+    Time descriptor.
+    """
+    response_wait_times: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationResponseWaitTimeArgsDict']]]]]
+    """
+    Time descriptor.
+    """
+
+@pulumi.input_type
+class CmOfferingSupportSupportEscalationArgs:
+    def __init__(__self__, *,
+                 contact: pulumi.Input[Optional[_builtins.str]] = None,
+                 escalation_wait_times: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationEscalationWaitTimeArgs']]]] = None,
+                 response_wait_times: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationResponseWaitTimeArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] contact: Escalation contact.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationEscalationWaitTimeArgs']]] escalation_wait_times: Time descriptor.
+        :param pulumi.Input[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationResponseWaitTimeArgs']]] response_wait_times: Time descriptor.
+        """
+        if contact is not None:
+            pulumi.set(__self__, "contact", contact)
+        if escalation_wait_times is not None:
+            pulumi.set(__self__, "escalation_wait_times", escalation_wait_times)
+        if response_wait_times is not None:
+            pulumi.set(__self__, "response_wait_times", response_wait_times)
+
+    @_builtins.property
+    @pulumi.getter
+    def contact(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Escalation contact.
+        """
+        return pulumi.get(self, "contact")
+
+    @contact.setter
+    def contact(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "contact", value)
+
+    @_builtins.property
+    @pulumi.getter(name="escalationWaitTimes")
+    def escalation_wait_times(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationEscalationWaitTimeArgs']]]]:
+        """
+        Time descriptor.
+        """
+        return pulumi.get(self, "escalation_wait_times")
+
+    @escalation_wait_times.setter
+    def escalation_wait_times(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationEscalationWaitTimeArgs']]]]):
+        pulumi.set(self, "escalation_wait_times", value)
+
+    @_builtins.property
+    @pulumi.getter(name="responseWaitTimes")
+    def response_wait_times(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationResponseWaitTimeArgs']]]]:
+        """
+        Time descriptor.
+        """
+        return pulumi.get(self, "response_wait_times")
+
+    @response_wait_times.setter
+    def response_wait_times(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmOfferingSupportSupportEscalationResponseWaitTimeArgs']]]]):
+        pulumi.set(self, "response_wait_times", value)
+
+
+class CmOfferingSupportSupportEscalationEscalationWaitTimeArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Valid values are hour or day.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Amount of time to wait in unit 'type'.
+    """
+
+@pulumi.input_type
+class CmOfferingSupportSupportEscalationEscalationWaitTimeArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Valid values are hour or day.
+        :param pulumi.Input[_builtins.int] value: Amount of time to wait in unit 'type'.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Valid values are hour or day.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Amount of time to wait in unit 'type'.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "value", value)
+
+
+class CmOfferingSupportSupportEscalationResponseWaitTimeArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Valid values are hour or day.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Amount of time to wait in unit 'type'.
+    """
+
+@pulumi.input_type
+class CmOfferingSupportSupportEscalationResponseWaitTimeArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Valid values are hour or day.
+        :param pulumi.Input[_builtins.int] value: Amount of time to wait in unit 'type'.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Valid values are hour or day.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Amount of time to wait in unit 'type'.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "value", value)
+
+
+class CmValidationEnvironmentVariableArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the environment variable.
+    """
+    secure: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    If the environment variablel should be secure.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Value of the environment variable.
+    """
+
+@pulumi.input_type
+class CmValidationEnvironmentVariableArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secure: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of the environment variable.
+        :param pulumi.Input[_builtins.bool] secure: If the environment variablel should be secure.
+        :param pulumi.Input[_builtins.str] value: Value of the environment variable.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if secure is not None:
+            pulumi.set(__self__, "secure", secure)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the environment variable.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def secure(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        If the environment variablel should be secure.
+        """
+        return pulumi.get(self, "secure")
+
+    @secure.setter
+    def secure(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "secure", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Value of the environment variable.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class CmValidationSchematicsArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Description for the schematics workspace.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name for the schematics workspace.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Region to use for the schematics installation.
+    """
+    resource_group_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The resource group ID.
+    """
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of tags for the schematics workspace.
+    """
+    terraform_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version of terraform to use in schematics.
+    """
+
+@pulumi.input_type
+class CmValidationSchematicsArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None,
+                 resource_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 terraform_version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Description for the schematics workspace.
+        :param pulumi.Input[_builtins.str] name: Name for the schematics workspace.
+        :param pulumi.Input[_builtins.str] region: Region to use for the schematics installation.
+        :param pulumi.Input[_builtins.str] resource_group_id: The resource group ID.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] tags: List of tags for the schematics workspace.
+        :param pulumi.Input[_builtins.str] terraform_version: Version of terraform to use in schematics.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if resource_group_id is not None:
+            pulumi.set(__self__, "resource_group_id", resource_group_id)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if terraform_version is not None:
+            pulumi.set(__self__, "terraform_version", terraform_version)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Description for the schematics workspace.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name for the schematics workspace.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Region to use for the schematics installation.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroupId")
+    def resource_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The resource group ID.
+        """
+        return pulumi.get(self, "resource_group_id")
+
+    @resource_group_id.setter
+    def resource_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "resource_group_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of tags for the schematics workspace.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="terraformVersion")
+    def terraform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version of terraform to use in schematics.
+        """
+        return pulumi.get(self, "terraform_version")
+
+    @terraform_version.setter
+    def terraform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "terraform_version", value)
+
+
+class CmVersionConfigurationArgsDict(TypedDict):
+    custom_config: NotRequired[pulumi.Input[Optional['CmVersionConfigurationCustomConfigArgsDict']]]
+    """
+    Render type.
+    """
+    default_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Key description.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Display name for configuration type.
+    """
+    hidden: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Hide values.
+    """
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Configuration key.
+    """
+    options: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]]
+    """
+    List of options of type.
+    """
+    required: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Is key required to install.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Value type (string, boolean, int).
+    """
+    type_metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The original type, as found in the source being onboarded.
+    """
+    value_constraint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Deprecated - Constraint associated with value, e.g., for string type - regx:[a-z].
+    """
+    value_constraints: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationValueConstraintArgsDict']]]]]
+    """
+    Validation rules for this input value.
+    """
+
+@pulumi.input_type
+class CmVersionConfigurationArgs:
+    def __init__(__self__, *,
+                 custom_config: pulumi.Input[Optional['CmVersionConfigurationCustomConfigArgs']] = None,
+                 default_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hidden: pulumi.Input[Optional[_builtins.bool]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 options: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]] = None,
+                 required: pulumi.Input[Optional[_builtins.bool]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 type_metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_constraint: pulumi.Input[Optional[_builtins.str]] = None,
+                 value_constraints: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationValueConstraintArgs']]]] = None):
+        """
+        :param pulumi.Input['CmVersionConfigurationCustomConfigArgs'] custom_config: Render type.
+        :param pulumi.Input[_builtins.str] default_value: The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+        :param pulumi.Input[_builtins.str] description: Key description.
+        :param pulumi.Input[_builtins.str] display_name: Display name for configuration type.
+        :param pulumi.Input[_builtins.bool] hidden: Hide values.
+        :param pulumi.Input[_builtins.str] key: Configuration key.
+        :param pulumi.Input[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]] options: List of options of type.
+        :param pulumi.Input[_builtins.bool] required: Is key required to install.
+        :param pulumi.Input[_builtins.str] type: Value type (string, boolean, int).
+        :param pulumi.Input[_builtins.str] type_metadata: The original type, as found in the source being onboarded.
+        :param pulumi.Input[_builtins.str] value_constraint: Deprecated - Constraint associated with value, e.g., for string type - regx:[a-z].
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionConfigurationValueConstraintArgs']]] value_constraints: Validation rules for this input value.
+        """
+        if custom_config is not None:
+            pulumi.set(__self__, "custom_config", custom_config)
+        if default_value is not None:
+            pulumi.set(__self__, "default_value", default_value)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if hidden is not None:
+            pulumi.set(__self__, "hidden", hidden)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if options is not None:
+            pulumi.set(__self__, "options", options)
+        if required is not None:
+            pulumi.set(__self__, "required", required)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if type_metadata is not None:
+            pulumi.set(__self__, "type_metadata", type_metadata)
+        if value_constraint is not None:
+            warnings.warn("""This field is deprecated use value_constraints instead.""", DeprecationWarning)
+            pulumi.log.warn("""value_constraint is deprecated: This field is deprecated use value_constraints instead.""")
+        if value_constraint is not None:
+            pulumi.set(__self__, "value_constraint", value_constraint)
+        if value_constraints is not None:
+            pulumi.set(__self__, "value_constraints", value_constraints)
+
+    @_builtins.property
+    @pulumi.getter(name="customConfig")
+    def custom_config(self) -> pulumi.Input[Optional['CmVersionConfigurationCustomConfigArgs']]:
+        """
+        Render type.
+        """
+        return pulumi.get(self, "custom_config")
+
+    @custom_config.setter
+    def custom_config(self, value: pulumi.Input[Optional['CmVersionConfigurationCustomConfigArgs']]):
+        pulumi.set(self, "custom_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultValue")
+    def default_value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+        """
+        return pulumi.get(self, "default_value")
+
+    @default_value.setter
+    def default_value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "default_value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Key description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Display name for configuration type.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def hidden(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Hide values.
+        """
+        return pulumi.get(self, "hidden")
+
+    @hidden.setter
+    def hidden(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "hidden", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Configuration key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]:
+        """
+        List of options of type.
+        """
+        return pulumi.get(self, "options")
+
+    @options.setter
+    def options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]):
+        pulumi.set(self, "options", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def required(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Is key required to install.
+        """
+        return pulumi.get(self, "required")
+
+    @required.setter
+    def required(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "required", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Value type (string, boolean, int).
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="typeMetadata")
+    def type_metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The original type, as found in the source being onboarded.
+        """
+        return pulumi.get(self, "type_metadata")
+
+    @type_metadata.setter
+    def type_metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type_metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueConstraint")
+    @_utilities.deprecated("""This field is deprecated use value_constraints instead.""")
+    def value_constraint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Deprecated - Constraint associated with value, e.g., for string type - regx:[a-z].
+        """
+        return pulumi.get(self, "value_constraint")
+
+    @value_constraint.setter
+    def value_constraint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value_constraint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueConstraints")
+    def value_constraints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationValueConstraintArgs']]]]:
+        """
+        Validation rules for this input value.
+        """
+        return pulumi.get(self, "value_constraints")
+
+    @value_constraints.setter
+    def value_constraints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationValueConstraintArgs']]]]):
+        pulumi.set(self, "value_constraints", value)
+
+
+class CmVersionConfigurationCustomConfigArgsDict(TypedDict):
+    associations: NotRequired[pulumi.Input[Optional['CmVersionConfigurationCustomConfigAssociationsArgsDict']]]
+    """
+    List of parameters that are associated with this configuration.
+    """
+    config_constraints: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Map of constraint parameters that will be passed to the custom widget.
+    """
+    grouping: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+    """
+    grouping_index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Determines the order that this configuration item shows in that particular grouping.
+    """
+    original_grouping: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the widget type.
+    """
+
+@pulumi.input_type
+class CmVersionConfigurationCustomConfigArgs:
+    def __init__(__self__, *,
+                 associations: pulumi.Input[Optional['CmVersionConfigurationCustomConfigAssociationsArgs']] = None,
+                 config_constraints: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 grouping: pulumi.Input[Optional[_builtins.str]] = None,
+                 grouping_index: pulumi.Input[Optional[_builtins.int]] = None,
+                 original_grouping: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input['CmVersionConfigurationCustomConfigAssociationsArgs'] associations: List of parameters that are associated with this configuration.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] config_constraints: Map of constraint parameters that will be passed to the custom widget.
+        :param pulumi.Input[_builtins.str] grouping: Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+        :param pulumi.Input[_builtins.int] grouping_index: Determines the order that this configuration item shows in that particular grouping.
+        :param pulumi.Input[_builtins.str] original_grouping: Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+        :param pulumi.Input[_builtins.str] type: ID of the widget type.
+        """
+        if associations is not None:
+            pulumi.set(__self__, "associations", associations)
+        if config_constraints is not None:
+            pulumi.set(__self__, "config_constraints", config_constraints)
+        if grouping is not None:
+            pulumi.set(__self__, "grouping", grouping)
+        if grouping_index is not None:
+            pulumi.set(__self__, "grouping_index", grouping_index)
+        if original_grouping is not None:
+            pulumi.set(__self__, "original_grouping", original_grouping)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def associations(self) -> pulumi.Input[Optional['CmVersionConfigurationCustomConfigAssociationsArgs']]:
+        """
+        List of parameters that are associated with this configuration.
+        """
+        return pulumi.get(self, "associations")
+
+    @associations.setter
+    def associations(self, value: pulumi.Input[Optional['CmVersionConfigurationCustomConfigAssociationsArgs']]):
+        pulumi.set(self, "associations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configConstraints")
+    def config_constraints(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Map of constraint parameters that will be passed to the custom widget.
+        """
+        return pulumi.get(self, "config_constraints")
+
+    @config_constraints.setter
+    def config_constraints(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "config_constraints", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def grouping(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+        """
+        return pulumi.get(self, "grouping")
+
+    @grouping.setter
+    def grouping(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "grouping", value)
+
+    @_builtins.property
+    @pulumi.getter(name="groupingIndex")
+    def grouping_index(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Determines the order that this configuration item shows in that particular grouping.
+        """
+        return pulumi.get(self, "grouping_index")
+
+    @grouping_index.setter
+    def grouping_index(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "grouping_index", value)
+
+    @_builtins.property
+    @pulumi.getter(name="originalGrouping")
+    def original_grouping(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+        """
+        return pulumi.get(self, "original_grouping")
+
+    @original_grouping.setter
+    def original_grouping(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "original_grouping", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the widget type.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class CmVersionConfigurationCustomConfigAssociationsArgsDict(TypedDict):
+    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationCustomConfigAssociationsParameterArgsDict']]]]]
+    """
+    Parameters for this association.
+    """
+
+@pulumi.input_type
+class CmVersionConfigurationCustomConfigAssociationsArgs:
+    def __init__(__self__, *,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationCustomConfigAssociationsParameterArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionConfigurationCustomConfigAssociationsParameterArgs']]] parameters: Parameters for this association.
+        """
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @_builtins.property
+    @pulumi.getter
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationCustomConfigAssociationsParameterArgs']]]]:
+        """
+        Parameters for this association.
+        """
+        return pulumi.get(self, "parameters")
+
+    @parameters.setter
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionConfigurationCustomConfigAssociationsParameterArgs']]]]):
+        pulumi.set(self, "parameters", value)
+
+
+class CmVersionConfigurationCustomConfigAssociationsParameterArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of this parameter.
+    """
+    options_refresh: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Refresh options.
+    """
+
+@pulumi.input_type
+class CmVersionConfigurationCustomConfigAssociationsParameterArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 options_refresh: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of this parameter.
+        :param pulumi.Input[_builtins.bool] options_refresh: Refresh options.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if options_refresh is not None:
+            pulumi.set(__self__, "options_refresh", options_refresh)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of this parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="optionsRefresh")
+    def options_refresh(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Refresh options.
+        """
+        return pulumi.get(self, "options_refresh")
+
+    @options_refresh.setter
+    def options_refresh(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "options_refresh", value)
+
+
+class CmVersionConfigurationValueConstraintArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The value to display if the inptu value does not match the specified constraint.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of constraint.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Contstraint value.  For type regex, this is a regular expression in Javascript notation.
+    """
+
+@pulumi.input_type
+class CmVersionConfigurationValueConstraintArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: The value to display if the inptu value does not match the specified constraint.
+        :param pulumi.Input[_builtins.str] type: Type of constraint.
+        :param pulumi.Input[_builtins.str] value: Contstraint value.  For type regex, this is a regular expression in Javascript notation.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The value to display if the inptu value does not match the specified constraint.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of constraint.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Contstraint value.  For type regex, this is a regular expression in Javascript notation.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class CmVersionDeprecatePendingArgsDict(TypedDict):
+    deprecate_date: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date of deprecation.
+    """
+    deprecate_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Deprecation state.
+    """
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class CmVersionDeprecatePendingArgs:
+    def __init__(__self__, *,
+                 deprecate_date: pulumi.Input[Optional[_builtins.str]] = None,
+                 deprecate_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 description: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] deprecate_date: Date of deprecation.
+        :param pulumi.Input[_builtins.str] deprecate_state: Deprecation state.
+        """
+        if deprecate_date is not None:
+            pulumi.set(__self__, "deprecate_date", deprecate_date)
+        if deprecate_state is not None:
+            pulumi.set(__self__, "deprecate_state", deprecate_state)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+
+    @_builtins.property
+    @pulumi.getter(name="deprecateDate")
+    def deprecate_date(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date of deprecation.
+        """
+        return pulumi.get(self, "deprecate_date")
+
+    @deprecate_date.setter
+    def deprecate_date(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deprecate_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deprecateState")
+    def deprecate_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Deprecation state.
+        """
+        return pulumi.get(self, "deprecate_state")
+
+    @deprecate_state.setter
+    def deprecate_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "deprecate_state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+
+class CmVersionEntitlementArgsDict(TypedDict):
+    image_repo_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Image repository name.
+    """
+    part_numbers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+    """
+    product_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Product ID.
+    """
+    provider_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Provider ID.
+    """
+    provider_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Provider name.
+    """
+
+@pulumi.input_type
+class CmVersionEntitlementArgs:
+    def __init__(__self__, *,
+                 image_repo_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 part_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 product_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] image_repo_name: Image repository name.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] part_numbers: list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+        :param pulumi.Input[_builtins.str] product_id: Product ID.
+        :param pulumi.Input[_builtins.str] provider_id: Provider ID.
+        :param pulumi.Input[_builtins.str] provider_name: Provider name.
+        """
+        if image_repo_name is not None:
+            pulumi.set(__self__, "image_repo_name", image_repo_name)
+        if part_numbers is not None:
+            pulumi.set(__self__, "part_numbers", part_numbers)
+        if product_id is not None:
+            pulumi.set(__self__, "product_id", product_id)
+        if provider_id is not None:
+            pulumi.set(__self__, "provider_id", provider_id)
+        if provider_name is not None:
+            pulumi.set(__self__, "provider_name", provider_name)
+
+    @_builtins.property
+    @pulumi.getter(name="imageRepoName")
+    def image_repo_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Image repository name.
+        """
+        return pulumi.get(self, "image_repo_name")
+
+    @image_repo_name.setter
+    def image_repo_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "image_repo_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="partNumbers")
+    def part_numbers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+        """
+        return pulumi.get(self, "part_numbers")
+
+    @part_numbers.setter
+    def part_numbers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "part_numbers", value)
+
+    @_builtins.property
+    @pulumi.getter(name="productId")
+    def product_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Product ID.
+        """
+        return pulumi.get(self, "product_id")
+
+    @product_id.setter
+    def product_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "product_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="providerId")
+    def provider_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Provider ID.
+        """
+        return pulumi.get(self, "provider_id")
+
+    @provider_id.setter
+    def provider_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "provider_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="providerName")
+    def provider_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Provider name.
+        """
+        return pulumi.get(self, "provider_name")
+
+    @provider_name.setter
+    def provider_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "provider_name", value)
+
+
+class CmVersionFlavorArgsDict(TypedDict):
+    index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Order that this flavor should appear when listed for a single version.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Label for this flavor.
+    """
+    label_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic name for this flavor.
+    """
+
+@pulumi.input_type
+class CmVersionFlavorArgs:
+    def __init__(__self__, *,
+                 index: pulumi.Input[Optional[_builtins.int]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 label_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] index: Order that this flavor should appear when listed for a single version.
+        :param pulumi.Input[_builtins.str] label: Label for this flavor.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] label_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] name: Programmatic name for this flavor.
+        """
+        if index is not None:
+            pulumi.set(__self__, "index", index)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if label_i18n is not None:
+            pulumi.set(__self__, "label_i18n", label_i18n)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def index(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Order that this flavor should appear when listed for a single version.
+        """
+        return pulumi.get(self, "index")
+
+    @index.setter
+    def index(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "index", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Label for this flavor.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter(name="labelI18n")
+    def label_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "label_i18n")
+
+    @label_i18n.setter
+    def label_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "label_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic name for this flavor.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmVersionIamPermissionArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionIamPermissionResourceArgsDict']]]]]
+    """
+    Resources for this permission.
+    """
+    role_crns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Role CRNs for this permission.
+    """
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Service name.
+    """
+
+@pulumi.input_type
+class CmVersionIamPermissionArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionIamPermissionResourceArgs']]]] = None,
+                 role_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionIamPermissionResourceArgs']]] resources: Resources for this permission.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] role_crns: Role CRNs for this permission.
+        :param pulumi.Input[_builtins.str] service_name: Service name.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if role_crns is not None:
+            pulumi.set(__self__, "role_crns", role_crns)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionIamPermissionResourceArgs']]]]:
+        """
+        Resources for this permission.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionIamPermissionResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="roleCrns")
+    def role_crns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Role CRNs for this permission.
+        """
+        return pulumi.get(self, "role_crns")
+
+    @role_crns.setter
+    def role_crns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "role_crns", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Service name.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "service_name", value)
+
+
+class CmVersionIamPermissionResourceArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource description.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+    role_crns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Role CRNs for this permission.
+    """
+
+@pulumi.input_type
+class CmVersionIamPermissionResourceArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 role_crns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Resource description.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] role_crns: Role CRNs for this permission.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if role_crns is not None:
+            pulumi.set(__self__, "role_crns", role_crns)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="roleCrns")
+    def role_crns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Role CRNs for this permission.
+        """
+        return pulumi.get(self, "role_crns")
+
+    @role_crns.setter
+    def role_crns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "role_crns", value)
+
+
+class CmVersionImportMetadataArgsDict(TypedDict):
+    file: NotRequired[pulumi.Input[Optional['CmVersionImportMetadataFileArgsDict']]]
+    """
+    Details for the stored image file. Required for virtual server image for VPC.
+    """
+    images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionImportMetadataImageArgsDict']]]]]
+    """
+    Image operating system. Required for virtual server image for VPC.
+    """
+    minimum_provisioned_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+    """
+    operating_system: NotRequired[pulumi.Input[Optional['CmVersionImportMetadataOperatingSystemArgsDict']]]
+    """
+    Operating system included in this image. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionImportMetadataArgs:
+    def __init__(__self__, *,
+                 file: pulumi.Input[Optional['CmVersionImportMetadataFileArgs']] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionImportMetadataImageArgs']]]] = None,
+                 minimum_provisioned_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 operating_system: pulumi.Input[Optional['CmVersionImportMetadataOperatingSystemArgs']] = None):
+        """
+        :param pulumi.Input['CmVersionImportMetadataFileArgs'] file: Details for the stored image file. Required for virtual server image for VPC.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionImportMetadataImageArgs']]] images: Image operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.int] minimum_provisioned_size: Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        :param pulumi.Input['CmVersionImportMetadataOperatingSystemArgs'] operating_system: Operating system included in this image. Required for virtual server image for VPC.
+        """
+        if file is not None:
+            pulumi.set(__self__, "file", file)
+        if images is not None:
+            pulumi.set(__self__, "images", images)
+        if minimum_provisioned_size is not None:
+            pulumi.set(__self__, "minimum_provisioned_size", minimum_provisioned_size)
+        if operating_system is not None:
+            pulumi.set(__self__, "operating_system", operating_system)
+
+    @_builtins.property
+    @pulumi.getter
+    def file(self) -> pulumi.Input[Optional['CmVersionImportMetadataFileArgs']]:
+        """
+        Details for the stored image file. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "file")
+
+    @file.setter
+    def file(self, value: pulumi.Input[Optional['CmVersionImportMetadataFileArgs']]):
+        pulumi.set(self, "file", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionImportMetadataImageArgs']]]]:
+        """
+        Image operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "images")
+
+    @images.setter
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionImportMetadataImageArgs']]]]):
+        pulumi.set(self, "images", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minimumProvisionedSize")
+    def minimum_provisioned_size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "minimum_provisioned_size")
+
+    @minimum_provisioned_size.setter
+    def minimum_provisioned_size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "minimum_provisioned_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operatingSystem")
+    def operating_system(self) -> pulumi.Input[Optional['CmVersionImportMetadataOperatingSystemArgs']]:
+        """
+        Operating system included in this image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "operating_system")
+
+    @operating_system.setter
+    def operating_system(self, value: pulumi.Input[Optional['CmVersionImportMetadataOperatingSystemArgs']]):
+        pulumi.set(self, "operating_system", value)
+
+
+class CmVersionImportMetadataFileArgsDict(TypedDict):
+    size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionImportMetadataFileArgs:
+    def __init__(__self__, *,
+                 size: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] size: Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "size", value)
+
+
+class CmVersionImportMetadataImageArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic ID of virtual server image. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic name of virtual server image. Required for virtual server image for VPC.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Region the virtual server image is available in. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionImportMetadataImageArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Programmatic name of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] region: Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic name of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+
+class CmVersionImportMetadataOperatingSystemArgsDict(TypedDict):
+    architecture: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Operating system architecture. Required for virtual server image for VPC.
+    """
+    dedicated_host_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+    """
+    family: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Software family for this operating system. Required for virtual server image for VPC.
+    """
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL for this operating system. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Globally unique name for this operating system Required for virtual server image for VPC.
+    """
+    vendor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Vendor of the operating system. Required for virtual server image for VPC.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Major release version of this operating system. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionImportMetadataOperatingSystemArgs:
+    def __init__(__self__, *,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 family: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] architecture: Operating system architecture. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.bool] dedicated_host_only: Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] display_name: Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] family: Software family for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] href: URL for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Globally unique name for this operating system Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] vendor: Vendor of the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] version: Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if dedicated_host_only is not None:
+            pulumi.set(__self__, "dedicated_host_only", dedicated_host_only)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if family is not None:
+            pulumi.set(__self__, "family", family)
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if vendor is not None:
+            pulumi.set(__self__, "vendor", vendor)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Operating system architecture. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "architecture", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dedicatedHostOnly")
+    def dedicated_host_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "dedicated_host_only")
+
+    @dedicated_host_only.setter
+    def dedicated_host_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "dedicated_host_only", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def family(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Software family for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "family")
+
+    @family.setter
+    def family(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "family", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Globally unique name for this operating system Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vendor(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Vendor of the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "vendor")
+
+    @vendor.setter
+    def vendor(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vendor", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmVersionInstallArgsDict(TypedDict):
+    delete_script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that if run will remove the installed version.
+    """
+    instructions: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+    """
+    instructions_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    scope: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional value indicating if this script is scoped to a namespace or the entire cluster.
+    """
+    script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that needs to be run post any pre-condition script.
+    """
+    script_permission: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional iam permissions that are required on the target cluster to run this script.
+    """
+
+@pulumi.input_type
+class CmVersionInstallArgs:
+    def __init__(__self__, *,
+                 delete_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_permission: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] delete_script: Optional script that if run will remove the installed version.
+        :param pulumi.Input[_builtins.str] instructions: Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] instructions_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] scope: Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        :param pulumi.Input[_builtins.str] script: Optional script that needs to be run post any pre-condition script.
+        :param pulumi.Input[_builtins.str] script_permission: Optional iam permissions that are required on the target cluster to run this script.
+        """
+        if delete_script is not None:
+            pulumi.set(__self__, "delete_script", delete_script)
+        if instructions is not None:
+            pulumi.set(__self__, "instructions", instructions)
+        if instructions_i18n is not None:
+            pulumi.set(__self__, "instructions_i18n", instructions_i18n)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if script is not None:
+            pulumi.set(__self__, "script", script)
+        if script_permission is not None:
+            pulumi.set(__self__, "script_permission", script_permission)
+
+    @_builtins.property
+    @pulumi.getter(name="deleteScript")
+    def delete_script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that if run will remove the installed version.
+        """
+        return pulumi.get(self, "delete_script")
+
+    @delete_script.setter
+    def delete_script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "delete_script", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def instructions(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        """
+        return pulumi.get(self, "instructions")
+
+    @instructions.setter
+    def instructions(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instructions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instructionsI18n")
+    def instructions_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "instructions_i18n")
+
+    @instructions_i18n.setter
+    def instructions_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "instructions_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that needs to be run post any pre-condition script.
+        """
+        return pulumi.get(self, "script")
+
+    @script.setter
+    def script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scriptPermission")
+    def script_permission(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional iam permissions that are required on the target cluster to run this script.
+        """
+        return pulumi.get(self, "script_permission")
+
+    @script_permission.setter
+    def script_permission(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script_permission", value)
+
+
+class CmVersionLicenseArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    License description.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    License ID.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    license name.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    type of license e.g., Apache xxx.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL for the license text.
+    """
+
+@pulumi.input_type
+class CmVersionLicenseArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: License description.
+        :param pulumi.Input[_builtins.str] id: License ID.
+        :param pulumi.Input[_builtins.str] name: license name.
+        :param pulumi.Input[_builtins.str] type: type of license e.g., Apache xxx.
+        :param pulumi.Input[_builtins.str] url: URL for the license text.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        License description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        License ID.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        license name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        type of license e.g., Apache xxx.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL for the license text.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class CmVersionMetadataArgsDict(TypedDict):
+    end_deploy_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The time validation ended.
+    """
+    est_deploy_time: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    The estimated time validation takes.
+    """
+    example_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Working directory of source files.
+    """
+    modules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleArgsDict']]]]]
+    """
+    Terraform modules.
+    """
+    source_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version source URL.
+    """
+    start_deploy_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The time validation started.
+    """
+    terraform_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Terraform version.
+    """
+    usage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Usage text for the version.
+    """
+    usage_template: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Usage text for the version.
+    """
+    validated_terraform_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Validated terraform version.
+    """
+    version_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version name.
+    """
+    vsi_vpcs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcArgsDict']]]]]
+    """
+    VSI VPC version information
+    """
+    working_directory: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Working directory of source files.
+    """
+
+@pulumi.input_type
+class CmVersionMetadataArgs:
+    def __init__(__self__, *,
+                 end_deploy_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 est_deploy_time: pulumi.Input[Optional[_builtins.float]] = None,
+                 example_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 modules: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleArgs']]]] = None,
+                 source_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 start_deploy_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 terraform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage: pulumi.Input[Optional[_builtins.str]] = None,
+                 usage_template: pulumi.Input[Optional[_builtins.str]] = None,
+                 validated_terraform_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vsi_vpcs: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcArgs']]]] = None,
+                 working_directory: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] end_deploy_time: The time validation ended.
+        :param pulumi.Input[_builtins.float] est_deploy_time: The estimated time validation takes.
+        :param pulumi.Input[_builtins.str] example_name: Working directory of source files.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionMetadataModuleArgs']]] modules: Terraform modules.
+        :param pulumi.Input[_builtins.str] source_url: Version source URL.
+        :param pulumi.Input[_builtins.str] start_deploy_time: The time validation started.
+        :param pulumi.Input[_builtins.str] terraform_version: Terraform version.
+        :param pulumi.Input[_builtins.str] usage: Usage text for the version.
+        :param pulumi.Input[_builtins.str] usage_template: Usage text for the version.
+        :param pulumi.Input[_builtins.str] validated_terraform_version: Validated terraform version.
+        :param pulumi.Input[_builtins.str] version_name: Version name.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionMetadataVsiVpcArgs']]] vsi_vpcs: VSI VPC version information
+        :param pulumi.Input[_builtins.str] working_directory: Working directory of source files.
+        """
+        if end_deploy_time is not None:
+            pulumi.set(__self__, "end_deploy_time", end_deploy_time)
+        if est_deploy_time is not None:
+            pulumi.set(__self__, "est_deploy_time", est_deploy_time)
+        if example_name is not None:
+            pulumi.set(__self__, "example_name", example_name)
+        if modules is not None:
+            pulumi.set(__self__, "modules", modules)
+        if source_url is not None:
+            pulumi.set(__self__, "source_url", source_url)
+        if start_deploy_time is not None:
+            pulumi.set(__self__, "start_deploy_time", start_deploy_time)
+        if terraform_version is not None:
+            pulumi.set(__self__, "terraform_version", terraform_version)
+        if usage is not None:
+            pulumi.set(__self__, "usage", usage)
+        if usage_template is not None:
+            pulumi.set(__self__, "usage_template", usage_template)
+        if validated_terraform_version is not None:
+            pulumi.set(__self__, "validated_terraform_version", validated_terraform_version)
+        if version_name is not None:
+            pulumi.set(__self__, "version_name", version_name)
+        if vsi_vpcs is not None:
+            pulumi.set(__self__, "vsi_vpcs", vsi_vpcs)
+        if working_directory is not None:
+            pulumi.set(__self__, "working_directory", working_directory)
+
+    @_builtins.property
+    @pulumi.getter(name="endDeployTime")
+    def end_deploy_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time validation ended.
+        """
+        return pulumi.get(self, "end_deploy_time")
+
+    @end_deploy_time.setter
+    def end_deploy_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "end_deploy_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="estDeployTime")
+    def est_deploy_time(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        The estimated time validation takes.
+        """
+        return pulumi.get(self, "est_deploy_time")
+
+    @est_deploy_time.setter
+    def est_deploy_time(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "est_deploy_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="exampleName")
+    def example_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Working directory of source files.
+        """
+        return pulumi.get(self, "example_name")
+
+    @example_name.setter
+    def example_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "example_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def modules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleArgs']]]]:
+        """
+        Terraform modules.
+        """
+        return pulumi.get(self, "modules")
+
+    @modules.setter
+    def modules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleArgs']]]]):
+        pulumi.set(self, "modules", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceUrl")
+    def source_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version source URL.
+        """
+        return pulumi.get(self, "source_url")
+
+    @source_url.setter
+    def source_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="startDeployTime")
+    def start_deploy_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The time validation started.
+        """
+        return pulumi.get(self, "start_deploy_time")
+
+    @start_deploy_time.setter
+    def start_deploy_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "start_deploy_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="terraformVersion")
+    def terraform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Terraform version.
+        """
+        return pulumi.get(self, "terraform_version")
+
+    @terraform_version.setter
+    def terraform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "terraform_version", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def usage(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Usage text for the version.
+        """
+        return pulumi.get(self, "usage")
+
+    @usage.setter
+    def usage(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "usage", value)
+
+    @_builtins.property
+    @pulumi.getter(name="usageTemplate")
+    def usage_template(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Usage text for the version.
+        """
+        return pulumi.get(self, "usage_template")
+
+    @usage_template.setter
+    def usage_template(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "usage_template", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validatedTerraformVersion")
+    def validated_terraform_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Validated terraform version.
+        """
+        return pulumi.get(self, "validated_terraform_version")
+
+    @validated_terraform_version.setter
+    def validated_terraform_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "validated_terraform_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionName")
+    def version_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version name.
+        """
+        return pulumi.get(self, "version_name")
+
+    @version_name.setter
+    def version_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vsiVpcs")
+    def vsi_vpcs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcArgs']]]]:
+        """
+        VSI VPC version information
+        """
+        return pulumi.get(self, "vsi_vpcs")
+
+    @vsi_vpcs.setter
+    def vsi_vpcs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcArgs']]]]):
+        pulumi.set(self, "vsi_vpcs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="workingDirectory")
+    def working_directory(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Working directory of source files.
+        """
+        return pulumi.get(self, "working_directory")
+
+    @working_directory.setter
+    def working_directory(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "working_directory", value)
+
+
+class CmVersionMetadataModuleArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the module.
+    """
+    offering_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleOfferingReferenceArgsDict']]]]]
+    """
+    Terraform modules.
+    """
+    source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Source of the module.
+    """
+
+@pulumi.input_type
+class CmVersionMetadataModuleArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 offering_references: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleOfferingReferenceArgs']]]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of the module.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionMetadataModuleOfferingReferenceArgs']]] offering_references: Terraform modules.
+        :param pulumi.Input[_builtins.str] source: Source of the module.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if offering_references is not None:
+            pulumi.set(__self__, "offering_references", offering_references)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the module.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="offeringReferences")
+    def offering_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleOfferingReferenceArgs']]]]:
+        """
+        Terraform modules.
+        """
+        return pulumi.get(self, "offering_references")
+
+    @offering_references.setter
+    def offering_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataModuleOfferingReferenceArgs']]]]):
+        pulumi.set(self, "offering_references", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Source of the module.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+
+class CmVersionMetadataModuleOfferingReferenceArgsDict(TypedDict):
+    catalog_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Catalog ID of the module reference.
+    """
+    flavor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Flavor of the module.
+    """
+    flavors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Flavors of the module.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the offering module.
+    """
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Kind of the offeringmodule.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Metadata of the module.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the offering module.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Version of the offering module.
+    """
+
+@pulumi.input_type
+class CmVersionMetadataModuleOfferingReferenceArgs:
+    def __init__(__self__, *,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavor: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] catalog_id: Catalog ID of the module reference.
+        :param pulumi.Input[_builtins.str] flavor: Flavor of the module.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] flavors: Flavors of the module.
+        :param pulumi.Input[_builtins.str] id: ID of the offering module.
+        :param pulumi.Input[_builtins.str] kind: Kind of the offeringmodule.
+        :param pulumi.Input[_builtins.str] metadata: Metadata of the module.
+        :param pulumi.Input[_builtins.str] name: Name of the offering module.
+        :param pulumi.Input[_builtins.str] version: Version of the offering module.
+        """
+        if catalog_id is not None:
+            pulumi.set(__self__, "catalog_id", catalog_id)
+        if flavor is not None:
+            pulumi.set(__self__, "flavor", flavor)
+        if flavors is not None:
+            pulumi.set(__self__, "flavors", flavors)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogId")
+    def catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Catalog ID of the module reference.
+        """
+        return pulumi.get(self, "catalog_id")
+
+    @catalog_id.setter
+    def catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "catalog_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def flavor(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Flavor of the module.
+        """
+        return pulumi.get(self, "flavor")
+
+    @flavor.setter
+    def flavor(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "flavor", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def flavors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Flavors of the module.
+        """
+        return pulumi.get(self, "flavors")
+
+    @flavors.setter
+    def flavors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "flavors", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the offering module.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Kind of the offeringmodule.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Metadata of the module.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the offering module.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Version of the offering module.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmVersionMetadataVsiVpcArgsDict(TypedDict):
+    files: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcFileArgsDict']]]]]
+    """
+    Details for the stored image file. Required for virtual server image for VPC.
+    """
+    images: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcImageArgsDict']]]]]
+    """
+    Image operating system. Required for virtual server image for VPC.
+    """
+    minimum_provisioned_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+    """
+    operating_systems: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcOperatingSystemArgsDict']]]]]
+    """
+    Operating system included in this image. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionMetadataVsiVpcArgs:
+    def __init__(__self__, *,
+                 files: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcFileArgs']]]] = None,
+                 images: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcImageArgs']]]] = None,
+                 minimum_provisioned_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 operating_systems: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcOperatingSystemArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionMetadataVsiVpcFileArgs']]] files: Details for the stored image file. Required for virtual server image for VPC.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionMetadataVsiVpcImageArgs']]] images: Image operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.int] minimum_provisioned_size: Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionMetadataVsiVpcOperatingSystemArgs']]] operating_systems: Operating system included in this image. Required for virtual server image for VPC.
+        """
+        if files is not None:
+            pulumi.set(__self__, "files", files)
+        if images is not None:
+            pulumi.set(__self__, "images", images)
+        if minimum_provisioned_size is not None:
+            pulumi.set(__self__, "minimum_provisioned_size", minimum_provisioned_size)
+        if operating_systems is not None:
+            pulumi.set(__self__, "operating_systems", operating_systems)
+
+    @_builtins.property
+    @pulumi.getter
+    def files(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcFileArgs']]]]:
+        """
+        Details for the stored image file. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "files")
+
+    @files.setter
+    def files(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcFileArgs']]]]):
+        pulumi.set(self, "files", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def images(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcImageArgs']]]]:
+        """
+        Image operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "images")
+
+    @images.setter
+    def images(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcImageArgs']]]]):
+        pulumi.set(self, "images", value)
+
+    @_builtins.property
+    @pulumi.getter(name="minimumProvisionedSize")
+    def minimum_provisioned_size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "minimum_provisioned_size")
+
+    @minimum_provisioned_size.setter
+    def minimum_provisioned_size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "minimum_provisioned_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operatingSystems")
+    def operating_systems(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcOperatingSystemArgs']]]]:
+        """
+        Operating system included in this image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "operating_systems")
+
+    @operating_systems.setter
+    def operating_systems(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionMetadataVsiVpcOperatingSystemArgs']]]]):
+        pulumi.set(self, "operating_systems", value)
+
+
+class CmVersionMetadataVsiVpcFileArgsDict(TypedDict):
+    size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionMetadataVsiVpcFileArgs:
+    def __init__(__self__, *,
+                 size: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] size: Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "size", value)
+
+
+class CmVersionMetadataVsiVpcImageArgsDict(TypedDict):
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic ID of virtual server image. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Programmatic name of virtual server image. Required for virtual server image for VPC.
+    """
+    region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Region the virtual server image is available in. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionMetadataVsiVpcImageArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 region: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Programmatic name of virtual server image. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] region: Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic ID of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Programmatic name of virtual server image. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Region the virtual server image is available in. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "region", value)
+
+
+class CmVersionMetadataVsiVpcOperatingSystemArgsDict(TypedDict):
+    architecture: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Operating system architecture. Required for virtual server image for VPC.
+    """
+    dedicated_host_only: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+    """
+    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+    """
+    family: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Software family for this operating system. Required for virtual server image for VPC.
+    """
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL for this operating system. Required for virtual server image for VPC.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Globally unique name for this operating system Required for virtual server image for VPC.
+    """
+    vendor: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Vendor of the operating system. Required for virtual server image for VPC.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Major release version of this operating system. Required for virtual server image for VPC.
+    """
+
+@pulumi.input_type
+class CmVersionMetadataVsiVpcOperatingSystemArgs:
+    def __init__(__self__, *,
+                 architecture: pulumi.Input[Optional[_builtins.str]] = None,
+                 dedicated_host_only: pulumi.Input[Optional[_builtins.bool]] = None,
+                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 family: pulumi.Input[Optional[_builtins.str]] = None,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 vendor: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] architecture: Operating system architecture. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.bool] dedicated_host_only: Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] display_name: Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] family: Software family for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] href: URL for this operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] name: Globally unique name for this operating system Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] vendor: Vendor of the operating system. Required for virtual server image for VPC.
+        :param pulumi.Input[_builtins.str] version: Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        if architecture is not None:
+            pulumi.set(__self__, "architecture", architecture)
+        if dedicated_host_only is not None:
+            pulumi.set(__self__, "dedicated_host_only", dedicated_host_only)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if family is not None:
+            pulumi.set(__self__, "family", family)
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if vendor is not None:
+            pulumi.set(__self__, "vendor", vendor)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def architecture(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Operating system architecture. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "architecture")
+
+    @architecture.setter
+    def architecture(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "architecture", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dedicatedHostOnly")
+    def dedicated_host_only(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "dedicated_host_only")
+
+    @dedicated_host_only.setter
+    def dedicated_host_only(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "dedicated_host_only", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def family(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Software family for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "family")
+
+    @family.setter
+    def family(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "family", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL for this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Globally unique name for this operating system Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vendor(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Vendor of the operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "vendor")
+
+    @vendor.setter
+    def vendor(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vendor", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Major release version of this operating system. Required for virtual server image for VPC.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmVersionOutputArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Output description.
+    """
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Output key.
+    """
+
+@pulumi.input_type
+class CmVersionOutputArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 key: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Output description.
+        :param pulumi.Input[_builtins.str] key: Output key.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Output description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Output key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+
+class CmVersionPreInstallArgsDict(TypedDict):
+    delete_script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that if run will remove the installed version.
+    """
+    instructions: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+    """
+    instructions_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    scope: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional value indicating if this script is scoped to a namespace or the entire cluster.
+    """
+    script: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional script that needs to be run post any pre-condition script.
+    """
+    script_permission: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional iam permissions that are required on the target cluster to run this script.
+    """
+
+@pulumi.input_type
+class CmVersionPreInstallArgs:
+    def __init__(__self__, *,
+                 delete_script: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions: pulumi.Input[Optional[_builtins.str]] = None,
+                 instructions_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 scope: pulumi.Input[Optional[_builtins.str]] = None,
+                 script: pulumi.Input[Optional[_builtins.str]] = None,
+                 script_permission: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] delete_script: Optional script that if run will remove the installed version.
+        :param pulumi.Input[_builtins.str] instructions: Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] instructions_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] scope: Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        :param pulumi.Input[_builtins.str] script: Optional script that needs to be run post any pre-condition script.
+        :param pulumi.Input[_builtins.str] script_permission: Optional iam permissions that are required on the target cluster to run this script.
+        """
+        if delete_script is not None:
+            pulumi.set(__self__, "delete_script", delete_script)
+        if instructions is not None:
+            pulumi.set(__self__, "instructions", instructions)
+        if instructions_i18n is not None:
+            pulumi.set(__self__, "instructions_i18n", instructions_i18n)
+        if scope is not None:
+            pulumi.set(__self__, "scope", scope)
+        if script is not None:
+            pulumi.set(__self__, "script", script)
+        if script_permission is not None:
+            pulumi.set(__self__, "script_permission", script_permission)
+
+    @_builtins.property
+    @pulumi.getter(name="deleteScript")
+    def delete_script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that if run will remove the installed version.
+        """
+        return pulumi.get(self, "delete_script")
+
+    @delete_script.setter
+    def delete_script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "delete_script", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def instructions(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+        """
+        return pulumi.get(self, "instructions")
+
+    @instructions.setter
+    def instructions(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instructions", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instructionsI18n")
+    def instructions_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "instructions_i18n")
+
+    @instructions_i18n.setter
+    def instructions_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "instructions_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def scope(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional value indicating if this script is scoped to a namespace or the entire cluster.
+        """
+        return pulumi.get(self, "scope")
+
+    @scope.setter
+    def scope(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "scope", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def script(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional script that needs to be run post any pre-condition script.
+        """
+        return pulumi.get(self, "script")
+
+    @script.setter
+    def script(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scriptPermission")
+    def script_permission(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional iam permissions that are required on the target cluster to run this script.
+        """
+        return pulumi.get(self, "script_permission")
+
+    @script_permission.setter
+    def script_permission(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "script_permission", value)
+
+
+class CmVersionRequiredResourceArgsDict(TypedDict):
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of requirement.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+    """
+
+@pulumi.input_type
+class CmVersionRequiredResourceArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] type: Type of requirement.
+        :param pulumi.Input[_builtins.str] value: mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of requirement.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class CmVersionSolutionInfoArgsDict(TypedDict):
+    architecture_diagrams: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoArchitectureDiagramArgsDict']]]]]
+    """
+    Architecture diagrams for this solution.
+    """
+    cost_estimates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateArgsDict']]]]]
+    """
+    Cost estimate definition.
+    """
+    dependencies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoDependencyArgsDict']]]]]
+    """
+    Dependencies for this solution.
+    """
+    features: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoFeatureArgsDict']]]]]
+    """
+    Features - titles only.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoArgs:
+    def __init__(__self__, *,
+                 architecture_diagrams: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoArchitectureDiagramArgs']]]] = None,
+                 cost_estimates: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateArgs']]]] = None,
+                 dependencies: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoDependencyArgs']]]] = None,
+                 features: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoFeatureArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoArchitectureDiagramArgs']]] architecture_diagrams: Architecture diagrams for this solution.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateArgs']]] cost_estimates: Cost estimate definition.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoDependencyArgs']]] dependencies: Dependencies for this solution.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoFeatureArgs']]] features: Features - titles only.
+        """
+        if architecture_diagrams is not None:
+            pulumi.set(__self__, "architecture_diagrams", architecture_diagrams)
+        if cost_estimates is not None:
+            pulumi.set(__self__, "cost_estimates", cost_estimates)
+        if dependencies is not None:
+            pulumi.set(__self__, "dependencies", dependencies)
+        if features is not None:
+            pulumi.set(__self__, "features", features)
+
+    @_builtins.property
+    @pulumi.getter(name="architectureDiagrams")
+    def architecture_diagrams(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoArchitectureDiagramArgs']]]]:
+        """
+        Architecture diagrams for this solution.
+        """
+        return pulumi.get(self, "architecture_diagrams")
+
+    @architecture_diagrams.setter
+    def architecture_diagrams(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoArchitectureDiagramArgs']]]]):
+        pulumi.set(self, "architecture_diagrams", value)
+
+    @_builtins.property
+    @pulumi.getter(name="costEstimates")
+    def cost_estimates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateArgs']]]]:
+        """
+        Cost estimate definition.
+        """
+        return pulumi.get(self, "cost_estimates")
+
+    @cost_estimates.setter
+    def cost_estimates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateArgs']]]]):
+        pulumi.set(self, "cost_estimates", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def dependencies(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoDependencyArgs']]]]:
+        """
+        Dependencies for this solution.
+        """
+        return pulumi.get(self, "dependencies")
+
+    @dependencies.setter
+    def dependencies(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoDependencyArgs']]]]):
+        pulumi.set(self, "dependencies", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoFeatureArgs']]]]:
+        """
+        Features - titles only.
+        """
+        return pulumi.get(self, "features")
+
+    @features.setter
+    def features(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoFeatureArgs']]]]):
+        pulumi.set(self, "features", value)
+
+
+class CmVersionSolutionInfoArchitectureDiagramArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Description of this diagram.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    diagram: NotRequired[pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramArgsDict']]]
+    """
+    Offering Media information.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoArchitectureDiagramArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 diagram: pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Description of this diagram.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input['CmVersionSolutionInfoArchitectureDiagramDiagramArgs'] diagram: Offering Media information.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if diagram is not None:
+            pulumi.set(__self__, "diagram", diagram)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Description of this diagram.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def diagram(self) -> pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramArgs']]:
+        """
+        Offering Media information.
+        """
+        return pulumi.get(self, "diagram")
+
+    @diagram.setter
+    def diagram(self, value: pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramArgs']]):
+        pulumi.set(self, "diagram", value)
+
+
+class CmVersionSolutionInfoArchitectureDiagramDiagramArgsDict(TypedDict):
+    api_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    CM API specific URL of the specified media item.
+    """
+    caption: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Caption for this media item.
+    """
+    caption_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    thumbnail_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Thumbnail URL for this media item.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of this media item.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL of the specified media item.
+    """
+    url_proxy: NotRequired[pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgsDict']]]
+    """
+    Offering URL proxy information.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoArchitectureDiagramDiagramArgs:
+    def __init__(__self__, *,
+                 api_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 caption: pulumi.Input[Optional[_builtins.str]] = None,
+                 caption_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 thumbnail_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None,
+                 url_proxy: pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_url: CM API specific URL of the specified media item.
+        :param pulumi.Input[_builtins.str] caption: Caption for this media item.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] caption_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] thumbnail_url: Thumbnail URL for this media item.
+        :param pulumi.Input[_builtins.str] type: Type of this media item.
+        :param pulumi.Input[_builtins.str] url: URL of the specified media item.
+        :param pulumi.Input['CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs'] url_proxy: Offering URL proxy information.
+        """
+        if api_url is not None:
+            pulumi.set(__self__, "api_url", api_url)
+        if caption is not None:
+            pulumi.set(__self__, "caption", caption)
+        if caption_i18n is not None:
+            pulumi.set(__self__, "caption_i18n", caption_i18n)
+        if thumbnail_url is not None:
+            pulumi.set(__self__, "thumbnail_url", thumbnail_url)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+        if url_proxy is not None:
+            pulumi.set(__self__, "url_proxy", url_proxy)
+
+    @_builtins.property
+    @pulumi.getter(name="apiUrl")
+    def api_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        CM API specific URL of the specified media item.
+        """
+        return pulumi.get(self, "api_url")
+
+    @api_url.setter
+    def api_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def caption(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Caption for this media item.
+        """
+        return pulumi.get(self, "caption")
+
+    @caption.setter
+    def caption(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "caption", value)
+
+    @_builtins.property
+    @pulumi.getter(name="captionI18n")
+    def caption_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "caption_i18n")
+
+    @caption_i18n.setter
+    def caption_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "caption_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter(name="thumbnailUrl")
+    def thumbnail_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Thumbnail URL for this media item.
+        """
+        return pulumi.get(self, "thumbnail_url")
+
+    @thumbnail_url.setter
+    def thumbnail_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "thumbnail_url", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of this media item.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL of the specified media item.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="urlProxy")
+    def url_proxy(self) -> pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs']]:
+        """
+        Offering URL proxy information.
+        """
+        return pulumi.get(self, "url_proxy")
+
+    @url_proxy.setter
+    def url_proxy(self, value: pulumi.Input[Optional['CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs']]):
+        pulumi.set(self, "url_proxy", value)
+
+
+class CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgsDict(TypedDict):
+    sha: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    SHA256 fingerprint of image.
+    """
+    url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    URL of the specified media item being proxied.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxyArgs:
+    def __init__(__self__, *,
+                 sha: pulumi.Input[Optional[_builtins.str]] = None,
+                 url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] sha: SHA256 fingerprint of image.
+        :param pulumi.Input[_builtins.str] url: URL of the specified media item being proxied.
+        """
+        if sha is not None:
+            pulumi.set(__self__, "sha", sha)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def sha(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        SHA256 fingerprint of image.
+        """
+        return pulumi.get(self, "sha")
+
+    @sha.setter
+    def sha(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "sha", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        URL of the specified media item being proxied.
+        """
+        return pulumi.get(self, "url")
+
+    @url.setter
+    def url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "url", value)
+
+
+class CmVersionSolutionInfoCostEstimateArgsDict(TypedDict):
+    currency: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost estimate currency.
+    """
+    diff_total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Difference in total hourly cost.
+    """
+    diff_total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Difference in total monthly cost.
+    """
+    past_total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Past total hourly cost.
+    """
+    past_total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Past total monthly cost.
+    """
+    projects: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectArgsDict']]]]]
+    """
+    Cost estimate projects.
+    """
+    summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateSummaryArgsDict']]]]]
+    """
+    Cost summary definition.
+    """
+    time_generated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    When this estimate was generated.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost estimate version.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateArgs:
+    def __init__(__self__, *,
+                 currency: pulumi.Input[Optional[_builtins.str]] = None,
+                 diff_total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 diff_total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 past_total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 past_total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 projects: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectArgs']]]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateSummaryArgs']]]] = None,
+                 time_generated: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] currency: Cost estimate currency.
+        :param pulumi.Input[_builtins.str] diff_total_hourly_cost: Difference in total hourly cost.
+        :param pulumi.Input[_builtins.str] diff_total_monthly_cost: Difference in total monthly cost.
+        :param pulumi.Input[_builtins.str] past_total_hourly_cost: Past total hourly cost.
+        :param pulumi.Input[_builtins.str] past_total_monthly_cost: Past total monthly cost.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectArgs']]] projects: Cost estimate projects.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateSummaryArgs']]] summaries: Cost summary definition.
+        :param pulumi.Input[_builtins.str] time_generated: When this estimate was generated.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        :param pulumi.Input[_builtins.str] version: Cost estimate version.
+        """
+        if currency is not None:
+            pulumi.set(__self__, "currency", currency)
+        if diff_total_hourly_cost is not None:
+            pulumi.set(__self__, "diff_total_hourly_cost", diff_total_hourly_cost)
+        if diff_total_monthly_cost is not None:
+            pulumi.set(__self__, "diff_total_monthly_cost", diff_total_monthly_cost)
+        if past_total_hourly_cost is not None:
+            pulumi.set(__self__, "past_total_hourly_cost", past_total_hourly_cost)
+        if past_total_monthly_cost is not None:
+            pulumi.set(__self__, "past_total_monthly_cost", past_total_monthly_cost)
+        if projects is not None:
+            pulumi.set(__self__, "projects", projects)
+        if summaries is not None:
+            pulumi.set(__self__, "summaries", summaries)
+        if time_generated is not None:
+            pulumi.set(__self__, "time_generated", time_generated)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter
+    def currency(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost estimate currency.
+        """
+        return pulumi.get(self, "currency")
+
+    @currency.setter
+    def currency(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "currency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="diffTotalHourlyCost")
+    def diff_total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Difference in total hourly cost.
+        """
+        return pulumi.get(self, "diff_total_hourly_cost")
+
+    @diff_total_hourly_cost.setter
+    def diff_total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "diff_total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="diffTotalMonthlyCost")
+    def diff_total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Difference in total monthly cost.
+        """
+        return pulumi.get(self, "diff_total_monthly_cost")
+
+    @diff_total_monthly_cost.setter
+    def diff_total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "diff_total_monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pastTotalHourlyCost")
+    def past_total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Past total hourly cost.
+        """
+        return pulumi.get(self, "past_total_hourly_cost")
+
+    @past_total_hourly_cost.setter
+    def past_total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "past_total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pastTotalMonthlyCost")
+    def past_total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Past total monthly cost.
+        """
+        return pulumi.get(self, "past_total_monthly_cost")
+
+    @past_total_monthly_cost.setter
+    def past_total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "past_total_monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectArgs']]]]:
+        """
+        Cost estimate projects.
+        """
+        return pulumi.get(self, "projects")
+
+    @projects.setter
+    def projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectArgs']]]]):
+        pulumi.set(self, "projects", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateSummaryArgs']]]]:
+        """
+        Cost summary definition.
+        """
+        return pulumi.get(self, "summaries")
+
+    @summaries.setter
+    def summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateSummaryArgs']]]]):
+        pulumi.set(self, "summaries", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeGenerated")
+    def time_generated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When this estimate was generated.
+        """
+        return pulumi.get(self, "time_generated")
+
+    @time_generated.setter
+    def time_generated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_generated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost estimate version.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectArgsDict(TypedDict):
+    breakdowns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownArgsDict']]]]]
+    """
+    Cost breakdown definition.
+    """
+    diffs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffArgsDict']]]]]
+    """
+    Cost breakdown definition.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Project metadata.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Project name.
+    """
+    past_breakdowns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgsDict']]]]]
+    """
+    Cost breakdown definition.
+    """
+    summaries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectSummaryArgsDict']]]]]
+    """
+    Cost summary definition.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectArgs:
+    def __init__(__self__, *,
+                 breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownArgs']]]] = None,
+                 diffs: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffArgs']]]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 past_breakdowns: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]]] = None,
+                 summaries: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectSummaryArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownArgs']]] breakdowns: Cost breakdown definition.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffArgs']]] diffs: Cost breakdown definition.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Project metadata.
+        :param pulumi.Input[_builtins.str] name: Project name.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]] past_breakdowns: Cost breakdown definition.
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectSummaryArgs']]] summaries: Cost summary definition.
+        """
+        if breakdowns is not None:
+            pulumi.set(__self__, "breakdowns", breakdowns)
+        if diffs is not None:
+            pulumi.set(__self__, "diffs", diffs)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if past_breakdowns is not None:
+            pulumi.set(__self__, "past_breakdowns", past_breakdowns)
+        if summaries is not None:
+            pulumi.set(__self__, "summaries", summaries)
+
+    @_builtins.property
+    @pulumi.getter
+    def breakdowns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownArgs']]]]:
+        """
+        Cost breakdown definition.
+        """
+        return pulumi.get(self, "breakdowns")
+
+    @breakdowns.setter
+    def breakdowns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownArgs']]]]):
+        pulumi.set(self, "breakdowns", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def diffs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffArgs']]]]:
+        """
+        Cost breakdown definition.
+        """
+        return pulumi.get(self, "diffs")
+
+    @diffs.setter
+    def diffs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffArgs']]]]):
+        pulumi.set(self, "diffs", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Project metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pastBreakdowns")
+    def past_breakdowns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]]]:
+        """
+        Cost breakdown definition.
+        """
+        return pulumi.get(self, "past_breakdowns")
+
+    @past_breakdowns.setter
+    def past_breakdowns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgs']]]]):
+        pulumi.set(self, "past_breakdowns", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def summaries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectSummaryArgs']]]]:
+        """
+        Cost summary definition.
+        """
+        return pulumi.get(self, "summaries")
+
+    @summaries.setter
+    def summaries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectSummaryArgs']]]]):
+        pulumi.set(self, "summaries", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectBreakdownArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgsDict']]]]]
+    """
+    Resources.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectBreakdownArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]] resources: Resources.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]]]:
+        """
+        Resources.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgsDict(TypedDict):
+    cost_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgsDict']]]]]
+    """
+    Cost components.
+    """
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Hourly cost.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Resource metadata.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Monthly cost.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectBreakdownResourceArgs:
+    def __init__(__self__, *,
+                 cost_components: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]]] = None,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]] cost_components: Cost components.
+        :param pulumi.Input[_builtins.str] hourly_cost: Hourly cost.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Resource metadata.
+        :param pulumi.Input[_builtins.str] monthly_cost: Monthly cost.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        """
+        if cost_components is not None:
+            pulumi.set(__self__, "cost_components", cost_components)
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="costComponents")
+    def cost_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]]]:
+        """
+        Cost components.
+        """
+        return pulumi.get(self, "cost_components")
+
+    @cost_components.setter
+    def cost_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs']]]]):
+        pulumi.set(self, "cost_components", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Monthly cost.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgsDict(TypedDict):
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly cost.
+    """
+    hourly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly quantity.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly cist.
+    """
+    monthly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly quantity.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component name.
+    """
+    price: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component price.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component unit.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponentArgs:
+    def __init__(__self__, *,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 price: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] hourly_cost: Cost component hourly cost.
+        :param pulumi.Input[_builtins.str] hourly_quantity: Cost component hourly quantity.
+        :param pulumi.Input[_builtins.str] monthly_cost: Cost component monthly cist.
+        :param pulumi.Input[_builtins.str] monthly_quantity: Cost component monthly quantity.
+        :param pulumi.Input[_builtins.str] name: Cost component name.
+        :param pulumi.Input[_builtins.str] price: Cost component price.
+        :param pulumi.Input[_builtins.str] unit: Cost component unit.
+        """
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if hourly_quantity is not None:
+            pulumi.set(__self__, "hourly_quantity", hourly_quantity)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if monthly_quantity is not None:
+            pulumi.set(__self__, "monthly_quantity", monthly_quantity)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if price is not None:
+            pulumi.set(__self__, "price", price)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyQuantity")
+    def hourly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly quantity.
+        """
+        return pulumi.get(self, "hourly_quantity")
+
+    @hourly_quantity.setter
+    def hourly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly cist.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyQuantity")
+    def monthly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly quantity.
+        """
+        return pulumi.get(self, "monthly_quantity")
+
+    @monthly_quantity.setter
+    def monthly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def price(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component price.
+        """
+        return pulumi.get(self, "price")
+
+    @price.setter
+    def price(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "price", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component unit.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectDiffArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceArgsDict']]]]]
+    """
+    Resources.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectDiffArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]] resources: Resources.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]]]:
+        """
+        Resources.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectDiffResourceArgsDict(TypedDict):
+    cost_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgsDict']]]]]
+    """
+    Cost components.
+    """
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Hourly cost.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Resource metadata.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Monthly cost.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectDiffResourceArgs:
+    def __init__(__self__, *,
+                 cost_components: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]]] = None,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]] cost_components: Cost components.
+        :param pulumi.Input[_builtins.str] hourly_cost: Hourly cost.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Resource metadata.
+        :param pulumi.Input[_builtins.str] monthly_cost: Monthly cost.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        """
+        if cost_components is not None:
+            pulumi.set(__self__, "cost_components", cost_components)
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="costComponents")
+    def cost_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]]]:
+        """
+        Cost components.
+        """
+        return pulumi.get(self, "cost_components")
+
+    @cost_components.setter
+    def cost_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs']]]]):
+        pulumi.set(self, "cost_components", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Monthly cost.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgsDict(TypedDict):
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly cost.
+    """
+    hourly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly quantity.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly cist.
+    """
+    monthly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly quantity.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component name.
+    """
+    price: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component price.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component unit.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponentArgs:
+    def __init__(__self__, *,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 price: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] hourly_cost: Cost component hourly cost.
+        :param pulumi.Input[_builtins.str] hourly_quantity: Cost component hourly quantity.
+        :param pulumi.Input[_builtins.str] monthly_cost: Cost component monthly cist.
+        :param pulumi.Input[_builtins.str] monthly_quantity: Cost component monthly quantity.
+        :param pulumi.Input[_builtins.str] name: Cost component name.
+        :param pulumi.Input[_builtins.str] price: Cost component price.
+        :param pulumi.Input[_builtins.str] unit: Cost component unit.
+        """
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if hourly_quantity is not None:
+            pulumi.set(__self__, "hourly_quantity", hourly_quantity)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if monthly_quantity is not None:
+            pulumi.set(__self__, "monthly_quantity", monthly_quantity)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if price is not None:
+            pulumi.set(__self__, "price", price)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyQuantity")
+    def hourly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly quantity.
+        """
+        return pulumi.get(self, "hourly_quantity")
+
+    @hourly_quantity.setter
+    def hourly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly cist.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyQuantity")
+    def monthly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly quantity.
+        """
+        return pulumi.get(self, "monthly_quantity")
+
+    @monthly_quantity.setter
+    def monthly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def price(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component price.
+        """
+        return pulumi.get(self, "price")
+
+    @price.setter
+    def price(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "price", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component unit.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgsDict(TypedDict):
+    resources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgsDict']]]]]
+    """
+    Resources.
+    """
+    total_hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total hourly cost.
+    """
+    total_monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Total monthly cost.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectPastBreakdownArgs:
+    def __init__(__self__, *,
+                 resources: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]]] = None,
+                 total_hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 total_monthly_cost: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]] resources: Resources.
+        :param pulumi.Input[_builtins.str] total_hourly_cost: Total hourly cost.
+        :param pulumi.Input[_builtins.str] total_monthly_cost: Total monthly cost.
+        """
+        if resources is not None:
+            pulumi.set(__self__, "resources", resources)
+        if total_hourly_cost is not None:
+            pulumi.set(__self__, "total_hourly_cost", total_hourly_cost)
+        if total_monthly_cost is not None:
+            pulumi.set(__self__, "total_monthly_cost", total_monthly_cost)
+
+    @_builtins.property
+    @pulumi.getter
+    def resources(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]]]:
+        """
+        Resources.
+        """
+        return pulumi.get(self, "resources")
+
+    @resources.setter
+    def resources(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs']]]]):
+        pulumi.set(self, "resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalHourlyCost")
+    def total_hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total hourly cost.
+        """
+        return pulumi.get(self, "total_hourly_cost")
+
+    @total_hourly_cost.setter
+    def total_hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMonthlyCost")
+    def total_monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Total monthly cost.
+        """
+        return pulumi.get(self, "total_monthly_cost")
+
+    @total_monthly_cost.setter
+    def total_monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "total_monthly_cost", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgsDict(TypedDict):
+    cost_components: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgsDict']]]]]
+    """
+    Cost components.
+    """
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Hourly cost.
+    """
+    metadata: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Resource metadata.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Monthly cost.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource name.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceArgs:
+    def __init__(__self__, *,
+                 cost_components: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]]] = None,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]] cost_components: Cost components.
+        :param pulumi.Input[_builtins.str] hourly_cost: Hourly cost.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] metadata: Resource metadata.
+        :param pulumi.Input[_builtins.str] monthly_cost: Monthly cost.
+        :param pulumi.Input[_builtins.str] name: Resource name.
+        """
+        if cost_components is not None:
+            pulumi.set(__self__, "cost_components", cost_components)
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="costComponents")
+    def cost_components(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]]]:
+        """
+        Cost components.
+        """
+        return pulumi.get(self, "cost_components")
+
+    @cost_components.setter
+    def cost_components(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs']]]]):
+        pulumi.set(self, "cost_components", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Resource metadata.
+        """
+        return pulumi.get(self, "metadata")
+
+    @metadata.setter
+    def metadata(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "metadata", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Monthly cost.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgsDict(TypedDict):
+    hourly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly cost.
+    """
+    hourly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component hourly quantity.
+    """
+    monthly_cost: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly cist.
+    """
+    monthly_quantity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component monthly quantity.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component name.
+    """
+    price: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component price.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cost component unit.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponentArgs:
+    def __init__(__self__, *,
+                 hourly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 hourly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_cost: pulumi.Input[Optional[_builtins.str]] = None,
+                 monthly_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 price: pulumi.Input[Optional[_builtins.str]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] hourly_cost: Cost component hourly cost.
+        :param pulumi.Input[_builtins.str] hourly_quantity: Cost component hourly quantity.
+        :param pulumi.Input[_builtins.str] monthly_cost: Cost component monthly cist.
+        :param pulumi.Input[_builtins.str] monthly_quantity: Cost component monthly quantity.
+        :param pulumi.Input[_builtins.str] name: Cost component name.
+        :param pulumi.Input[_builtins.str] price: Cost component price.
+        :param pulumi.Input[_builtins.str] unit: Cost component unit.
+        """
+        if hourly_cost is not None:
+            pulumi.set(__self__, "hourly_cost", hourly_cost)
+        if hourly_quantity is not None:
+            pulumi.set(__self__, "hourly_quantity", hourly_quantity)
+        if monthly_cost is not None:
+            pulumi.set(__self__, "monthly_cost", monthly_cost)
+        if monthly_quantity is not None:
+            pulumi.set(__self__, "monthly_quantity", monthly_quantity)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if price is not None:
+            pulumi.set(__self__, "price", price)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyCost")
+    def hourly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly cost.
+        """
+        return pulumi.get(self, "hourly_cost")
+
+    @hourly_cost.setter
+    def hourly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hourlyQuantity")
+    def hourly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component hourly quantity.
+        """
+        return pulumi.get(self, "hourly_quantity")
+
+    @hourly_quantity.setter
+    def hourly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hourly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyCost")
+    def monthly_cost(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly cist.
+        """
+        return pulumi.get(self, "monthly_cost")
+
+    @monthly_cost.setter
+    def monthly_cost(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_cost", value)
+
+    @_builtins.property
+    @pulumi.getter(name="monthlyQuantity")
+    def monthly_quantity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component monthly quantity.
+        """
+        return pulumi.get(self, "monthly_quantity")
+
+    @monthly_quantity.setter
+    def monthly_quantity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "monthly_quantity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def price(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component price.
+        """
+        return pulumi.get(self, "price")
+
+    @price.setter
+    def price(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "price", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cost component unit.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class CmVersionSolutionInfoCostEstimateProjectSummaryArgsDict(TypedDict):
+    no_price_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    No price resource counts.
+    """
+    total_detected_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total detected resources.
+    """
+    total_no_price_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total no price resources.
+    """
+    total_supported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total supported resources.
+    """
+    total_unsupported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total unsupported resources.
+    """
+    total_usage_based_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total usage based resources.
+    """
+    unsupported_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Unsupported resource counts.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateProjectSummaryArgs:
+    def __init__(__self__, *,
+                 no_price_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 total_detected_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_no_price_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_supported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_unsupported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_usage_based_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 unsupported_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] no_price_resource_counts: No price resource counts.
+        :param pulumi.Input[_builtins.int] total_detected_resources: Total detected resources.
+        :param pulumi.Input[_builtins.int] total_no_price_resources: Total no price resources.
+        :param pulumi.Input[_builtins.int] total_supported_resources: Total supported resources.
+        :param pulumi.Input[_builtins.int] total_unsupported_resources: Total unsupported resources.
+        :param pulumi.Input[_builtins.int] total_usage_based_resources: Total usage based resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] unsupported_resource_counts: Unsupported resource counts.
+        """
+        if no_price_resource_counts is not None:
+            pulumi.set(__self__, "no_price_resource_counts", no_price_resource_counts)
+        if total_detected_resources is not None:
+            pulumi.set(__self__, "total_detected_resources", total_detected_resources)
+        if total_no_price_resources is not None:
+            pulumi.set(__self__, "total_no_price_resources", total_no_price_resources)
+        if total_supported_resources is not None:
+            pulumi.set(__self__, "total_supported_resources", total_supported_resources)
+        if total_unsupported_resources is not None:
+            pulumi.set(__self__, "total_unsupported_resources", total_unsupported_resources)
+        if total_usage_based_resources is not None:
+            pulumi.set(__self__, "total_usage_based_resources", total_usage_based_resources)
+        if unsupported_resource_counts is not None:
+            pulumi.set(__self__, "unsupported_resource_counts", unsupported_resource_counts)
+
+    @_builtins.property
+    @pulumi.getter(name="noPriceResourceCounts")
+    def no_price_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        No price resource counts.
+        """
+        return pulumi.get(self, "no_price_resource_counts")
+
+    @no_price_resource_counts.setter
+    def no_price_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "no_price_resource_counts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalDetectedResources")
+    def total_detected_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total detected resources.
+        """
+        return pulumi.get(self, "total_detected_resources")
+
+    @total_detected_resources.setter
+    def total_detected_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_detected_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalNoPriceResources")
+    def total_no_price_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total no price resources.
+        """
+        return pulumi.get(self, "total_no_price_resources")
+
+    @total_no_price_resources.setter
+    def total_no_price_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_no_price_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSupportedResources")
+    def total_supported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total supported resources.
+        """
+        return pulumi.get(self, "total_supported_resources")
+
+    @total_supported_resources.setter
+    def total_supported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_supported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUnsupportedResources")
+    def total_unsupported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total unsupported resources.
+        """
+        return pulumi.get(self, "total_unsupported_resources")
+
+    @total_unsupported_resources.setter
+    def total_unsupported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_unsupported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUsageBasedResources")
+    def total_usage_based_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total usage based resources.
+        """
+        return pulumi.get(self, "total_usage_based_resources")
+
+    @total_usage_based_resources.setter
+    def total_usage_based_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_usage_based_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unsupportedResourceCounts")
+    def unsupported_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Unsupported resource counts.
+        """
+        return pulumi.get(self, "unsupported_resource_counts")
+
+    @unsupported_resource_counts.setter
+    def unsupported_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "unsupported_resource_counts", value)
+
+
+class CmVersionSolutionInfoCostEstimateSummaryArgsDict(TypedDict):
+    no_price_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    No price resource counts.
+    """
+    total_detected_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total detected resources.
+    """
+    total_no_price_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total no price resources.
+    """
+    total_supported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total supported resources.
+    """
+    total_unsupported_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total unsupported resources.
+    """
+    total_usage_based_resources: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total usage based resources.
+    """
+    unsupported_resource_counts: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Unsupported resource counts.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoCostEstimateSummaryArgs:
+    def __init__(__self__, *,
+                 no_price_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 total_detected_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_no_price_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_supported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_unsupported_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_usage_based_resources: pulumi.Input[Optional[_builtins.int]] = None,
+                 unsupported_resource_counts: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] no_price_resource_counts: No price resource counts.
+        :param pulumi.Input[_builtins.int] total_detected_resources: Total detected resources.
+        :param pulumi.Input[_builtins.int] total_no_price_resources: Total no price resources.
+        :param pulumi.Input[_builtins.int] total_supported_resources: Total supported resources.
+        :param pulumi.Input[_builtins.int] total_unsupported_resources: Total unsupported resources.
+        :param pulumi.Input[_builtins.int] total_usage_based_resources: Total usage based resources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] unsupported_resource_counts: Unsupported resource counts.
+        """
+        if no_price_resource_counts is not None:
+            pulumi.set(__self__, "no_price_resource_counts", no_price_resource_counts)
+        if total_detected_resources is not None:
+            pulumi.set(__self__, "total_detected_resources", total_detected_resources)
+        if total_no_price_resources is not None:
+            pulumi.set(__self__, "total_no_price_resources", total_no_price_resources)
+        if total_supported_resources is not None:
+            pulumi.set(__self__, "total_supported_resources", total_supported_resources)
+        if total_unsupported_resources is not None:
+            pulumi.set(__self__, "total_unsupported_resources", total_unsupported_resources)
+        if total_usage_based_resources is not None:
+            pulumi.set(__self__, "total_usage_based_resources", total_usage_based_resources)
+        if unsupported_resource_counts is not None:
+            pulumi.set(__self__, "unsupported_resource_counts", unsupported_resource_counts)
+
+    @_builtins.property
+    @pulumi.getter(name="noPriceResourceCounts")
+    def no_price_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        No price resource counts.
+        """
+        return pulumi.get(self, "no_price_resource_counts")
+
+    @no_price_resource_counts.setter
+    def no_price_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "no_price_resource_counts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalDetectedResources")
+    def total_detected_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total detected resources.
+        """
+        return pulumi.get(self, "total_detected_resources")
+
+    @total_detected_resources.setter
+    def total_detected_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_detected_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalNoPriceResources")
+    def total_no_price_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total no price resources.
+        """
+        return pulumi.get(self, "total_no_price_resources")
+
+    @total_no_price_resources.setter
+    def total_no_price_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_no_price_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSupportedResources")
+    def total_supported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total supported resources.
+        """
+        return pulumi.get(self, "total_supported_resources")
+
+    @total_supported_resources.setter
+    def total_supported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_supported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUnsupportedResources")
+    def total_unsupported_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total unsupported resources.
+        """
+        return pulumi.get(self, "total_unsupported_resources")
+
+    @total_unsupported_resources.setter
+    def total_unsupported_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_unsupported_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalUsageBasedResources")
+    def total_usage_based_resources(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total usage based resources.
+        """
+        return pulumi.get(self, "total_usage_based_resources")
+
+    @total_usage_based_resources.setter
+    def total_usage_based_resources(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_usage_based_resources", value)
+
+    @_builtins.property
+    @pulumi.getter(name="unsupportedResourceCounts")
+    def unsupported_resource_counts(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Unsupported resource counts.
+        """
+        return pulumi.get(self, "unsupported_resource_counts")
+
+    @unsupported_resource_counts.setter
+    def unsupported_resource_counts(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "unsupported_resource_counts", value)
+
+
+class CmVersionSolutionInfoDependencyArgsDict(TypedDict):
+    catalog_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional - If not specified, assumes the Public Catalog.
+    """
+    flavors: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Optional - List of dependent flavors in the specified range.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional - Offering ID - not required if name is set.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Optional - Programmatic Offering name.
+    """
+    version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Required - Semver value or range.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoDependencyArgs:
+    def __init__(__self__, *,
+                 catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 flavors: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] catalog_id: Optional - If not specified, assumes the Public Catalog.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] flavors: Optional - List of dependent flavors in the specified range.
+        :param pulumi.Input[_builtins.str] id: Optional - Offering ID - not required if name is set.
+        :param pulumi.Input[_builtins.str] name: Optional - Programmatic Offering name.
+        :param pulumi.Input[_builtins.str] version: Required - Semver value or range.
+        """
+        if catalog_id is not None:
+            pulumi.set(__self__, "catalog_id", catalog_id)
+        if flavors is not None:
+            pulumi.set(__self__, "flavors", flavors)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if version is not None:
+            pulumi.set(__self__, "version", version)
+
+    @_builtins.property
+    @pulumi.getter(name="catalogId")
+    def catalog_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional - If not specified, assumes the Public Catalog.
+        """
+        return pulumi.get(self, "catalog_id")
+
+    @catalog_id.setter
+    def catalog_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "catalog_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def flavors(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Optional - List of dependent flavors in the specified range.
+        """
+        return pulumi.get(self, "flavors")
+
+    @flavors.setter
+    def flavors(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "flavors", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional - Offering ID - not required if name is set.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Optional - Programmatic Offering name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Required - Semver value or range.
+        """
+        return pulumi.get(self, "version")
+
+    @version.setter
+    def version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version", value)
+
+
+class CmVersionSolutionInfoFeatureArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Feature description.
+    """
+    description_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Heading.
+    """
+    title_i18n: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    A map of translated strings, by language code.
+    """
+
+@pulumi.input_type
+class CmVersionSolutionInfoFeatureArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 description_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None,
+                 title_i18n: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Feature description.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] description_i18n: A map of translated strings, by language code.
+        :param pulumi.Input[_builtins.str] title: Heading.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] title_i18n: A map of translated strings, by language code.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if description_i18n is not None:
+            pulumi.set(__self__, "description_i18n", description_i18n)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+        if title_i18n is not None:
+            pulumi.set(__self__, "title_i18n", title_i18n)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Feature description.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="descriptionI18n")
+    def description_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "description_i18n")
+
+    @description_i18n.setter
+    def description_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "description_i18n", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Heading.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+    @_builtins.property
+    @pulumi.getter(name="titleI18n")
+    def title_i18n(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        A map of translated strings, by language code.
+        """
+        return pulumi.get(self, "title_i18n")
+
+    @title_i18n.setter
+    def title_i18n(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "title_i18n", value)
+
+
+class CmVersionStateArgsDict(TypedDict):
+    current: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+    current_entered: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of current request.
+    """
+    pending: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+    pending_requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of pending request.
+    """
+    previous: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    one of: new, validated, account-published, ibm-published, public-published.
+    """
+
+@pulumi.input_type
+class CmVersionStateArgs:
+    def __init__(__self__, *,
+                 current: pulumi.Input[Optional[_builtins.str]] = None,
+                 current_entered: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_requested: pulumi.Input[Optional[_builtins.str]] = None,
+                 previous: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] current: one of: new, validated, account-published, ibm-published, public-published.
+        :param pulumi.Input[_builtins.str] current_entered: Date and time of current request.
+        :param pulumi.Input[_builtins.str] pending: one of: new, validated, account-published, ibm-published, public-published.
+        :param pulumi.Input[_builtins.str] pending_requested: Date and time of pending request.
+        :param pulumi.Input[_builtins.str] previous: one of: new, validated, account-published, ibm-published, public-published.
+        """
+        if current is not None:
+            pulumi.set(__self__, "current", current)
+        if current_entered is not None:
+            pulumi.set(__self__, "current_entered", current_entered)
+        if pending is not None:
+            pulumi.set(__self__, "pending", pending)
+        if pending_requested is not None:
+            pulumi.set(__self__, "pending_requested", pending_requested)
+        if previous is not None:
+            pulumi.set(__self__, "previous", previous)
+
+    @_builtins.property
+    @pulumi.getter
+    def current(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "current")
+
+    @current.setter
+    def current(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current", value)
+
+    @_builtins.property
+    @pulumi.getter(name="currentEntered")
+    def current_entered(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of current request.
+        """
+        return pulumi.get(self, "current_entered")
+
+    @current_entered.setter
+    def current_entered(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "current_entered", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def pending(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "pending")
+
+    @pending.setter
+    def pending(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pendingRequested")
+    def pending_requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of pending request.
+        """
+        return pulumi.get(self, "pending_requested")
+
+    @pending_requested.setter
+    def pending_requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pending_requested", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def previous(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        one of: new, validated, account-published, ibm-published, public-published.
+        """
+        return pulumi.get(self, "previous")
+
+    @previous.setter
+    def previous(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "previous", value)
+
+
+class CmVersionValidationArgsDict(TypedDict):
+    last_operation: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Last operation (e.g. submit_deployment, generate_installer, install_offering.
+    """
+    message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Any message needing to be conveyed as part of the validation job.
+    """
+    requested: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of last validation was requested.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Current validation state - <empty>, in_progress, valid, invalid, expired.
+    """
+    target: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+    """
+    validated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Date and time of last successful validation.
+    """
+
+@pulumi.input_type
+class CmVersionValidationArgs:
+    def __init__(__self__, *,
+                 last_operation: pulumi.Input[Optional[_builtins.str]] = None,
+                 message: pulumi.Input[Optional[_builtins.str]] = None,
+                 requested: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 validated: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] last_operation: Last operation (e.g. submit_deployment, generate_installer, install_offering.
+        :param pulumi.Input[_builtins.str] message: Any message needing to be conveyed as part of the validation job.
+        :param pulumi.Input[_builtins.str] requested: Date and time of last validation was requested.
+        :param pulumi.Input[_builtins.str] state: Current validation state - <empty>, in_progress, valid, invalid, expired.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] target: Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+        :param pulumi.Input[_builtins.str] validated: Date and time of last successful validation.
+        """
+        if last_operation is not None:
+            pulumi.set(__self__, "last_operation", last_operation)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if requested is not None:
+            pulumi.set(__self__, "requested", requested)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if target is not None:
+            pulumi.set(__self__, "target", target)
+        if validated is not None:
+            pulumi.set(__self__, "validated", validated)
+
+    @_builtins.property
+    @pulumi.getter(name="lastOperation")
+    def last_operation(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Last operation (e.g. submit_deployment, generate_installer, install_offering.
+        """
+        return pulumi.get(self, "last_operation")
+
+    @last_operation.setter
+    def last_operation(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "last_operation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Any message needing to be conveyed as part of the validation job.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "message", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def requested(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of last validation was requested.
+        """
+        return pulumi.get(self, "requested")
+
+    @requested.setter
+    def requested(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "requested", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Current validation state - <empty>, in_progress, valid, invalid, expired.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "target", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def validated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Date and time of last successful validation.
+        """
+        return pulumi.get(self, "validated")
+
+    @validated.setter
+    def validated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "validated", value)
+
 
 class ComputeAutoscaleGroupVirtualGuestMemberTemplateArgsDict(TypedDict):
     block_storage_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
@@ -49933,6 +64959,3124 @@ class ResourceInstancePlanHistoryArgs:
     @start_date.setter
     def start_date(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "start_date", value)
+
+
+class SmCustomCredentialsConfigurationCodeEngineArgsDict(TypedDict):
+    job_name: pulumi.Input[_builtins.str]
+    """
+    The name of the Code Engine Job.
+    """
+    project_id: pulumi.Input[_builtins.str]
+    """
+    The ID of the Code Engine project.
+    """
+    region: pulumi.Input[_builtins.str]
+    """
+    The region of the Code Engine project.
+    """
+
+@pulumi.input_type
+class SmCustomCredentialsConfigurationCodeEngineArgs:
+    def __init__(__self__, *,
+                 job_name: pulumi.Input[_builtins.str],
+                 project_id: pulumi.Input[_builtins.str],
+                 region: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] job_name: The name of the Code Engine Job.
+        :param pulumi.Input[_builtins.str] project_id: The ID of the Code Engine project.
+        :param pulumi.Input[_builtins.str] region: The region of the Code Engine project.
+        """
+        pulumi.set(__self__, "job_name", job_name)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "region", region)
+
+    @_builtins.property
+    @pulumi.getter(name="jobName")
+    def job_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the Code Engine Job.
+        """
+        return pulumi.get(self, "job_name")
+
+    @job_name.setter
+    def job_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "job_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The ID of the Code Engine project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "project_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[_builtins.str]:
+        """
+        The region of the Code Engine project.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "region", value)
+
+
+class SmCustomCredentialsConfigurationSchemaArgsDict(TypedDict):
+    credentials: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaCredentialArgsDict']]]]]
+    """
+    The schema of the credentials.
+    """
+    parameters: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaParameterArgsDict']]]]]
+    """
+    The schema of the input parameters.
+    """
+
+@pulumi.input_type
+class SmCustomCredentialsConfigurationSchemaArgs:
+    def __init__(__self__, *,
+                 credentials: pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaCredentialArgs']]]] = None,
+                 parameters: pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaParameterArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaCredentialArgs']]] credentials: The schema of the credentials.
+        :param pulumi.Input[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaParameterArgs']]] parameters: The schema of the input parameters.
+        """
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaCredentialArgs']]]]:
+        """
+        The schema of the credentials.
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaCredentialArgs']]]]):
+        pulumi.set(self, "credentials", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def parameters(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaParameterArgs']]]]:
+        """
+        The schema of the input parameters.
+        """
+        return pulumi.get(self, "parameters")
+
+    @parameters.setter
+    def parameters(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmCustomCredentialsConfigurationSchemaParameterArgs']]]]):
+        pulumi.set(self, "parameters", value)
+
+
+class SmCustomCredentialsConfigurationSchemaCredentialArgsDict(TypedDict):
+    format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The format of the credential, for example 'required:true, type:string'
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of the credential.
+    """
+
+@pulumi.input_type
+class SmCustomCredentialsConfigurationSchemaCredentialArgs:
+    def __init__(__self__, *,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] format: The format of the credential, for example 'required:true, type:string'
+        :param pulumi.Input[_builtins.str] name: The name of the credential.
+        """
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The format of the credential, for example 'required:true, type:string'
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "format", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the credential.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class SmCustomCredentialsConfigurationSchemaParameterArgsDict(TypedDict):
+    env_variable_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of the environment variable associated with the configuration schema parameter.
+    """
+    format: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The format of the parameter, for example 'required:true, type:string', 'type:int, required:false', 'type:enum[val1|val2|val3], required:true', 'required:true, type:boolean'
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of the parameter.
+    """
+
+@pulumi.input_type
+class SmCustomCredentialsConfigurationSchemaParameterArgs:
+    def __init__(__self__, *,
+                 env_variable_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 format: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] env_variable_name: The name of the environment variable associated with the configuration schema parameter.
+        :param pulumi.Input[_builtins.str] format: The format of the parameter, for example 'required:true, type:string', 'type:int, required:false', 'type:enum[val1|val2|val3], required:true', 'required:true, type:boolean'
+        :param pulumi.Input[_builtins.str] name: The name of the parameter.
+        """
+        if env_variable_name is not None:
+            pulumi.set(__self__, "env_variable_name", env_variable_name)
+        if format is not None:
+            pulumi.set(__self__, "format", format)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="envVariableName")
+    def env_variable_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the environment variable associated with the configuration schema parameter.
+        """
+        return pulumi.get(self, "env_variable_name")
+
+    @env_variable_name.setter
+    def env_variable_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "env_variable_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def format(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The format of the parameter, for example 'required:true, type:string', 'type:int, required:false', 'type:enum[val1|val2|val3], required:true', 'required:true, type:boolean'
+        """
+        return pulumi.get(self, "format")
+
+    @format.setter
+    def format(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "format", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the parameter.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class SmCustomCredentialsSecretCredentialsContentArgsDict(TypedDict):
+    boolean_values: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]]]
+    """
+    Credentials that have boolean values.
+    """
+    integer_values: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]]]
+    """
+    Credentials that have integer values.
+    """
+    string_values: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Credentials that have string values.
+    """
+
+@pulumi.input_type
+class SmCustomCredentialsSecretCredentialsContentArgs:
+    def __init__(__self__, *,
+                 boolean_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]] = None,
+                 integer_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]] = None,
+                 string_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.bool]]] boolean_values: Credentials that have boolean values.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.int]]] integer_values: Credentials that have integer values.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] string_values: Credentials that have string values.
+        """
+        if boolean_values is not None:
+            pulumi.set(__self__, "boolean_values", boolean_values)
+        if integer_values is not None:
+            pulumi.set(__self__, "integer_values", integer_values)
+        if string_values is not None:
+            pulumi.set(__self__, "string_values", string_values)
+
+    @_builtins.property
+    @pulumi.getter(name="booleanValues")
+    def boolean_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]]:
+        """
+        Credentials that have boolean values.
+        """
+        return pulumi.get(self, "boolean_values")
+
+    @boolean_values.setter
+    def boolean_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]]):
+        pulumi.set(self, "boolean_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="integerValues")
+    def integer_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]]:
+        """
+        Credentials that have integer values.
+        """
+        return pulumi.get(self, "integer_values")
+
+    @integer_values.setter
+    def integer_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "integer_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="stringValues")
+    def string_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Credentials that have string values.
+        """
+        return pulumi.get(self, "string_values")
+
+    @string_values.setter
+    def string_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "string_values", value)
+
+
+class SmCustomCredentialsSecretParametersArgsDict(TypedDict):
+    boolean_values: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]]]
+    """
+    Pararmeters that have boolean values.
+    """
+    integer_values: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]]]
+    """
+    Pararmeters that have integer values.
+    """
+    string_values: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    Pararmeters that have string values.
+    """
+
+@pulumi.input_type
+class SmCustomCredentialsSecretParametersArgs:
+    def __init__(__self__, *,
+                 boolean_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]] = None,
+                 integer_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]] = None,
+                 string_values: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.bool]]] boolean_values: Pararmeters that have boolean values.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.int]]] integer_values: Pararmeters that have integer values.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] string_values: Pararmeters that have string values.
+        """
+        if boolean_values is not None:
+            pulumi.set(__self__, "boolean_values", boolean_values)
+        if integer_values is not None:
+            pulumi.set(__self__, "integer_values", integer_values)
+        if string_values is not None:
+            pulumi.set(__self__, "string_values", string_values)
+
+    @_builtins.property
+    @pulumi.getter(name="booleanValues")
+    def boolean_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]]:
+        """
+        Pararmeters that have boolean values.
+        """
+        return pulumi.get(self, "boolean_values")
+
+    @boolean_values.setter
+    def boolean_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.bool]]]]):
+        pulumi.set(self, "boolean_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="integerValues")
+    def integer_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]]:
+        """
+        Pararmeters that have integer values.
+        """
+        return pulumi.get(self, "integer_values")
+
+    @integer_values.setter
+    def integer_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "integer_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="stringValues")
+    def string_values(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Pararmeters that have string values.
+        """
+        return pulumi.get(self, "string_values")
+
+    @string_values.setter
+    def string_values(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "string_values", value)
+
+
+class SmCustomCredentialsSecretRotationArgsDict(TypedDict):
+    auto_rotate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+    """
+    interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The length of the secret rotation time interval.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The units for the secret rotation time interval.
+    """
+
+@pulumi.input_type
+class SmCustomCredentialsSecretRotationArgs:
+    def __init__(__self__, *,
+                 auto_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_rotate: Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        :param pulumi.Input[_builtins.int] interval: The length of the secret rotation time interval.
+        :param pulumi.Input[_builtins.str] unit: The units for the secret rotation time interval.
+        """
+        if auto_rotate is not None:
+            pulumi.set(__self__, "auto_rotate", auto_rotate)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="autoRotate")
+    def auto_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        """
+        return pulumi.get(self, "auto_rotate")
+
+    @auto_rotate.setter
+    def auto_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_rotate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The length of the secret rotation time interval.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interval", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The units for the secret rotation time interval.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class SmIamCredentialsSecretRotationArgsDict(TypedDict):
+    auto_rotate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+    """
+    interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The length of the secret rotation time interval.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The units for the secret rotation time interval.
+    """
+
+@pulumi.input_type
+class SmIamCredentialsSecretRotationArgs:
+    def __init__(__self__, *,
+                 auto_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_rotate: Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        :param pulumi.Input[_builtins.int] interval: The length of the secret rotation time interval.
+        :param pulumi.Input[_builtins.str] unit: The units for the secret rotation time interval.
+        """
+        if auto_rotate is not None:
+            pulumi.set(__self__, "auto_rotate", auto_rotate)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="autoRotate")
+    def auto_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        """
+        return pulumi.get(self, "auto_rotate")
+
+    @auto_rotate.setter
+    def auto_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_rotate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The length of the secret rotation time interval.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interval", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The units for the secret rotation time interval.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class SmImportedCertificateManagedCsrArgsDict(TypedDict):
+    alt_names: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    With the Subject Alternative Name field, you can specify additional hostnames to be protected by a single SSL certificate.
+    """
+    client_flag: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    This field indicates whether certificate is flagged for client use.
+    """
+    code_signing_flag: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    This field indicates whether certificate is flagged for code signing use.
+    """
+    common_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The Common Name (CN) represents the server name protected by the SSL certificate.
+    """
+    countries: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The Country (C) values to define in the subject field of the resulting certificate.
+    """
+    csr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The certificate signing request.
+    """
+    email_protection_flag: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    This field indicates whether certificate is flagged for email protection use.
+    """
+    exclude_cn_from_sans: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    This parameter controls whether the common name is excluded from Subject Alternative Names (SANs).
+    """
+    ext_key_usage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The allowed extended key usage constraint on certificate, in a comma-delimited list.
+    """
+    ext_key_usage_oids: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A comma-delimited list of extended key usage Object Identifiers (OIDs).
+    """
+    ip_sans: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The IP Subject Alternative Names to define for the certificate, in a comma-delimited list.
+    """
+    key_bits: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of bits to use to generate the private key.
+    """
+    key_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The type of private key to generate.
+    """
+    key_usage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The allowed key usage constraint to define for certificate, in a comma-delimited list.
+    """
+    localities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The Locality (L) values to define in the subject field of the resulting certificate.
+    """
+    organizations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The Organization (O) values to define in the subject field of the resulting certificate.
+    """
+    other_sans: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The custom Object Identifier (OID) or UTF8-string Subject Alternative Names to define for the certificate, in a comma-delimited list.
+    """
+    ous: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The Organizational Unit (OU) values to define in the subject field of the resulting certificate.
+    """
+    policy_identifiers: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A comma-delimited list of policy Object Identifiers (OIDs).
+    """
+    postal_codes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The postal code values to define in the subject field of the resulting certificate.
+    """
+    provinces: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The Province (ST) values to define in the subject field of the resulting certificate.
+    """
+    require_cn: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    If set to false, makes the common_name field optional while generating a certificate.
+    """
+    rotate_keys: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    This field indicates whether the private key will be rotated.
+    """
+    server_flag: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    This field indicates whether certificate is flagged for server use.
+    """
+    street_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The street address values to define in the subject field of the resulting certificate.
+    """
+    uri_sans: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URI Subject Alternative Names to define for the certificate, in a comma-delimited list.
+    """
+    user_ids: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specifies the list of requested User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate.
+    """
+
+@pulumi.input_type
+class SmImportedCertificateManagedCsrArgs:
+    def __init__(__self__, *,
+                 alt_names: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_flag: pulumi.Input[Optional[_builtins.bool]] = None,
+                 code_signing_flag: pulumi.Input[Optional[_builtins.bool]] = None,
+                 common_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 countries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 csr: pulumi.Input[Optional[_builtins.str]] = None,
+                 email_protection_flag: pulumi.Input[Optional[_builtins.bool]] = None,
+                 exclude_cn_from_sans: pulumi.Input[Optional[_builtins.bool]] = None,
+                 ext_key_usage: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_key_usage_oids: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_sans: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_bits: pulumi.Input[Optional[_builtins.int]] = None,
+                 key_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_usage: pulumi.Input[Optional[_builtins.str]] = None,
+                 localities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 organizations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 other_sans: pulumi.Input[Optional[_builtins.str]] = None,
+                 ous: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 policy_identifiers: pulumi.Input[Optional[_builtins.str]] = None,
+                 postal_codes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 provinces: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 require_cn: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rotate_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+                 server_flag: pulumi.Input[Optional[_builtins.bool]] = None,
+                 street_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 uri_sans: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_ids: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] alt_names: With the Subject Alternative Name field, you can specify additional hostnames to be protected by a single SSL certificate.
+        :param pulumi.Input[_builtins.bool] client_flag: This field indicates whether certificate is flagged for client use.
+        :param pulumi.Input[_builtins.bool] code_signing_flag: This field indicates whether certificate is flagged for code signing use.
+        :param pulumi.Input[_builtins.str] common_name: The Common Name (CN) represents the server name protected by the SSL certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] countries: The Country (C) values to define in the subject field of the resulting certificate.
+        :param pulumi.Input[_builtins.str] csr: The certificate signing request.
+        :param pulumi.Input[_builtins.bool] email_protection_flag: This field indicates whether certificate is flagged for email protection use.
+        :param pulumi.Input[_builtins.bool] exclude_cn_from_sans: This parameter controls whether the common name is excluded from Subject Alternative Names (SANs).
+        :param pulumi.Input[_builtins.str] ext_key_usage: The allowed extended key usage constraint on certificate, in a comma-delimited list.
+        :param pulumi.Input[_builtins.str] ext_key_usage_oids: A comma-delimited list of extended key usage Object Identifiers (OIDs).
+        :param pulumi.Input[_builtins.str] ip_sans: The IP Subject Alternative Names to define for the certificate, in a comma-delimited list.
+        :param pulumi.Input[_builtins.int] key_bits: The number of bits to use to generate the private key.
+        :param pulumi.Input[_builtins.str] key_type: The type of private key to generate.
+        :param pulumi.Input[_builtins.str] key_usage: The allowed key usage constraint to define for certificate, in a comma-delimited list.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] localities: The Locality (L) values to define in the subject field of the resulting certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] organizations: The Organization (O) values to define in the subject field of the resulting certificate.
+        :param pulumi.Input[_builtins.str] other_sans: The custom Object Identifier (OID) or UTF8-string Subject Alternative Names to define for the certificate, in a comma-delimited list.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ous: The Organizational Unit (OU) values to define in the subject field of the resulting certificate.
+        :param pulumi.Input[_builtins.str] policy_identifiers: A comma-delimited list of policy Object Identifiers (OIDs).
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] postal_codes: The postal code values to define in the subject field of the resulting certificate.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] provinces: The Province (ST) values to define in the subject field of the resulting certificate.
+        :param pulumi.Input[_builtins.bool] require_cn: If set to false, makes the common_name field optional while generating a certificate.
+        :param pulumi.Input[_builtins.bool] rotate_keys: This field indicates whether the private key will be rotated.
+        :param pulumi.Input[_builtins.bool] server_flag: This field indicates whether certificate is flagged for server use.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] street_addresses: The street address values to define in the subject field of the resulting certificate.
+        :param pulumi.Input[_builtins.str] uri_sans: The URI Subject Alternative Names to define for the certificate, in a comma-delimited list.
+        :param pulumi.Input[_builtins.str] user_ids: Specifies the list of requested User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate.
+        """
+        if alt_names is not None:
+            pulumi.set(__self__, "alt_names", alt_names)
+        if client_flag is not None:
+            pulumi.set(__self__, "client_flag", client_flag)
+        if code_signing_flag is not None:
+            pulumi.set(__self__, "code_signing_flag", code_signing_flag)
+        if common_name is not None:
+            pulumi.set(__self__, "common_name", common_name)
+        if countries is not None:
+            pulumi.set(__self__, "countries", countries)
+        if csr is not None:
+            pulumi.set(__self__, "csr", csr)
+        if email_protection_flag is not None:
+            pulumi.set(__self__, "email_protection_flag", email_protection_flag)
+        if exclude_cn_from_sans is not None:
+            pulumi.set(__self__, "exclude_cn_from_sans", exclude_cn_from_sans)
+        if ext_key_usage is not None:
+            pulumi.set(__self__, "ext_key_usage", ext_key_usage)
+        if ext_key_usage_oids is not None:
+            pulumi.set(__self__, "ext_key_usage_oids", ext_key_usage_oids)
+        if ip_sans is not None:
+            pulumi.set(__self__, "ip_sans", ip_sans)
+        if key_bits is not None:
+            pulumi.set(__self__, "key_bits", key_bits)
+        if key_type is not None:
+            pulumi.set(__self__, "key_type", key_type)
+        if key_usage is not None:
+            pulumi.set(__self__, "key_usage", key_usage)
+        if localities is not None:
+            pulumi.set(__self__, "localities", localities)
+        if organizations is not None:
+            pulumi.set(__self__, "organizations", organizations)
+        if other_sans is not None:
+            pulumi.set(__self__, "other_sans", other_sans)
+        if ous is not None:
+            pulumi.set(__self__, "ous", ous)
+        if policy_identifiers is not None:
+            pulumi.set(__self__, "policy_identifiers", policy_identifiers)
+        if postal_codes is not None:
+            pulumi.set(__self__, "postal_codes", postal_codes)
+        if provinces is not None:
+            pulumi.set(__self__, "provinces", provinces)
+        if require_cn is not None:
+            pulumi.set(__self__, "require_cn", require_cn)
+        if rotate_keys is not None:
+            pulumi.set(__self__, "rotate_keys", rotate_keys)
+        if server_flag is not None:
+            pulumi.set(__self__, "server_flag", server_flag)
+        if street_addresses is not None:
+            pulumi.set(__self__, "street_addresses", street_addresses)
+        if uri_sans is not None:
+            pulumi.set(__self__, "uri_sans", uri_sans)
+        if user_ids is not None:
+            pulumi.set(__self__, "user_ids", user_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="altNames")
+    def alt_names(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        With the Subject Alternative Name field, you can specify additional hostnames to be protected by a single SSL certificate.
+        """
+        return pulumi.get(self, "alt_names")
+
+    @alt_names.setter
+    def alt_names(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "alt_names", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clientFlag")
+    def client_flag(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        This field indicates whether certificate is flagged for client use.
+        """
+        return pulumi.get(self, "client_flag")
+
+    @client_flag.setter
+    def client_flag(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "client_flag", value)
+
+    @_builtins.property
+    @pulumi.getter(name="codeSigningFlag")
+    def code_signing_flag(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        This field indicates whether certificate is flagged for code signing use.
+        """
+        return pulumi.get(self, "code_signing_flag")
+
+    @code_signing_flag.setter
+    def code_signing_flag(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "code_signing_flag", value)
+
+    @_builtins.property
+    @pulumi.getter(name="commonName")
+    def common_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The Common Name (CN) represents the server name protected by the SSL certificate.
+        """
+        return pulumi.get(self, "common_name")
+
+    @common_name.setter
+    def common_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "common_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def countries(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The Country (C) values to define in the subject field of the resulting certificate.
+        """
+        return pulumi.get(self, "countries")
+
+    @countries.setter
+    def countries(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "countries", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def csr(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The certificate signing request.
+        """
+        return pulumi.get(self, "csr")
+
+    @csr.setter
+    def csr(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "csr", value)
+
+    @_builtins.property
+    @pulumi.getter(name="emailProtectionFlag")
+    def email_protection_flag(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        This field indicates whether certificate is flagged for email protection use.
+        """
+        return pulumi.get(self, "email_protection_flag")
+
+    @email_protection_flag.setter
+    def email_protection_flag(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "email_protection_flag", value)
+
+    @_builtins.property
+    @pulumi.getter(name="excludeCnFromSans")
+    def exclude_cn_from_sans(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        This parameter controls whether the common name is excluded from Subject Alternative Names (SANs).
+        """
+        return pulumi.get(self, "exclude_cn_from_sans")
+
+    @exclude_cn_from_sans.setter
+    def exclude_cn_from_sans(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "exclude_cn_from_sans", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extKeyUsage")
+    def ext_key_usage(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The allowed extended key usage constraint on certificate, in a comma-delimited list.
+        """
+        return pulumi.get(self, "ext_key_usage")
+
+    @ext_key_usage.setter
+    def ext_key_usage(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_key_usage", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extKeyUsageOids")
+    def ext_key_usage_oids(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A comma-delimited list of extended key usage Object Identifiers (OIDs).
+        """
+        return pulumi.get(self, "ext_key_usage_oids")
+
+    @ext_key_usage_oids.setter
+    def ext_key_usage_oids(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_key_usage_oids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipSans")
+    def ip_sans(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The IP Subject Alternative Names to define for the certificate, in a comma-delimited list.
+        """
+        return pulumi.get(self, "ip_sans")
+
+    @ip_sans.setter
+    def ip_sans(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ip_sans", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyBits")
+    def key_bits(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of bits to use to generate the private key.
+        """
+        return pulumi.get(self, "key_bits")
+
+    @key_bits.setter
+    def key_bits(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "key_bits", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of private key to generate.
+        """
+        return pulumi.get(self, "key_type")
+
+    @key_type.setter
+    def key_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyUsage")
+    def key_usage(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The allowed key usage constraint to define for certificate, in a comma-delimited list.
+        """
+        return pulumi.get(self, "key_usage")
+
+    @key_usage.setter
+    def key_usage(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_usage", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def localities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The Locality (L) values to define in the subject field of the resulting certificate.
+        """
+        return pulumi.get(self, "localities")
+
+    @localities.setter
+    def localities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "localities", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def organizations(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The Organization (O) values to define in the subject field of the resulting certificate.
+        """
+        return pulumi.get(self, "organizations")
+
+    @organizations.setter
+    def organizations(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "organizations", value)
+
+    @_builtins.property
+    @pulumi.getter(name="otherSans")
+    def other_sans(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The custom Object Identifier (OID) or UTF8-string Subject Alternative Names to define for the certificate, in a comma-delimited list.
+        """
+        return pulumi.get(self, "other_sans")
+
+    @other_sans.setter
+    def other_sans(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "other_sans", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ous(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The Organizational Unit (OU) values to define in the subject field of the resulting certificate.
+        """
+        return pulumi.get(self, "ous")
+
+    @ous.setter
+    def ous(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ous", value)
+
+    @_builtins.property
+    @pulumi.getter(name="policyIdentifiers")
+    def policy_identifiers(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A comma-delimited list of policy Object Identifiers (OIDs).
+        """
+        return pulumi.get(self, "policy_identifiers")
+
+    @policy_identifiers.setter
+    def policy_identifiers(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "policy_identifiers", value)
+
+    @_builtins.property
+    @pulumi.getter(name="postalCodes")
+    def postal_codes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The postal code values to define in the subject field of the resulting certificate.
+        """
+        return pulumi.get(self, "postal_codes")
+
+    @postal_codes.setter
+    def postal_codes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "postal_codes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def provinces(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The Province (ST) values to define in the subject field of the resulting certificate.
+        """
+        return pulumi.get(self, "provinces")
+
+    @provinces.setter
+    def provinces(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "provinces", value)
+
+    @_builtins.property
+    @pulumi.getter(name="requireCn")
+    def require_cn(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        If set to false, makes the common_name field optional while generating a certificate.
+        """
+        return pulumi.get(self, "require_cn")
+
+    @require_cn.setter
+    def require_cn(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "require_cn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rotateKeys")
+    def rotate_keys(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        This field indicates whether the private key will be rotated.
+        """
+        return pulumi.get(self, "rotate_keys")
+
+    @rotate_keys.setter
+    def rotate_keys(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "rotate_keys", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serverFlag")
+    def server_flag(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        This field indicates whether certificate is flagged for server use.
+        """
+        return pulumi.get(self, "server_flag")
+
+    @server_flag.setter
+    def server_flag(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "server_flag", value)
+
+    @_builtins.property
+    @pulumi.getter(name="streetAddresses")
+    def street_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The street address values to define in the subject field of the resulting certificate.
+        """
+        return pulumi.get(self, "street_addresses")
+
+    @street_addresses.setter
+    def street_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "street_addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="uriSans")
+    def uri_sans(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URI Subject Alternative Names to define for the certificate, in a comma-delimited list.
+        """
+        return pulumi.get(self, "uri_sans")
+
+    @uri_sans.setter
+    def uri_sans(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "uri_sans", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userIds")
+    def user_ids(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies the list of requested User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate.
+        """
+        return pulumi.get(self, "user_ids")
+
+    @user_ids.setter
+    def user_ids(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "user_ids", value)
+
+
+class SmImportedCertificateValidityArgsDict(TypedDict):
+    not_after: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date-time format follows RFC 3339.
+    """
+    not_before: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date-time format follows RFC 3339.
+    """
+
+@pulumi.input_type
+class SmImportedCertificateValidityArgs:
+    def __init__(__self__, *,
+                 not_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 not_before: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] not_after: The date-time format follows RFC 3339.
+        :param pulumi.Input[_builtins.str] not_before: The date-time format follows RFC 3339.
+        """
+        if not_after is not None:
+            pulumi.set(__self__, "not_after", not_after)
+        if not_before is not None:
+            pulumi.set(__self__, "not_before", not_before)
+
+    @_builtins.property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date-time format follows RFC 3339.
+        """
+        return pulumi.get(self, "not_after")
+
+    @not_after.setter
+    def not_after(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "not_after", value)
+
+    @_builtins.property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date-time format follows RFC 3339.
+        """
+        return pulumi.get(self, "not_before")
+
+    @not_before.setter
+    def not_before(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "not_before", value)
+
+
+class SmPrivateCertificateConfigurationActionSignCsrDataArgsDict(TypedDict):
+    ca_chains: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The chain of certificate authorities that are associated with the certificate.
+    """
+    certificate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The PEM-encoded contents of your certificate.
+    """
+    expiration: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The certificate expiration time.
+    """
+    issuing_ca: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateConfigurationActionSignCsrDataArgs:
+    def __init__(__self__, *,
+                 ca_chains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 issuing_ca: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ca_chains: The chain of certificate authorities that are associated with the certificate.
+        :param pulumi.Input[_builtins.str] certificate: The PEM-encoded contents of your certificate.
+        :param pulumi.Input[_builtins.int] expiration: The certificate expiration time.
+        :param pulumi.Input[_builtins.str] issuing_ca: The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+        """
+        if ca_chains is not None:
+            pulumi.set(__self__, "ca_chains", ca_chains)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if expiration is not None:
+            pulumi.set(__self__, "expiration", expiration)
+        if issuing_ca is not None:
+            pulumi.set(__self__, "issuing_ca", issuing_ca)
+
+    @_builtins.property
+    @pulumi.getter(name="caChains")
+    def ca_chains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The chain of certificate authorities that are associated with the certificate.
+        """
+        return pulumi.get(self, "ca_chains")
+
+    @ca_chains.setter
+    def ca_chains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ca_chains", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The PEM-encoded contents of your certificate.
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def expiration(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The certificate expiration time.
+        """
+        return pulumi.get(self, "expiration")
+
+    @expiration.setter
+    def expiration(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "expiration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="issuingCa")
+    def issuing_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+        """
+        return pulumi.get(self, "issuing_ca")
+
+    @issuing_ca.setter
+    def issuing_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "issuing_ca", value)
+
+
+class SmPrivateCertificateConfigurationIntermediateCaCryptoKeyArgsDict(TypedDict):
+    allow_generate_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+    """
+    provider: NotRequired[pulumi.Input[Optional['SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgsDict']]]
+    """
+    The data that is associated with a cryptographic provider.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateConfigurationIntermediateCaCryptoKeyArgs:
+    def __init__(__self__, *,
+                 allow_generate_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider: pulumi.Input[Optional['SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.bool] allow_generate_key: The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+        :param pulumi.Input[_builtins.str] id: The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+        :param pulumi.Input[_builtins.str] label: The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+        :param pulumi.Input['SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgs'] provider: The data that is associated with a cryptographic provider.
+        """
+        if allow_generate_key is not None:
+            pulumi.set(__self__, "allow_generate_key", allow_generate_key)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if provider is not None:
+            pulumi.set(__self__, "provider", provider)
+
+    @_builtins.property
+    @pulumi.getter(name="allowGenerateKey")
+    def allow_generate_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+        """
+        return pulumi.get(self, "allow_generate_key")
+
+    @allow_generate_key.setter
+    def allow_generate_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "allow_generate_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def provider(self) -> pulumi.Input[Optional['SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgs']]:
+        """
+        The data that is associated with a cryptographic provider.
+        """
+        return pulumi.get(self, "provider")
+
+    @provider.setter
+    def provider(self, value: pulumi.Input[Optional['SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgs']]):
+        pulumi.set(self, "provider", value)
+
+
+class SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgsDict(TypedDict):
+    instance_crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The HPCS instance CRN.
+    """
+    pin_iam_credentials_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The secret Id of iam credentials with api key to access HPCS instance.
+    """
+    private_keystore_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The HPCS private key store space id.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The type of cryptographic provider.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProviderArgs:
+    def __init__(__self__, *,
+                 instance_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 pin_iam_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_keystore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] instance_crn: The HPCS instance CRN.
+        :param pulumi.Input[_builtins.str] pin_iam_credentials_secret_id: The secret Id of iam credentials with api key to access HPCS instance.
+        :param pulumi.Input[_builtins.str] private_keystore_id: The HPCS private key store space id.
+        :param pulumi.Input[_builtins.str] type: The type of cryptographic provider.
+        """
+        if instance_crn is not None:
+            pulumi.set(__self__, "instance_crn", instance_crn)
+        if pin_iam_credentials_secret_id is not None:
+            pulumi.set(__self__, "pin_iam_credentials_secret_id", pin_iam_credentials_secret_id)
+        if private_keystore_id is not None:
+            pulumi.set(__self__, "private_keystore_id", private_keystore_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCrn")
+    def instance_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The HPCS instance CRN.
+        """
+        return pulumi.get(self, "instance_crn")
+
+    @instance_crn.setter
+    def instance_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instance_crn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pinIamCredentialsSecretId")
+    def pin_iam_credentials_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secret Id of iam credentials with api key to access HPCS instance.
+        """
+        return pulumi.get(self, "pin_iam_credentials_secret_id")
+
+    @pin_iam_credentials_secret_id.setter
+    def pin_iam_credentials_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pin_iam_credentials_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeystoreId")
+    def private_keystore_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The HPCS private key store space id.
+        """
+        return pulumi.get(self, "private_keystore_id")
+
+    @private_keystore_id.setter
+    def private_keystore_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_keystore_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of cryptographic provider.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class SmPrivateCertificateConfigurationIntermediateCaDataArgsDict(TypedDict):
+    ca_chains: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The chain of certificate authorities that are associated with the certificate.
+    """
+    certificate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The PEM-encoded contents of your certificate.
+    """
+    csr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The certificate signing request.
+    """
+    expiration: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The certificate expiration time.
+    """
+    issuing_ca: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+    """
+    private_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Optional) The PEM-encoded private key to associate with the certificate.
+    """
+    private_key_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The type of private key to generate.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateConfigurationIntermediateCaDataArgs:
+    def __init__(__self__, *,
+                 ca_chains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 csr: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 issuing_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ca_chains: The chain of certificate authorities that are associated with the certificate.
+        :param pulumi.Input[_builtins.str] certificate: The PEM-encoded contents of your certificate.
+        :param pulumi.Input[_builtins.str] csr: The certificate signing request.
+        :param pulumi.Input[_builtins.int] expiration: The certificate expiration time.
+        :param pulumi.Input[_builtins.str] issuing_ca: The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+        :param pulumi.Input[_builtins.str] private_key: (Optional) The PEM-encoded private key to associate with the certificate.
+        :param pulumi.Input[_builtins.str] private_key_type: The type of private key to generate.
+        """
+        if ca_chains is not None:
+            pulumi.set(__self__, "ca_chains", ca_chains)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if csr is not None:
+            pulumi.set(__self__, "csr", csr)
+        if expiration is not None:
+            pulumi.set(__self__, "expiration", expiration)
+        if issuing_ca is not None:
+            pulumi.set(__self__, "issuing_ca", issuing_ca)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+        if private_key_type is not None:
+            pulumi.set(__self__, "private_key_type", private_key_type)
+
+    @_builtins.property
+    @pulumi.getter(name="caChains")
+    def ca_chains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The chain of certificate authorities that are associated with the certificate.
+        """
+        return pulumi.get(self, "ca_chains")
+
+    @ca_chains.setter
+    def ca_chains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ca_chains", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The PEM-encoded contents of your certificate.
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def csr(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The certificate signing request.
+        """
+        return pulumi.get(self, "csr")
+
+    @csr.setter
+    def csr(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "csr", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def expiration(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The certificate expiration time.
+        """
+        return pulumi.get(self, "expiration")
+
+    @expiration.setter
+    def expiration(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "expiration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="issuingCa")
+    def issuing_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+        """
+        return pulumi.get(self, "issuing_ca")
+
+    @issuing_ca.setter
+    def issuing_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "issuing_ca", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) The PEM-encoded private key to associate with the certificate.
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyType")
+    def private_key_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of private key to generate.
+        """
+        return pulumi.get(self, "private_key_type")
+
+    @private_key_type.setter
+    def private_key_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key_type", value)
+
+
+class SmPrivateCertificateConfigurationRootCaCryptoKeyArgsDict(TypedDict):
+    allow_generate_key: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+    """
+    label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+    """
+    provider: NotRequired[pulumi.Input[Optional['SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgsDict']]]
+    """
+    The data that is associated with a cryptographic provider.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateConfigurationRootCaCryptoKeyArgs:
+    def __init__(__self__, *,
+                 allow_generate_key: pulumi.Input[Optional[_builtins.bool]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 label: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider: pulumi.Input[Optional['SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.bool] allow_generate_key: The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+        :param pulumi.Input[_builtins.str] id: The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+        :param pulumi.Input[_builtins.str] label: The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+        :param pulumi.Input['SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgs'] provider: The data that is associated with a cryptographic provider.
+        """
+        if allow_generate_key is not None:
+            pulumi.set(__self__, "allow_generate_key", allow_generate_key)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if label is not None:
+            pulumi.set(__self__, "label", label)
+        if provider is not None:
+            pulumi.set(__self__, "provider", provider)
+
+    @_builtins.property
+    @pulumi.getter(name="allowGenerateKey")
+    def allow_generate_key(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+        """
+        return pulumi.get(self, "allow_generate_key")
+
+    @allow_generate_key.setter
+    def allow_generate_key(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "allow_generate_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+        """
+        return pulumi.get(self, "label")
+
+    @label.setter
+    def label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "label", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def provider(self) -> pulumi.Input[Optional['SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgs']]:
+        """
+        The data that is associated with a cryptographic provider.
+        """
+        return pulumi.get(self, "provider")
+
+    @provider.setter
+    def provider(self, value: pulumi.Input[Optional['SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgs']]):
+        pulumi.set(self, "provider", value)
+
+
+class SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgsDict(TypedDict):
+    instance_crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The HPCS instance CRN.
+    """
+    pin_iam_credentials_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The secret Id of iam credentials with api key to access HPCS instance.
+    """
+    private_keystore_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The HPCS private key store space id.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The type of cryptographic provider.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateConfigurationRootCaCryptoKeyProviderArgs:
+    def __init__(__self__, *,
+                 instance_crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 pin_iam_credentials_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_keystore_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] instance_crn: The HPCS instance CRN.
+        :param pulumi.Input[_builtins.str] pin_iam_credentials_secret_id: The secret Id of iam credentials with api key to access HPCS instance.
+        :param pulumi.Input[_builtins.str] private_keystore_id: The HPCS private key store space id.
+        :param pulumi.Input[_builtins.str] type: The type of cryptographic provider.
+        """
+        if instance_crn is not None:
+            pulumi.set(__self__, "instance_crn", instance_crn)
+        if pin_iam_credentials_secret_id is not None:
+            pulumi.set(__self__, "pin_iam_credentials_secret_id", pin_iam_credentials_secret_id)
+        if private_keystore_id is not None:
+            pulumi.set(__self__, "private_keystore_id", private_keystore_id)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceCrn")
+    def instance_crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The HPCS instance CRN.
+        """
+        return pulumi.get(self, "instance_crn")
+
+    @instance_crn.setter
+    def instance_crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instance_crn", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pinIamCredentialsSecretId")
+    def pin_iam_credentials_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The secret Id of iam credentials with api key to access HPCS instance.
+        """
+        return pulumi.get(self, "pin_iam_credentials_secret_id")
+
+    @pin_iam_credentials_secret_id.setter
+    def pin_iam_credentials_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pin_iam_credentials_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeystoreId")
+    def private_keystore_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The HPCS private key store space id.
+        """
+        return pulumi.get(self, "private_keystore_id")
+
+    @private_keystore_id.setter
+    def private_keystore_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_keystore_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of cryptographic provider.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class SmPrivateCertificateConfigurationRootCaDataArgsDict(TypedDict):
+    ca_chains: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    The chain of certificate authorities that are associated with the certificate.
+    """
+    certificate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The PEM-encoded contents of your certificate.
+    """
+    csr: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The certificate signing request.
+    """
+    expiration: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The certificate expiration time.
+    """
+    issuing_ca: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+    """
+    private_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Optional) The PEM-encoded private key to associate with the certificate.
+    """
+    private_key_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The type of private key to generate.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateConfigurationRootCaDataArgs:
+    def __init__(__self__, *,
+                 ca_chains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 csr: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.int]] = None,
+                 issuing_ca: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ca_chains: The chain of certificate authorities that are associated with the certificate.
+        :param pulumi.Input[_builtins.str] certificate: The PEM-encoded contents of your certificate.
+        :param pulumi.Input[_builtins.str] csr: The certificate signing request.
+        :param pulumi.Input[_builtins.int] expiration: The certificate expiration time.
+        :param pulumi.Input[_builtins.str] issuing_ca: The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+        :param pulumi.Input[_builtins.str] private_key: (Optional) The PEM-encoded private key to associate with the certificate.
+        :param pulumi.Input[_builtins.str] private_key_type: The type of private key to generate.
+        """
+        if ca_chains is not None:
+            pulumi.set(__self__, "ca_chains", ca_chains)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if csr is not None:
+            pulumi.set(__self__, "csr", csr)
+        if expiration is not None:
+            pulumi.set(__self__, "expiration", expiration)
+        if issuing_ca is not None:
+            pulumi.set(__self__, "issuing_ca", issuing_ca)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+        if private_key_type is not None:
+            pulumi.set(__self__, "private_key_type", private_key_type)
+
+    @_builtins.property
+    @pulumi.getter(name="caChains")
+    def ca_chains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        The chain of certificate authorities that are associated with the certificate.
+        """
+        return pulumi.get(self, "ca_chains")
+
+    @ca_chains.setter
+    def ca_chains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "ca_chains", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The PEM-encoded contents of your certificate.
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def csr(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The certificate signing request.
+        """
+        return pulumi.get(self, "csr")
+
+    @csr.setter
+    def csr(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "csr", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def expiration(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The certificate expiration time.
+        """
+        return pulumi.get(self, "expiration")
+
+    @expiration.setter
+    def expiration(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "expiration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="issuingCa")
+    def issuing_ca(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+        """
+        return pulumi.get(self, "issuing_ca")
+
+    @issuing_ca.setter
+    def issuing_ca(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "issuing_ca", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Optional) The PEM-encoded private key to associate with the certificate.
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyType")
+    def private_key_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of private key to generate.
+        """
+        return pulumi.get(self, "private_key_type")
+
+    @private_key_type.setter
+    def private_key_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key_type", value)
+
+
+class SmPrivateCertificateRotationArgsDict(TypedDict):
+    auto_rotate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+    """
+    interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The length of the secret rotation time interval.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The units for the secret rotation time interval.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateRotationArgs:
+    def __init__(__self__, *,
+                 auto_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_rotate: Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        :param pulumi.Input[_builtins.int] interval: The length of the secret rotation time interval.
+        :param pulumi.Input[_builtins.str] unit: The units for the secret rotation time interval.
+        """
+        if auto_rotate is not None:
+            pulumi.set(__self__, "auto_rotate", auto_rotate)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="autoRotate")
+    def auto_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        """
+        return pulumi.get(self, "auto_rotate")
+
+    @auto_rotate.setter
+    def auto_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_rotate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The length of the secret rotation time interval.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interval", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The units for the secret rotation time interval.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class SmPrivateCertificateValidityArgsDict(TypedDict):
+    not_after: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date-time format follows RFC 3339.
+    """
+    not_before: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date-time format follows RFC 3339.
+    """
+
+@pulumi.input_type
+class SmPrivateCertificateValidityArgs:
+    def __init__(__self__, *,
+                 not_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 not_before: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] not_after: The date-time format follows RFC 3339.
+        :param pulumi.Input[_builtins.str] not_before: The date-time format follows RFC 3339.
+        """
+        if not_after is not None:
+            pulumi.set(__self__, "not_after", not_after)
+        if not_before is not None:
+            pulumi.set(__self__, "not_before", not_before)
+
+    @_builtins.property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date-time format follows RFC 3339.
+        """
+        return pulumi.get(self, "not_after")
+
+    @not_after.setter
+    def not_after(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "not_after", value)
+
+    @_builtins.property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date-time format follows RFC 3339.
+        """
+        return pulumi.get(self, "not_before")
+
+    @not_before.setter
+    def not_before(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "not_before", value)
+
+
+class SmPublicCertificateAkamaiArgsDict(TypedDict):
+    config: NotRequired[pulumi.Input[Optional['SmPublicCertificateAkamaiConfigArgsDict']]]
+    """
+    Akamai credentials
+    """
+    edgerc: NotRequired[pulumi.Input[Optional['SmPublicCertificateAkamaiEdgercArgsDict']]]
+    """
+    Akamai credentials
+    """
+
+@pulumi.input_type
+class SmPublicCertificateAkamaiArgs:
+    def __init__(__self__, *,
+                 config: pulumi.Input[Optional['SmPublicCertificateAkamaiConfigArgs']] = None,
+                 edgerc: pulumi.Input[Optional['SmPublicCertificateAkamaiEdgercArgs']] = None):
+        """
+        :param pulumi.Input['SmPublicCertificateAkamaiConfigArgs'] config: Akamai credentials
+        :param pulumi.Input['SmPublicCertificateAkamaiEdgercArgs'] edgerc: Akamai credentials
+        """
+        if config is not None:
+            pulumi.set(__self__, "config", config)
+        if edgerc is not None:
+            pulumi.set(__self__, "edgerc", edgerc)
+
+    @_builtins.property
+    @pulumi.getter
+    def config(self) -> pulumi.Input[Optional['SmPublicCertificateAkamaiConfigArgs']]:
+        """
+        Akamai credentials
+        """
+        return pulumi.get(self, "config")
+
+    @config.setter
+    def config(self, value: pulumi.Input[Optional['SmPublicCertificateAkamaiConfigArgs']]):
+        pulumi.set(self, "config", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def edgerc(self) -> pulumi.Input[Optional['SmPublicCertificateAkamaiEdgercArgs']]:
+        """
+        Akamai credentials
+        """
+        return pulumi.get(self, "edgerc")
+
+    @edgerc.setter
+    def edgerc(self, value: pulumi.Input[Optional['SmPublicCertificateAkamaiEdgercArgs']]):
+        pulumi.set(self, "edgerc", value)
+
+
+class SmPublicCertificateAkamaiConfigArgsDict(TypedDict):
+    access_token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    client_secret: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    client_token: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    host: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class SmPublicCertificateAkamaiConfigArgs:
+    def __init__(__self__, *,
+                 access_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_secret: pulumi.Input[Optional[_builtins.str]] = None,
+                 client_token: pulumi.Input[Optional[_builtins.str]] = None,
+                 host: pulumi.Input[Optional[_builtins.str]] = None):
+        if access_token is not None:
+            pulumi.set(__self__, "access_token", access_token)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if client_token is not None:
+            pulumi.set(__self__, "client_token", client_token)
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+
+    @_builtins.property
+    @pulumi.getter(name="accessToken")
+    def access_token(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "access_token")
+
+    @access_token.setter
+    def access_token(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "access_token", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "client_secret")
+
+    @client_secret.setter
+    def client_secret(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "client_secret", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clientToken")
+    def client_token(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "client_token")
+
+    @client_token.setter
+    def client_token(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "client_token", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def host(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "host", value)
+
+
+class SmPublicCertificateAkamaiEdgercArgsDict(TypedDict):
+    config_section: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The section of the edgerc file to use for configuration.
+    """
+    path_to_edgerc: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Path to Akamai's configuration file.
+    """
+
+@pulumi.input_type
+class SmPublicCertificateAkamaiEdgercArgs:
+    def __init__(__self__, *,
+                 config_section: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_to_edgerc: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] config_section: The section of the edgerc file to use for configuration.
+        :param pulumi.Input[_builtins.str] path_to_edgerc: Path to Akamai's configuration file.
+        """
+        if config_section is not None:
+            pulumi.set(__self__, "config_section", config_section)
+        if path_to_edgerc is not None:
+            pulumi.set(__self__, "path_to_edgerc", path_to_edgerc)
+
+    @_builtins.property
+    @pulumi.getter(name="configSection")
+    def config_section(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The section of the edgerc file to use for configuration.
+        """
+        return pulumi.get(self, "config_section")
+
+    @config_section.setter
+    def config_section(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "config_section", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pathToEdgerc")
+    def path_to_edgerc(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Path to Akamai's configuration file.
+        """
+        return pulumi.get(self, "path_to_edgerc")
+
+    @path_to_edgerc.setter
+    def path_to_edgerc(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "path_to_edgerc", value)
+
+
+class SmPublicCertificateIssuanceInfoArgsDict(TypedDict):
+    auto_rotated: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether the issued certificate is configured with an automatic rotation policy.
+    """
+    challenges: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmPublicCertificateIssuanceInfoChallengeArgsDict']]]]]
+    """
+    The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+    """
+    dns_challenge_validation_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+    """
+    error_code: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A code that identifies an issuance error.This field, along with `error_message`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+    """
+    error_message: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A human-readable message that provides details about the issuance error.
+    """
+    ordered_on: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date when the certificate is ordered. The date format follows RFC 3339.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+    """
+    state_description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A text representation of the secret state.
+    """
+
+@pulumi.input_type
+class SmPublicCertificateIssuanceInfoArgs:
+    def __init__(__self__, *,
+                 auto_rotated: pulumi.Input[Optional[_builtins.bool]] = None,
+                 challenges: pulumi.Input[Optional[Sequence[pulumi.Input['SmPublicCertificateIssuanceInfoChallengeArgs']]]] = None,
+                 dns_challenge_validation_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_code: pulumi.Input[Optional[_builtins.str]] = None,
+                 error_message: pulumi.Input[Optional[_builtins.str]] = None,
+                 ordered_on: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.int]] = None,
+                 state_description: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_rotated: Indicates whether the issued certificate is configured with an automatic rotation policy.
+        :param pulumi.Input[Sequence[pulumi.Input['SmPublicCertificateIssuanceInfoChallengeArgs']]] challenges: The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+        :param pulumi.Input[_builtins.str] dns_challenge_validation_time: The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+        :param pulumi.Input[_builtins.str] error_code: A code that identifies an issuance error.This field, along with `error_message`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+        :param pulumi.Input[_builtins.str] error_message: A human-readable message that provides details about the issuance error.
+        :param pulumi.Input[_builtins.str] ordered_on: The date when the certificate is ordered. The date format follows RFC 3339.
+        :param pulumi.Input[_builtins.int] state: The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+        :param pulumi.Input[_builtins.str] state_description: A text representation of the secret state.
+        """
+        if auto_rotated is not None:
+            pulumi.set(__self__, "auto_rotated", auto_rotated)
+        if challenges is not None:
+            pulumi.set(__self__, "challenges", challenges)
+        if dns_challenge_validation_time is not None:
+            pulumi.set(__self__, "dns_challenge_validation_time", dns_challenge_validation_time)
+        if error_code is not None:
+            pulumi.set(__self__, "error_code", error_code)
+        if error_message is not None:
+            pulumi.set(__self__, "error_message", error_message)
+        if ordered_on is not None:
+            pulumi.set(__self__, "ordered_on", ordered_on)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if state_description is not None:
+            pulumi.set(__self__, "state_description", state_description)
+
+    @_builtins.property
+    @pulumi.getter(name="autoRotated")
+    def auto_rotated(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the issued certificate is configured with an automatic rotation policy.
+        """
+        return pulumi.get(self, "auto_rotated")
+
+    @auto_rotated.setter
+    def auto_rotated(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_rotated", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def challenges(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmPublicCertificateIssuanceInfoChallengeArgs']]]]:
+        """
+        The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+        """
+        return pulumi.get(self, "challenges")
+
+    @challenges.setter
+    def challenges(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmPublicCertificateIssuanceInfoChallengeArgs']]]]):
+        pulumi.set(self, "challenges", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dnsChallengeValidationTime")
+    def dns_challenge_validation_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+        """
+        return pulumi.get(self, "dns_challenge_validation_time")
+
+    @dns_challenge_validation_time.setter
+    def dns_challenge_validation_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "dns_challenge_validation_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="errorCode")
+    def error_code(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A code that identifies an issuance error.This field, along with `error_message`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+        """
+        return pulumi.get(self, "error_code")
+
+    @error_code.setter
+    def error_code(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "error_code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A human-readable message that provides details about the issuance error.
+        """
+        return pulumi.get(self, "error_message")
+
+    @error_message.setter
+    def error_message(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "error_message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="orderedOn")
+    def ordered_on(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date when the certificate is ordered. The date format follows RFC 3339.
+        """
+        return pulumi.get(self, "ordered_on")
+
+    @ordered_on.setter
+    def ordered_on(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ordered_on", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="stateDescription")
+    def state_description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A text representation of the secret state.
+        """
+        return pulumi.get(self, "state_description")
+
+    @state_description.setter
+    def state_description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state_description", value)
+
+
+class SmPublicCertificateIssuanceInfoChallengeArgsDict(TypedDict):
+    domain: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The challenge domain.
+    """
+    expiration: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The challenge expiration date. The date format follows RFC 3339.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The challenge status.
+    """
+    txt_record_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The TXT record name.
+    """
+    txt_record_value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The TXT record value.
+    """
+
+@pulumi.input_type
+class SmPublicCertificateIssuanceInfoChallengeArgs:
+    def __init__(__self__, *,
+                 domain: pulumi.Input[Optional[_builtins.str]] = None,
+                 expiration: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None,
+                 txt_record_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 txt_record_value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] domain: The challenge domain.
+        :param pulumi.Input[_builtins.str] expiration: The challenge expiration date. The date format follows RFC 3339.
+        :param pulumi.Input[_builtins.str] status: The challenge status.
+        :param pulumi.Input[_builtins.str] txt_record_name: The TXT record name.
+        :param pulumi.Input[_builtins.str] txt_record_value: The TXT record value.
+        """
+        if domain is not None:
+            pulumi.set(__self__, "domain", domain)
+        if expiration is not None:
+            pulumi.set(__self__, "expiration", expiration)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if txt_record_name is not None:
+            pulumi.set(__self__, "txt_record_name", txt_record_name)
+        if txt_record_value is not None:
+            pulumi.set(__self__, "txt_record_value", txt_record_value)
+
+    @_builtins.property
+    @pulumi.getter
+    def domain(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The challenge domain.
+        """
+        return pulumi.get(self, "domain")
+
+    @domain.setter
+    def domain(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def expiration(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The challenge expiration date. The date format follows RFC 3339.
+        """
+        return pulumi.get(self, "expiration")
+
+    @expiration.setter
+    def expiration(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expiration", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The challenge status.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="txtRecordName")
+    def txt_record_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The TXT record name.
+        """
+        return pulumi.get(self, "txt_record_name")
+
+    @txt_record_name.setter
+    def txt_record_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "txt_record_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="txtRecordValue")
+    def txt_record_value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The TXT record value.
+        """
+        return pulumi.get(self, "txt_record_value")
+
+    @txt_record_value.setter
+    def txt_record_value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "txt_record_value", value)
+
+
+class SmPublicCertificateRotationArgsDict(TypedDict):
+    auto_rotate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your certificate 31 days before it expires.
+    """
+    rotate_keys: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+    """
+
+@pulumi.input_type
+class SmPublicCertificateRotationArgs:
+    def __init__(__self__, *,
+                 auto_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 rotate_keys: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_rotate: Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your certificate 31 days before it expires.
+        :param pulumi.Input[_builtins.bool] rotate_keys: Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+        """
+        if auto_rotate is not None:
+            pulumi.set(__self__, "auto_rotate", auto_rotate)
+        if rotate_keys is not None:
+            pulumi.set(__self__, "rotate_keys", rotate_keys)
+
+    @_builtins.property
+    @pulumi.getter(name="autoRotate")
+    def auto_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your certificate 31 days before it expires.
+        """
+        return pulumi.get(self, "auto_rotate")
+
+    @auto_rotate.setter
+    def auto_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_rotate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="rotateKeys")
+    def rotate_keys(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+        """
+        return pulumi.get(self, "rotate_keys")
+
+    @rotate_keys.setter
+    def rotate_keys(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "rotate_keys", value)
+
+
+class SmPublicCertificateValidityArgsDict(TypedDict):
+    not_after: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date-time format follows RFC 3339.
+    """
+    not_before: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The date-time format follows RFC 3339.
+    """
+
+@pulumi.input_type
+class SmPublicCertificateValidityArgs:
+    def __init__(__self__, *,
+                 not_after: pulumi.Input[Optional[_builtins.str]] = None,
+                 not_before: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] not_after: The date-time format follows RFC 3339.
+        :param pulumi.Input[_builtins.str] not_before: The date-time format follows RFC 3339.
+        """
+        if not_after is not None:
+            pulumi.set(__self__, "not_after", not_after)
+        if not_before is not None:
+            pulumi.set(__self__, "not_before", not_before)
+
+    @_builtins.property
+    @pulumi.getter(name="notAfter")
+    def not_after(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date-time format follows RFC 3339.
+        """
+        return pulumi.get(self, "not_after")
+
+    @not_after.setter
+    def not_after(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "not_after", value)
+
+    @_builtins.property
+    @pulumi.getter(name="notBefore")
+    def not_before(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The date-time format follows RFC 3339.
+        """
+        return pulumi.get(self, "not_before")
+
+    @not_before.setter
+    def not_before(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "not_before", value)
+
+
+class SmServiceCredentialsSecretRotationArgsDict(TypedDict):
+    auto_rotate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+    """
+    interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The length of the secret rotation time interval.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The units for the secret rotation time interval.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretRotationArgs:
+    def __init__(__self__, *,
+                 auto_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_rotate: Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        :param pulumi.Input[_builtins.int] interval: The length of the secret rotation time interval.
+        :param pulumi.Input[_builtins.str] unit: The units for the secret rotation time interval.
+        """
+        if auto_rotate is not None:
+            pulumi.set(__self__, "auto_rotate", auto_rotate)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="autoRotate")
+    def auto_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        """
+        return pulumi.get(self, "auto_rotate")
+
+    @auto_rotate.setter
+    def auto_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_rotate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The length of the secret rotation time interval.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interval", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The units for the secret rotation time interval.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
+
+
+class SmServiceCredentialsSecretSourceServiceArgsDict(TypedDict):
+    instance: pulumi.Input['SmServiceCredentialsSecretSourceServiceInstanceArgsDict']
+    """
+    The source service instance identifier.
+    """
+    iams: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamArgsDict']]]]]
+    """
+    The source service IAM data is returned in case IAM credentials where created for this secret.
+    """
+    parameters: NotRequired[pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]]
+    """
+    The collection of parameters for the service credentials target.
+    """
+    resource_keys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceResourceKeyArgsDict']]]]]
+    """
+    The source service resource key data of the generated service credentials.
+    """
+    role: NotRequired[pulumi.Input[Optional['SmServiceCredentialsSecretSourceServiceRoleArgsDict']]]
+    """
+    The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceArgs:
+    def __init__(__self__, *,
+                 instance: pulumi.Input['SmServiceCredentialsSecretSourceServiceInstanceArgs'],
+                 iams: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamArgs']]]] = None,
+                 parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 resource_keys: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceResourceKeyArgs']]]] = None,
+                 role: pulumi.Input[Optional['SmServiceCredentialsSecretSourceServiceRoleArgs']] = None):
+        """
+        :param pulumi.Input['SmServiceCredentialsSecretSourceServiceInstanceArgs'] instance: The source service instance identifier.
+        :param pulumi.Input[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamArgs']]] iams: The source service IAM data is returned in case IAM credentials where created for this secret.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] parameters: The collection of parameters for the service credentials target.
+        :param pulumi.Input[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceResourceKeyArgs']]] resource_keys: The source service resource key data of the generated service credentials.
+        :param pulumi.Input['SmServiceCredentialsSecretSourceServiceRoleArgs'] role: The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+        """
+        pulumi.set(__self__, "instance", instance)
+        if iams is not None:
+            pulumi.set(__self__, "iams", iams)
+        if parameters is not None:
+            pulumi.set(__self__, "parameters", parameters)
+        if resource_keys is not None:
+            pulumi.set(__self__, "resource_keys", resource_keys)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+
+    @_builtins.property
+    @pulumi.getter
+    def instance(self) -> pulumi.Input['SmServiceCredentialsSecretSourceServiceInstanceArgs']:
+        """
+        The source service instance identifier.
+        """
+        return pulumi.get(self, "instance")
+
+    @instance.setter
+    def instance(self, value: pulumi.Input['SmServiceCredentialsSecretSourceServiceInstanceArgs']):
+        pulumi.set(self, "instance", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def iams(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamArgs']]]]:
+        """
+        The source service IAM data is returned in case IAM credentials where created for this secret.
+        """
+        return pulumi.get(self, "iams")
+
+    @iams.setter
+    def iams(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamArgs']]]]):
+        pulumi.set(self, "iams", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def parameters(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        The collection of parameters for the service credentials target.
+        """
+        return pulumi.get(self, "parameters")
+
+    @parameters.setter
+    def parameters(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "parameters", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceKeys")
+    def resource_keys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceResourceKeyArgs']]]]:
+        """
+        The source service resource key data of the generated service credentials.
+        """
+        return pulumi.get(self, "resource_keys")
+
+    @resource_keys.setter
+    def resource_keys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceResourceKeyArgs']]]]):
+        pulumi.set(self, "resource_keys", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def role(self) -> pulumi.Input[Optional['SmServiceCredentialsSecretSourceServiceRoleArgs']]:
+        """
+        The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+        """
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: pulumi.Input[Optional['SmServiceCredentialsSecretSourceServiceRoleArgs']]):
+        pulumi.set(self, "role", value)
+
+
+class SmServiceCredentialsSecretSourceServiceIamArgsDict(TypedDict):
+    apikeys: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamApikeyArgsDict']]]]]
+    """
+    The IAM apikey metadata for the IAM credentials that were generated.
+    """
+    roles: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamRoleArgsDict']]]]]
+    """
+    The IAM role for the generate service credentials.
+    """
+    serviceids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamServiceidArgsDict']]]]]
+    """
+    The IAM serviceid for the generated service credentials.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceIamArgs:
+    def __init__(__self__, *,
+                 apikeys: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamApikeyArgs']]]] = None,
+                 roles: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamRoleArgs']]]] = None,
+                 serviceids: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamServiceidArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamApikeyArgs']]] apikeys: The IAM apikey metadata for the IAM credentials that were generated.
+        :param pulumi.Input[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamRoleArgs']]] roles: The IAM role for the generate service credentials.
+        :param pulumi.Input[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamServiceidArgs']]] serviceids: The IAM serviceid for the generated service credentials.
+        """
+        if apikeys is not None:
+            pulumi.set(__self__, "apikeys", apikeys)
+        if roles is not None:
+            pulumi.set(__self__, "roles", roles)
+        if serviceids is not None:
+            pulumi.set(__self__, "serviceids", serviceids)
+
+    @_builtins.property
+    @pulumi.getter
+    def apikeys(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamApikeyArgs']]]]:
+        """
+        The IAM apikey metadata for the IAM credentials that were generated.
+        """
+        return pulumi.get(self, "apikeys")
+
+    @apikeys.setter
+    def apikeys(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamApikeyArgs']]]]):
+        pulumi.set(self, "apikeys", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def roles(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamRoleArgs']]]]:
+        """
+        The IAM role for the generate service credentials.
+        """
+        return pulumi.get(self, "roles")
+
+    @roles.setter
+    def roles(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamRoleArgs']]]]):
+        pulumi.set(self, "roles", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def serviceids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamServiceidArgs']]]]:
+        """
+        The IAM serviceid for the generated service credentials.
+        """
+        return pulumi.get(self, "serviceids")
+
+    @serviceids.setter
+    def serviceids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SmServiceCredentialsSecretSourceServiceIamServiceidArgs']]]]):
+        pulumi.set(self, "serviceids", value)
+
+
+class SmServiceCredentialsSecretSourceServiceIamApikeyArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The IAM API key description for the generated service credentials.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The IAM API key name for the generated service credentials.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceIamApikeyArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: The IAM API key description for the generated service credentials.
+        :param pulumi.Input[_builtins.str] name: The IAM API key name for the generated service credentials.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The IAM API key description for the generated service credentials.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The IAM API key name for the generated service credentials.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class SmServiceCredentialsSecretSourceServiceIamRoleArgsDict(TypedDict):
+    crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The IAM role CRN assigned to the generated service credentials.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceIamRoleArgs:
+    def __init__(__self__, *,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] crn: The IAM role CRN assigned to the generated service credentials.
+        """
+        if crn is not None:
+            pulumi.set(__self__, "crn", crn)
+
+    @_builtins.property
+    @pulumi.getter
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The IAM role CRN assigned to the generated service credentials.
+        """
+        return pulumi.get(self, "crn")
+
+    @crn.setter
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "crn", value)
+
+
+class SmServiceCredentialsSecretSourceServiceIamServiceidArgsDict(TypedDict):
+    crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The IAM Service ID CRN.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceIamServiceidArgs:
+    def __init__(__self__, *,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] crn: The IAM Service ID CRN.
+        """
+        if crn is not None:
+            pulumi.set(__self__, "crn", crn)
+
+    @_builtins.property
+    @pulumi.getter
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The IAM Service ID CRN.
+        """
+        return pulumi.get(self, "crn")
+
+    @crn.setter
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "crn", value)
+
+
+class SmServiceCredentialsSecretSourceServiceInstanceArgsDict(TypedDict):
+    crn: pulumi.Input[_builtins.str]
+    """
+    A CRN that uniquely identifies a service credentials target.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceInstanceArgs:
+    def __init__(__self__, *,
+                 crn: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] crn: A CRN that uniquely identifies a service credentials target.
+        """
+        pulumi.set(__self__, "crn", crn)
+
+    @_builtins.property
+    @pulumi.getter
+    def crn(self) -> pulumi.Input[_builtins.str]:
+        """
+        A CRN that uniquely identifies a service credentials target.
+        """
+        return pulumi.get(self, "crn")
+
+    @crn.setter
+    def crn(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "crn", value)
+
+
+class SmServiceCredentialsSecretSourceServiceResourceKeyArgsDict(TypedDict):
+    crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The resource key CRN of the generated service credentials.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The resource key name of the generated service credentials.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceResourceKeyArgs:
+    def __init__(__self__, *,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] crn: The resource key CRN of the generated service credentials.
+        :param pulumi.Input[_builtins.str] name: The resource key name of the generated service credentials.
+        """
+        if crn is not None:
+            pulumi.set(__self__, "crn", crn)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The resource key CRN of the generated service credentials.
+        """
+        return pulumi.get(self, "crn")
+
+    @crn.setter
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "crn", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The resource key name of the generated service credentials.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+
+class SmServiceCredentialsSecretSourceServiceRoleArgsDict(TypedDict):
+    crn: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The CRN role identifier for creating a service-id.
+    """
+
+@pulumi.input_type
+class SmServiceCredentialsSecretSourceServiceRoleArgs:
+    def __init__(__self__, *,
+                 crn: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] crn: The CRN role identifier for creating a service-id.
+        """
+        if crn is not None:
+            pulumi.set(__self__, "crn", crn)
+
+    @_builtins.property
+    @pulumi.getter
+    def crn(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The CRN role identifier for creating a service-id.
+        """
+        return pulumi.get(self, "crn")
+
+    @crn.setter
+    def crn(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "crn", value)
+
+
+class SmUsernamePasswordSecretPasswordGenerationPolicyArgsDict(TypedDict):
+    include_digits: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Include digits in auto-generated passwords.
+    """
+    include_symbols: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Include symbols in auto-generated passwords.
+    """
+    include_uppercase: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Include uppercase letters in auto-generated passwords.
+    """
+    length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The length of auto-generated passwords.
+    """
+
+@pulumi.input_type
+class SmUsernamePasswordSecretPasswordGenerationPolicyArgs:
+    def __init__(__self__, *,
+                 include_digits: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_symbols: pulumi.Input[Optional[_builtins.bool]] = None,
+                 include_uppercase: pulumi.Input[Optional[_builtins.bool]] = None,
+                 length: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] include_digits: Include digits in auto-generated passwords.
+        :param pulumi.Input[_builtins.bool] include_symbols: Include symbols in auto-generated passwords.
+        :param pulumi.Input[_builtins.bool] include_uppercase: Include uppercase letters in auto-generated passwords.
+        :param pulumi.Input[_builtins.int] length: The length of auto-generated passwords.
+        """
+        if include_digits is not None:
+            pulumi.set(__self__, "include_digits", include_digits)
+        if include_symbols is not None:
+            pulumi.set(__self__, "include_symbols", include_symbols)
+        if include_uppercase is not None:
+            pulumi.set(__self__, "include_uppercase", include_uppercase)
+        if length is not None:
+            pulumi.set(__self__, "length", length)
+
+    @_builtins.property
+    @pulumi.getter(name="includeDigits")
+    def include_digits(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Include digits in auto-generated passwords.
+        """
+        return pulumi.get(self, "include_digits")
+
+    @include_digits.setter
+    def include_digits(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "include_digits", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includeSymbols")
+    def include_symbols(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Include symbols in auto-generated passwords.
+        """
+        return pulumi.get(self, "include_symbols")
+
+    @include_symbols.setter
+    def include_symbols(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "include_symbols", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includeUppercase")
+    def include_uppercase(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Include uppercase letters in auto-generated passwords.
+        """
+        return pulumi.get(self, "include_uppercase")
+
+    @include_uppercase.setter
+    def include_uppercase(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "include_uppercase", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The length of auto-generated passwords.
+        """
+        return pulumi.get(self, "length")
+
+    @length.setter
+    def length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "length", value)
+
+
+class SmUsernamePasswordSecretRotationArgsDict(TypedDict):
+    auto_rotate: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+    """
+    interval: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The length of the secret rotation time interval.
+    """
+    unit: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The units for the secret rotation time interval.
+    """
+
+@pulumi.input_type
+class SmUsernamePasswordSecretRotationArgs:
+    def __init__(__self__, *,
+                 auto_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+                 interval: pulumi.Input[Optional[_builtins.int]] = None,
+                 unit: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] auto_rotate: Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        :param pulumi.Input[_builtins.int] interval: The length of the secret rotation time interval.
+        :param pulumi.Input[_builtins.str] unit: The units for the secret rotation time interval.
+        """
+        if auto_rotate is not None:
+            pulumi.set(__self__, "auto_rotate", auto_rotate)
+        if interval is not None:
+            pulumi.set(__self__, "interval", interval)
+        if unit is not None:
+            pulumi.set(__self__, "unit", unit)
+
+    @_builtins.property
+    @pulumi.getter(name="autoRotate")
+    def auto_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `auto_rotate` is set to `true` the service rotates your secret based on the defined interval.
+        """
+        return pulumi.get(self, "auto_rotate")
+
+    @auto_rotate.setter
+    def auto_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "auto_rotate", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The length of the secret rotation time interval.
+        """
+        return pulumi.get(self, "interval")
+
+    @interval.setter
+    def interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "interval", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def unit(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The units for the secret rotation time interval.
+        """
+        return pulumi.get(self, "unit")
+
+    @unit.setter
+    def unit(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "unit", value)
 
 
 class TgConnectionTunnelArgsDict(TypedDict):
