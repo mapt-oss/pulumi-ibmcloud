@@ -190,6 +190,7 @@ func Provider() tfbridge.ProviderInfo {
 		// "ibm_dns_",       // DNS
 		"ibm_iam_", // IAM
 		"ibm_cm_",  // Catalog Management (Private Catalog, Offerings, Versions)
+		"ibm_sm_",  // Secrets Manager
 		// Add more as needed - see resource_filter.go for full list
 	}
 
@@ -231,6 +232,18 @@ func Provider() tfbridge.ProviderInfo {
 
 	prov.MustApplyAutoAliases()
 	prov.SetAutonaming(255, "-")
+
+	// Mark ibm_sm_arbitrary_secret payload as a Pulumi secret so it is never shown in plaintext.
+	// We must update the existing entry set by MustComputeTokens (which carries the Tok) rather
+	// than replacing it — replacing would clear the token and break schema validation.
+	if _, exists := filteredResources["ibm_sm_arbitrary_secret"]; exists {
+		if ri := prov.Resources["ibm_sm_arbitrary_secret"]; ri != nil {
+			if ri.Fields == nil {
+				ri.Fields = map[string]*tfbridge.SchemaInfo{}
+			}
+			ri.Fields["payload"] = &tfbridge.SchemaInfo{Secret: tfbridge.True()}
+		}
+	}
 
 	// Fix naming collision for getProjectConfigOutput type (only if not filtered out)
 	// The type "ibmcloud:index/getProjectConfigOutput:getProjectConfigOutput" was conflicting
