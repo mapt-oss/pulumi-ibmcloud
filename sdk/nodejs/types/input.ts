@@ -5,6 +5,3106 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface CmAccountAccountFilters {
+    /**
+     * Filter against offering categories with dynamic keys.
+     */
+    categoryFilters?: pulumi.Input<pulumi.Input<inputs.CmAccountAccountFiltersCategoryFilter>[] | undefined>;
+    /**
+     * Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+     */
+    idFilters?: pulumi.Input<pulumi.Input<inputs.CmAccountAccountFiltersIdFilter>[] | undefined>;
+    /**
+     * > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+     */
+    includeAll?: pulumi.Input<boolean | undefined>;
+}
+
+export interface CmAccountAccountFiltersCategoryFilter {
+    /**
+     * Name of this category
+     */
+    categoryName: pulumi.Input<string>;
+    /**
+     * Filter terms related to the category.
+     */
+    filter?: pulumi.Input<inputs.CmAccountAccountFiltersCategoryFilterFilter | undefined>;
+    /**
+     * Whether to include the category in the catalog filter.
+     */
+    include?: pulumi.Input<boolean | undefined>;
+}
+
+export interface CmAccountAccountFiltersCategoryFilterFilter {
+    /**
+     * List of filter terms for the category.
+     */
+    filterTerms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmAccountAccountFiltersIdFilter {
+    /**
+     * Offering filter terms.
+     */
+    excludes?: pulumi.Input<pulumi.Input<inputs.CmAccountAccountFiltersIdFilterExclude>[] | undefined>;
+    /**
+     * Offering filter terms.
+     */
+    includes?: pulumi.Input<pulumi.Input<inputs.CmAccountAccountFiltersIdFilterInclude>[] | undefined>;
+}
+
+export interface CmAccountAccountFiltersIdFilterExclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmAccountAccountFiltersIdFilterInclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmAccountTerraformEngine {
+    /**
+     * The api key used to access the engine instance.
+     */
+    apiToken?: pulumi.Input<string | undefined>;
+    /**
+     * The settings that determines how deployable architectures are auto-created from workspaces in the terraform engine.
+     */
+    daCreation?: pulumi.Input<inputs.CmAccountTerraformEngineDaCreation | undefined>;
+    /**
+     * User provided name for the specified engine.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The private endpoint for the engine instance.
+     */
+    privateEndpoint?: pulumi.Input<string | undefined>;
+    /**
+     * The public endpoint for the engine instance.
+     */
+    publicEndpoint?: pulumi.Input<string | undefined>;
+    /**
+     * The terraform engine type. The only one supported at the moment is terraform-enterprise.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface CmAccountTerraformEngineDaCreation {
+    /**
+     * Default private catalog to create the deployable architectures in.
+     */
+    defaultPrivateCatalogId?: pulumi.Input<string | undefined>;
+    /**
+     * Determines whether deployable architectures are auto-created from workspaces in the engine.
+     */
+    enabled?: pulumi.Input<boolean | undefined>;
+    /**
+     * Determines which workspace scope to query to auto-create deployable architectures from.
+     */
+    pollingInfo?: pulumi.Input<inputs.CmAccountTerraformEngineDaCreationPollingInfo | undefined>;
+}
+
+export interface CmAccountTerraformEngineDaCreationPollingInfo {
+    /**
+     * Last polling status of the engine scope.
+     */
+    lastPollingStatuses?: pulumi.Input<pulumi.Input<inputs.CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatus>[] | undefined>;
+    /**
+     * List of scopes to auto-create deployable architectures from workspaces in the engine.
+     */
+    scopes?: pulumi.Input<pulumi.Input<inputs.CmAccountTerraformEngineDaCreationPollingInfoScope>[] | undefined>;
+}
+
+export interface CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatus {
+    /**
+     * Status code of the last polling attempt.
+     */
+    code?: pulumi.Input<number | undefined>;
+    /**
+     * Status message from the last polling attempt.
+     */
+    message?: pulumi.Input<string | undefined>;
+}
+
+export interface CmAccountTerraformEngineDaCreationPollingInfoScope {
+    /**
+     * Identifier for the specified type in the scope.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Scope to auto-create deployable architectures from. The supported scopes today are workspace, org, and project.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface CmCatalogCatalogFilter {
+    /**
+     * Filter against offering categories with dynamic keys.
+     */
+    categoryFilters?: pulumi.Input<pulumi.Input<inputs.CmCatalogCatalogFilterCategoryFilter>[] | undefined>;
+    /**
+     * Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+     */
+    idFilters?: pulumi.Input<inputs.CmCatalogCatalogFilterIdFilters | undefined>;
+    /**
+     * > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+     */
+    includeAll?: pulumi.Input<boolean | undefined>;
+}
+
+export interface CmCatalogCatalogFilterCategoryFilter {
+    /**
+     * Name of this category
+     */
+    categoryName: pulumi.Input<string>;
+    /**
+     * Filter terms related to the category.
+     */
+    filter?: pulumi.Input<inputs.CmCatalogCatalogFilterCategoryFilterFilter | undefined>;
+    /**
+     * Whether to include the category in the catalog filter.
+     */
+    include?: pulumi.Input<boolean | undefined>;
+}
+
+export interface CmCatalogCatalogFilterCategoryFilterFilter {
+    /**
+     * List of filter terms for the category.
+     */
+    filterTerms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmCatalogCatalogFilterIdFilters {
+    /**
+     * Offering filter terms.
+     */
+    exclude?: pulumi.Input<inputs.CmCatalogCatalogFilterIdFiltersExclude | undefined>;
+    /**
+     * Offering filter terms.
+     */
+    include?: pulumi.Input<inputs.CmCatalogCatalogFilterIdFiltersInclude | undefined>;
+}
+
+export interface CmCatalogCatalogFilterIdFiltersExclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmCatalogCatalogFilterIdFiltersInclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmCatalogFeature {
+    /**
+     * Feature description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Heading.
+     */
+    title?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmCatalogTargetAccountContext {
+    /**
+     * API key of the target account.
+     */
+    apiKey?: pulumi.Input<string | undefined>;
+    /**
+     * Label for this target account context.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * Unique identifier/name for this target account context.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Project ID.
+     */
+    projectId?: pulumi.Input<string | undefined>;
+    /**
+     * Trusted profile information.
+     */
+    trustedProfile?: pulumi.Input<inputs.CmCatalogTargetAccountContextTrustedProfile | undefined>;
+}
+
+export interface CmCatalogTargetAccountContextTrustedProfile {
+    /**
+     * CRN of this catalog.
+     */
+    catalogCrn?: pulumi.Input<string | undefined>;
+    /**
+     * Name of this catalog.
+     */
+    catalogName?: pulumi.Input<string | undefined>;
+    /**
+     * Target service ID.
+     */
+    targetServiceId?: pulumi.Input<string | undefined>;
+    /**
+     * Trusted profile ID.
+     */
+    trustedProfileId?: pulumi.Input<string | undefined>;
+}
+
+export interface CmObjectPublish {
+    /**
+     * Indicates if this offering has been approved for use by all IBMers.
+     */
+    ibmApproved?: pulumi.Input<boolean | undefined>;
+    /**
+     * Is it permitted to request publishing to IBM or Public.
+     */
+    permitIbmPublicPublish?: pulumi.Input<boolean | undefined>;
+    /**
+     * The portal's approval record ID.
+     */
+    portalApprovalRecord?: pulumi.Input<string | undefined>;
+    /**
+     * The portal UI URL.
+     */
+    portalUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Indicates if this offering has been approved for use by all IBM Cloud users.
+     */
+    publicApproved?: pulumi.Input<boolean | undefined>;
+}
+
+export interface CmObjectState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered?: pulumi.Input<string | undefined>;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested?: pulumi.Input<string | undefined>;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingBadge {
+    /**
+     * Authority for the current badge.
+     */
+    authority?: pulumi.Input<string | undefined>;
+    /**
+     * An optional set of constraints indicating which versions in an Offering have this particular badge.
+     */
+    constraints?: pulumi.Input<pulumi.Input<inputs.CmOfferingBadgeConstraint>[] | undefined>;
+    /**
+     * Description of the current badge.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Icon for the current badge.
+     */
+    icon?: pulumi.Input<string | undefined>;
+    /**
+     * ID of the current badge.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Display name for the current badge.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Learn more links for a badge.
+     */
+    learnMoreLinks?: pulumi.Input<pulumi.Input<inputs.CmOfferingBadgeLearnMoreLink>[] | undefined>;
+    /**
+     * Tag for the current badge.
+     */
+    tag?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingBadgeConstraint {
+    /**
+     * Rule for the current constraint.
+     */
+    rule?: pulumi.Input<string | undefined>;
+    /**
+     * Type of the current constraint.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingBadgeLearnMoreLink {
+    /**
+     * First party link.
+     */
+    firstParty?: pulumi.Input<string | undefined>;
+    /**
+     * Third party link.
+     */
+    thirdParty?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate?: pulumi.Input<string | undefined>;
+    /**
+     * Deprecation state.
+     */
+    deprecateState?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingFeature {
+    /**
+     * Feature description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Heading.
+     */
+    title?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmOfferingImagePullKey {
+    /**
+     * Key description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Key name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Key value.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKind {
+    /**
+     * List of features associated with this offering.
+     */
+    additionalFeatures?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindAdditionalFeature>[] | undefined>;
+    /**
+     * The date and time this catalog was created.
+     */
+    created?: pulumi.Input<string | undefined>;
+    /**
+     * content kind, e.g., helm, vm image.
+     */
+    formatKind?: pulumi.Input<string | undefined>;
+    /**
+     * Unique ID.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * install kind, e.g., helm, operator, terraform.
+     */
+    installKind?: pulumi.Input<string | undefined>;
+    /**
+     * Open ended metadata information.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * list of plans.
+     */
+    plans?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindPlan>[] | undefined>;
+    /**
+     * List of tags associated with this catalog.
+     */
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * target cloud to install, e.g., iks, open_shift_iks.
+     */
+    targetKind?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time this catalog was last updated.
+     */
+    updated?: pulumi.Input<string | undefined>;
+    /**
+     * list of versions.
+     */
+    versions?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersion>[] | undefined>;
+}
+
+export interface CmOfferingKindAdditionalFeature {
+    /**
+     * Feature description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Heading.
+     */
+    title?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmOfferingKindPlan {
+    /**
+     * list of features associated with this offering.
+     */
+    additionalFeatures?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindPlanAdditionalFeature>[] | undefined>;
+    /**
+     * the date'time this catalog was created.
+     */
+    created?: pulumi.Input<string | undefined>;
+    /**
+     * list of deployments.
+     */
+    deployments?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindPlanDeployment>[] | undefined>;
+    /**
+     * unique id.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Display Name in the requested language.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * Long description in the requested language.
+     */
+    longDescription?: pulumi.Input<string | undefined>;
+    /**
+     * open ended metadata information.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The programmatic name of this offering.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Short description in the requested language.
+     */
+    shortDescription?: pulumi.Input<string | undefined>;
+    /**
+     * list of tags associated with this catalog.
+     */
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * the date'time this catalog was last updated.
+     */
+    updated?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindPlanAdditionalFeature {
+    /**
+     * Feature description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Heading.
+     */
+    title?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmOfferingKindPlanDeployment {
+    /**
+     * the date'time this catalog was created.
+     */
+    created?: pulumi.Input<string | undefined>;
+    /**
+     * unique id.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Display Name in the requested language.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * Long description in the requested language.
+     */
+    longDescription?: pulumi.Input<string | undefined>;
+    /**
+     * open ended metadata information.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The programmatic name of this offering.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Short description in the requested language.
+     */
+    shortDescription?: pulumi.Input<string | undefined>;
+    /**
+     * list of tags associated with this catalog.
+     */
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * the date'time this catalog was last updated.
+     */
+    updated?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersion {
+    /**
+     * Catalog ID.
+     */
+    catalogId?: pulumi.Input<string | undefined>;
+    /**
+     * List of user solicited overrides.
+     */
+    configurations?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionConfiguration>[] | undefined>;
+    /**
+     * The date and time this version was created.
+     */
+    created?: pulumi.Input<string | undefined>;
+    /**
+     * Version's CRN.
+     */
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * Deprecation information for a Version.
+     */
+    deprecatePendings?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionDeprecatePending>[] | undefined>;
+    /**
+     * read only field, indicating if this version is deprecated.
+     */
+    deprecated?: pulumi.Input<boolean | undefined>;
+    /**
+     * Entitlement license info.
+     */
+    entitlement?: pulumi.Input<inputs.CmOfferingKindVersionEntitlement | undefined>;
+    /**
+     * Version Flavor Information.  Only supported for Product kind Solution.
+     */
+    flavor?: pulumi.Input<inputs.CmOfferingKindVersionFlavor | undefined>;
+    /**
+     * List of IAM permissions that are required to consume this version.
+     */
+    iamPermissions?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionIamPermission>[] | undefined>;
+    /**
+     * Unique ID.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * If set, denotes a url to a YAML file with list of container images used by this version.
+     */
+    imageManifestUrl?: pulumi.Input<string | undefined>;
+    /**
+     * ID of the image pull key to use from Offering.ImagePullKeys.
+     */
+    imagePullKeyName?: pulumi.Input<string | undefined>;
+    /**
+     * Script information.
+     */
+    install?: pulumi.Input<inputs.CmOfferingKindVersionInstall | undefined>;
+    /**
+     * Is the version able to be shared.
+     */
+    isConsumable?: pulumi.Input<boolean | undefined>;
+    /**
+     * Kind ID.
+     */
+    kindId?: pulumi.Input<string | undefined>;
+    /**
+     * List of licenses the product was built with.
+     */
+    licenses?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionLicense>[] | undefined>;
+    /**
+     * Long description for version.
+     */
+    longDescription?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    longDescriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Generic data to be included with content being onboarded. Required for virtual server image for VPC.
+     */
+    metadata?: pulumi.Input<inputs.CmOfferingKindVersionMetadata | undefined>;
+    /**
+     * Offering ID.
+     */
+    offeringId?: pulumi.Input<string | undefined>;
+    /**
+     * List of output values for this version.
+     */
+    outputs?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionOutput>[] | undefined>;
+    /**
+     * Version of the package used to create this version.
+     */
+    packageVersion?: pulumi.Input<string | undefined>;
+    /**
+     * Optional pre-install instructions.
+     */
+    preInstalls?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionPreInstall>[] | undefined>;
+    /**
+     * Content's repo URL.
+     */
+    repoUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Resource requirments for installation.
+     */
+    requiredResources?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionRequiredResource>[] | undefined>;
+    /**
+     * Cloudant revision.
+     */
+    rev?: pulumi.Input<string | undefined>;
+    /**
+     * hash of the content.
+     */
+    sha?: pulumi.Input<string | undefined>;
+    /**
+     * Denotes if single instance can be deployed to a given cluster.
+     */
+    singleInstance?: pulumi.Input<boolean | undefined>;
+    /**
+     * Version Solution Information.  Only supported for Product kind Solution.
+     */
+    solutionInfo?: pulumi.Input<inputs.CmOfferingKindVersionSolutionInfo | undefined>;
+    /**
+     * Content's source URL (e.g git repo).
+     */
+    sourceUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Offering state.
+     */
+    state?: pulumi.Input<inputs.CmOfferingKindVersionState | undefined>;
+    /**
+     * List of tags associated with this catalog.
+     */
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * File used to on-board this version.
+     */
+    tgzUrl?: pulumi.Input<string | undefined>;
+    /**
+     * The date and time this version was last updated.
+     */
+    updated?: pulumi.Input<string | undefined>;
+    /**
+     * Validation response.
+     */
+    validation?: pulumi.Input<inputs.CmOfferingKindVersionValidation | undefined>;
+    /**
+     * Version of content type.
+     */
+    version?: pulumi.Input<string | undefined>;
+    /**
+     * A dotted value of `catalogID`.`versionID`.
+     */
+    versionLocator?: pulumi.Input<string | undefined>;
+    /**
+     * Whitelisted accounts for version.
+     */
+    whitelistedAccounts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmOfferingKindVersionConfiguration {
+    /**
+     * Render type.
+     */
+    customConfig?: pulumi.Input<inputs.CmOfferingKindVersionConfigurationCustomConfig | undefined>;
+    /**
+     * The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * Key description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Display name for configuration type.
+     */
+    displayName?: pulumi.Input<string | undefined>;
+    /**
+     * Hide values.
+     */
+    hidden?: pulumi.Input<boolean | undefined>;
+    /**
+     * Configuration key.
+     */
+    key?: pulumi.Input<string | undefined>;
+    /**
+     * List of options of type.
+     */
+    options?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[] | undefined>;
+    /**
+     * Is key required to install.
+     */
+    required?: pulumi.Input<boolean | undefined>;
+    /**
+     * Value type (string, boolean, int).
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * The original type, as found in the source being onboarded.
+     */
+    typeMetadata?: pulumi.Input<string | undefined>;
+    /**
+     * Constraint associated with value, e.g., for string type - regx:[a-z].
+     */
+    valueConstraint?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionConfigurationCustomConfig {
+    /**
+     * List of parameters that are associated with this configuration.
+     */
+    associations?: pulumi.Input<inputs.CmOfferingKindVersionConfigurationCustomConfigAssociations | undefined>;
+    /**
+     * Map of constraint parameters that will be passed to the custom widget.
+     */
+    configConstraints?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+     */
+    grouping?: pulumi.Input<string | undefined>;
+    /**
+     * Determines the order that this configuration item shows in that particular grouping.
+     */
+    groupingIndex?: pulumi.Input<number | undefined>;
+    /**
+     * Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+     */
+    originalGrouping?: pulumi.Input<string | undefined>;
+    /**
+     * ID of the widget type.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionConfigurationCustomConfigAssociations {
+    /**
+     * Parameters for this association.
+     */
+    parameters?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionConfigurationCustomConfigAssociationsParameter>[] | undefined>;
+}
+
+export interface CmOfferingKindVersionConfigurationCustomConfigAssociationsParameter {
+    /**
+     * Name of this parameter.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Refresh options.
+     */
+    optionsRefresh?: pulumi.Input<boolean | undefined>;
+}
+
+export interface CmOfferingKindVersionDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate?: pulumi.Input<string | undefined>;
+    /**
+     * Deprecation state.
+     */
+    deprecateState?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionEntitlement {
+    /**
+     * Image repository name.
+     */
+    imageRepoName?: pulumi.Input<string | undefined>;
+    /**
+     * list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+     */
+    partNumbers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Product ID.
+     */
+    productId?: pulumi.Input<string | undefined>;
+    /**
+     * Provider ID.
+     */
+    providerId?: pulumi.Input<string | undefined>;
+    /**
+     * Provider name.
+     */
+    providerName?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionFlavor {
+    /**
+     * Order that this flavor should appear when listed for a single version.
+     */
+    index?: pulumi.Input<number | undefined>;
+    /**
+     * Label for this flavor.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Programmatic name for this flavor.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionIamPermission {
+    /**
+     * Resources for this permission.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionIamPermissionResource>[] | undefined>;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Service name.
+     */
+    serviceName?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionIamPermissionResource {
+    /**
+     * Resource description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmOfferingKindVersionInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript?: pulumi.Input<string | undefined>;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope?: pulumi.Input<string | undefined>;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script?: pulumi.Input<string | undefined>;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionLicense {
+    /**
+     * License description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * License ID.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * license name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * type of license e.g., Apache xxx.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * URL for the license text.
+     */
+    url?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadata {
+    /**
+     * The time validation ended.
+     */
+    endDeployTime?: pulumi.Input<string | undefined>;
+    /**
+     * The estimated time validation takes.
+     */
+    estDeployTime?: pulumi.Input<number | undefined>;
+    /**
+     * Working directory of source files.
+     */
+    exampleName?: pulumi.Input<string | undefined>;
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    file?: pulumi.Input<inputs.CmOfferingKindVersionMetadataFile | undefined>;
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionMetadataImage>[] | undefined>;
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize?: pulumi.Input<number | undefined>;
+    /**
+     * Terraform modules.
+     */
+    modules?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionMetadataModule>[] | undefined>;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystem?: pulumi.Input<inputs.CmOfferingKindVersionMetadataOperatingSystem | undefined>;
+    /**
+     * Version source URL.
+     */
+    sourceUrl?: pulumi.Input<string | undefined>;
+    /**
+     * The time validation started.
+     */
+    startDeployTime?: pulumi.Input<string | undefined>;
+    /**
+     * Terraform version.
+     */
+    terraformVersion?: pulumi.Input<string | undefined>;
+    /**
+     * Usage text for the version.
+     */
+    usage?: pulumi.Input<string | undefined>;
+    /**
+     * Usage text for the version.
+     */
+    usageTemplate?: pulumi.Input<string | undefined>;
+    /**
+     * Version name.
+     */
+    validatedTerraformVersion?: pulumi.Input<string | undefined>;
+    /**
+     * Version name.
+     */
+    versionName?: pulumi.Input<string | undefined>;
+    /**
+     * VSI VPC version information
+     */
+    vsiVpcs?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionMetadataVsiVpc>[] | undefined>;
+    /**
+     * Working directory of source files.
+     */
+    workingDirectory?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size?: pulumi.Input<number | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataModule {
+    /**
+     * Name of the module.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Terraform modules.
+     */
+    offeringReferences?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionMetadataModuleOfferingReference>[] | undefined>;
+    /**
+     * Source of the module.
+     */
+    source?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataModuleOfferingReference {
+    /**
+     * Catalog ID of the module reference.
+     */
+    catalogId?: pulumi.Input<string | undefined>;
+    /**
+     * Flavor of the module.
+     */
+    flavor?: pulumi.Input<string | undefined>;
+    /**
+     * Flavors of the module.
+     */
+    flavors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * ID of the offering module.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Kind of the offeringmodule.
+     */
+    kind?: pulumi.Input<string | undefined>;
+    /**
+     * Metadata of the module.
+     */
+    metadata?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the offering module.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Version of the offering module.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture?: pulumi.Input<string | undefined>;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly?: pulumi.Input<boolean | undefined>;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName?: pulumi.Input<string | undefined>;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family?: pulumi.Input<string | undefined>;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor?: pulumi.Input<string | undefined>;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpc {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    file?: pulumi.Input<inputs.CmOfferingKindVersionMetadataVsiVpcFile | undefined>;
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionMetadataVsiVpcImage>[] | undefined>;
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize?: pulumi.Input<number | undefined>;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystem?: pulumi.Input<inputs.CmOfferingKindVersionMetadataVsiVpcOperatingSystem | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpcFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size?: pulumi.Input<number | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpcImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpcOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture?: pulumi.Input<string | undefined>;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly?: pulumi.Input<boolean | undefined>;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName?: pulumi.Input<string | undefined>;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family?: pulumi.Input<string | undefined>;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor?: pulumi.Input<string | undefined>;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionOutput {
+    /**
+     * Output description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Output key.
+     */
+    key?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionPreInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript?: pulumi.Input<string | undefined>;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope?: pulumi.Input<string | undefined>;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script?: pulumi.Input<string | undefined>;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionRequiredResource {
+    /**
+     * Type of requirement.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfo {
+    /**
+     * Architecture diagrams for this solution.
+     */
+    architectureDiagrams?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoArchitectureDiagram>[] | undefined>;
+    /**
+     * Cost estimate definition.
+     */
+    costEstimates?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimate>[] | undefined>;
+    /**
+     * Dependencies for this solution.
+     */
+    dependencies?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoDependency>[] | undefined>;
+    /**
+     * Features - titles only.
+     */
+    features?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoFeature>[] | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoArchitectureDiagram {
+    /**
+     * Description of this diagram.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Offering Media information.
+     */
+    diagram?: pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagram | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagram {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Caption for this media item.
+     */
+    caption?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Type of this media item.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * URL of the specified media item.
+     */
+    url?: pulumi.Input<string | undefined>;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxy?: pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxy | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha?: pulumi.Input<string | undefined>;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimate {
+    /**
+     * Cost estimate currency.
+     */
+    currency?: pulumi.Input<string | undefined>;
+    /**
+     * Difference in total hourly cost.
+     */
+    diffTotalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Difference in total monthly cost.
+     */
+    diffTotalMonthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Past total hourly cost.
+     */
+    pastTotalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Past total monthly cost.
+     */
+    pastTotalMonthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost estimate projects.
+     */
+    projects?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProject>[] | undefined>;
+    /**
+     * Cost summary definition.
+     */
+    summaries?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateSummary>[] | undefined>;
+    /**
+     * When this estimate was generated.
+     */
+    timeGenerated?: pulumi.Input<string | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost estimate version.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProject {
+    /**
+     * Cost breakdown definition.
+     */
+    breakdowns?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdown>[] | undefined>;
+    /**
+     * Cost breakdown definition.
+     */
+    diffs?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectDiff>[] | undefined>;
+    /**
+     * Project metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Project name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost breakdown definition.
+     */
+    pastBreakdowns?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdown>[] | undefined>;
+    /**
+     * Cost summary definition.
+     */
+    summaries?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectSummary>[] | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdown {
+    /**
+     * Resources.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResource>[] | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent>[] | undefined>;
+    /**
+     * Hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Monthly cost.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component price.
+     */
+    price?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component unit.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectDiff {
+    /**
+     * Resources.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResource>[] | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResource {
+    /**
+     * Cost components.
+     */
+    costComponents?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent>[] | undefined>;
+    /**
+     * Hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Monthly cost.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component price.
+     */
+    price?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component unit.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdown {
+    /**
+     * Resources.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResource>[] | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents?: pulumi.Input<pulumi.Input<inputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent>[] | undefined>;
+    /**
+     * Hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Monthly cost.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component price.
+     */
+    price?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component unit.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoDependency {
+    /**
+     * Optional - If not specified, assumes the Public Catalog.
+     */
+    catalogId?: pulumi.Input<string | undefined>;
+    /**
+     * Optional - List of dependent flavors in the specified range.
+     */
+    flavors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Optional - Offering ID - not required if name is set.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Optional - Programmatic Offering name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Required - Semver value or range.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionSolutionInfoFeature {
+    /**
+     * Feature description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Heading.
+     */
+    title?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmOfferingKindVersionState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered?: pulumi.Input<string | undefined>;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested?: pulumi.Input<string | undefined>;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingKindVersionValidation {
+    /**
+     * Last operation (e.g. submit_deployment, generate_installer, install_offering.
+     */
+    lastOperation?: pulumi.Input<string | undefined>;
+    /**
+     * Any message needing to be conveyed as part of the validation job.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of last validation was requested.
+     */
+    requested?: pulumi.Input<string | undefined>;
+    /**
+     * Current validation state - <empty>, in_progress, valid, invalid, expired.
+     */
+    state?: pulumi.Input<string | undefined>;
+    /**
+     * Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+     */
+    target?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Date and time of last successful validation.
+     */
+    validated?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingMedia {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Caption for this media item.
+     */
+    caption?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Type of this media item.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * URL of the specified media item.
+     */
+    url?: pulumi.Input<string | undefined>;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxy?: pulumi.Input<inputs.CmOfferingMediaUrlProxy | undefined>;
+}
+
+export interface CmOfferingMediaUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha?: pulumi.Input<string | undefined>;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingProviderInfo {
+    /**
+     * The id of this provider.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * The name of this provider.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingRating {
+    /**
+     * Four start rating.
+     */
+    fourStarCount?: pulumi.Input<number | undefined>;
+    /**
+     * One start rating.
+     */
+    oneStarCount?: pulumi.Input<number | undefined>;
+    /**
+     * Three start rating.
+     */
+    threeStarCount?: pulumi.Input<number | undefined>;
+    /**
+     * Two start rating.
+     */
+    twoStarCount?: pulumi.Input<number | undefined>;
+}
+
+export interface CmOfferingRepoInfo {
+    /**
+     * Token for private repos.
+     */
+    token?: pulumi.Input<string | undefined>;
+    /**
+     * Public or enterprise GitHub.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingSupport {
+    /**
+     * A list of country codes indicating where support is provided.
+     */
+    locations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Support process as provided by an ISV.
+     */
+    process?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    processI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * A list of support options (e.g. email, phone, slack, other).
+     */
+    supportDetails?: pulumi.Input<pulumi.Input<inputs.CmOfferingSupportSupportDetail>[] | undefined>;
+    /**
+     * Support escalation policy.
+     */
+    supportEscalations?: pulumi.Input<pulumi.Input<inputs.CmOfferingSupportSupportEscalation>[] | undefined>;
+    /**
+     * Support type for this product.
+     */
+    supportType?: pulumi.Input<string | undefined>;
+    /**
+     * URL to be displayed in the Consumption UI for getting support on this offering.
+     */
+    url?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingSupportSupportDetail {
+    /**
+     * Times when support is available.
+     */
+    availabilities?: pulumi.Input<pulumi.Input<inputs.CmOfferingSupportSupportDetailAvailability>[] | undefined>;
+    /**
+     * Contact for the current support detail.
+     */
+    contact?: pulumi.Input<string | undefined>;
+    /**
+     * Time descriptor.
+     */
+    responseWaitTimes?: pulumi.Input<pulumi.Input<inputs.CmOfferingSupportSupportDetailResponseWaitTime>[] | undefined>;
+    /**
+     * Type of the current support detail.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingSupportSupportDetailAvailability {
+    /**
+     * Is this support always available.
+     */
+    alwaysAvailable?: pulumi.Input<boolean | undefined>;
+    /**
+     * A list of support times.
+     */
+    times?: pulumi.Input<pulumi.Input<inputs.CmOfferingSupportSupportDetailAvailabilityTime>[] | undefined>;
+    /**
+     * Timezone (e.g. America/New_York).
+     */
+    timezone?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingSupportSupportDetailAvailabilityTime {
+    /**
+     * The day of the week, represented as an integer.
+     */
+    day?: pulumi.Input<number | undefined>;
+    /**
+     * HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+     */
+    endTime?: pulumi.Input<string | undefined>;
+    /**
+     * HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+     */
+    startTime?: pulumi.Input<string | undefined>;
+}
+
+export interface CmOfferingSupportSupportDetailResponseWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value?: pulumi.Input<number | undefined>;
+}
+
+export interface CmOfferingSupportSupportEscalation {
+    /**
+     * Escalation contact.
+     */
+    contact?: pulumi.Input<string | undefined>;
+    /**
+     * Time descriptor.
+     */
+    escalationWaitTimes?: pulumi.Input<pulumi.Input<inputs.CmOfferingSupportSupportEscalationEscalationWaitTime>[] | undefined>;
+    /**
+     * Time descriptor.
+     */
+    responseWaitTimes?: pulumi.Input<pulumi.Input<inputs.CmOfferingSupportSupportEscalationResponseWaitTime>[] | undefined>;
+}
+
+export interface CmOfferingSupportSupportEscalationEscalationWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value?: pulumi.Input<number | undefined>;
+}
+
+export interface CmOfferingSupportSupportEscalationResponseWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value?: pulumi.Input<number | undefined>;
+}
+
+export interface CmValidationEnvironmentVariable {
+    /**
+     * Name of the environment variable.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * If the environment variablel should be secure.
+     */
+    secure?: pulumi.Input<boolean | undefined>;
+    /**
+     * Value of the environment variable.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface CmValidationSchematics {
+    /**
+     * Description for the schematics workspace.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Name for the schematics workspace.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Region to use for the schematics installation.
+     */
+    region?: pulumi.Input<string | undefined>;
+    /**
+     * The resource group ID.
+     */
+    resourceGroupId?: pulumi.Input<string | undefined>;
+    /**
+     * List of tags for the schematics workspace.
+     */
+    tags?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Version of terraform to use in schematics.
+     */
+    terraformVersion?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionConfiguration {
+    /**
+     * Render type.
+     */
+    customConfig?: pulumi.Input<inputs.CmVersionConfigurationCustomConfig | undefined>;
+    /**
+     * The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+     */
+    defaultValue?: pulumi.Input<string | undefined>;
+    /**
+     * Key description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Display name for configuration type.
+     */
+    displayName?: pulumi.Input<string | undefined>;
+    /**
+     * Hide values.
+     */
+    hidden?: pulumi.Input<boolean | undefined>;
+    /**
+     * Configuration key.
+     */
+    key?: pulumi.Input<string | undefined>;
+    /**
+     * List of options of type.
+     */
+    options?: pulumi.Input<pulumi.Input<{[key: string]: pulumi.Input<string>}>[] | undefined>;
+    /**
+     * Is key required to install.
+     */
+    required?: pulumi.Input<boolean | undefined>;
+    /**
+     * Value type (string, boolean, int).
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * The original type, as found in the source being onboarded.
+     */
+    typeMetadata?: pulumi.Input<string | undefined>;
+    /**
+     * Deprecated - Constraint associated with value, e.g., for string type - regx:[a-z].
+     *
+     * @deprecated This field is deprecated use valueConstraints instead.
+     */
+    valueConstraint?: pulumi.Input<string | undefined>;
+    /**
+     * Validation rules for this input value.
+     */
+    valueConstraints?: pulumi.Input<pulumi.Input<inputs.CmVersionConfigurationValueConstraint>[] | undefined>;
+}
+
+export interface CmVersionConfigurationCustomConfig {
+    /**
+     * List of parameters that are associated with this configuration.
+     */
+    associations?: pulumi.Input<inputs.CmVersionConfigurationCustomConfigAssociations | undefined>;
+    /**
+     * Map of constraint parameters that will be passed to the custom widget.
+     */
+    configConstraints?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+     */
+    grouping?: pulumi.Input<string | undefined>;
+    /**
+     * Determines the order that this configuration item shows in that particular grouping.
+     */
+    groupingIndex?: pulumi.Input<number | undefined>;
+    /**
+     * Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+     */
+    originalGrouping?: pulumi.Input<string | undefined>;
+    /**
+     * ID of the widget type.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionConfigurationCustomConfigAssociations {
+    /**
+     * Parameters for this association.
+     */
+    parameters?: pulumi.Input<pulumi.Input<inputs.CmVersionConfigurationCustomConfigAssociationsParameter>[] | undefined>;
+}
+
+export interface CmVersionConfigurationCustomConfigAssociationsParameter {
+    /**
+     * Name of this parameter.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Refresh options.
+     */
+    optionsRefresh?: pulumi.Input<boolean | undefined>;
+}
+
+export interface CmVersionConfigurationValueConstraint {
+    /**
+     * The value to display if the inptu value does not match the specified constraint.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Type of constraint.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * Contstraint value.  For type regex, this is a regular expression in Javascript notation.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate?: pulumi.Input<string | undefined>;
+    /**
+     * Deprecation state.
+     */
+    deprecateState?: pulumi.Input<string | undefined>;
+    description?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionEntitlement {
+    /**
+     * Image repository name.
+     */
+    imageRepoName?: pulumi.Input<string | undefined>;
+    /**
+     * list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+     */
+    partNumbers?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Product ID.
+     */
+    productId?: pulumi.Input<string | undefined>;
+    /**
+     * Provider ID.
+     */
+    providerId?: pulumi.Input<string | undefined>;
+    /**
+     * Provider name.
+     */
+    providerName?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionFlavor {
+    /**
+     * Order that this flavor should appear when listed for a single version.
+     */
+    index?: pulumi.Input<number | undefined>;
+    /**
+     * Label for this flavor.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Programmatic name for this flavor.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionIamPermission {
+    /**
+     * Resources for this permission.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmVersionIamPermissionResource>[] | undefined>;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Service name.
+     */
+    serviceName?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionIamPermissionResource {
+    /**
+     * Resource description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface CmVersionImportMetadata {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    file?: pulumi.Input<inputs.CmVersionImportMetadataFile | undefined>;
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images?: pulumi.Input<pulumi.Input<inputs.CmVersionImportMetadataImage>[] | undefined>;
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize?: pulumi.Input<number | undefined>;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystem?: pulumi.Input<inputs.CmVersionImportMetadataOperatingSystem | undefined>;
+}
+
+export interface CmVersionImportMetadataFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size?: pulumi.Input<number | undefined>;
+}
+
+export interface CmVersionImportMetadataImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionImportMetadataOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture?: pulumi.Input<string | undefined>;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly?: pulumi.Input<boolean | undefined>;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName?: pulumi.Input<string | undefined>;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family?: pulumi.Input<string | undefined>;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor?: pulumi.Input<string | undefined>;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript?: pulumi.Input<string | undefined>;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope?: pulumi.Input<string | undefined>;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script?: pulumi.Input<string | undefined>;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionLicense {
+    /**
+     * License description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * License ID.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * license name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * type of license e.g., Apache xxx.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * URL for the license text.
+     */
+    url?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionMetadata {
+    /**
+     * The time validation ended.
+     */
+    endDeployTime?: pulumi.Input<string | undefined>;
+    /**
+     * The estimated time validation takes.
+     */
+    estDeployTime?: pulumi.Input<number | undefined>;
+    /**
+     * Working directory of source files.
+     */
+    exampleName?: pulumi.Input<string | undefined>;
+    /**
+     * Terraform modules.
+     */
+    modules?: pulumi.Input<pulumi.Input<inputs.CmVersionMetadataModule>[] | undefined>;
+    /**
+     * Version source URL.
+     */
+    sourceUrl?: pulumi.Input<string | undefined>;
+    /**
+     * The time validation started.
+     */
+    startDeployTime?: pulumi.Input<string | undefined>;
+    /**
+     * Terraform version.
+     */
+    terraformVersion?: pulumi.Input<string | undefined>;
+    /**
+     * Usage text for the version.
+     */
+    usage?: pulumi.Input<string | undefined>;
+    /**
+     * Usage text for the version.
+     */
+    usageTemplate?: pulumi.Input<string | undefined>;
+    /**
+     * Validated terraform version.
+     */
+    validatedTerraformVersion?: pulumi.Input<string | undefined>;
+    /**
+     * Version name.
+     */
+    versionName?: pulumi.Input<string | undefined>;
+    /**
+     * VSI VPC version information
+     */
+    vsiVpcs?: pulumi.Input<pulumi.Input<inputs.CmVersionMetadataVsiVpc>[] | undefined>;
+    /**
+     * Working directory of source files.
+     */
+    workingDirectory?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionMetadataModule {
+    /**
+     * Name of the module.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Terraform modules.
+     */
+    offeringReferences?: pulumi.Input<pulumi.Input<inputs.CmVersionMetadataModuleOfferingReference>[] | undefined>;
+    /**
+     * Source of the module.
+     */
+    source?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionMetadataModuleOfferingReference {
+    /**
+     * Catalog ID of the module reference.
+     */
+    catalogId?: pulumi.Input<string | undefined>;
+    /**
+     * Flavor of the module.
+     */
+    flavor?: pulumi.Input<string | undefined>;
+    /**
+     * Flavors of the module.
+     */
+    flavors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * ID of the offering module.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Kind of the offeringmodule.
+     */
+    kind?: pulumi.Input<string | undefined>;
+    /**
+     * Metadata of the module.
+     */
+    metadata?: pulumi.Input<string | undefined>;
+    /**
+     * Name of the offering module.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Version of the offering module.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionMetadataVsiVpc {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    files?: pulumi.Input<pulumi.Input<inputs.CmVersionMetadataVsiVpcFile>[] | undefined>;
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images?: pulumi.Input<pulumi.Input<inputs.CmVersionMetadataVsiVpcImage>[] | undefined>;
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize?: pulumi.Input<number | undefined>;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystems?: pulumi.Input<pulumi.Input<inputs.CmVersionMetadataVsiVpcOperatingSystem>[] | undefined>;
+}
+
+export interface CmVersionMetadataVsiVpcFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size?: pulumi.Input<number | undefined>;
+}
+
+export interface CmVersionMetadataVsiVpcImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionMetadataVsiVpcOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture?: pulumi.Input<string | undefined>;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly?: pulumi.Input<boolean | undefined>;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName?: pulumi.Input<string | undefined>;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family?: pulumi.Input<string | undefined>;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor?: pulumi.Input<string | undefined>;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionOutput {
+    /**
+     * Output description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * Output key.
+     */
+    key?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionPreInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript?: pulumi.Input<string | undefined>;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope?: pulumi.Input<string | undefined>;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script?: pulumi.Input<string | undefined>;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionRequiredResource {
+    /**
+     * Type of requirement.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+     */
+    value?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfo {
+    /**
+     * Architecture diagrams for this solution.
+     */
+    architectureDiagrams?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoArchitectureDiagram>[] | undefined>;
+    /**
+     * Cost estimate definition.
+     */
+    costEstimates?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimate>[] | undefined>;
+    /**
+     * Dependencies for this solution.
+     */
+    dependencies?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoDependency>[] | undefined>;
+    /**
+     * Features - titles only.
+     */
+    features?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoFeature>[] | undefined>;
+}
+
+export interface CmVersionSolutionInfoArchitectureDiagram {
+    /**
+     * Description of this diagram.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Offering Media information.
+     */
+    diagram?: pulumi.Input<inputs.CmVersionSolutionInfoArchitectureDiagramDiagram | undefined>;
+}
+
+export interface CmVersionSolutionInfoArchitectureDiagramDiagram {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Caption for this media item.
+     */
+    caption?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl?: pulumi.Input<string | undefined>;
+    /**
+     * Type of this media item.
+     */
+    type?: pulumi.Input<string | undefined>;
+    /**
+     * URL of the specified media item.
+     */
+    url?: pulumi.Input<string | undefined>;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxy?: pulumi.Input<inputs.CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxy | undefined>;
+}
+
+export interface CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha?: pulumi.Input<string | undefined>;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimate {
+    /**
+     * Cost estimate currency.
+     */
+    currency?: pulumi.Input<string | undefined>;
+    /**
+     * Difference in total hourly cost.
+     */
+    diffTotalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Difference in total monthly cost.
+     */
+    diffTotalMonthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Past total hourly cost.
+     */
+    pastTotalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Past total monthly cost.
+     */
+    pastTotalMonthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost estimate projects.
+     */
+    projects?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProject>[] | undefined>;
+    /**
+     * Cost summary definition.
+     */
+    summaries?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateSummary>[] | undefined>;
+    /**
+     * When this estimate was generated.
+     */
+    timeGenerated?: pulumi.Input<string | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost estimate version.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProject {
+    /**
+     * Cost breakdown definition.
+     */
+    breakdowns?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectBreakdown>[] | undefined>;
+    /**
+     * Cost breakdown definition.
+     */
+    diffs?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectDiff>[] | undefined>;
+    /**
+     * Project metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Project name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost breakdown definition.
+     */
+    pastBreakdowns?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectPastBreakdown>[] | undefined>;
+    /**
+     * Cost summary definition.
+     */
+    summaries?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectSummary>[] | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectBreakdown {
+    /**
+     * Resources.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectBreakdownResource>[] | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent>[] | undefined>;
+    /**
+     * Hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Monthly cost.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component price.
+     */
+    price?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component unit.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectDiff {
+    /**
+     * Resources.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectDiffResource>[] | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectDiffResource {
+    /**
+     * Cost components.
+     */
+    costComponents?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent>[] | undefined>;
+    /**
+     * Hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Monthly cost.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component price.
+     */
+    price?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component unit.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectPastBreakdown {
+    /**
+     * Resources.
+     */
+    resources?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectPastBreakdownResource>[] | undefined>;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectPastBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents?: pulumi.Input<pulumi.Input<inputs.CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent>[] | undefined>;
+    /**
+     * Hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource metadata.
+     */
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Monthly cost.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Resource name.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component price.
+     */
+    price?: pulumi.Input<string | undefined>;
+    /**
+     * Cost component unit.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmVersionSolutionInfoCostEstimateSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources?: pulumi.Input<number | undefined>;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmVersionSolutionInfoDependency {
+    /**
+     * Optional - If not specified, assumes the Public Catalog.
+     */
+    catalogId?: pulumi.Input<string | undefined>;
+    /**
+     * Optional - List of dependent flavors in the specified range.
+     */
+    flavors?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Optional - Offering ID - not required if name is set.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * Optional - Programmatic Offering name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * Required - Semver value or range.
+     */
+    version?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionSolutionInfoFeature {
+    /**
+     * Feature description.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Heading.
+     */
+    title?: pulumi.Input<string | undefined>;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface CmVersionState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered?: pulumi.Input<string | undefined>;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested?: pulumi.Input<string | undefined>;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous?: pulumi.Input<string | undefined>;
+}
+
+export interface CmVersionValidation {
+    /**
+     * Last operation (e.g. submit_deployment, generate_installer, install_offering.
+     */
+    lastOperation?: pulumi.Input<string | undefined>;
+    /**
+     * Any message needing to be conveyed as part of the validation job.
+     */
+    message?: pulumi.Input<string | undefined>;
+    /**
+     * Date and time of last validation was requested.
+     */
+    requested?: pulumi.Input<string | undefined>;
+    /**
+     * Current validation state - <empty>, in_progress, valid, invalid, expired.
+     */
+    state?: pulumi.Input<string | undefined>;
+    /**
+     * Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+     */
+    target?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * Date and time of last successful validation.
+     */
+    validated?: pulumi.Input<string | undefined>;
+}
+
 export interface ComputeAutoscaleGroupVirtualGuestMemberTemplate {
     blockStorageIds?: pulumi.Input<pulumi.Input<number>[] | undefined>;
     bulkVms?: pulumi.Input<pulumi.Input<inputs.ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVm>[] | undefined>;
@@ -10405,6 +13505,669 @@ export interface PiVolumeOnboardingResultsVolumeOnboardingFailure {
 export interface ResourceInstancePlanHistory {
     resourcePlanId?: pulumi.Input<string | undefined>;
     startDate?: pulumi.Input<string | undefined>;
+}
+
+export interface SmCustomCredentialsConfigurationCodeEngine {
+    /**
+     * The name of the Code Engine Job.
+     */
+    jobName: pulumi.Input<string>;
+    /**
+     * The ID of the Code Engine project.
+     */
+    projectId: pulumi.Input<string>;
+    /**
+     * The region of the Code Engine project.
+     */
+    region: pulumi.Input<string>;
+}
+
+export interface SmCustomCredentialsConfigurationSchema {
+    /**
+     * The schema of the credentials.
+     */
+    credentials?: pulumi.Input<pulumi.Input<inputs.SmCustomCredentialsConfigurationSchemaCredential>[] | undefined>;
+    /**
+     * The schema of the input parameters.
+     */
+    parameters?: pulumi.Input<pulumi.Input<inputs.SmCustomCredentialsConfigurationSchemaParameter>[] | undefined>;
+}
+
+export interface SmCustomCredentialsConfigurationSchemaCredential {
+    /**
+     * The format of the credential, for example 'required:true, type:string'
+     */
+    format?: pulumi.Input<string | undefined>;
+    /**
+     * The name of the credential.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface SmCustomCredentialsConfigurationSchemaParameter {
+    /**
+     * The name of the environment variable associated with the configuration schema parameter.
+     */
+    envVariableName?: pulumi.Input<string | undefined>;
+    /**
+     * The format of the parameter, for example 'required:true, type:string', 'type:int, required:false', 'type:enum[val1|val2|val3], required:true', 'required:true, type:boolean'
+     */
+    format?: pulumi.Input<string | undefined>;
+    /**
+     * The name of the parameter.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface SmCustomCredentialsSecretCredentialsContent {
+    /**
+     * Credentials that have boolean values.
+     */
+    booleanValues?: pulumi.Input<{[key: string]: pulumi.Input<boolean>} | undefined>;
+    /**
+     * Credentials that have integer values.
+     */
+    integerValues?: pulumi.Input<{[key: string]: pulumi.Input<number>} | undefined>;
+    /**
+     * Credentials that have string values.
+     */
+    stringValues?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface SmCustomCredentialsSecretParameters {
+    /**
+     * Pararmeters that have boolean values.
+     */
+    booleanValues?: pulumi.Input<{[key: string]: pulumi.Input<boolean>} | undefined>;
+    /**
+     * Pararmeters that have integer values.
+     */
+    integerValues?: pulumi.Input<{[key: string]: pulumi.Input<number>} | undefined>;
+    /**
+     * Pararmeters that have string values.
+     */
+    stringValues?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+}
+
+export interface SmCustomCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate?: pulumi.Input<boolean | undefined>;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval?: pulumi.Input<number | undefined>;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface SmIamCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate?: pulumi.Input<boolean | undefined>;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval?: pulumi.Input<number | undefined>;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface SmImportedCertificateManagedCsr {
+    /**
+     * With the Subject Alternative Name field, you can specify additional hostnames to be protected by a single SSL certificate.
+     */
+    altNames?: pulumi.Input<string | undefined>;
+    /**
+     * This field indicates whether certificate is flagged for client use.
+     */
+    clientFlag?: pulumi.Input<boolean | undefined>;
+    /**
+     * This field indicates whether certificate is flagged for code signing use.
+     */
+    codeSigningFlag?: pulumi.Input<boolean | undefined>;
+    /**
+     * The Common Name (CN) represents the server name protected by the SSL certificate.
+     */
+    commonName?: pulumi.Input<string | undefined>;
+    /**
+     * The Country (C) values to define in the subject field of the resulting certificate.
+     */
+    countries?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The certificate signing request.
+     */
+    csr?: pulumi.Input<string | undefined>;
+    /**
+     * This field indicates whether certificate is flagged for email protection use.
+     */
+    emailProtectionFlag?: pulumi.Input<boolean | undefined>;
+    /**
+     * This parameter controls whether the common name is excluded from Subject Alternative Names (SANs).
+     */
+    excludeCnFromSans?: pulumi.Input<boolean | undefined>;
+    /**
+     * The allowed extended key usage constraint on certificate, in a comma-delimited list.
+     */
+    extKeyUsage?: pulumi.Input<string | undefined>;
+    /**
+     * A comma-delimited list of extended key usage Object Identifiers (OIDs).
+     */
+    extKeyUsageOids?: pulumi.Input<string | undefined>;
+    /**
+     * The IP Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    ipSans?: pulumi.Input<string | undefined>;
+    /**
+     * The number of bits to use to generate the private key.
+     */
+    keyBits?: pulumi.Input<number | undefined>;
+    /**
+     * The type of private key to generate.
+     */
+    keyType?: pulumi.Input<string | undefined>;
+    /**
+     * The allowed key usage constraint to define for certificate, in a comma-delimited list.
+     */
+    keyUsage?: pulumi.Input<string | undefined>;
+    /**
+     * The Locality (L) values to define in the subject field of the resulting certificate.
+     */
+    localities?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The Organization (O) values to define in the subject field of the resulting certificate.
+     */
+    organizations?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The custom Object Identifier (OID) or UTF8-string Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    otherSans?: pulumi.Input<string | undefined>;
+    /**
+     * The Organizational Unit (OU) values to define in the subject field of the resulting certificate.
+     */
+    ous?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * A comma-delimited list of policy Object Identifiers (OIDs).
+     */
+    policyIdentifiers?: pulumi.Input<string | undefined>;
+    /**
+     * The postal code values to define in the subject field of the resulting certificate.
+     */
+    postalCodes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The Province (ST) values to define in the subject field of the resulting certificate.
+     */
+    provinces?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * If set to false, makes the commonName field optional while generating a certificate.
+     */
+    requireCn?: pulumi.Input<boolean | undefined>;
+    /**
+     * This field indicates whether the private key will be rotated.
+     */
+    rotateKeys?: pulumi.Input<boolean | undefined>;
+    /**
+     * This field indicates whether certificate is flagged for server use.
+     */
+    serverFlag?: pulumi.Input<boolean | undefined>;
+    /**
+     * The street address values to define in the subject field of the resulting certificate.
+     */
+    streetAddresses?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The URI Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    uriSans?: pulumi.Input<string | undefined>;
+    /**
+     * Specifies the list of requested User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate.
+     */
+    userIds?: pulumi.Input<string | undefined>;
+}
+
+export interface SmImportedCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter?: pulumi.Input<string | undefined>;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPrivateCertificateConfigurationActionSignCsrData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate?: pulumi.Input<string | undefined>;
+    /**
+     * The certificate expiration time.
+     */
+    expiration?: pulumi.Input<number | undefined>;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPrivateCertificateConfigurationIntermediateCaCryptoKey {
+    /**
+     * The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+     */
+    allowGenerateKey?: pulumi.Input<boolean | undefined>;
+    /**
+     * The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * The data that is associated with a cryptographic provider.
+     */
+    provider?: pulumi.Input<inputs.SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProvider | undefined>;
+}
+
+export interface SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProvider {
+    /**
+     * The HPCS instance CRN.
+     */
+    instanceCrn?: pulumi.Input<string | undefined>;
+    /**
+     * The secret Id of iam credentials with api key to access HPCS instance.
+     */
+    pinIamCredentialsSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * The HPCS private key store space id.
+     */
+    privateKeystoreId?: pulumi.Input<string | undefined>;
+    /**
+     * The type of cryptographic provider.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPrivateCertificateConfigurationIntermediateCaData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate?: pulumi.Input<string | undefined>;
+    /**
+     * The certificate signing request.
+     */
+    csr?: pulumi.Input<string | undefined>;
+    /**
+     * The certificate expiration time.
+     */
+    expiration?: pulumi.Input<number | undefined>;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) The PEM-encoded private key to associate with the certificate.
+     */
+    privateKey?: pulumi.Input<string | undefined>;
+    /**
+     * The type of private key to generate.
+     */
+    privateKeyType?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPrivateCertificateConfigurationRootCaCryptoKey {
+    /**
+     * The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+     */
+    allowGenerateKey?: pulumi.Input<boolean | undefined>;
+    /**
+     * The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+     */
+    id?: pulumi.Input<string | undefined>;
+    /**
+     * The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+     */
+    label?: pulumi.Input<string | undefined>;
+    /**
+     * The data that is associated with a cryptographic provider.
+     */
+    provider?: pulumi.Input<inputs.SmPrivateCertificateConfigurationRootCaCryptoKeyProvider | undefined>;
+}
+
+export interface SmPrivateCertificateConfigurationRootCaCryptoKeyProvider {
+    /**
+     * The HPCS instance CRN.
+     */
+    instanceCrn?: pulumi.Input<string | undefined>;
+    /**
+     * The secret Id of iam credentials with api key to access HPCS instance.
+     */
+    pinIamCredentialsSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * The HPCS private key store space id.
+     */
+    privateKeystoreId?: pulumi.Input<string | undefined>;
+    /**
+     * The type of cryptographic provider.
+     */
+    type?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPrivateCertificateConfigurationRootCaData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate?: pulumi.Input<string | undefined>;
+    /**
+     * The certificate signing request.
+     */
+    csr?: pulumi.Input<string | undefined>;
+    /**
+     * The certificate expiration time.
+     */
+    expiration?: pulumi.Input<number | undefined>;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa?: pulumi.Input<string | undefined>;
+    /**
+     * (Optional) The PEM-encoded private key to associate with the certificate.
+     */
+    privateKey?: pulumi.Input<string | undefined>;
+    /**
+     * The type of private key to generate.
+     */
+    privateKeyType?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPrivateCertificateRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate?: pulumi.Input<boolean | undefined>;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval?: pulumi.Input<number | undefined>;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPrivateCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter?: pulumi.Input<string | undefined>;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPublicCertificateAkamai {
+    /**
+     * Akamai credentials
+     */
+    config?: pulumi.Input<inputs.SmPublicCertificateAkamaiConfig | undefined>;
+    /**
+     * Akamai credentials
+     */
+    edgerc?: pulumi.Input<inputs.SmPublicCertificateAkamaiEdgerc | undefined>;
+}
+
+export interface SmPublicCertificateAkamaiConfig {
+    accessToken?: pulumi.Input<string | undefined>;
+    clientSecret?: pulumi.Input<string | undefined>;
+    clientToken?: pulumi.Input<string | undefined>;
+    host?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPublicCertificateAkamaiEdgerc {
+    /**
+     * The section of the edgerc file to use for configuration.
+     */
+    configSection?: pulumi.Input<string | undefined>;
+    /**
+     * Path to Akamai's configuration file.
+     */
+    pathToEdgerc?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPublicCertificateIssuanceInfo {
+    /**
+     * Indicates whether the issued certificate is configured with an automatic rotation policy.
+     */
+    autoRotated?: pulumi.Input<boolean | undefined>;
+    /**
+     * The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+     */
+    challenges?: pulumi.Input<pulumi.Input<inputs.SmPublicCertificateIssuanceInfoChallenge>[] | undefined>;
+    /**
+     * The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+     */
+    dnsChallengeValidationTime?: pulumi.Input<string | undefined>;
+    /**
+     * A code that identifies an issuance error.This field, along with `errorMessage`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+     */
+    errorCode?: pulumi.Input<string | undefined>;
+    /**
+     * A human-readable message that provides details about the issuance error.
+     */
+    errorMessage?: pulumi.Input<string | undefined>;
+    /**
+     * The date when the certificate is ordered. The date format follows RFC 3339.
+     */
+    orderedOn?: pulumi.Input<string | undefined>;
+    /**
+     * The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+     */
+    state?: pulumi.Input<number | undefined>;
+    /**
+     * A text representation of the secret state.
+     */
+    stateDescription?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPublicCertificateIssuanceInfoChallenge {
+    /**
+     * The challenge domain.
+     */
+    domain?: pulumi.Input<string | undefined>;
+    /**
+     * The challenge expiration date. The date format follows RFC 3339.
+     */
+    expiration?: pulumi.Input<string | undefined>;
+    /**
+     * The challenge status.
+     */
+    status?: pulumi.Input<string | undefined>;
+    /**
+     * The TXT record name.
+     */
+    txtRecordName?: pulumi.Input<string | undefined>;
+    /**
+     * The TXT record value.
+     */
+    txtRecordValue?: pulumi.Input<string | undefined>;
+}
+
+export interface SmPublicCertificateRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your certificate 31 days before it expires.
+     */
+    autoRotate?: pulumi.Input<boolean | undefined>;
+    /**
+     * Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+     */
+    rotateKeys?: pulumi.Input<boolean | undefined>;
+}
+
+export interface SmPublicCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter?: pulumi.Input<string | undefined>;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore?: pulumi.Input<string | undefined>;
+}
+
+export interface SmServiceCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate?: pulumi.Input<boolean | undefined>;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval?: pulumi.Input<number | undefined>;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit?: pulumi.Input<string | undefined>;
+}
+
+export interface SmServiceCredentialsSecretSourceService {
+    /**
+     * The source service IAM data is returned in case IAM credentials where created for this secret.
+     */
+    iams?: pulumi.Input<pulumi.Input<inputs.SmServiceCredentialsSecretSourceServiceIam>[] | undefined>;
+    /**
+     * The source service instance identifier.
+     */
+    instance: pulumi.Input<inputs.SmServiceCredentialsSecretSourceServiceInstance>;
+    /**
+     * The collection of parameters for the service credentials target.
+     */
+    parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The source service resource key data of the generated service credentials.
+     */
+    resourceKeys?: pulumi.Input<pulumi.Input<inputs.SmServiceCredentialsSecretSourceServiceResourceKey>[] | undefined>;
+    /**
+     * The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+     */
+    role?: pulumi.Input<inputs.SmServiceCredentialsSecretSourceServiceRole | undefined>;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIam {
+    /**
+     * The IAM apikey metadata for the IAM credentials that were generated.
+     */
+    apikeys?: pulumi.Input<pulumi.Input<inputs.SmServiceCredentialsSecretSourceServiceIamApikey>[] | undefined>;
+    /**
+     * The IAM role for the generate service credentials.
+     */
+    roles?: pulumi.Input<pulumi.Input<inputs.SmServiceCredentialsSecretSourceServiceIamRole>[] | undefined>;
+    /**
+     * The IAM serviceid for the generated service credentials.
+     */
+    serviceids?: pulumi.Input<pulumi.Input<inputs.SmServiceCredentialsSecretSourceServiceIamServiceid>[] | undefined>;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIamApikey {
+    /**
+     * The IAM API key description for the generated service credentials.
+     */
+    description?: pulumi.Input<string | undefined>;
+    /**
+     * The IAM API key name for the generated service credentials.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIamRole {
+    /**
+     * The IAM role CRN assigned to the generated service credentials.
+     */
+    crn?: pulumi.Input<string | undefined>;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIamServiceid {
+    /**
+     * The IAM Service ID CRN.
+     */
+    crn?: pulumi.Input<string | undefined>;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceInstance {
+    /**
+     * A CRN that uniquely identifies a service credentials target.
+     */
+    crn: pulumi.Input<string>;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceResourceKey {
+    /**
+     * The resource key CRN of the generated service credentials.
+     */
+    crn?: pulumi.Input<string | undefined>;
+    /**
+     * The resource key name of the generated service credentials.
+     */
+    name?: pulumi.Input<string | undefined>;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceRole {
+    /**
+     * The CRN role identifier for creating a service-id.
+     */
+    crn?: pulumi.Input<string | undefined>;
+}
+
+export interface SmUsernamePasswordSecretPasswordGenerationPolicy {
+    /**
+     * Include digits in auto-generated passwords.
+     */
+    includeDigits?: pulumi.Input<boolean | undefined>;
+    /**
+     * Include symbols in auto-generated passwords.
+     */
+    includeSymbols?: pulumi.Input<boolean | undefined>;
+    /**
+     * Include uppercase letters in auto-generated passwords.
+     */
+    includeUppercase?: pulumi.Input<boolean | undefined>;
+    /**
+     * The length of auto-generated passwords.
+     */
+    length?: pulumi.Input<number | undefined>;
+}
+
+export interface SmUsernamePasswordSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate?: pulumi.Input<boolean | undefined>;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval?: pulumi.Input<number | undefined>;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit?: pulumi.Input<string | undefined>;
 }
 
 export interface TgConnectionTunnel {

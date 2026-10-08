@@ -6,6 +6,13 @@ import builtins as _builtins
 from . import _utilities
 import typing
 # Export this package's modules as members:
+from .cm_account import *
+from .cm_catalog import *
+from .cm_object import *
+from .cm_offering import *
+from .cm_offering_instance import *
+from .cm_validation import *
+from .cm_version import *
 from .compute_autoscale_group import *
 from .compute_autoscale_policy import *
 from .compute_bare_metal import *
@@ -26,6 +33,13 @@ from .cos_bucket_object import *
 from .cos_bucket_object_lock_configuration import *
 from .cos_bucket_replication_rule import *
 from .cos_bucket_website_configuration import *
+from .get_cm_account import *
+from .get_cm_catalog import *
+from .get_cm_object import *
+from .get_cm_offering import *
+from .get_cm_offering_instance import *
+from .get_cm_preset import *
+from .get_cm_version import *
 from .get_compute_bare_metal import *
 from .get_compute_image_template import *
 from .get_compute_placement_group import *
@@ -374,6 +388,38 @@ from .get_resource_key import *
 from .get_resource_quota import *
 from .get_resource_reclamations import *
 from .get_resource_tag import *
+from .get_sm_arbitrary_secret import *
+from .get_sm_arbitrary_secret_metadata import *
+from .get_sm_configurations import *
+from .get_sm_custom_credentials_configuration import *
+from .get_sm_custom_credentials_secret import *
+from .get_sm_custom_credentials_secret_metadata import *
+from .get_sm_en_registration import *
+from .get_sm_iam_credentials_configuration import *
+from .get_sm_iam_credentials_secret import *
+from .get_sm_iam_credentials_secret_metadata import *
+from .get_sm_imported_certificate import *
+from .get_sm_imported_certificate_metadata import *
+from .get_sm_instance import *
+from .get_sm_kv_secret import *
+from .get_sm_kv_secret_metadata import *
+from .get_sm_private_certificate import *
+from .get_sm_private_certificate_configuration_intermediate_ca import *
+from .get_sm_private_certificate_configuration_root_ca import *
+from .get_sm_private_certificate_configuration_template import *
+from .get_sm_private_certificate_metadata import *
+from .get_sm_public_certificate import *
+from .get_sm_public_certificate_configuration_ca_lets_encrypt import *
+from .get_sm_public_certificate_configuration_dns_cis import *
+from .get_sm_public_certificate_configuration_dns_classic_infrastructure import *
+from .get_sm_public_certificate_metadata import *
+from .get_sm_secret_group import *
+from .get_sm_secret_groups import *
+from .get_sm_secrets import *
+from .get_sm_service_credentials_secret import *
+from .get_sm_service_credentials_secret_metadata import *
+from .get_sm_username_password_secret import *
+from .get_sm_username_password_secret_metadata import *
 from .get_tg_connection_prefix_filter import *
 from .get_tg_connection_prefix_filters import *
 from .get_tg_gateway import *
@@ -569,6 +615,29 @@ from .resource_instance import *
 from .resource_key import *
 from .resource_reclamation_delete import *
 from .resource_tag import *
+from .sm_admin_token import *
+from .sm_arbitrary_secret import *
+from .sm_custom_credentials_configuration import *
+from .sm_custom_credentials_secret import *
+from .sm_en_registration import *
+from .sm_iam_credentials_configuration import *
+from .sm_iam_credentials_secret import *
+from .sm_imported_certificate import *
+from .sm_kv_secret import *
+from .sm_private_certificate import *
+from .sm_private_certificate_configuration_action_set_signed import *
+from .sm_private_certificate_configuration_action_sign_csr import *
+from .sm_private_certificate_configuration_intermediate_ca import *
+from .sm_private_certificate_configuration_root_ca import *
+from .sm_private_certificate_configuration_template import *
+from .sm_public_certificate import *
+from .sm_public_certificate_action_validate_manual_dns import *
+from .sm_public_certificate_configuration_ca_lets_encrypt import *
+from .sm_public_certificate_configuration_dns_cis import *
+from .sm_public_certificate_configuration_dns_classic_infrastructure import *
+from .sm_secret_group import *
+from .sm_service_credentials_secret import *
+from .sm_username_password_secret import *
 from .tg_connection import *
 from .tg_connection_action import *
 from .tg_connection_prefix_filter import *
@@ -588,6 +657,62 @@ else:
 _utilities.register(
     resource_modules="""
 [
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/cmAccount",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/cmAccount:CmAccount": "CmAccount"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/cmCatalog",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/cmCatalog:CmCatalog": "CmCatalog"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/cmObject",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/cmObject:CmObject": "CmObject"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/cmOffering",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/cmOffering:CmOffering": "CmOffering"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/cmOfferingInstance",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/cmOfferingInstance:CmOfferingInstance": "CmOfferingInstance"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/cmValidation",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/cmValidation:CmValidation": "CmValidation"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/cmVersion",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/cmVersion:CmVersion": "CmVersion"
+  }
+ },
  {
   "pkg": "ibmcloud",
   "mod": "index/computeAutoscaleGroup",
@@ -2234,6 +2359,190 @@ _utilities.register(
   "fqn": "pulumi_ibmcloud",
   "classes": {
    "ibmcloud:index/resourceTag:ResourceTag": "ResourceTag"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smAdminToken",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smAdminToken:SmAdminToken": "SmAdminToken"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smArbitrarySecret",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smArbitrarySecret:SmArbitrarySecret": "SmArbitrarySecret"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smCustomCredentialsConfiguration",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smCustomCredentialsConfiguration:SmCustomCredentialsConfiguration": "SmCustomCredentialsConfiguration"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smCustomCredentialsSecret",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smCustomCredentialsSecret:SmCustomCredentialsSecret": "SmCustomCredentialsSecret"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smEnRegistration",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smEnRegistration:SmEnRegistration": "SmEnRegistration"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smIamCredentialsConfiguration",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smIamCredentialsConfiguration:SmIamCredentialsConfiguration": "SmIamCredentialsConfiguration"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smIamCredentialsSecret",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smIamCredentialsSecret:SmIamCredentialsSecret": "SmIamCredentialsSecret"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smImportedCertificate",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smImportedCertificate:SmImportedCertificate": "SmImportedCertificate"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smKvSecret",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smKvSecret:SmKvSecret": "SmKvSecret"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPrivateCertificate",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPrivateCertificate:SmPrivateCertificate": "SmPrivateCertificate"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPrivateCertificateConfigurationActionSetSigned",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPrivateCertificateConfigurationActionSetSigned:SmPrivateCertificateConfigurationActionSetSigned": "SmPrivateCertificateConfigurationActionSetSigned"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPrivateCertificateConfigurationActionSignCsr",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPrivateCertificateConfigurationActionSignCsr:SmPrivateCertificateConfigurationActionSignCsr": "SmPrivateCertificateConfigurationActionSignCsr"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPrivateCertificateConfigurationIntermediateCa",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPrivateCertificateConfigurationIntermediateCa:SmPrivateCertificateConfigurationIntermediateCa": "SmPrivateCertificateConfigurationIntermediateCa"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPrivateCertificateConfigurationRootCa",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPrivateCertificateConfigurationRootCa:SmPrivateCertificateConfigurationRootCa": "SmPrivateCertificateConfigurationRootCa"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPrivateCertificateConfigurationTemplate",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPrivateCertificateConfigurationTemplate:SmPrivateCertificateConfigurationTemplate": "SmPrivateCertificateConfigurationTemplate"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPublicCertificate",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPublicCertificate:SmPublicCertificate": "SmPublicCertificate"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPublicCertificateActionValidateManualDns",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPublicCertificateActionValidateManualDns:SmPublicCertificateActionValidateManualDns": "SmPublicCertificateActionValidateManualDns"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPublicCertificateConfigurationCaLetsEncrypt",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPublicCertificateConfigurationCaLetsEncrypt:SmPublicCertificateConfigurationCaLetsEncrypt": "SmPublicCertificateConfigurationCaLetsEncrypt"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPublicCertificateConfigurationDnsCis",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPublicCertificateConfigurationDnsCis:SmPublicCertificateConfigurationDnsCis": "SmPublicCertificateConfigurationDnsCis"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smPublicCertificateConfigurationDnsClassicInfrastructure",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smPublicCertificateConfigurationDnsClassicInfrastructure:SmPublicCertificateConfigurationDnsClassicInfrastructure": "SmPublicCertificateConfigurationDnsClassicInfrastructure"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smSecretGroup",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smSecretGroup:SmSecretGroup": "SmSecretGroup"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smServiceCredentialsSecret",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smServiceCredentialsSecret:SmServiceCredentialsSecret": "SmServiceCredentialsSecret"
+  }
+ },
+ {
+  "pkg": "ibmcloud",
+  "mod": "index/smUsernamePasswordSecret",
+  "fqn": "pulumi_ibmcloud",
+  "classes": {
+   "ibmcloud:index/smUsernamePasswordSecret:SmUsernamePasswordSecret": "SmUsernamePasswordSecret"
   }
  },
  {

@@ -5,6 +5,3106 @@ import * as pulumi from "@pulumi/pulumi";
 import * as inputs from "../types/input";
 import * as outputs from "../types/output";
 
+export interface CmAccountAccountFilters {
+    /**
+     * Filter against offering categories with dynamic keys.
+     */
+    categoryFilters: outputs.CmAccountAccountFiltersCategoryFilter[];
+    /**
+     * Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+     */
+    idFilters: outputs.CmAccountAccountFiltersIdFilter[];
+    /**
+     * > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+     */
+    includeAll: boolean;
+}
+
+export interface CmAccountAccountFiltersCategoryFilter {
+    /**
+     * Name of this category
+     */
+    categoryName: string;
+    /**
+     * Filter terms related to the category.
+     */
+    filter: outputs.CmAccountAccountFiltersCategoryFilterFilter;
+    /**
+     * Whether to include the category in the catalog filter.
+     */
+    include: boolean;
+}
+
+export interface CmAccountAccountFiltersCategoryFilterFilter {
+    /**
+     * List of filter terms for the category.
+     */
+    filterTerms: string[];
+}
+
+export interface CmAccountAccountFiltersIdFilter {
+    /**
+     * Offering filter terms.
+     */
+    excludes: outputs.CmAccountAccountFiltersIdFilterExclude[];
+    /**
+     * Offering filter terms.
+     */
+    includes: outputs.CmAccountAccountFiltersIdFilterInclude[];
+}
+
+export interface CmAccountAccountFiltersIdFilterExclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface CmAccountAccountFiltersIdFilterInclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface CmAccountTerraformEngine {
+    /**
+     * The api key used to access the engine instance.
+     */
+    apiToken: string;
+    /**
+     * The settings that determines how deployable architectures are auto-created from workspaces in the terraform engine.
+     */
+    daCreation: outputs.CmAccountTerraformEngineDaCreation;
+    /**
+     * User provided name for the specified engine.
+     */
+    name: string;
+    /**
+     * The private endpoint for the engine instance.
+     */
+    privateEndpoint: string;
+    /**
+     * The public endpoint for the engine instance.
+     */
+    publicEndpoint: string;
+    /**
+     * The terraform engine type. The only one supported at the moment is terraform-enterprise.
+     */
+    type: string;
+}
+
+export interface CmAccountTerraformEngineDaCreation {
+    /**
+     * Default private catalog to create the deployable architectures in.
+     */
+    defaultPrivateCatalogId: string;
+    /**
+     * Determines whether deployable architectures are auto-created from workspaces in the engine.
+     */
+    enabled: boolean;
+    /**
+     * Determines which workspace scope to query to auto-create deployable architectures from.
+     */
+    pollingInfo: outputs.CmAccountTerraformEngineDaCreationPollingInfo;
+}
+
+export interface CmAccountTerraformEngineDaCreationPollingInfo {
+    /**
+     * Last polling status of the engine scope.
+     */
+    lastPollingStatuses: outputs.CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatus[];
+    /**
+     * List of scopes to auto-create deployable architectures from workspaces in the engine.
+     */
+    scopes: outputs.CmAccountTerraformEngineDaCreationPollingInfoScope[];
+}
+
+export interface CmAccountTerraformEngineDaCreationPollingInfoLastPollingStatus {
+    /**
+     * Status code of the last polling attempt.
+     */
+    code: number;
+    /**
+     * Status message from the last polling attempt.
+     */
+    message: string;
+}
+
+export interface CmAccountTerraformEngineDaCreationPollingInfoScope {
+    /**
+     * Identifier for the specified type in the scope.
+     */
+    name: string;
+    /**
+     * Scope to auto-create deployable architectures from. The supported scopes today are workspace, org, and project.
+     */
+    type: string;
+}
+
+export interface CmCatalogCatalogFilter {
+    /**
+     * Filter against offering categories with dynamic keys.
+     */
+    categoryFilters: outputs.CmCatalogCatalogFilterCategoryFilter[];
+    /**
+     * Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+     */
+    idFilters: outputs.CmCatalogCatalogFilterIdFilters;
+    /**
+     * > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+     */
+    includeAll: boolean;
+}
+
+export interface CmCatalogCatalogFilterCategoryFilter {
+    /**
+     * Name of this category
+     */
+    categoryName: string;
+    /**
+     * Filter terms related to the category.
+     */
+    filter: outputs.CmCatalogCatalogFilterCategoryFilterFilter;
+    /**
+     * Whether to include the category in the catalog filter.
+     */
+    include: boolean;
+}
+
+export interface CmCatalogCatalogFilterCategoryFilterFilter {
+    /**
+     * List of filter terms for the category.
+     */
+    filterTerms: string[];
+}
+
+export interface CmCatalogCatalogFilterIdFilters {
+    /**
+     * Offering filter terms.
+     */
+    exclude: outputs.CmCatalogCatalogFilterIdFiltersExclude;
+    /**
+     * Offering filter terms.
+     */
+    include: outputs.CmCatalogCatalogFilterIdFiltersInclude;
+}
+
+export interface CmCatalogCatalogFilterIdFiltersExclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface CmCatalogCatalogFilterIdFiltersInclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface CmCatalogFeature {
+    /**
+     * Feature description.
+     */
+    description?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: {[key: string]: string};
+}
+
+export interface CmCatalogTargetAccountContext {
+    /**
+     * API key of the target account.
+     */
+    apiKey?: string;
+    /**
+     * Label for this target account context.
+     */
+    label?: string;
+    /**
+     * Unique identifier/name for this target account context.
+     */
+    name?: string;
+    /**
+     * Project ID.
+     */
+    projectId?: string;
+    /**
+     * Trusted profile information.
+     */
+    trustedProfile?: outputs.CmCatalogTargetAccountContextTrustedProfile;
+}
+
+export interface CmCatalogTargetAccountContextTrustedProfile {
+    /**
+     * CRN of this catalog.
+     */
+    catalogCrn: string;
+    /**
+     * Name of this catalog.
+     */
+    catalogName: string;
+    /**
+     * Target service ID.
+     */
+    targetServiceId: string;
+    /**
+     * Trusted profile ID.
+     */
+    trustedProfileId?: string;
+}
+
+export interface CmObjectPublish {
+    /**
+     * Indicates if this offering has been approved for use by all IBMers.
+     */
+    ibmApproved: boolean;
+    /**
+     * Is it permitted to request publishing to IBM or Public.
+     */
+    permitIbmPublicPublish: boolean;
+    /**
+     * The portal's approval record ID.
+     */
+    portalApprovalRecord: string;
+    /**
+     * The portal UI URL.
+     */
+    portalUrl: string;
+    /**
+     * Indicates if this offering has been approved for use by all IBM Cloud users.
+     */
+    publicApproved: boolean;
+}
+
+export interface CmObjectState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current: string;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending: string;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous: string;
+}
+
+export interface CmOfferingBadge {
+    /**
+     * Authority for the current badge.
+     */
+    authority: string;
+    /**
+     * An optional set of constraints indicating which versions in an Offering have this particular badge.
+     */
+    constraints: outputs.CmOfferingBadgeConstraint[];
+    /**
+     * Description of the current badge.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Icon for the current badge.
+     */
+    icon: string;
+    /**
+     * ID of the current badge.
+     */
+    id: string;
+    /**
+     * Display name for the current badge.
+     */
+    label: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n: {[key: string]: string};
+    /**
+     * Learn more links for a badge.
+     */
+    learnMoreLinks: outputs.CmOfferingBadgeLearnMoreLink[];
+    /**
+     * Tag for the current badge.
+     */
+    tag: string;
+}
+
+export interface CmOfferingBadgeConstraint {
+    /**
+     * Rule for the current constraint.
+     */
+    rule: string;
+    /**
+     * Type of the current constraint.
+     */
+    type: string;
+}
+
+export interface CmOfferingBadgeLearnMoreLink {
+    /**
+     * First party link.
+     */
+    firstParty: string;
+    /**
+     * Third party link.
+     */
+    thirdParty: string;
+}
+
+export interface CmOfferingDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate: string;
+    /**
+     * Deprecation state.
+     */
+    deprecateState: string;
+    description: string;
+}
+
+export interface CmOfferingFeature {
+    /**
+     * Feature description.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n: {[key: string]: string};
+}
+
+export interface CmOfferingImagePullKey {
+    /**
+     * Key description.
+     */
+    description: string;
+    /**
+     * Key name.
+     */
+    name: string;
+    /**
+     * Key value.
+     */
+    value: string;
+}
+
+export interface CmOfferingKind {
+    /**
+     * List of features associated with this offering.
+     */
+    additionalFeatures?: outputs.CmOfferingKindAdditionalFeature[];
+    /**
+     * The date and time this catalog was created.
+     */
+    created?: string;
+    /**
+     * content kind, e.g., helm, vm image.
+     */
+    formatKind?: string;
+    /**
+     * Unique ID.
+     */
+    id?: string;
+    /**
+     * install kind, e.g., helm, operator, terraform.
+     */
+    installKind?: string;
+    /**
+     * Open ended metadata information.
+     */
+    metadata?: {[key: string]: string};
+    /**
+     * list of plans.
+     */
+    plans?: outputs.CmOfferingKindPlan[];
+    /**
+     * List of tags associated with this catalog.
+     */
+    tags?: string[];
+    /**
+     * target cloud to install, e.g., iks, open_shift_iks.
+     */
+    targetKind?: string;
+    /**
+     * The date and time this catalog was last updated.
+     */
+    updated?: string;
+    /**
+     * list of versions.
+     */
+    versions?: outputs.CmOfferingKindVersion[];
+}
+
+export interface CmOfferingKindAdditionalFeature {
+    /**
+     * Feature description.
+     */
+    description?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: {[key: string]: string};
+}
+
+export interface CmOfferingKindPlan {
+    /**
+     * list of features associated with this offering.
+     */
+    additionalFeatures?: outputs.CmOfferingKindPlanAdditionalFeature[];
+    /**
+     * the date'time this catalog was created.
+     */
+    created?: string;
+    /**
+     * list of deployments.
+     */
+    deployments?: outputs.CmOfferingKindPlanDeployment[];
+    /**
+     * unique id.
+     */
+    id?: string;
+    /**
+     * Display Name in the requested language.
+     */
+    label?: string;
+    /**
+     * Long description in the requested language.
+     */
+    longDescription?: string;
+    /**
+     * open ended metadata information.
+     */
+    metadata?: {[key: string]: string};
+    /**
+     * The programmatic name of this offering.
+     */
+    name?: string;
+    /**
+     * Short description in the requested language.
+     */
+    shortDescription?: string;
+    /**
+     * list of tags associated with this catalog.
+     */
+    tags?: string[];
+    /**
+     * the date'time this catalog was last updated.
+     */
+    updated?: string;
+}
+
+export interface CmOfferingKindPlanAdditionalFeature {
+    /**
+     * Feature description.
+     */
+    description?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: {[key: string]: string};
+}
+
+export interface CmOfferingKindPlanDeployment {
+    /**
+     * the date'time this catalog was created.
+     */
+    created?: string;
+    /**
+     * unique id.
+     */
+    id?: string;
+    /**
+     * Display Name in the requested language.
+     */
+    label?: string;
+    /**
+     * Long description in the requested language.
+     */
+    longDescription?: string;
+    /**
+     * open ended metadata information.
+     */
+    metadata?: {[key: string]: string};
+    /**
+     * The programmatic name of this offering.
+     */
+    name?: string;
+    /**
+     * Short description in the requested language.
+     */
+    shortDescription?: string;
+    /**
+     * list of tags associated with this catalog.
+     */
+    tags?: string[];
+    /**
+     * the date'time this catalog was last updated.
+     */
+    updated?: string;
+}
+
+export interface CmOfferingKindVersion {
+    /**
+     * Catalog ID.
+     */
+    catalogId?: string;
+    /**
+     * List of user solicited overrides.
+     */
+    configurations: outputs.CmOfferingKindVersionConfiguration[];
+    /**
+     * The date and time this version was created.
+     */
+    created?: string;
+    /**
+     * Version's CRN.
+     */
+    crn?: string;
+    /**
+     * Deprecation information for a Version.
+     */
+    deprecatePendings: outputs.CmOfferingKindVersionDeprecatePending[];
+    /**
+     * read only field, indicating if this version is deprecated.
+     */
+    deprecated?: boolean;
+    /**
+     * Entitlement license info.
+     */
+    entitlement?: outputs.CmOfferingKindVersionEntitlement;
+    /**
+     * Version Flavor Information.  Only supported for Product kind Solution.
+     */
+    flavor?: outputs.CmOfferingKindVersionFlavor;
+    /**
+     * List of IAM permissions that are required to consume this version.
+     */
+    iamPermissions?: outputs.CmOfferingKindVersionIamPermission[];
+    /**
+     * Unique ID.
+     */
+    id: string;
+    /**
+     * If set, denotes a url to a YAML file with list of container images used by this version.
+     */
+    imageManifestUrl?: string;
+    /**
+     * ID of the image pull key to use from Offering.ImagePullKeys.
+     */
+    imagePullKeyName?: string;
+    /**
+     * Script information.
+     */
+    install?: outputs.CmOfferingKindVersionInstall;
+    /**
+     * Is the version able to be shared.
+     */
+    isConsumable: boolean;
+    /**
+     * Kind ID.
+     */
+    kindId?: string;
+    /**
+     * List of licenses the product was built with.
+     */
+    licenses?: outputs.CmOfferingKindVersionLicense[];
+    /**
+     * Long description for version.
+     */
+    longDescription?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    longDescriptionI18n?: {[key: string]: string};
+    /**
+     * Generic data to be included with content being onboarded. Required for virtual server image for VPC.
+     */
+    metadata?: outputs.CmOfferingKindVersionMetadata;
+    /**
+     * Offering ID.
+     */
+    offeringId?: string;
+    /**
+     * List of output values for this version.
+     */
+    outputs?: outputs.CmOfferingKindVersionOutput[];
+    /**
+     * Version of the package used to create this version.
+     */
+    packageVersion?: string;
+    /**
+     * Optional pre-install instructions.
+     */
+    preInstalls?: outputs.CmOfferingKindVersionPreInstall[];
+    /**
+     * Content's repo URL.
+     */
+    repoUrl?: string;
+    /**
+     * Resource requirments for installation.
+     */
+    requiredResources?: outputs.CmOfferingKindVersionRequiredResource[];
+    /**
+     * Cloudant revision.
+     */
+    rev: string;
+    /**
+     * hash of the content.
+     */
+    sha?: string;
+    /**
+     * Denotes if single instance can be deployed to a given cluster.
+     */
+    singleInstance?: boolean;
+    /**
+     * Version Solution Information.  Only supported for Product kind Solution.
+     */
+    solutionInfo?: outputs.CmOfferingKindVersionSolutionInfo;
+    /**
+     * Content's source URL (e.g git repo).
+     */
+    sourceUrl?: string;
+    /**
+     * Offering state.
+     */
+    state?: outputs.CmOfferingKindVersionState;
+    /**
+     * List of tags associated with this catalog.
+     */
+    tags?: string[];
+    /**
+     * File used to on-board this version.
+     */
+    tgzUrl?: string;
+    /**
+     * The date and time this version was last updated.
+     */
+    updated?: string;
+    /**
+     * Validation response.
+     */
+    validation?: outputs.CmOfferingKindVersionValidation;
+    /**
+     * Version of content type.
+     */
+    version?: string;
+    /**
+     * A dotted value of `catalogID`.`versionID`.
+     */
+    versionLocator?: string;
+    /**
+     * Whitelisted accounts for version.
+     */
+    whitelistedAccounts?: string[];
+}
+
+export interface CmOfferingKindVersionConfiguration {
+    /**
+     * Render type.
+     */
+    customConfig: outputs.CmOfferingKindVersionConfigurationCustomConfig;
+    /**
+     * The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+     */
+    defaultValue: string;
+    /**
+     * Key description.
+     */
+    description: string;
+    /**
+     * Display name for configuration type.
+     */
+    displayName: string;
+    /**
+     * Hide values.
+     */
+    hidden: boolean;
+    /**
+     * Configuration key.
+     */
+    key: string;
+    /**
+     * List of options of type.
+     */
+    options: {[key: string]: string}[];
+    /**
+     * Is key required to install.
+     */
+    required: boolean;
+    /**
+     * Value type (string, boolean, int).
+     */
+    type: string;
+    /**
+     * The original type, as found in the source being onboarded.
+     */
+    typeMetadata: string;
+    /**
+     * Constraint associated with value, e.g., for string type - regx:[a-z].
+     */
+    valueConstraint: string;
+}
+
+export interface CmOfferingKindVersionConfigurationCustomConfig {
+    /**
+     * List of parameters that are associated with this configuration.
+     */
+    associations: outputs.CmOfferingKindVersionConfigurationCustomConfigAssociations;
+    /**
+     * Map of constraint parameters that will be passed to the custom widget.
+     */
+    configConstraints: {[key: string]: string};
+    /**
+     * Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+     */
+    grouping: string;
+    /**
+     * Determines the order that this configuration item shows in that particular grouping.
+     */
+    groupingIndex: number;
+    /**
+     * Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+     */
+    originalGrouping: string;
+    /**
+     * ID of the widget type.
+     */
+    type: string;
+}
+
+export interface CmOfferingKindVersionConfigurationCustomConfigAssociations {
+    /**
+     * Parameters for this association.
+     */
+    parameters: outputs.CmOfferingKindVersionConfigurationCustomConfigAssociationsParameter[];
+}
+
+export interface CmOfferingKindVersionConfigurationCustomConfigAssociationsParameter {
+    /**
+     * Name of this parameter.
+     */
+    name: string;
+    /**
+     * Refresh options.
+     */
+    optionsRefresh: boolean;
+}
+
+export interface CmOfferingKindVersionDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate: string;
+    /**
+     * Deprecation state.
+     */
+    deprecateState: string;
+    description: string;
+}
+
+export interface CmOfferingKindVersionEntitlement {
+    /**
+     * Image repository name.
+     */
+    imageRepoName?: string;
+    /**
+     * list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+     */
+    partNumbers?: string[];
+    /**
+     * Product ID.
+     */
+    productId?: string;
+    /**
+     * Provider ID.
+     */
+    providerId?: string;
+    /**
+     * Provider name.
+     */
+    providerName?: string;
+}
+
+export interface CmOfferingKindVersionFlavor {
+    /**
+     * Order that this flavor should appear when listed for a single version.
+     */
+    index?: number;
+    /**
+     * Label for this flavor.
+     */
+    label?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n?: {[key: string]: string};
+    /**
+     * Programmatic name for this flavor.
+     */
+    name?: string;
+}
+
+export interface CmOfferingKindVersionIamPermission {
+    /**
+     * Resources for this permission.
+     */
+    resources?: outputs.CmOfferingKindVersionIamPermissionResource[];
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: string[];
+    /**
+     * Service name.
+     */
+    serviceName?: string;
+}
+
+export interface CmOfferingKindVersionIamPermissionResource {
+    /**
+     * Resource description.
+     */
+    description?: string;
+    /**
+     * Resource name.
+     */
+    name?: string;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: string[];
+}
+
+export interface CmOfferingKindVersionInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript?: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n?: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope?: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script?: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission?: string;
+}
+
+export interface CmOfferingKindVersionLicense {
+    /**
+     * License description.
+     */
+    description?: string;
+    /**
+     * License ID.
+     */
+    id?: string;
+    /**
+     * license name.
+     */
+    name?: string;
+    /**
+     * type of license e.g., Apache xxx.
+     */
+    type?: string;
+    /**
+     * URL for the license text.
+     */
+    url?: string;
+}
+
+export interface CmOfferingKindVersionMetadata {
+    /**
+     * The time validation ended.
+     */
+    endDeployTime: string;
+    /**
+     * The estimated time validation takes.
+     */
+    estDeployTime: number;
+    /**
+     * Working directory of source files.
+     */
+    exampleName: string;
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    file?: outputs.CmOfferingKindVersionMetadataFile;
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images?: outputs.CmOfferingKindVersionMetadataImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize?: number;
+    /**
+     * Terraform modules.
+     */
+    modules: outputs.CmOfferingKindVersionMetadataModule[];
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystem?: outputs.CmOfferingKindVersionMetadataOperatingSystem;
+    /**
+     * Version source URL.
+     */
+    sourceUrl?: string;
+    /**
+     * The time validation started.
+     */
+    startDeployTime: string;
+    /**
+     * Terraform version.
+     */
+    terraformVersion?: string;
+    /**
+     * Usage text for the version.
+     */
+    usage: string;
+    /**
+     * Usage text for the version.
+     */
+    usageTemplate: string;
+    /**
+     * Version name.
+     */
+    validatedTerraformVersion?: string;
+    /**
+     * Version name.
+     */
+    versionName?: string;
+    /**
+     * VSI VPC version information
+     */
+    vsiVpcs: outputs.CmOfferingKindVersionMetadataVsiVpc[];
+    /**
+     * Working directory of source files.
+     */
+    workingDirectory: string;
+}
+
+export interface CmOfferingKindVersionMetadataFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size?: number;
+}
+
+export interface CmOfferingKindVersionMetadataImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id?: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name?: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region?: string;
+}
+
+export interface CmOfferingKindVersionMetadataModule {
+    /**
+     * Name of the module.
+     */
+    name: string;
+    /**
+     * Terraform modules.
+     */
+    offeringReferences: outputs.CmOfferingKindVersionMetadataModuleOfferingReference[];
+    /**
+     * Source of the module.
+     */
+    source: string;
+}
+
+export interface CmOfferingKindVersionMetadataModuleOfferingReference {
+    /**
+     * Catalog ID of the module reference.
+     */
+    catalogId: string;
+    /**
+     * Flavor of the module.
+     */
+    flavor: string;
+    /**
+     * Flavors of the module.
+     */
+    flavors: string[];
+    /**
+     * ID of the offering module.
+     */
+    id: string;
+    /**
+     * Kind of the offeringmodule.
+     */
+    kind: string;
+    /**
+     * Metadata of the module.
+     */
+    metadata: string;
+    /**
+     * Name of the offering module.
+     */
+    name: string;
+    /**
+     * Version of the offering module.
+     */
+    version: string;
+}
+
+export interface CmOfferingKindVersionMetadataOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture?: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly?: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName?: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family?: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href?: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name?: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor?: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version?: string;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpc {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    file?: outputs.CmOfferingKindVersionMetadataVsiVpcFile;
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images?: outputs.CmOfferingKindVersionMetadataVsiVpcImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize?: number;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystem?: outputs.CmOfferingKindVersionMetadataVsiVpcOperatingSystem;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpcFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size?: number;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpcImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id?: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name?: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region?: string;
+}
+
+export interface CmOfferingKindVersionMetadataVsiVpcOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture?: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly?: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName?: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family?: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href?: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name?: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor?: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version?: string;
+}
+
+export interface CmOfferingKindVersionOutput {
+    /**
+     * Output description.
+     */
+    description?: string;
+    /**
+     * Output key.
+     */
+    key?: string;
+}
+
+export interface CmOfferingKindVersionPreInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript?: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n?: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope?: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script?: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission?: string;
+}
+
+export interface CmOfferingKindVersionRequiredResource {
+    /**
+     * Type of requirement.
+     */
+    type?: string;
+    /**
+     * mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+     */
+    value?: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfo {
+    /**
+     * Architecture diagrams for this solution.
+     */
+    architectureDiagrams?: outputs.CmOfferingKindVersionSolutionInfoArchitectureDiagram[];
+    /**
+     * Cost estimate definition.
+     */
+    costEstimates: outputs.CmOfferingKindVersionSolutionInfoCostEstimate[];
+    /**
+     * Dependencies for this solution.
+     */
+    dependencies?: outputs.CmOfferingKindVersionSolutionInfoDependency[];
+    /**
+     * Features - titles only.
+     */
+    features?: outputs.CmOfferingKindVersionSolutionInfoFeature[];
+}
+
+export interface CmOfferingKindVersionSolutionInfoArchitectureDiagram {
+    /**
+     * Description of this diagram.
+     */
+    description?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: {[key: string]: string};
+    /**
+     * Offering Media information.
+     */
+    diagram?: outputs.CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagram;
+}
+
+export interface CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagram {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl?: string;
+    /**
+     * Caption for this media item.
+     */
+    caption?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n?: {[key: string]: string};
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl?: string;
+    /**
+     * Type of this media item.
+     */
+    type?: string;
+    /**
+     * URL of the specified media item.
+     */
+    url?: string;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxy?: outputs.CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxy;
+}
+
+export interface CmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha?: string;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url?: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimate {
+    /**
+     * Cost estimate currency.
+     */
+    currency: string;
+    /**
+     * Difference in total hourly cost.
+     */
+    diffTotalHourlyCost: string;
+    /**
+     * Difference in total monthly cost.
+     */
+    diffTotalMonthlyCost: string;
+    /**
+     * Past total hourly cost.
+     */
+    pastTotalHourlyCost: string;
+    /**
+     * Past total monthly cost.
+     */
+    pastTotalMonthlyCost: string;
+    /**
+     * Cost estimate projects.
+     */
+    projects: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProject[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.CmOfferingKindVersionSolutionInfoCostEstimateSummary[];
+    /**
+     * When this estimate was generated.
+     */
+    timeGenerated: string;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+    /**
+     * Cost estimate version.
+     */
+    version: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProject {
+    /**
+     * Cost breakdown definition.
+     */
+    breakdowns: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdown[];
+    /**
+     * Cost breakdown definition.
+     */
+    diffs: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectDiff[];
+    /**
+     * Project metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Project name.
+     */
+    name: string;
+    /**
+     * Cost breakdown definition.
+     */
+    pastBreakdowns: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdown[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectSummary[];
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectDiff {
+    /**
+     * Resources.
+     */
+    resources: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateProjectSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface CmOfferingKindVersionSolutionInfoCostEstimateSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface CmOfferingKindVersionSolutionInfoDependency {
+    /**
+     * Optional - If not specified, assumes the Public Catalog.
+     */
+    catalogId?: string;
+    /**
+     * Optional - List of dependent flavors in the specified range.
+     */
+    flavors?: string[];
+    /**
+     * Optional - Offering ID - not required if name is set.
+     */
+    id?: string;
+    /**
+     * Optional - Programmatic Offering name.
+     */
+    name?: string;
+    /**
+     * Required - Semver value or range.
+     */
+    version?: string;
+}
+
+export interface CmOfferingKindVersionSolutionInfoFeature {
+    /**
+     * Feature description.
+     */
+    description?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: {[key: string]: string};
+}
+
+export interface CmOfferingKindVersionState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current?: string;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered?: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending?: string;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested?: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous?: string;
+}
+
+export interface CmOfferingKindVersionValidation {
+    /**
+     * Last operation (e.g. submit_deployment, generate_installer, install_offering.
+     */
+    lastOperation?: string;
+    /**
+     * Any message needing to be conveyed as part of the validation job.
+     */
+    message?: string;
+    /**
+     * Date and time of last validation was requested.
+     */
+    requested?: string;
+    /**
+     * Current validation state - <empty>, in_progress, valid, invalid, expired.
+     */
+    state?: string;
+    /**
+     * Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+     */
+    target?: {[key: string]: string};
+    /**
+     * Date and time of last successful validation.
+     */
+    validated?: string;
+}
+
+export interface CmOfferingMedia {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl: string;
+    /**
+     * Caption for this media item.
+     */
+    caption: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n: {[key: string]: string};
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl: string;
+    /**
+     * Type of this media item.
+     */
+    type: string;
+    /**
+     * URL of the specified media item.
+     */
+    url: string;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxy: outputs.CmOfferingMediaUrlProxy;
+}
+
+export interface CmOfferingMediaUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha: string;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url: string;
+}
+
+export interface CmOfferingProviderInfo {
+    /**
+     * The id of this provider.
+     */
+    id: string;
+    /**
+     * The name of this provider.
+     */
+    name: string;
+}
+
+export interface CmOfferingRating {
+    /**
+     * Four start rating.
+     */
+    fourStarCount: number;
+    /**
+     * One start rating.
+     */
+    oneStarCount: number;
+    /**
+     * Three start rating.
+     */
+    threeStarCount: number;
+    /**
+     * Two start rating.
+     */
+    twoStarCount: number;
+}
+
+export interface CmOfferingRepoInfo {
+    /**
+     * Token for private repos.
+     */
+    token?: string;
+    /**
+     * Public or enterprise GitHub.
+     */
+    type?: string;
+}
+
+export interface CmOfferingSupport {
+    /**
+     * A list of country codes indicating where support is provided.
+     */
+    locations: string[];
+    /**
+     * Support process as provided by an ISV.
+     */
+    process: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    processI18n: {[key: string]: string};
+    /**
+     * A list of support options (e.g. email, phone, slack, other).
+     */
+    supportDetails: outputs.CmOfferingSupportSupportDetail[];
+    /**
+     * Support escalation policy.
+     */
+    supportEscalations: outputs.CmOfferingSupportSupportEscalation[];
+    /**
+     * Support type for this product.
+     */
+    supportType: string;
+    /**
+     * URL to be displayed in the Consumption UI for getting support on this offering.
+     */
+    url: string;
+}
+
+export interface CmOfferingSupportSupportDetail {
+    /**
+     * Times when support is available.
+     */
+    availabilities: outputs.CmOfferingSupportSupportDetailAvailability[];
+    /**
+     * Contact for the current support detail.
+     */
+    contact: string;
+    /**
+     * Time descriptor.
+     */
+    responseWaitTimes: outputs.CmOfferingSupportSupportDetailResponseWaitTime[];
+    /**
+     * Type of the current support detail.
+     */
+    type: string;
+}
+
+export interface CmOfferingSupportSupportDetailAvailability {
+    /**
+     * Is this support always available.
+     */
+    alwaysAvailable: boolean;
+    /**
+     * A list of support times.
+     */
+    times: outputs.CmOfferingSupportSupportDetailAvailabilityTime[];
+    /**
+     * Timezone (e.g. America/New_York).
+     */
+    timezone: string;
+}
+
+export interface CmOfferingSupportSupportDetailAvailabilityTime {
+    /**
+     * The day of the week, represented as an integer.
+     */
+    day: number;
+    /**
+     * HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+     */
+    endTime: string;
+    /**
+     * HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+     */
+    startTime: string;
+}
+
+export interface CmOfferingSupportSupportDetailResponseWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type: string;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value: number;
+}
+
+export interface CmOfferingSupportSupportEscalation {
+    /**
+     * Escalation contact.
+     */
+    contact: string;
+    /**
+     * Time descriptor.
+     */
+    escalationWaitTimes: outputs.CmOfferingSupportSupportEscalationEscalationWaitTime[];
+    /**
+     * Time descriptor.
+     */
+    responseWaitTimes: outputs.CmOfferingSupportSupportEscalationResponseWaitTime[];
+}
+
+export interface CmOfferingSupportSupportEscalationEscalationWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type: string;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value: number;
+}
+
+export interface CmOfferingSupportSupportEscalationResponseWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type: string;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value: number;
+}
+
+export interface CmValidationEnvironmentVariable {
+    /**
+     * Name of the environment variable.
+     */
+    name?: string;
+    /**
+     * If the environment variablel should be secure.
+     */
+    secure?: boolean;
+    /**
+     * Value of the environment variable.
+     */
+    value?: string;
+}
+
+export interface CmValidationSchematics {
+    /**
+     * Description for the schematics workspace.
+     */
+    description?: string;
+    /**
+     * Name for the schematics workspace.
+     */
+    name?: string;
+    /**
+     * Region to use for the schematics installation.
+     */
+    region?: string;
+    /**
+     * The resource group ID.
+     */
+    resourceGroupId?: string;
+    /**
+     * List of tags for the schematics workspace.
+     */
+    tags?: string[];
+    /**
+     * Version of terraform to use in schematics.
+     */
+    terraformVersion?: string;
+}
+
+export interface CmVersionConfiguration {
+    /**
+     * Render type.
+     */
+    customConfig: outputs.CmVersionConfigurationCustomConfig;
+    /**
+     * The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+     */
+    defaultValue: string;
+    /**
+     * Key description.
+     */
+    description: string;
+    /**
+     * Display name for configuration type.
+     */
+    displayName: string;
+    /**
+     * Hide values.
+     */
+    hidden: boolean;
+    /**
+     * Configuration key.
+     */
+    key: string;
+    /**
+     * List of options of type.
+     */
+    options: {[key: string]: string}[];
+    /**
+     * Is key required to install.
+     */
+    required: boolean;
+    /**
+     * Value type (string, boolean, int).
+     */
+    type: string;
+    /**
+     * The original type, as found in the source being onboarded.
+     */
+    typeMetadata: string;
+    /**
+     * Deprecated - Constraint associated with value, e.g., for string type - regx:[a-z].
+     *
+     * @deprecated This field is deprecated use valueConstraints instead.
+     */
+    valueConstraint: string;
+    /**
+     * Validation rules for this input value.
+     */
+    valueConstraints: outputs.CmVersionConfigurationValueConstraint[];
+}
+
+export interface CmVersionConfigurationCustomConfig {
+    /**
+     * List of parameters that are associated with this configuration.
+     */
+    associations: outputs.CmVersionConfigurationCustomConfigAssociations;
+    /**
+     * Map of constraint parameters that will be passed to the custom widget.
+     */
+    configConstraints: {[key: string]: string};
+    /**
+     * Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+     */
+    grouping: string;
+    /**
+     * Determines the order that this configuration item shows in that particular grouping.
+     */
+    groupingIndex: number;
+    /**
+     * Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+     */
+    originalGrouping: string;
+    /**
+     * ID of the widget type.
+     */
+    type: string;
+}
+
+export interface CmVersionConfigurationCustomConfigAssociations {
+    /**
+     * Parameters for this association.
+     */
+    parameters: outputs.CmVersionConfigurationCustomConfigAssociationsParameter[];
+}
+
+export interface CmVersionConfigurationCustomConfigAssociationsParameter {
+    /**
+     * Name of this parameter.
+     */
+    name: string;
+    /**
+     * Refresh options.
+     */
+    optionsRefresh: boolean;
+}
+
+export interface CmVersionConfigurationValueConstraint {
+    /**
+     * The value to display if the inptu value does not match the specified constraint.
+     */
+    description: string;
+    /**
+     * Type of constraint.
+     */
+    type: string;
+    /**
+     * Contstraint value.  For type regex, this is a regular expression in Javascript notation.
+     */
+    value: string;
+}
+
+export interface CmVersionDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate: string;
+    /**
+     * Deprecation state.
+     */
+    deprecateState: string;
+    description: string;
+}
+
+export interface CmVersionEntitlement {
+    /**
+     * Image repository name.
+     */
+    imageRepoName?: string;
+    /**
+     * list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+     */
+    partNumbers?: string[];
+    /**
+     * Product ID.
+     */
+    productId?: string;
+    /**
+     * Provider ID.
+     */
+    providerId?: string;
+    /**
+     * Provider name.
+     */
+    providerName?: string;
+}
+
+export interface CmVersionFlavor {
+    /**
+     * Order that this flavor should appear when listed for a single version.
+     */
+    index?: number;
+    /**
+     * Label for this flavor.
+     */
+    label?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n?: {[key: string]: string};
+    /**
+     * Programmatic name for this flavor.
+     */
+    name?: string;
+}
+
+export interface CmVersionIamPermission {
+    /**
+     * Resources for this permission.
+     */
+    resources?: outputs.CmVersionIamPermissionResource[];
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: string[];
+    /**
+     * Service name.
+     */
+    serviceName?: string;
+}
+
+export interface CmVersionIamPermissionResource {
+    /**
+     * Resource description.
+     */
+    description?: string;
+    /**
+     * Resource name.
+     */
+    name?: string;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns?: string[];
+}
+
+export interface CmVersionImportMetadata {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    file?: outputs.CmVersionImportMetadataFile;
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images?: outputs.CmVersionImportMetadataImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize?: number;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystem?: outputs.CmVersionImportMetadataOperatingSystem;
+}
+
+export interface CmVersionImportMetadataFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size?: number;
+}
+
+export interface CmVersionImportMetadataImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id?: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name?: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region?: string;
+}
+
+export interface CmVersionImportMetadataOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture?: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly?: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName?: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family?: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href?: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name?: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor?: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version?: string;
+}
+
+export interface CmVersionInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission: string;
+}
+
+export interface CmVersionLicense {
+    /**
+     * License description.
+     */
+    description: string;
+    /**
+     * License ID.
+     */
+    id: string;
+    /**
+     * license name.
+     */
+    name: string;
+    /**
+     * type of license e.g., Apache xxx.
+     */
+    type: string;
+    /**
+     * URL for the license text.
+     */
+    url: string;
+}
+
+export interface CmVersionMetadata {
+    /**
+     * The time validation ended.
+     */
+    endDeployTime: string;
+    /**
+     * The estimated time validation takes.
+     */
+    estDeployTime: number;
+    /**
+     * Working directory of source files.
+     */
+    exampleName: string;
+    /**
+     * Terraform modules.
+     */
+    modules: outputs.CmVersionMetadataModule[];
+    /**
+     * Version source URL.
+     */
+    sourceUrl: string;
+    /**
+     * The time validation started.
+     */
+    startDeployTime: string;
+    /**
+     * Terraform version.
+     */
+    terraformVersion: string;
+    /**
+     * Usage text for the version.
+     */
+    usage: string;
+    /**
+     * Usage text for the version.
+     */
+    usageTemplate: string;
+    /**
+     * Validated terraform version.
+     */
+    validatedTerraformVersion: string;
+    /**
+     * Version name.
+     */
+    versionName: string;
+    /**
+     * VSI VPC version information
+     */
+    vsiVpcs: outputs.CmVersionMetadataVsiVpc[];
+    /**
+     * Working directory of source files.
+     */
+    workingDirectory: string;
+}
+
+export interface CmVersionMetadataModule {
+    /**
+     * Name of the module.
+     */
+    name: string;
+    /**
+     * Terraform modules.
+     */
+    offeringReferences: outputs.CmVersionMetadataModuleOfferingReference[];
+    /**
+     * Source of the module.
+     */
+    source: string;
+}
+
+export interface CmVersionMetadataModuleOfferingReference {
+    /**
+     * Catalog ID of the module reference.
+     */
+    catalogId: string;
+    /**
+     * Flavor of the module.
+     */
+    flavor: string;
+    /**
+     * Flavors of the module.
+     */
+    flavors: string[];
+    /**
+     * ID of the offering module.
+     */
+    id: string;
+    /**
+     * Kind of the offeringmodule.
+     */
+    kind: string;
+    /**
+     * Metadata of the module.
+     */
+    metadata: string;
+    /**
+     * Name of the offering module.
+     */
+    name: string;
+    /**
+     * Version of the offering module.
+     */
+    version: string;
+}
+
+export interface CmVersionMetadataVsiVpc {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    files: outputs.CmVersionMetadataVsiVpcFile[];
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images: outputs.CmVersionMetadataVsiVpcImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize: number;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystems: outputs.CmVersionMetadataVsiVpcOperatingSystem[];
+}
+
+export interface CmVersionMetadataVsiVpcFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size: number;
+}
+
+export interface CmVersionMetadataVsiVpcImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region: string;
+}
+
+export interface CmVersionMetadataVsiVpcOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version: string;
+}
+
+export interface CmVersionOutput {
+    /**
+     * Output description.
+     */
+    description?: string;
+    /**
+     * Output key.
+     */
+    key?: string;
+}
+
+export interface CmVersionPreInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript?: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n?: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope?: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script?: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission?: string;
+}
+
+export interface CmVersionRequiredResource {
+    /**
+     * Type of requirement.
+     */
+    type?: string;
+    /**
+     * mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+     */
+    value?: string;
+}
+
+export interface CmVersionSolutionInfo {
+    /**
+     * Architecture diagrams for this solution.
+     */
+    architectureDiagrams?: outputs.CmVersionSolutionInfoArchitectureDiagram[];
+    /**
+     * Cost estimate definition.
+     */
+    costEstimates: outputs.CmVersionSolutionInfoCostEstimate[];
+    /**
+     * Dependencies for this solution.
+     */
+    dependencies?: outputs.CmVersionSolutionInfoDependency[];
+    /**
+     * Features - titles only.
+     */
+    features?: outputs.CmVersionSolutionInfoFeature[];
+}
+
+export interface CmVersionSolutionInfoArchitectureDiagram {
+    /**
+     * Description of this diagram.
+     */
+    description?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: {[key: string]: string};
+    /**
+     * Offering Media information.
+     */
+    diagram?: outputs.CmVersionSolutionInfoArchitectureDiagramDiagram;
+}
+
+export interface CmVersionSolutionInfoArchitectureDiagramDiagram {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl?: string;
+    /**
+     * Caption for this media item.
+     */
+    caption?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n?: {[key: string]: string};
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl?: string;
+    /**
+     * Type of this media item.
+     */
+    type?: string;
+    /**
+     * URL of the specified media item.
+     */
+    url?: string;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxy?: outputs.CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxy;
+}
+
+export interface CmVersionSolutionInfoArchitectureDiagramDiagramUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha?: string;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url?: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimate {
+    /**
+     * Cost estimate currency.
+     */
+    currency: string;
+    /**
+     * Difference in total hourly cost.
+     */
+    diffTotalHourlyCost: string;
+    /**
+     * Difference in total monthly cost.
+     */
+    diffTotalMonthlyCost: string;
+    /**
+     * Past total hourly cost.
+     */
+    pastTotalHourlyCost: string;
+    /**
+     * Past total monthly cost.
+     */
+    pastTotalMonthlyCost: string;
+    /**
+     * Cost estimate projects.
+     */
+    projects: outputs.CmVersionSolutionInfoCostEstimateProject[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.CmVersionSolutionInfoCostEstimateSummary[];
+    /**
+     * When this estimate was generated.
+     */
+    timeGenerated: string;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+    /**
+     * Cost estimate version.
+     */
+    version: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProject {
+    /**
+     * Cost breakdown definition.
+     */
+    breakdowns: outputs.CmVersionSolutionInfoCostEstimateProjectBreakdown[];
+    /**
+     * Cost breakdown definition.
+     */
+    diffs: outputs.CmVersionSolutionInfoCostEstimateProjectDiff[];
+    /**
+     * Project metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Project name.
+     */
+    name: string;
+    /**
+     * Cost breakdown definition.
+     */
+    pastBreakdowns: outputs.CmVersionSolutionInfoCostEstimateProjectPastBreakdown[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.CmVersionSolutionInfoCostEstimateProjectSummary[];
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.CmVersionSolutionInfoCostEstimateProjectBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectDiff {
+    /**
+     * Resources.
+     */
+    resources: outputs.CmVersionSolutionInfoCostEstimateProjectDiffResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectDiffResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectPastBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.CmVersionSolutionInfoCostEstimateProjectPastBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectPastBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface CmVersionSolutionInfoCostEstimateProjectSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface CmVersionSolutionInfoCostEstimateSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface CmVersionSolutionInfoDependency {
+    /**
+     * Optional - If not specified, assumes the Public Catalog.
+     */
+    catalogId?: string;
+    /**
+     * Optional - List of dependent flavors in the specified range.
+     */
+    flavors?: string[];
+    /**
+     * Optional - Offering ID - not required if name is set.
+     */
+    id?: string;
+    /**
+     * Optional - Programmatic Offering name.
+     */
+    name?: string;
+    /**
+     * Required - Semver value or range.
+     */
+    version?: string;
+}
+
+export interface CmVersionSolutionInfoFeature {
+    /**
+     * Feature description.
+     */
+    description?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n?: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title?: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n?: {[key: string]: string};
+}
+
+export interface CmVersionState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current: string;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending: string;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous: string;
+}
+
+export interface CmVersionValidation {
+    /**
+     * Last operation (e.g. submit_deployment, generate_installer, install_offering.
+     */
+    lastOperation?: string;
+    /**
+     * Any message needing to be conveyed as part of the validation job.
+     */
+    message?: string;
+    /**
+     * Date and time of last validation was requested.
+     */
+    requested?: string;
+    /**
+     * Current validation state - <empty>, in_progress, valid, invalid, expired.
+     */
+    state?: string;
+    /**
+     * Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+     */
+    target?: {[key: string]: string};
+    /**
+     * Date and time of last successful validation.
+     */
+    validated?: string;
+}
+
 export interface ComputeAutoscaleGroupVirtualGuestMemberTemplate {
     blockStorageIds: number[];
     bulkVms?: outputs.ComputeAutoscaleGroupVirtualGuestMemberTemplateBulkVm[];
@@ -469,6 +3569,3059 @@ export interface CosBucketWebsiteConfigurationWebsiteConfigurationRoutingRuleRed
      * The object key to be used in the Location header that is returned in the response.
      */
     replaceKeyWith?: string;
+}
+
+export interface GetCmAccountAccountFilter {
+    /**
+     * Filter against offering categories.
+     */
+    categoryFilters: outputs.GetCmAccountAccountFilterCategoryFilter[];
+    /**
+     * Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+     */
+    idFilters: outputs.GetCmAccountAccountFilterIdFilter[];
+    /**
+     * > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+     */
+    includeAll: boolean;
+}
+
+export interface GetCmAccountAccountFilterCategoryFilter {
+    /**
+     * Name of this category
+     */
+    categoryName: string;
+    /**
+     * Filter terms related to the category.
+     */
+    filters: outputs.GetCmAccountAccountFilterCategoryFilterFilter[];
+    /**
+     * Whether to include the category in the catalog filter.
+     */
+    include: boolean;
+}
+
+export interface GetCmAccountAccountFilterCategoryFilterFilter {
+    /**
+     * List of filter terms for the category.
+     */
+    filterTerms: string[];
+}
+
+export interface GetCmAccountAccountFilterIdFilter {
+    /**
+     * Offering filter terms.
+     */
+    excludes: outputs.GetCmAccountAccountFilterIdFilterExclude[];
+    /**
+     * Offering filter terms.
+     */
+    includes: outputs.GetCmAccountAccountFilterIdFilterInclude[];
+}
+
+export interface GetCmAccountAccountFilterIdFilterExclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface GetCmAccountAccountFilterIdFilterInclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface GetCmAccountTerraformEngine {
+    /**
+     * The api key used to access the engine instance.
+     */
+    apiToken: string;
+    /**
+     * The settings that determines how deployable architectures are auto-created from workspaces in the terraform engine.
+     */
+    daCreations: outputs.GetCmAccountTerraformEngineDaCreation[];
+    /**
+     * User provided name for the specified engine.
+     */
+    name: string;
+    /**
+     * The private endpoint for the engine instance.
+     */
+    privateEndpoint: string;
+    /**
+     * The public endpoint for the engine instance.
+     */
+    publicEndpoint: string;
+    /**
+     * The terraform engine type. The only one supported at the moment is terraform-enterprise.
+     */
+    type: string;
+}
+
+export interface GetCmAccountTerraformEngineDaCreation {
+    /**
+     * Default private catalog to create the deployable architectures in.
+     */
+    defaultPrivateCatalogId: string;
+    /**
+     * Determines whether deployable architectures are auto-created from workspaces in the engine.
+     */
+    enabled: boolean;
+    /**
+     * Determines which workspace scope to query to auto-create deployable architectures from.
+     */
+    pollingInfos: outputs.GetCmAccountTerraformEngineDaCreationPollingInfo[];
+}
+
+export interface GetCmAccountTerraformEngineDaCreationPollingInfo {
+    /**
+     * Last polling status of the engine scope.
+     */
+    lastPollingStatuses: outputs.GetCmAccountTerraformEngineDaCreationPollingInfoLastPollingStatus[];
+    /**
+     * List of scopes to auto-create deployable architectures from workspaces in the engine.
+     */
+    scopes: outputs.GetCmAccountTerraformEngineDaCreationPollingInfoScope[];
+}
+
+export interface GetCmAccountTerraformEngineDaCreationPollingInfoLastPollingStatus {
+    /**
+     * Status code of the last polling attempt.
+     */
+    code: number;
+    /**
+     * Status message from the last polling attempt.
+     */
+    message: string;
+}
+
+export interface GetCmAccountTerraformEngineDaCreationPollingInfoScope {
+    /**
+     * Identifier for the specified type in the scope.
+     */
+    name: string;
+    /**
+     * Scope to auto-create deployable architectures from. The supported scopes today are workspace, org, and project.
+     */
+    type: string;
+}
+
+export interface GetCmCatalogCatalogFilter {
+    /**
+     * Filter against offering categories with dynamic keys.
+     */
+    categoryFilters: outputs.GetCmCatalogCatalogFilterCategoryFilter[];
+    /**
+     * Filter on offering ID's. There is an include filter and an exclule filter. Both can be set.
+     */
+    idFilters: outputs.GetCmCatalogCatalogFilterIdFilter[];
+    /**
+     * > true - Include all of the public catalog when filtering. Further settings will specifically exclude some offerings. false - Exclude all of the public catalog when filtering. Further settings will specifically include some offerings.
+     */
+    includeAll: boolean;
+}
+
+export interface GetCmCatalogCatalogFilterCategoryFilter {
+    /**
+     * Name of this category
+     */
+    categoryName: string;
+    /**
+     * Filter terms related to the category.
+     */
+    filters: outputs.GetCmCatalogCatalogFilterCategoryFilterFilter[];
+    /**
+     * Whether to include the category in the catalog filter.
+     */
+    include: boolean;
+}
+
+export interface GetCmCatalogCatalogFilterCategoryFilterFilter {
+    /**
+     * List of filter terms for the category.
+     */
+    filterTerms: string[];
+}
+
+export interface GetCmCatalogCatalogFilterIdFilter {
+    /**
+     * Offering filter terms.
+     */
+    excludes: outputs.GetCmCatalogCatalogFilterIdFilterExclude[];
+    /**
+     * Offering filter terms.
+     */
+    includes: outputs.GetCmCatalogCatalogFilterIdFilterInclude[];
+}
+
+export interface GetCmCatalogCatalogFilterIdFilterExclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface GetCmCatalogCatalogFilterIdFilterInclude {
+    /**
+     * List of values to match against. If include is true, then if the offering has one of the values then the offering is included. If include is false, then if the offering has one of the values then the offering is excluded.
+     */
+    filterTerms: string[];
+}
+
+export interface GetCmCatalogFeature {
+    /**
+     * Feature description.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n: {[key: string]: string};
+}
+
+export interface GetCmCatalogTargetAccountContext {
+    /**
+     * API key of the target account.
+     */
+    apiKey: string;
+    /**
+     * Label for this target account context.
+     */
+    label: string;
+    /**
+     * Unique identifier/name for this target account context.
+     */
+    name: string;
+    /**
+     * Project ID.
+     */
+    projectId: string;
+    /**
+     * Trusted profile information.
+     */
+    trustedProfiles: outputs.GetCmCatalogTargetAccountContextTrustedProfile[];
+}
+
+export interface GetCmCatalogTargetAccountContextTrustedProfile {
+    /**
+     * CRN of this catalog.
+     */
+    catalogCrn: string;
+    /**
+     * Name of this catalog.
+     */
+    catalogName: string;
+    /**
+     * Target service ID.
+     */
+    targetServiceId: string;
+    /**
+     * Trusted profile ID.
+     */
+    trustedProfileId: string;
+}
+
+export interface GetCmObjectPublish {
+    /**
+     * Indicates if this offering has been approved for use by all IBMers.
+     */
+    ibmApproved: boolean;
+    /**
+     * Is it permitted to request publishing to IBM or Public.
+     */
+    permitIbmPublicPublish: boolean;
+    /**
+     * The portal's approval record ID.
+     */
+    portalApprovalRecord: string;
+    /**
+     * The portal UI URL.
+     */
+    portalUrl: string;
+    /**
+     * Indicates if this offering has been approved for use by all IBM Cloud users.
+     */
+    publicApproved: boolean;
+}
+
+export interface GetCmObjectState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current: string;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending: string;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous: string;
+}
+
+export interface GetCmOfferingBadge {
+    /**
+     * Authority for the current badge.
+     */
+    authority: string;
+    /**
+     * An optional set of constraints indicating which versions in an Offering have this particular badge.
+     */
+    constraints: outputs.GetCmOfferingBadgeConstraint[];
+    /**
+     * Description of the current badge.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Icon for the current badge.
+     */
+    icon: string;
+    /**
+     * ID of the current badge.
+     */
+    id: string;
+    /**
+     * Display name for the current badge.
+     */
+    label: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n: {[key: string]: string};
+    /**
+     * Learn more links for a badge.
+     */
+    learnMoreLinks: outputs.GetCmOfferingBadgeLearnMoreLink[];
+    /**
+     * Tag for the current badge.
+     */
+    tag: string;
+}
+
+export interface GetCmOfferingBadgeConstraint {
+    /**
+     * Rule for the current constraint.
+     */
+    rule: string;
+    /**
+     * Type of the current constraint.
+     */
+    type: string;
+}
+
+export interface GetCmOfferingBadgeLearnMoreLink {
+    /**
+     * First party link.
+     */
+    firstParty: string;
+    /**
+     * Third party link.
+     */
+    thirdParty: string;
+}
+
+export interface GetCmOfferingDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate: string;
+    /**
+     * Deprecation state.
+     */
+    deprecateState: string;
+    description: string;
+}
+
+export interface GetCmOfferingFeature {
+    /**
+     * Feature description.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n: {[key: string]: string};
+}
+
+export interface GetCmOfferingImagePullKey {
+    /**
+     * Key description.
+     */
+    description: string;
+    /**
+     * Key name.
+     */
+    name: string;
+    /**
+     * Key value.
+     */
+    value: string;
+}
+
+export interface GetCmOfferingKind {
+    /**
+     * List of features associated with this offering.
+     */
+    additionalFeatures: outputs.GetCmOfferingKindAdditionalFeature[];
+    /**
+     * The date and time this catalog was created.
+     */
+    created: string;
+    /**
+     * content kind, e.g., helm, vm image.
+     */
+    formatKind: string;
+    /**
+     * Unique ID.
+     */
+    id: string;
+    /**
+     * install kind, e.g., helm, operator, terraform.
+     */
+    installKind: string;
+    /**
+     * Open ended metadata information.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * list of plans.
+     */
+    plans: outputs.GetCmOfferingKindPlan[];
+    /**
+     * List of tags associated with this catalog.
+     */
+    tags: string[];
+    /**
+     * target cloud to install, e.g., iks, open_shift_iks.
+     */
+    targetKind: string;
+    /**
+     * The date and time this catalog was last updated.
+     */
+    updated: string;
+    /**
+     * list of versions.
+     */
+    versions: outputs.GetCmOfferingKindVersion[];
+}
+
+export interface GetCmOfferingKindAdditionalFeature {
+    /**
+     * Feature description.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n: {[key: string]: string};
+}
+
+export interface GetCmOfferingKindPlan {
+    /**
+     * list of features associated with this offering.
+     */
+    additionalFeatures: outputs.GetCmOfferingKindPlanAdditionalFeature[];
+    /**
+     * the date'time this catalog was created.
+     */
+    created: string;
+    /**
+     * list of deployments.
+     */
+    deployments: outputs.GetCmOfferingKindPlanDeployment[];
+    /**
+     * unique id.
+     */
+    id: string;
+    /**
+     * Display Name in the requested language.
+     */
+    label: string;
+    /**
+     * Long description in the requested language.
+     */
+    longDescription: string;
+    /**
+     * open ended metadata information.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * The programmatic name of this offering.
+     */
+    name: string;
+    /**
+     * Short description in the requested language.
+     */
+    shortDescription: string;
+    /**
+     * list of tags associated with this catalog.
+     */
+    tags: string[];
+    /**
+     * the date'time this catalog was last updated.
+     */
+    updated: string;
+}
+
+export interface GetCmOfferingKindPlanAdditionalFeature {
+    /**
+     * Feature description.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n: {[key: string]: string};
+}
+
+export interface GetCmOfferingKindPlanDeployment {
+    /**
+     * the date'time this catalog was created.
+     */
+    created: string;
+    /**
+     * unique id.
+     */
+    id: string;
+    /**
+     * Display Name in the requested language.
+     */
+    label: string;
+    /**
+     * Long description in the requested language.
+     */
+    longDescription: string;
+    /**
+     * open ended metadata information.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * The programmatic name of this offering.
+     */
+    name: string;
+    /**
+     * Short description in the requested language.
+     */
+    shortDescription: string;
+    /**
+     * list of tags associated with this catalog.
+     */
+    tags: string[];
+    /**
+     * the date'time this catalog was last updated.
+     */
+    updated: string;
+}
+
+export interface GetCmOfferingKindVersion {
+    /**
+     * Catalog ID.
+     */
+    catalogId: string;
+    /**
+     * List of user solicited overrides.
+     */
+    configurations: outputs.GetCmOfferingKindVersionConfiguration[];
+    /**
+     * The date and time this version was created.
+     */
+    created: string;
+    /**
+     * Version's CRN.
+     */
+    crn: string;
+    /**
+     * Deprecation information for an Offering.
+     */
+    deprecatePendings: outputs.GetCmOfferingKindVersionDeprecatePending[];
+    /**
+     * read only field, indicating if this version is deprecated.
+     */
+    deprecated: boolean;
+    /**
+     * Entitlement license info.
+     */
+    entitlements: outputs.GetCmOfferingKindVersionEntitlement[];
+    /**
+     * Version Flavor Information.  Only supported for Product kind Solution.
+     */
+    flavors: outputs.GetCmOfferingKindVersionFlavor[];
+    /**
+     * List of IAM permissions that are required to consume this version.
+     */
+    iamPermissions: outputs.GetCmOfferingKindVersionIamPermission[];
+    /**
+     * Unique ID.
+     */
+    id: string;
+    /**
+     * If set, denotes a url to a YAML file with list of container images used by this version.
+     */
+    imageManifestUrl: string;
+    /**
+     * ID of the image pull key to use from Offering.ImagePullKeys.
+     */
+    imagePullKeyName: string;
+    /**
+     * Script information.
+     */
+    installs: outputs.GetCmOfferingKindVersionInstall[];
+    /**
+     * Is the version able to be shared.
+     */
+    isConsumable: boolean;
+    /**
+     * Kind ID.
+     */
+    kindId: string;
+    /**
+     * List of licenses the product was built with.
+     */
+    licenses: outputs.GetCmOfferingKindVersionLicense[];
+    /**
+     * Long description for version.
+     */
+    longDescription: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    longDescriptionI18n: {[key: string]: string};
+    /**
+     * Generic data to be included with content being onboarded. Required for virtual server image for VPC.
+     */
+    metadatas: outputs.GetCmOfferingKindVersionMetadata[];
+    /**
+     * Offering ID.
+     */
+    offeringId: string;
+    /**
+     * List of output values for this version.
+     */
+    outputs: outputs.GetCmOfferingKindVersionOutput[];
+    /**
+     * Version of the package used to create this version.
+     */
+    packageVersion: string;
+    /**
+     * Optional pre-install instructions.
+     */
+    preInstalls: outputs.GetCmOfferingKindVersionPreInstall[];
+    /**
+     * Content's repo URL.
+     */
+    repoUrl: string;
+    /**
+     * Resource requirments for installation.
+     */
+    requiredResources: outputs.GetCmOfferingKindVersionRequiredResource[];
+    /**
+     * Cloudant revision.
+     */
+    rev: string;
+    /**
+     * hash of the content.
+     */
+    sha: string;
+    /**
+     * Denotes if single instance can be deployed to a given cluster.
+     */
+    singleInstance: boolean;
+    /**
+     * Version Solution Information.  Only supported for Product kind Solution.
+     */
+    solutionInfos: outputs.GetCmOfferingKindVersionSolutionInfo[];
+    /**
+     * Content's source URL (e.g git repo).
+     */
+    sourceUrl: string;
+    /**
+     * Offering state.
+     */
+    states: outputs.GetCmOfferingKindVersionState[];
+    /**
+     * List of tags associated with this catalog.
+     */
+    tags: string[];
+    /**
+     * File used to on-board this version.
+     */
+    tgzUrl: string;
+    /**
+     * The date and time this version was last updated.
+     */
+    updated: string;
+    /**
+     * Validation response.
+     */
+    validations: outputs.GetCmOfferingKindVersionValidation[];
+    /**
+     * Version of content type.
+     */
+    version: string;
+    /**
+     * A dotted value of `catalogID`.`versionID`.
+     */
+    versionLocator: string;
+    /**
+     * Whitelisted accounts for version.
+     */
+    whitelistedAccounts: string[];
+}
+
+export interface GetCmOfferingKindVersionConfiguration {
+    /**
+     * Render type.
+     */
+    customConfigs: outputs.GetCmOfferingKindVersionConfigurationCustomConfig[];
+    /**
+     * The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+     */
+    defaultValue: string;
+    /**
+     * Key description.
+     */
+    description: string;
+    /**
+     * Display name for configuration type.
+     */
+    displayName: string;
+    /**
+     * Hide values.
+     */
+    hidden: boolean;
+    /**
+     * Configuration key.
+     */
+    key: string;
+    /**
+     * List of options of type.
+     */
+    options: {[key: string]: string}[];
+    /**
+     * Is key required to install.
+     */
+    required: boolean;
+    /**
+     * Value type (string, boolean, int).
+     */
+    type: string;
+    /**
+     * The original type, as found in the source being onboarded.
+     */
+    typeMetadata: string;
+    /**
+     * Constraint associated with value, e.g., for string type - regx:[a-z].
+     */
+    valueConstraint: string;
+}
+
+export interface GetCmOfferingKindVersionConfigurationCustomConfig {
+    /**
+     * List of parameters that are associated with this configuration.
+     */
+    associations: outputs.GetCmOfferingKindVersionConfigurationCustomConfigAssociation[];
+    /**
+     * Map of constraint parameters that will be passed to the custom widget.
+     */
+    configConstraints: {[key: string]: string};
+    /**
+     * Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+     */
+    grouping: string;
+    /**
+     * Determines the order that this configuration item shows in that particular grouping.
+     */
+    groupingIndex: number;
+    /**
+     * Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+     */
+    originalGrouping: string;
+    /**
+     * ID of the widget type.
+     */
+    type: string;
+}
+
+export interface GetCmOfferingKindVersionConfigurationCustomConfigAssociation {
+    /**
+     * Parameters for this association.
+     */
+    parameters: outputs.GetCmOfferingKindVersionConfigurationCustomConfigAssociationParameter[];
+}
+
+export interface GetCmOfferingKindVersionConfigurationCustomConfigAssociationParameter {
+    /**
+     * Name of this parameter.
+     */
+    name: string;
+    /**
+     * Refresh options.
+     */
+    optionsRefresh: boolean;
+}
+
+export interface GetCmOfferingKindVersionDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate: string;
+    /**
+     * Deprecation state.
+     */
+    deprecateState: string;
+    description: string;
+}
+
+export interface GetCmOfferingKindVersionEntitlement {
+    /**
+     * Image repository name.
+     */
+    imageRepoName: string;
+    /**
+     * list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+     */
+    partNumbers: string[];
+    /**
+     * Product ID.
+     */
+    productId: string;
+    /**
+     * Provider ID.
+     */
+    providerId: string;
+    /**
+     * Provider name.
+     */
+    providerName: string;
+}
+
+export interface GetCmOfferingKindVersionFlavor {
+    /**
+     * Order that this flavor should appear when listed for a single version.
+     */
+    index: number;
+    /**
+     * Label for this flavor.
+     */
+    label: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n: {[key: string]: string};
+    /**
+     * Programmatic name for this flavor.
+     */
+    name: string;
+}
+
+export interface GetCmOfferingKindVersionIamPermission {
+    /**
+     * Resources for this permission.
+     */
+    resources: outputs.GetCmOfferingKindVersionIamPermissionResource[];
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns: string[];
+    /**
+     * Service name.
+     */
+    serviceName: string;
+}
+
+export interface GetCmOfferingKindVersionIamPermissionResource {
+    /**
+     * Resource description.
+     */
+    description: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns: string[];
+}
+
+export interface GetCmOfferingKindVersionInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission: string;
+}
+
+export interface GetCmOfferingKindVersionLicense {
+    /**
+     * License description.
+     */
+    description: string;
+    /**
+     * License ID.
+     */
+    id: string;
+    /**
+     * license name.
+     */
+    name: string;
+    /**
+     * type of license e.g., Apache xxx.
+     */
+    type: string;
+    /**
+     * URL for the license text.
+     */
+    url: string;
+}
+
+export interface GetCmOfferingKindVersionMetadata {
+    /**
+     * The time validation ended.
+     */
+    endDeployTime: string;
+    /**
+     * The estimated time validation takes.
+     */
+    estDeployTime: number;
+    /**
+     * Working directory of source files.
+     */
+    exampleName: string;
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    files: outputs.GetCmOfferingKindVersionMetadataFile[];
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images: outputs.GetCmOfferingKindVersionMetadataImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize: number;
+    /**
+     * Terraform modules.
+     */
+    modules: outputs.GetCmOfferingKindVersionMetadataModule[];
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystems: outputs.GetCmOfferingKindVersionMetadataOperatingSystem[];
+    /**
+     * Version source URL.
+     */
+    sourceUrl: string;
+    /**
+     * The time validation started.
+     */
+    startDeployTime: string;
+    /**
+     * Terraform version.
+     */
+    terraformVersion: string;
+    /**
+     * Usage text for the version.
+     */
+    usage: string;
+    /**
+     * Usage text for the version.
+     */
+    usageTemplate: string;
+    /**
+     * Version name.
+     */
+    validatedTerraformVersion: string;
+    /**
+     * Version name.
+     */
+    versionName: string;
+    /**
+     * VSI VPC version information
+     */
+    vsiVpcs: outputs.GetCmOfferingKindVersionMetadataVsiVpc[];
+    /**
+     * Working directory of source files.
+     */
+    workingDirectory: string;
+}
+
+export interface GetCmOfferingKindVersionMetadataFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size: number;
+}
+
+export interface GetCmOfferingKindVersionMetadataImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region: string;
+}
+
+export interface GetCmOfferingKindVersionMetadataModule {
+    /**
+     * Name of the module.
+     */
+    name: string;
+    /**
+     * Terraform modules.
+     */
+    offeringReferences: outputs.GetCmOfferingKindVersionMetadataModuleOfferingReference[];
+    /**
+     * Source of the module.
+     */
+    source: string;
+}
+
+export interface GetCmOfferingKindVersionMetadataModuleOfferingReference {
+    /**
+     * Catalog ID of the module reference.
+     */
+    catalogId: string;
+    /**
+     * Flavor of the module.
+     */
+    flavor: string;
+    /**
+     * Flavors of the module.
+     */
+    flavors: string[];
+    /**
+     * ID of the offering module.
+     */
+    id: string;
+    /**
+     * Kind of the offeringmodule.
+     */
+    kind: string;
+    /**
+     * Metadata of the module.
+     */
+    metadata: string;
+    /**
+     * Name of the offering module.
+     */
+    name: string;
+    /**
+     * Version of the offering module.
+     */
+    version: string;
+}
+
+export interface GetCmOfferingKindVersionMetadataOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version: string;
+}
+
+export interface GetCmOfferingKindVersionMetadataVsiVpc {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    files: outputs.GetCmOfferingKindVersionMetadataVsiVpcFile[];
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images: outputs.GetCmOfferingKindVersionMetadataVsiVpcImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize: number;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystems: outputs.GetCmOfferingKindVersionMetadataVsiVpcOperatingSystem[];
+}
+
+export interface GetCmOfferingKindVersionMetadataVsiVpcFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size: number;
+}
+
+export interface GetCmOfferingKindVersionMetadataVsiVpcImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region: string;
+}
+
+export interface GetCmOfferingKindVersionMetadataVsiVpcOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version: string;
+}
+
+export interface GetCmOfferingKindVersionOutput {
+    /**
+     * Output description.
+     */
+    description: string;
+    /**
+     * Output key.
+     */
+    key: string;
+}
+
+export interface GetCmOfferingKindVersionPreInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission: string;
+}
+
+export interface GetCmOfferingKindVersionRequiredResource {
+    /**
+     * Type of requirement.
+     */
+    type: string;
+    /**
+     * mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+     */
+    value: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfo {
+    /**
+     * Architecture diagrams for this solution.
+     */
+    architectureDiagrams: outputs.GetCmOfferingKindVersionSolutionInfoArchitectureDiagram[];
+    /**
+     * Cost estimate definition.
+     */
+    costEstimates: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimate[];
+    /**
+     * Dependencies for this solution.
+     */
+    dependencies: outputs.GetCmOfferingKindVersionSolutionInfoDependency[];
+    /**
+     * Features - titles only.
+     */
+    features: outputs.GetCmOfferingKindVersionSolutionInfoFeature[];
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoArchitectureDiagram {
+    /**
+     * Description of this diagram.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Offering Media information.
+     */
+    diagrams: outputs.GetCmOfferingKindVersionSolutionInfoArchitectureDiagramDiagram[];
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoArchitectureDiagramDiagram {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl: string;
+    /**
+     * Caption for this media item.
+     */
+    caption: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n: {[key: string]: string};
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl: string;
+    /**
+     * Type of this media item.
+     */
+    type: string;
+    /**
+     * URL of the specified media item.
+     */
+    url: string;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxies: outputs.GetCmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxy[];
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoArchitectureDiagramDiagramUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha: string;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimate {
+    /**
+     * Cost estimate currency.
+     */
+    currency: string;
+    /**
+     * Difference in total hourly cost.
+     */
+    diffTotalHourlyCost: string;
+    /**
+     * Difference in total monthly cost.
+     */
+    diffTotalMonthlyCost: string;
+    /**
+     * Past total hourly cost.
+     */
+    pastTotalHourlyCost: string;
+    /**
+     * Past total monthly cost.
+     */
+    pastTotalMonthlyCost: string;
+    /**
+     * Cost estimate projects.
+     */
+    projects: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProject[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateSummary[];
+    /**
+     * When this estimate was generated.
+     */
+    timeGenerated: string;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+    /**
+     * Cost estimate version.
+     */
+    version: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProject {
+    /**
+     * Cost breakdown definition.
+     */
+    breakdowns: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdown[];
+    /**
+     * Cost breakdown definition.
+     */
+    diffs: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectDiff[];
+    /**
+     * Project metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Project name.
+     */
+    name: string;
+    /**
+     * Cost breakdown definition.
+     */
+    pastBreakdowns: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdown[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectSummary[];
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCOst: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectDiff {
+    /**
+     * Resources.
+     */
+    resources: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCOst: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCOst: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.GetCmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateProjectSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoCostEstimateSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoDependency {
+    /**
+     * Optional - If not specified, assumes the Public Catalog.
+     */
+    catalogId: string;
+    /**
+     * Optional - List of dependent flavors in the specified range.
+     */
+    flavors: string[];
+    /**
+     * Optional - Offering ID - not required if name is set.
+     */
+    id: string;
+    /**
+     * Optional - Programmatic Offering name.
+     */
+    name: string;
+    /**
+     * Required - Semver value or range.
+     */
+    version: string;
+}
+
+export interface GetCmOfferingKindVersionSolutionInfoFeature {
+    /**
+     * Feature description.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n: {[key: string]: string};
+}
+
+export interface GetCmOfferingKindVersionState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current: string;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending: string;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous: string;
+}
+
+export interface GetCmOfferingKindVersionValidation {
+    /**
+     * Last operation (e.g. submit_deployment, generate_installer, install_offering.
+     */
+    lastOperation: string;
+    /**
+     * Any message needing to be conveyed as part of the validation job.
+     */
+    message: string;
+    /**
+     * Date and time of last validation was requested.
+     */
+    requested: string;
+    /**
+     * Current validation state - <empty>, in_progress, valid, invalid, expired.
+     */
+    state: string;
+    /**
+     * Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+     */
+    target: {[key: string]: string};
+    /**
+     * Date and time of last successful validation.
+     */
+    validated: string;
+}
+
+export interface GetCmOfferingMedia {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl: string;
+    /**
+     * Caption for this media item.
+     */
+    caption: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n: {[key: string]: string};
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl: string;
+    /**
+     * Type of this media item.
+     */
+    type: string;
+    /**
+     * URL of the specified media item.
+     */
+    url: string;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxies: outputs.GetCmOfferingMediaUrlProxy[];
+}
+
+export interface GetCmOfferingMediaUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha: string;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url: string;
+}
+
+export interface GetCmOfferingProviderInfo {
+    /**
+     * The id of this provider.
+     */
+    id: string;
+    /**
+     * The name of this provider.
+     */
+    name: string;
+}
+
+export interface GetCmOfferingRating {
+    /**
+     * Four start rating.
+     */
+    fourStarCount: number;
+    /**
+     * One start rating.
+     */
+    oneStarCount: number;
+    /**
+     * Three start rating.
+     */
+    threeStarCount: number;
+    /**
+     * Two start rating.
+     */
+    twoStarCount: number;
+}
+
+export interface GetCmOfferingRepoInfo {
+    /**
+     * Token for private repos.
+     */
+    token: string;
+    /**
+     * Public or enterprise GitHub.
+     */
+    type: string;
+}
+
+export interface GetCmOfferingSupport {
+    /**
+     * A list of country codes indicating where support is provided.
+     */
+    locations: string[];
+    /**
+     * Support process as provided by an ISV.
+     */
+    process: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    processI18n: {[key: string]: string};
+    /**
+     * A list of support options (e.g. email, phone, slack, other).
+     */
+    supportDetails: outputs.GetCmOfferingSupportSupportDetail[];
+    /**
+     * Support escalation policy.
+     */
+    supportEscalations: outputs.GetCmOfferingSupportSupportEscalation[];
+    /**
+     * Support type for this product.
+     */
+    supportType: string;
+    /**
+     * URL to be displayed in the Consumption UI for getting support on this offering.
+     */
+    url: string;
+}
+
+export interface GetCmOfferingSupportSupportDetail {
+    /**
+     * Times when support is available.
+     */
+    availabilities: outputs.GetCmOfferingSupportSupportDetailAvailability[];
+    /**
+     * Contact for the current support detail.
+     */
+    contact: string;
+    /**
+     * Time descriptor.
+     */
+    responseWaitTimes: outputs.GetCmOfferingSupportSupportDetailResponseWaitTime[];
+    /**
+     * Type of the current support detail.
+     */
+    type: string;
+}
+
+export interface GetCmOfferingSupportSupportDetailAvailability {
+    /**
+     * Is this support always available.
+     */
+    alwaysAvailable: boolean;
+    /**
+     * A list of support times.
+     */
+    times: outputs.GetCmOfferingSupportSupportDetailAvailabilityTime[];
+    /**
+     * Timezone (e.g. America/New_York).
+     */
+    timezone: string;
+}
+
+export interface GetCmOfferingSupportSupportDetailAvailabilityTime {
+    /**
+     * The day of the week, represented as an integer.
+     */
+    day: number;
+    /**
+     * HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+     */
+    endTime: string;
+    /**
+     * HOURS:MINUTES:SECONDS using 24 hour time (e.g. 8:15:00).
+     */
+    startTime: string;
+}
+
+export interface GetCmOfferingSupportSupportDetailResponseWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type: string;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value: number;
+}
+
+export interface GetCmOfferingSupportSupportEscalation {
+    /**
+     * Escalation contact.
+     */
+    contact: string;
+    /**
+     * Time descriptor.
+     */
+    escalationWaitTimes: outputs.GetCmOfferingSupportSupportEscalationEscalationWaitTime[];
+    /**
+     * Time descriptor.
+     */
+    responseWaitTimes: outputs.GetCmOfferingSupportSupportEscalationResponseWaitTime[];
+}
+
+export interface GetCmOfferingSupportSupportEscalationEscalationWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type: string;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value: number;
+}
+
+export interface GetCmOfferingSupportSupportEscalationResponseWaitTime {
+    /**
+     * Valid values are hour or day.
+     */
+    type: string;
+    /**
+     * Amount of time to wait in unit 'type'.
+     */
+    value: number;
+}
+
+export interface GetCmVersionConfiguration {
+    /**
+     * Render type.
+     */
+    customConfigs: outputs.GetCmVersionConfigurationCustomConfig[];
+    /**
+     * The default value as a JSON encoded string.  To use a secret when the type is password, specify a JSON encoded value of $ref:#/components/schemas/SecretInstance, prefixed with `cmsm_v1:`.
+     */
+    defaultValue: string;
+    /**
+     * Key description.
+     */
+    description: string;
+    /**
+     * Display name for configuration type.
+     */
+    displayName: string;
+    /**
+     * Hide values.
+     */
+    hidden: boolean;
+    /**
+     * Configuration key.
+     */
+    key: string;
+    /**
+     * List of options of type.
+     */
+    options: {[key: string]: string}[];
+    /**
+     * Is key required to install.
+     */
+    required: boolean;
+    /**
+     * Value type (string, boolean, int).
+     */
+    type: string;
+    /**
+     * The original type, as found in the source being onboarded.
+     */
+    typeMetadata: string;
+    /**
+     * Constraint associated with value, e.g., for string type - regx:[a-z].
+     */
+    valueConstraint: string;
+    /**
+     * Validation rules for this input value.
+     */
+    valueConstraints: outputs.GetCmVersionConfigurationValueConstraint[];
+}
+
+export interface GetCmVersionConfigurationCustomConfig {
+    /**
+     * List of parameters that are associated with this configuration.
+     */
+    associations: outputs.GetCmVersionConfigurationCustomConfigAssociation[];
+    /**
+     * Map of constraint parameters that will be passed to the custom widget.
+     */
+    configConstraints: {[key: string]: string};
+    /**
+     * Determines where this configuration type is rendered (3 sections today - Target, Resource, and Deployment).
+     */
+    grouping: string;
+    /**
+     * Determines the order that this configuration item shows in that particular grouping.
+     */
+    groupingIndex: number;
+    /**
+     * Original grouping type for this configuration (3 types - Target, Resource, and Deployment).
+     */
+    originalGrouping: string;
+    /**
+     * ID of the widget type.
+     */
+    type: string;
+}
+
+export interface GetCmVersionConfigurationCustomConfigAssociation {
+    /**
+     * Parameters for this association.
+     */
+    parameters: outputs.GetCmVersionConfigurationCustomConfigAssociationParameter[];
+}
+
+export interface GetCmVersionConfigurationCustomConfigAssociationParameter {
+    /**
+     * Name of this parameter.
+     */
+    name: string;
+    /**
+     * Refresh options.
+     */
+    optionsRefresh: boolean;
+}
+
+export interface GetCmVersionConfigurationValueConstraint {
+    /**
+     * The value to display if the inptu value does not match the specified constraint.
+     */
+    description: string;
+    /**
+     * Type of constraint.
+     */
+    type: string;
+    /**
+     * Contstraint value.  For type regex, this is a regular expression in Javascript notation.
+     */
+    value: string;
+}
+
+export interface GetCmVersionDeprecatePending {
+    /**
+     * Date of deprecation.
+     */
+    deprecateDate: string;
+    /**
+     * Deprecation state.
+     */
+    deprecateState: string;
+    description: string;
+}
+
+export interface GetCmVersionEntitlement {
+    /**
+     * Image repository name.
+     */
+    imageRepoName: string;
+    /**
+     * list of license entitlement part numbers, eg. D1YGZLL,D1ZXILL.
+     */
+    partNumbers: string[];
+    /**
+     * Product ID.
+     */
+    productId: string;
+    /**
+     * Provider ID.
+     */
+    providerId: string;
+    /**
+     * Provider name.
+     */
+    providerName: string;
+}
+
+export interface GetCmVersionFlavor {
+    /**
+     * Order that this flavor should appear when listed for a single version.
+     */
+    index: number;
+    /**
+     * Label for this flavor.
+     */
+    label: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    labelI18n: {[key: string]: string};
+    /**
+     * Programmatic name for this flavor.
+     */
+    name: string;
+}
+
+export interface GetCmVersionIamPermission {
+    /**
+     * Resources for this permission.
+     */
+    resources: outputs.GetCmVersionIamPermissionResource[];
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns: string[];
+    /**
+     * Service name.
+     */
+    serviceName: string;
+}
+
+export interface GetCmVersionIamPermissionResource {
+    /**
+     * Resource description.
+     */
+    description: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+    /**
+     * Role CRNs for this permission.
+     */
+    roleCrns: string[];
+}
+
+export interface GetCmVersionInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission: string;
+}
+
+export interface GetCmVersionLicense {
+    /**
+     * License description.
+     */
+    description: string;
+    /**
+     * License ID.
+     */
+    id: string;
+    /**
+     * license name.
+     */
+    name: string;
+    /**
+     * type of license e.g., Apache xxx.
+     */
+    type: string;
+    /**
+     * URL for the license text.
+     */
+    url: string;
+}
+
+export interface GetCmVersionMetadata {
+    /**
+     * The time validation ended.
+     */
+    endDeployTime: string;
+    /**
+     * The estimated time validation takes.
+     */
+    estDeployTime: number;
+    /**
+     * Working directory of source files.
+     */
+    exampleName: string;
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    files: outputs.GetCmVersionMetadataFile[];
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images: outputs.GetCmVersionMetadataImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize: number;
+    /**
+     * Terraform modules.
+     */
+    modules: outputs.GetCmVersionMetadataModule[];
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystems: outputs.GetCmVersionMetadataOperatingSystem[];
+    /**
+     * Version source URL.
+     */
+    sourceUrl: string;
+    /**
+     * The time validation started.
+     */
+    startDeployTime: string;
+    /**
+     * Terraform version.
+     */
+    terraformVersion: string;
+    /**
+     * Usage text for the version.
+     */
+    usage: string;
+    /**
+     * Usage text for the version.
+     */
+    usageTemplate: string;
+    /**
+     * Version name.
+     */
+    validatedTerraformVersion: string;
+    /**
+     * Version name.
+     */
+    versionName: string;
+    /**
+     * VSI VPC version information
+     */
+    vsiVpcs: outputs.GetCmVersionMetadataVsiVpc[];
+    /**
+     * Working directory of source files.
+     */
+    workingDirectory: string;
+}
+
+export interface GetCmVersionMetadataFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size: number;
+}
+
+export interface GetCmVersionMetadataImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region: string;
+}
+
+export interface GetCmVersionMetadataModule {
+    /**
+     * Name of the module.
+     */
+    name: string;
+    /**
+     * Terraform modules.
+     */
+    offeringReferences: outputs.GetCmVersionMetadataModuleOfferingReference[];
+    /**
+     * Source of the module.
+     */
+    source: string;
+}
+
+export interface GetCmVersionMetadataModuleOfferingReference {
+    /**
+     * Catalog ID of the module reference.
+     */
+    catalogId: string;
+    /**
+     * Flavor of the module.
+     */
+    flavor: string;
+    /**
+     * Flavors of the module.
+     */
+    flavors: string[];
+    /**
+     * ID of the offering module.
+     */
+    id: string;
+    /**
+     * Kind of the offeringmodule.
+     */
+    kind: string;
+    /**
+     * Metadata of the module.
+     */
+    metadata: string;
+    /**
+     * Name of the offering module.
+     */
+    name: string;
+    /**
+     * Version of the offering module.
+     */
+    version: string;
+}
+
+export interface GetCmVersionMetadataOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version: string;
+}
+
+export interface GetCmVersionMetadataVsiVpc {
+    /**
+     * Details for the stored image file. Required for virtual server image for VPC.
+     */
+    files: outputs.GetCmVersionMetadataVsiVpcFile[];
+    /**
+     * Image operating system. Required for virtual server image for VPC.
+     */
+    images: outputs.GetCmVersionMetadataVsiVpcImage[];
+    /**
+     * Minimum size (in gigabytes) of a volume onto which this image may be provisioned. Required for virtual server image for VPC.
+     */
+    minimumProvisionedSize: number;
+    /**
+     * Operating system included in this image. Required for virtual server image for VPC.
+     */
+    operatingSystems: outputs.GetCmVersionMetadataVsiVpcOperatingSystem[];
+}
+
+export interface GetCmVersionMetadataVsiVpcFile {
+    /**
+     * Size of the stored image file rounded up to the next gigabyte. Required for virtual server image for VPC.
+     */
+    size: number;
+}
+
+export interface GetCmVersionMetadataVsiVpcImage {
+    /**
+     * Programmatic ID of virtual server image. Required for virtual server image for VPC.
+     */
+    id: string;
+    /**
+     * Programmatic name of virtual server image. Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Region the virtual server image is available in. Required for virtual server image for VPC.
+     */
+    region: string;
+}
+
+export interface GetCmVersionMetadataVsiVpcOperatingSystem {
+    /**
+     * Operating system architecture. Required for virtual server image for VPC.
+     */
+    architecture: string;
+    /**
+     * Images with this operating system can only be used on dedicated hosts or dedicated host groups. Required for virtual server image for VPC.
+     */
+    dedicatedHostOnly: boolean;
+    /**
+     * Unique, display-friendly name for the operating system. Required for virtual server image for VPC.
+     */
+    displayName: string;
+    /**
+     * Software family for this operating system. Required for virtual server image for VPC.
+     */
+    family: string;
+    /**
+     * URL for this operating system. Required for virtual server image for VPC.
+     */
+    href: string;
+    /**
+     * Globally unique name for this operating system Required for virtual server image for VPC.
+     */
+    name: string;
+    /**
+     * Vendor of the operating system. Required for virtual server image for VPC.
+     */
+    vendor: string;
+    /**
+     * Major release version of this operating system. Required for virtual server image for VPC.
+     */
+    version: string;
+}
+
+export interface GetCmVersionOutput {
+    /**
+     * Output description.
+     */
+    description: string;
+    /**
+     * Output key.
+     */
+    key: string;
+}
+
+export interface GetCmVersionPreInstall {
+    /**
+     * Optional script that if run will remove the installed version.
+     */
+    deleteScript: string;
+    /**
+     * Instruction on step and by whom (role) that are needed to take place to prepare the target for installing this version.
+     */
+    instructions: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    instructionsI18n: {[key: string]: string};
+    /**
+     * Optional value indicating if this script is scoped to a namespace or the entire cluster.
+     */
+    scope: string;
+    /**
+     * Optional script that needs to be run post any pre-condition script.
+     */
+    script: string;
+    /**
+     * Optional iam permissions that are required on the target cluster to run this script.
+     */
+    scriptPermission: string;
+}
+
+export interface GetCmVersionRequiredResource {
+    /**
+     * Type of requirement.
+     */
+    type: string;
+    /**
+     * mem, disk, cores, and nodes can be parsed as an int.  targetVersion will be a semver range value.
+     */
+    value: string;
+}
+
+export interface GetCmVersionSolutionInfo {
+    /**
+     * Architecture diagrams for this solution.
+     */
+    architectureDiagrams: outputs.GetCmVersionSolutionInfoArchitectureDiagram[];
+    /**
+     * Cost estimate definition.
+     */
+    costEstimates: outputs.GetCmVersionSolutionInfoCostEstimate[];
+    /**
+     * Dependencies for this solution.
+     */
+    dependencies: outputs.GetCmVersionSolutionInfoDependency[];
+    /**
+     * Features - titles only.
+     */
+    features: outputs.GetCmVersionSolutionInfoFeature[];
+}
+
+export interface GetCmVersionSolutionInfoArchitectureDiagram {
+    /**
+     * Description of this diagram.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Offering Media information.
+     */
+    diagrams: outputs.GetCmVersionSolutionInfoArchitectureDiagramDiagram[];
+}
+
+export interface GetCmVersionSolutionInfoArchitectureDiagramDiagram {
+    /**
+     * CM API specific URL of the specified media item.
+     */
+    apiUrl: string;
+    /**
+     * Caption for this media item.
+     */
+    caption: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    captionI18n: {[key: string]: string};
+    /**
+     * Thumbnail URL for this media item.
+     */
+    thumbnailUrl: string;
+    /**
+     * Type of this media item.
+     */
+    type: string;
+    /**
+     * URL of the specified media item.
+     */
+    url: string;
+    /**
+     * Offering URL proxy information.
+     */
+    urlProxies: outputs.GetCmVersionSolutionInfoArchitectureDiagramDiagramUrlProxy[];
+}
+
+export interface GetCmVersionSolutionInfoArchitectureDiagramDiagramUrlProxy {
+    /**
+     * SHA256 fingerprint of image.
+     */
+    sha: string;
+    /**
+     * URL of the specified media item being proxied.
+     */
+    url: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimate {
+    /**
+     * Cost estimate currency.
+     */
+    currency: string;
+    /**
+     * Difference in total hourly cost.
+     */
+    diffTotalHourlyCost: string;
+    /**
+     * Difference in total monthly cost.
+     */
+    diffTotalMonthlyCost: string;
+    /**
+     * Past total hourly cost.
+     */
+    pastTotalHourlyCost: string;
+    /**
+     * Past total monthly cost.
+     */
+    pastTotalMonthlyCost: string;
+    /**
+     * Cost estimate projects.
+     */
+    projects: outputs.GetCmVersionSolutionInfoCostEstimateProject[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.GetCmVersionSolutionInfoCostEstimateSummary[];
+    /**
+     * When this estimate was generated.
+     */
+    timeGenerated: string;
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCost: string;
+    /**
+     * Cost estimate version.
+     */
+    version: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProject {
+    /**
+     * Cost breakdown definition.
+     */
+    breakdowns: outputs.GetCmVersionSolutionInfoCostEstimateProjectBreakdown[];
+    /**
+     * Cost breakdown definition.
+     */
+    diffs: outputs.GetCmVersionSolutionInfoCostEstimateProjectDiff[];
+    /**
+     * Project metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Project name.
+     */
+    name: string;
+    /**
+     * Cost breakdown definition.
+     */
+    pastBreakdowns: outputs.GetCmVersionSolutionInfoCostEstimateProjectPastBreakdown[];
+    /**
+     * Cost summary definition.
+     */
+    summaries: outputs.GetCmVersionSolutionInfoCostEstimateProjectSummary[];
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.GetCmVersionSolutionInfoCostEstimateProjectBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCOst: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.GetCmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectDiff {
+    /**
+     * Resources.
+     */
+    resources: outputs.GetCmVersionSolutionInfoCostEstimateProjectDiffResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCOst: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectDiffResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.GetCmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectDiffResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectPastBreakdown {
+    /**
+     * Resources.
+     */
+    resources: outputs.GetCmVersionSolutionInfoCostEstimateProjectPastBreakdownResource[];
+    /**
+     * Total hourly cost.
+     */
+    totalHourlyCost: string;
+    /**
+     * Total monthly cost.
+     */
+    totalMonthlyCOst: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectPastBreakdownResource {
+    /**
+     * Cost components.
+     */
+    costComponents: outputs.GetCmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent[];
+    /**
+     * Hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Resource metadata.
+     */
+    metadata: {[key: string]: string};
+    /**
+     * Monthly cost.
+     */
+    monthlyCost: string;
+    /**
+     * Resource name.
+     */
+    name: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectPastBreakdownResourceCostComponent {
+    /**
+     * Cost component hourly cost.
+     */
+    hourlyCost: string;
+    /**
+     * Cost component hourly quantity.
+     */
+    hourlyQuantity: string;
+    /**
+     * Cost component monthly cist.
+     */
+    monthlyCost: string;
+    /**
+     * Cost component monthly quantity.
+     */
+    monthlyQuantity: string;
+    /**
+     * Cost component name.
+     */
+    name: string;
+    /**
+     * Cost component price.
+     */
+    price: string;
+    /**
+     * Cost component unit.
+     */
+    unit: string;
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateProjectSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface GetCmVersionSolutionInfoCostEstimateSummary {
+    /**
+     * No price resource counts.
+     */
+    noPriceResourceCounts: {[key: string]: string};
+    /**
+     * Total detected resources.
+     */
+    totalDetectedResources: number;
+    /**
+     * Total no price resources.
+     */
+    totalNoPriceResources: number;
+    /**
+     * Total supported resources.
+     */
+    totalSupportedResources: number;
+    /**
+     * Total unsupported resources.
+     */
+    totalUnsupportedResources: number;
+    /**
+     * Total usage based resources.
+     */
+    totalUsageBasedResources: number;
+    /**
+     * Unsupported resource counts.
+     */
+    unsupportedResourceCounts: {[key: string]: string};
+}
+
+export interface GetCmVersionSolutionInfoDependency {
+    /**
+     * Optional - If not specified, assumes the Public Catalog.
+     */
+    catalogId: string;
+    /**
+     * Optional - List of dependent flavors in the specified range.
+     */
+    flavors: string[];
+    /**
+     * Optional - Offering ID - not required if name is set.
+     */
+    id: string;
+    /**
+     * Optional - Programmatic Offering name.
+     */
+    name: string;
+    /**
+     * Required - Semver value or range.
+     */
+    version: string;
+}
+
+export interface GetCmVersionSolutionInfoFeature {
+    /**
+     * Feature description.
+     */
+    description: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    descriptionI18n: {[key: string]: string};
+    /**
+     * Heading.
+     */
+    title: string;
+    /**
+     * A map of translated strings, by language code.
+     */
+    titleI18n: {[key: string]: string};
+}
+
+export interface GetCmVersionState {
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    current: string;
+    /**
+     * Date and time of current request.
+     */
+    currentEntered: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    pending: string;
+    /**
+     * Date and time of pending request.
+     */
+    pendingRequested: string;
+    /**
+     * one of: new, validated, account-published, ibm-published, public-published.
+     */
+    previous: string;
+}
+
+export interface GetCmVersionValidation {
+    /**
+     * Last operation (e.g. submit_deployment, generate_installer, install_offering.
+     */
+    lastOperation: string;
+    /**
+     * Any message needing to be conveyed as part of the validation job.
+     */
+    message: string;
+    /**
+     * Date and time of last validation was requested.
+     */
+    requested: string;
+    /**
+     * Current validation state - <empty>, in_progress, valid, invalid, expired.
+     */
+    state: string;
+    /**
+     * Validation target information (e.g. cluster_id, region, namespace, etc).  Values will vary by Content type.
+     */
+    target: {[key: string]: string};
+    /**
+     * Date and time of last successful validation.
+     */
+    validated: string;
 }
 
 export interface GetComputePlacementGroupVirtualGuest {
@@ -31217,6 +37370,1581 @@ export interface GetResourceReclamationsReclamation {
     updatedBy: string;
 }
 
+export interface GetSmConfigurationsConfiguration {
+    /**
+     * The name of the intermediate certificate authority.
+     */
+    certificateAuthority: string;
+    /**
+     * The Common Name (AKA CN) represents the server name that is protected by the SSL certificate.
+     */
+    commonName: string;
+    /**
+     * The configuration type.
+     */
+    configType: string;
+    /**
+     * The date when a resource was created. The date format follows RFC 3339.
+     */
+    createdAt: string;
+    /**
+     * The unique identifier that is associated with the entity that created the secret.
+     */
+    createdBy: string;
+    /**
+     * Determines whether to encode the certificate revocation list (CRL) distribution points in the certificates that are issued by this certificate authority.
+     */
+    crlDistributionPointsEncoded: boolean;
+    /**
+     * The data that is associated with a cryptographic key.
+     */
+    cryptoKeys: outputs.GetSmConfigurationsConfigurationCryptoKey[];
+    /**
+     * The date a secret is expired. The date format follows RFC 3339.
+     */
+    expirationDate: string;
+    /**
+     * The distinguished name that identifies the entity that signed and issued the certificate.
+     */
+    issuer: string;
+    /**
+     * The number of bits to use to generate the private key.Allowable values for RSA keys are: `2048` and `4096`. Allowable values for EC keys are: `224`, `256`, `384`, and `521`. The default for RSA keys is `2048`. The default for EC keys is `256`.
+     */
+    keyBits: number;
+    /**
+     * The type of private key to generate.
+     */
+    keyType: string;
+    /**
+     * The configuration of the Let's Encrypt CA environment.
+     */
+    letsEncryptEnvironment: string;
+    /**
+     * Prefer the chain with an issuer matching this Subject Common Name.
+     */
+    letsEncryptPreferredChain: string;
+    /**
+     * The unique name of your configuration.
+     */
+    name: string;
+    /**
+     * The secret type. Supported types are arbitrary, certificates (imported, public, and private), IAM credentials, key-value, and user credentials.
+     */
+    secretType: string;
+    /**
+     * The signing method to use with this certificate authority to generate private certificates.You can choose between internal or externally signed options. For more information, see the [docs](https://cloud.ibm.com/docs/secrets-manager?topic=secrets-manager-intermediate-certificate-authorities).
+     */
+    signingMethod: string;
+    /**
+     * The status of the certificate authority. The status of a root certificate authority is either `configured` or `expired`. For intermediate certificate authorities, possible statuses include `signingRequired`,`signedCertificateRequired`, `certificateTemplateRequired`, `configured`, `expired` or `revoked`.
+     */
+    status: string;
+    /**
+     * The date when a resource was recently modified. The date format follows RFC 3339.
+     */
+    updatedAt: string;
+}
+
+export interface GetSmConfigurationsConfigurationCryptoKey {
+    /**
+     * The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+     */
+    allowGenerateKey: boolean;
+    /**
+     * The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+     */
+    id: string;
+    /**
+     * The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+     */
+    label: string;
+    /**
+     * The data that is associated with a cryptographic provider.
+     */
+    providers: outputs.GetSmConfigurationsConfigurationCryptoKeyProvider[];
+}
+
+export interface GetSmConfigurationsConfigurationCryptoKeyProvider {
+    /**
+     * The HPCS instance CRN.
+     */
+    instanceCrn: string;
+    /**
+     * The secret Id of iam credentials with api key to access HPCS instance.
+     */
+    pinIamCredentialsSecretId: string;
+    /**
+     * The HPCS private key store space id.
+     */
+    privateKeystoreId: string;
+    /**
+     * The type of cryptographic provider.
+     */
+    type: string;
+}
+
+export interface GetSmCustomCredentialsConfigurationCodeEngine {
+    /**
+     * The name of the Code Engine Job.
+     */
+    jobName: string;
+    /**
+     * The ID of the Code Engine project.
+     */
+    projectId: string;
+    /**
+     * The region of the Code Engine project.
+     */
+    region: string;
+}
+
+export interface GetSmCustomCredentialsConfigurationSchema {
+    /**
+     * Custom credentials configuration schema credentials format.
+     */
+    credentials: outputs.GetSmCustomCredentialsConfigurationSchemaCredential[];
+    /**
+     * Custom credentials configuration schema parameters.
+     */
+    parameters: outputs.GetSmCustomCredentialsConfigurationSchemaParameter[];
+}
+
+export interface GetSmCustomCredentialsConfigurationSchemaCredential {
+    /**
+     * The format of the credential, for example 'required:true, type:string'
+     */
+    format: string;
+    /**
+     * The name of the credential.
+     */
+    name: string;
+}
+
+export interface GetSmCustomCredentialsConfigurationSchemaParameter {
+    /**
+     * The name of the environment variable associated with the configuration schema parameter.
+     */
+    envVariableName: string;
+    /**
+     * The format of the parameter, for example 'required:true, type:string', 'type:int, required:false', 'type:enum[val1|val2|val3], required:true', 'required:true, type:boolean'
+     */
+    format: string;
+    /**
+     * The name of the parameter.
+     */
+    name: string;
+}
+
+export interface GetSmCustomCredentialsSecretCredentialsContent {
+    /**
+     * Credentials that have boolean values.
+     */
+    booleanValues: {[key: string]: boolean};
+    /**
+     * Credentials that have integer values.
+     */
+    integerValues: {[key: string]: number};
+    /**
+     * Credentials that have string values.
+     */
+    stringValues: {[key: string]: string};
+}
+
+export interface GetSmCustomCredentialsSecretMetadataParameter {
+    /**
+     * Pararmeters that have boolean values.
+     */
+    booleanValues: {[key: string]: boolean};
+    /**
+     * Pararmeters that have integer values.
+     */
+    integerValues: {[key: string]: number};
+    /**
+     * Pararmeters that have string values.
+     */
+    stringValues: {[key: string]: string};
+}
+
+export interface GetSmCustomCredentialsSecretMetadataRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmCustomCredentialsSecretParameter {
+    /**
+     * Pararmeters that have boolean values.
+     */
+    booleanValues: {[key: string]: boolean};
+    /**
+     * Pararmeters that have integer values.
+     */
+    integerValues: {[key: string]: number};
+    /**
+     * Pararmeters that have string values.
+     */
+    stringValues: {[key: string]: string};
+}
+
+export interface GetSmCustomCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmIamCredentialsSecretMetadataRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmIamCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmImportedCertificateManagedCsr {
+    /**
+     * With the Subject Alternative Name field, you can specify additional hostnames to be protected by a single SSL certificate.
+     */
+    altNames: string;
+    /**
+     * This field indicates whether certificate is flagged for client use.
+     */
+    clientFlag: boolean;
+    /**
+     * This field indicates whether certificate is flagged for code signing use.
+     */
+    codeSigningFlag: boolean;
+    /**
+     * The Common Name (CN) represents the server name protected by the SSL certificate.
+     */
+    commonName: string;
+    /**
+     * The Country (C) values to define in the subject field of the resulting certificate.
+     */
+    countries: string[];
+    /**
+     * The certificate signing request.
+     */
+    csr: string;
+    /**
+     * This field indicates whether certificate is flagged for email protection use.
+     */
+    emailProtectionFlag: boolean;
+    /**
+     * This parameter controls whether the common name is excluded from Subject Alternative Names (SANs).
+     */
+    excludeCnFromSans: boolean;
+    /**
+     * The allowed extended key usage constraint on certificate, in a comma-delimited list.
+     */
+    extKeyUsage: string;
+    /**
+     * A comma-delimited list of extended key usage Object Identifiers (OIDs).
+     */
+    extKeyUsageOids: string;
+    /**
+     * The IP Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    ipSans: string;
+    /**
+     * The number of bits to use to generate the private key.
+     */
+    keyBits: number;
+    /**
+     * The type of private key to generate.
+     */
+    keyType: string;
+    /**
+     * The allowed key usage constraint to define for certificate, in a comma-delimited list.
+     */
+    keyUsage: string;
+    /**
+     * The Locality (L) values to define in the subject field of the resulting certificate.
+     */
+    localities: string[];
+    /**
+     * The Organization (O) values to define in the subject field of the resulting certificate.
+     */
+    organizations: string[];
+    /**
+     * The custom Object Identifier (OID) or UTF8-string Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    otherSans: string;
+    /**
+     * The Organizational Unit (OU) values to define in the subject field of the resulting certificate.
+     */
+    ous: string[];
+    /**
+     * A comma-delimited list of policy Object Identifiers (OIDs).
+     */
+    policyIdentifiers: string;
+    /**
+     * The postal code values to define in the subject field of the resulting certificate.
+     */
+    postalCodes: string[];
+    /**
+     * The Province (ST) values to define in the subject field of the resulting certificate.
+     */
+    provinces: string[];
+    /**
+     * If set to false, makes the commonName field optional while generating a certificate.
+     */
+    requireCn: boolean;
+    /**
+     * This field indicates whether the private key will be rotated.
+     */
+    rotateKeys: boolean;
+    /**
+     * This field indicates whether certificate is flagged for server use.
+     */
+    serverFlag: boolean;
+    /**
+     * The street address values to define in the subject field of the resulting certificate.
+     */
+    streetAddresses: string[];
+    /**
+     * The URI Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    uriSans: string;
+    /**
+     * Specifies the list of requested User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate.
+     */
+    userIds: string;
+}
+
+export interface GetSmImportedCertificateMetadataManagedCsr {
+    /**
+     * With the Subject Alternative Name field, you can specify additional hostnames to be protected by a single SSL certificate.
+     */
+    altNames: string;
+    /**
+     * This field indicates whether certificate is flagged for client use.
+     */
+    clientFlag: boolean;
+    /**
+     * This field indicates whether certificate is flagged for code signing use.
+     */
+    codeSigningFlag: boolean;
+    /**
+     * The Common Name (CN) represents the server name protected by the SSL certificate.
+     */
+    commonName: string;
+    /**
+     * The Country (C) values to define in the subject field of the resulting certificate.
+     */
+    countries: string[];
+    /**
+     * The certificate signing request.
+     */
+    csr: string;
+    /**
+     * This field indicates whether certificate is flagged for email protection use.
+     */
+    emailProtectionFlag: boolean;
+    /**
+     * This parameter controls whether the common name is excluded from Subject Alternative Names (SANs).
+     */
+    excludeCnFromSans: boolean;
+    /**
+     * The allowed extended key usage constraint on certificate, in a comma-delimited list.
+     */
+    extKeyUsage: string;
+    /**
+     * A comma-delimited list of extended key usage Object Identifiers (OIDs).
+     */
+    extKeyUsageOids: string;
+    /**
+     * The IP Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    ipSans: string;
+    /**
+     * The number of bits to use to generate the private key.
+     */
+    keyBits: number;
+    /**
+     * The type of private key to generate.
+     */
+    keyType: string;
+    /**
+     * The allowed key usage constraint to define for certificate, in a comma-delimited list.
+     */
+    keyUsage: string;
+    /**
+     * The Locality (L) values to define in the subject field of the resulting certificate.
+     */
+    localities: string[];
+    /**
+     * The Organization (O) values to define in the subject field of the resulting certificate.
+     */
+    organizations: string[];
+    /**
+     * The custom Object Identifier (OID) or UTF8-string Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    otherSans: string;
+    /**
+     * The Organizational Unit (OU) values to define in the subject field of the resulting certificate.
+     */
+    ous: string[];
+    /**
+     * A comma-delimited list of policy Object Identifiers (OIDs).
+     */
+    policyIdentifiers: string;
+    /**
+     * The postal code values to define in the subject field of the resulting certificate.
+     */
+    postalCodes: string[];
+    /**
+     * The Province (ST) values to define in the subject field of the resulting certificate.
+     */
+    provinces: string[];
+    /**
+     * If set to false, makes the commonName field optional while generating a certificate.
+     */
+    requireCn: boolean;
+    /**
+     * This field indicates whether the private key will be rotated.
+     */
+    rotateKeys: boolean;
+    /**
+     * This field indicates whether certificate is flagged for server use.
+     */
+    serverFlag: boolean;
+    /**
+     * The street address values to define in the subject field of the resulting certificate.
+     */
+    streetAddresses: string[];
+    /**
+     * The URI Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    uriSans: string;
+    /**
+     * Specifies the list of requested User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate.
+     */
+    userIds: string;
+}
+
+export interface GetSmImportedCertificateMetadataValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface GetSmImportedCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface GetSmInstanceEncryption {
+    /**
+     * Vault encryption key CRN (only present for customerManaged mode).
+     */
+    keyCrn: string;
+    /**
+     * Vault encryption mode.
+     */
+    mode: string;
+    /**
+     * Vault encryption provider (only present for customerManaged mode). Valid value - 'key_protect'.
+     */
+    provider: string;
+}
+
+export interface GetSmInstanceEndpoint {
+    /**
+     * Endpoint URLs for accessing the Vault Dedicated instance.
+     */
+    privates: outputs.GetSmInstanceEndpointPrivate[];
+    /**
+     * Endpoint URLs for accessing the Vault Dedicated instance.
+     */
+    publics: outputs.GetSmInstanceEndpointPublic[];
+}
+
+export interface GetSmInstanceEndpointPrivate {
+    /**
+     * Vault API endpoint URL.
+     */
+    vaultApi: string;
+    /**
+     * Vault UI endpoint URL.
+     */
+    vaultUi: string;
+}
+
+export interface GetSmInstanceEndpointPublic {
+    /**
+     * Vault API endpoint URL.
+     */
+    vaultApi: string;
+    /**
+     * Vault UI endpoint URL.
+     */
+    vaultUi: string;
+}
+
+export interface GetSmInstanceVaultCluster {
+    /**
+     * Vault cluster status. Possible values:- sealed: The Vault cluster is sealed and requires unsealing to access secrets- not_initialized: The Vault cluster has not been initialized yet- healthy: The Vault cluster is operational and ready to serve requests.
+     */
+    status: string;
+    /**
+     * Vault cluster version.
+     */
+    version: string;
+}
+
+export interface GetSmPrivateCertificateConfigurationIntermediateCaCryptoKey {
+    /**
+     * The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+     */
+    allowGenerateKey: boolean;
+    /**
+     * The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+     */
+    id: string;
+    /**
+     * The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+     */
+    label: string;
+    /**
+     * The data that is associated with a cryptographic provider.
+     */
+    providers: outputs.GetSmPrivateCertificateConfigurationIntermediateCaCryptoKeyProvider[];
+}
+
+export interface GetSmPrivateCertificateConfigurationIntermediateCaCryptoKeyProvider {
+    /**
+     * The HPCS instance CRN.
+     */
+    instanceCrn: string;
+    /**
+     * The secret Id of iam credentials with api key to access HPCS instance.
+     */
+    pinIamCredentialsSecretId: string;
+    /**
+     * The HPCS private key store space id.
+     */
+    privateKeystoreId: string;
+    /**
+     * The type of cryptographic provider.
+     */
+    type: string;
+}
+
+export interface GetSmPrivateCertificateConfigurationIntermediateCaData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains: string[];
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate: string;
+    /**
+     * The certificate signing request.
+     */
+    csr: string;
+    /**
+     * The certificate expiration time.
+     */
+    expiration: number;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa: string;
+    /**
+     * (Optional) The PEM-encoded private key to associate with the certificate.
+     */
+    privateKey: string;
+    /**
+     * The type of private key to generate.
+     */
+    privateKeyType: string;
+}
+
+export interface GetSmPrivateCertificateConfigurationRootCaCryptoKey {
+    /**
+     * The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+     */
+    allowGenerateKey: boolean;
+    /**
+     * The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+     */
+    id: string;
+    /**
+     * The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+     */
+    label: string;
+    /**
+     * The data that is associated with a cryptographic provider.
+     */
+    providers: outputs.GetSmPrivateCertificateConfigurationRootCaCryptoKeyProvider[];
+}
+
+export interface GetSmPrivateCertificateConfigurationRootCaCryptoKeyProvider {
+    /**
+     * The HPCS instance CRN.
+     */
+    instanceCrn: string;
+    /**
+     * The secret Id of iam credentials with api key to access HPCS instance.
+     */
+    pinIamCredentialsSecretId: string;
+    /**
+     * The HPCS private key store space id.
+     */
+    privateKeystoreId: string;
+    /**
+     * The type of cryptographic provider.
+     */
+    type: string;
+}
+
+export interface GetSmPrivateCertificateConfigurationRootCaData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains: string[];
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate: string;
+    /**
+     * The certificate signing request.
+     */
+    csr: string;
+    /**
+     * The certificate expiration time.
+     */
+    expiration: number;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa: string;
+    /**
+     * (Optional) The PEM-encoded private key to associate with the certificate.
+     */
+    privateKey: string;
+    /**
+     * The type of private key to generate.
+     */
+    privateKeyType: string;
+}
+
+export interface GetSmPrivateCertificateMetadataRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmPrivateCertificateMetadataValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface GetSmPrivateCertificateRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmPrivateCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface GetSmPublicCertificateIssuanceInfo {
+    /**
+     * Indicates whether the issued certificate is configured with an automatic rotation policy.
+     */
+    autoRotated: boolean;
+    /**
+     * The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+     */
+    challenges: outputs.GetSmPublicCertificateIssuanceInfoChallenge[];
+    /**
+     * The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+     */
+    dnsChallengeValidationTime: string;
+    /**
+     * A code that identifies an issuance error.This field, along with `errorMessage`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+     */
+    errorCode: string;
+    /**
+     * A human-readable message that provides details about the issuance error.
+     */
+    errorMessage: string;
+    /**
+     * The date when the certificate is ordered. The date format follows RFC 3339.
+     */
+    orderedOn: string;
+    /**
+     * The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+     */
+    state: number;
+    /**
+     * A text representation of the secret state.
+     */
+    stateDescription: string;
+}
+
+export interface GetSmPublicCertificateIssuanceInfoChallenge {
+    /**
+     * The challenge domain.
+     */
+    domain: string;
+    /**
+     * The challenge expiration date. The date format follows RFC 3339.
+     */
+    expiration: string;
+    /**
+     * The challenge status.
+     */
+    status: string;
+    /**
+     * The TXT record name.
+     */
+    txtRecordName: string;
+    /**
+     * The TXT record value.
+     */
+    txtRecordValue: string;
+}
+
+export interface GetSmPublicCertificateMetadataIssuanceInfo {
+    /**
+     * Indicates whether the issued certificate is configured with an automatic rotation policy.
+     */
+    autoRotated: boolean;
+    /**
+     * The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+     */
+    challenges: outputs.GetSmPublicCertificateMetadataIssuanceInfoChallenge[];
+    /**
+     * The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+     */
+    dnsChallengeValidationTime: string;
+    /**
+     * A code that identifies an issuance error.This field, along with `errorMessage`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+     */
+    errorCode: string;
+    /**
+     * A human-readable message that provides details about the issuance error.
+     */
+    errorMessage: string;
+    /**
+     * The date when the certificate is ordered. The date format follows RFC 3339.
+     */
+    orderedOn: string;
+    /**
+     * The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+     */
+    state: number;
+    /**
+     * A text representation of the secret state.
+     */
+    stateDescription: string;
+}
+
+export interface GetSmPublicCertificateMetadataIssuanceInfoChallenge {
+    /**
+     * The challenge domain.
+     */
+    domain: string;
+    /**
+     * The challenge expiration date. The date format follows RFC 3339.
+     */
+    expiration: string;
+    /**
+     * The challenge status.
+     */
+    status: string;
+    /**
+     * The TXT record name.
+     */
+    txtRecordName: string;
+    /**
+     * The TXT record value.
+     */
+    txtRecordValue: string;
+}
+
+export interface GetSmPublicCertificateMetadataRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+     */
+    rotateKeys: boolean;
+}
+
+export interface GetSmPublicCertificateMetadataValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface GetSmPublicCertificateRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+     */
+    rotateKeys: boolean;
+}
+
+export interface GetSmPublicCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface GetSmSecretGroupsSecretGroup {
+    /**
+     * The date that a resource was created. The date format follows RFC 3339.
+     */
+    createdAt: string;
+    /**
+     * An extended description of your secret group.To protect your privacy, do not use personal data, such as your name or location, as a description for your secret group.
+     */
+    description: string;
+    /**
+     * A UUID identifier.
+     */
+    id: string;
+    /**
+     * The name of your secret group.
+     */
+    name: string;
+    /**
+     * The date that a resource was recently modified. The date format follows RFC 3339.
+     */
+    updatedAt: string;
+}
+
+export interface GetSmSecretsSecret {
+    /**
+     * Access Groups that you can use for an `iamCredentials` secret.Up to 10 Access Groups can be used for each secret.
+     */
+    accessGroups: string[];
+    /**
+     * With the Subject Alternative Name field, you can specify additional host names to be protected by a single SSL certificate.
+     */
+    altNames: string[];
+    /**
+     * The ID of the API key that is generated for this secret.
+     */
+    apiKeyId: string;
+    /**
+     * Indicates whether the issued certificate is bundled with intermediate certificates.
+     */
+    bundleCerts: boolean;
+    /**
+     * The name that is assigned to the certificate authority configuration.
+     */
+    ca: string;
+    /**
+     * The intermediate certificate authority that signed this certificate.
+     */
+    certificateAuthority: string;
+    /**
+     * The name of the certificate template.
+     */
+    certificateTemplate: string;
+    /**
+     * The Common Name (AKA CN) represents the server name protected by the SSL certificate.
+     */
+    commonName: string;
+    /**
+     * The date when a resource was created. The date format follows RFC 3339.
+     */
+    createdAt: string;
+    /**
+     * The unique identifier that is associated with the entity that created the secret.
+     */
+    createdBy: string;
+    /**
+     * A CRN that uniquely identifies an IBM Cloud resource.
+     */
+    crn: string;
+    /**
+     * The secret metadata that a user can customize.
+     */
+    customMetadata: {[key: string]: string};
+    /**
+     * An extended description of your secret.To protect your privacy, do not use personal data, such as your name or location, as a description for your secret group.
+     */
+    description: string;
+    /**
+     * The name that is assigned to the DNS provider configuration.
+     */
+    dns: string;
+    /**
+     * Indicates whether the secret data that is associated with a secret version was retrieved in a call to the service API.
+     */
+    downloaded: boolean;
+    /**
+     * The date a secret is expired. The date format follows RFC 3339.
+     */
+    expirationDate: string;
+    /**
+     * A UUID identifier.
+     */
+    id: string;
+    /**
+     * Indicates whether the certificate was imported with an associated intermediate certificate.
+     */
+    intermediateIncluded: boolean;
+    /**
+     * Issuance information that is associated with your certificate.
+     */
+    issuanceInfos: outputs.GetSmSecretsSecretIssuanceInfo[];
+    /**
+     * The distinguished name that identifies the entity that signed and issued the certificate.
+     */
+    issuer: string;
+    /**
+     * The identifier for the cryptographic algorithm used to generate the public key that is associated with the certificate.
+     */
+    keyAlgorithm: string;
+    /**
+     * Labels that you can use to search for secrets in your instance.Up to 30 labels can be created.
+     */
+    labels: string[];
+    /**
+     * The number of locks of the secret.
+     */
+    locksTotal: number;
+    /**
+     * The human-readable name of your secret.
+     */
+    name: string;
+    /**
+     * The date that the secret is scheduled for automatic rotation.The service automatically creates a new version of the secret on its next rotation date. This field exists only for secrets that have an existing rotation policy.
+     */
+    nextRotationDate: string;
+    /**
+     * Indicates whether the certificate was imported with an associated private key.
+     */
+    privateKeyIncluded: boolean;
+    /**
+     * The date when the data of the secret was last retrieved. The date format follows RFC 3339. Epoch date if there is no record of secret data retrieval.
+     */
+    retrievedAt: string;
+    /**
+     * Determines whether to use the same service ID and API key for future read operations on an`iamCredentials` secret. The value is always `true` for IAM credentials secrets managed by Terraform.
+     */
+    reuseApiKey: boolean;
+    /**
+     * The date and time that the certificate was revoked. The date format follows RFC 3339.
+     */
+    revocationTimeRfc3339: string;
+    /**
+     * The timestamp of the certificate revocation.
+     */
+    revocationTimeSeconds: number;
+    /**
+     * Determines whether Secrets Manager rotates your secrets automatically.
+     */
+    rotations: outputs.GetSmSecretsSecretRotation[];
+    /**
+     * A UUID identifier, or `default` secret group.
+     */
+    secretGroupId: string;
+    /**
+     * The secret type. Supported types are arbitrary, certificates (imported, public, and private), IAM credentials, key-value, and user credentials.
+     */
+    secretType: string;
+    /**
+     * The unique serial number that was assigned to a certificate by the issuing certificate authority.
+     */
+    serialNumber: string;
+    /**
+     * The service ID under which the API key (see the `apiKey` field) is created.If you omit this parameter, Secrets Manager generates a new service ID for your secret at its creation and adds it to the access groups that you assign.Optionally, you can use this field to provide your own service ID if you prefer to manage its access directly or retain the service ID after your secret expires, is rotated, or deleted. If you provide a service ID, do not include the `accessGroups` parameter.
+     */
+    serviceId: string;
+    /**
+     * Indicates whether an `iamCredentials` secret was created with a static service ID.If it is set to `true`, the service ID for the secret was provided by the user at secret creation. If it is set to `false`, the service ID was generated by Secrets Manager.
+     */
+    serviceIdIsStatic: boolean;
+    /**
+     * The identifier for the cryptographic algorithm that was used by the issuing certificate authority to sign a certificate.
+     */
+    signingAlgorithm: string;
+    /**
+     * The properties required for creating the service credentials for the specified source service instance.
+     */
+    sourceServices: outputs.GetSmSecretsSecretSourceService[];
+    /**
+     * The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+     */
+    state: number;
+    /**
+     * A text representation of the secret state.
+     */
+    stateDescription: string;
+    /**
+     * The time-to-live (TTL) or lease duration to assign to generated credentials.For `iamCredentials` secrets, the TTL defines for how long each generated API key remains valid. The value can be either an integer that specifies the number of seconds, or the string representation of a duration, such as `120m` or `24h`.Minimum duration is 1 minute. Maximum is 90 days.
+     */
+    ttl: string;
+    /**
+     * The date when a resource was recently modified. The date format follows RFC 3339.
+     */
+    updatedAt: string;
+    /**
+     * The date and time that the certificate validity period begins and ends.
+     */
+    validities: outputs.GetSmSecretsSecretValidity[];
+    /**
+     * The number of versions of the secret.
+     */
+    versionsTotal: number;
+}
+
+export interface GetSmSecretsSecretIssuanceInfo {
+    /**
+     * Indicates whether the issued certificate is configured with an automatic rotation policy.
+     */
+    autoRotated: boolean;
+    /**
+     * The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+     */
+    challenges: outputs.GetSmSecretsSecretIssuanceInfoChallenge[];
+    /**
+     * The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+     */
+    dnsChallengeValidationTime: string;
+    /**
+     * A code that identifies an issuance error.This field, along with `errorMessage`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+     */
+    errorCode: string;
+    /**
+     * A human-readable message that provides details about the issuance error.
+     */
+    errorMessage: string;
+    /**
+     * The date when the certificate is ordered. The date format follows RFC 3339.
+     */
+    orderedOn: string;
+    /**
+     * The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+     */
+    state: number;
+    /**
+     * A text representation of the secret state.
+     */
+    stateDescription: string;
+}
+
+export interface GetSmSecretsSecretIssuanceInfoChallenge {
+    /**
+     * The challenge domain.
+     */
+    domain: string;
+    /**
+     * The challenge expiration date. The date format follows RFC 3339.
+     */
+    expiration: string;
+    /**
+     * The challenge status.
+     */
+    status: string;
+    /**
+     * The TXT record name.
+     */
+    txtRecordName: string;
+    /**
+     * The TXT record value.
+     */
+    txtRecordValue: string;
+}
+
+export interface GetSmSecretsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+     */
+    rotateKeys: boolean;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmSecretsSecretSourceService {
+    /**
+     * The source service IAM data is returned in case IAM credentials where created for this secret.
+     */
+    iams: outputs.GetSmSecretsSecretSourceServiceIam[];
+    /**
+     * The source service instance identifier.
+     */
+    instances: outputs.GetSmSecretsSecretSourceServiceInstance[];
+    /**
+     * The collection of parameters for the service credentials target.
+     */
+    parameters: {[key: string]: string};
+    /**
+     * The source service resource key data of the generated service credentials.
+     */
+    resourceKeys: outputs.GetSmSecretsSecretSourceServiceResourceKey[];
+    /**
+     * The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+     */
+    roles: outputs.GetSmSecretsSecretSourceServiceRole[];
+}
+
+export interface GetSmSecretsSecretSourceServiceIam {
+    /**
+     * The IAM apikey metadata for the IAM credentials that were generated.
+     */
+    apikeys: outputs.GetSmSecretsSecretSourceServiceIamApikey[];
+    /**
+     * The IAM role for the generate service credentials.
+     */
+    roles: outputs.GetSmSecretsSecretSourceServiceIamRole[];
+    /**
+     * The IAM serviceid for the generated service credentials.
+     */
+    serviceids: outputs.GetSmSecretsSecretSourceServiceIamServiceid[];
+}
+
+export interface GetSmSecretsSecretSourceServiceIamApikey {
+    /**
+     * The IAM API key description for the generated service credentials.
+     */
+    description: string;
+    /**
+     * The IAM API key name for the generated service credentials.
+     */
+    name: string;
+}
+
+export interface GetSmSecretsSecretSourceServiceIamRole {
+    /**
+     * The IAM role CRN assigned to the generated service credentials.
+     */
+    crn: string;
+}
+
+export interface GetSmSecretsSecretSourceServiceIamServiceid {
+    /**
+     * The IAM Service ID CRN.
+     */
+    crn: string;
+}
+
+export interface GetSmSecretsSecretSourceServiceInstance {
+    /**
+     * A CRN that uniquely identifies a service credentials target.
+     */
+    crn: string;
+}
+
+export interface GetSmSecretsSecretSourceServiceResourceKey {
+    /**
+     * The resource key CRN of the generated service credentials.
+     */
+    crn: string;
+    /**
+     * The resource key name of the generated service credentials.
+     */
+    name: string;
+}
+
+export interface GetSmSecretsSecretSourceServiceRole {
+    /**
+     * The CRN role identifier for creating a service-id.
+     */
+    crn: string;
+}
+
+export interface GetSmSecretsSecretValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface GetSmServiceCredentialsSecretMetadataRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceService {
+    /**
+     * The source service IAM data is returned in case IAM credentials where created for this secret.
+     */
+    iams: outputs.GetSmServiceCredentialsSecretMetadataSourceServiceIam[];
+    /**
+     * The source service instance identifier.
+     */
+    instances: outputs.GetSmServiceCredentialsSecretMetadataSourceServiceInstance[];
+    /**
+     * The collection of parameters for the service credentials target.
+     */
+    parameters: {[key: string]: string};
+    /**
+     * The source service resource key data of the generated service credentials.
+     */
+    resourceKeys: outputs.GetSmServiceCredentialsSecretMetadataSourceServiceResourceKey[];
+    /**
+     * The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+     */
+    roles: outputs.GetSmServiceCredentialsSecretMetadataSourceServiceRole[];
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceServiceIam {
+    /**
+     * The IAM apikey metadata for the IAM credentials that were generated.
+     */
+    apikeys: outputs.GetSmServiceCredentialsSecretMetadataSourceServiceIamApikey[];
+    /**
+     * The IAM role for the generate service credentials.
+     */
+    roles: outputs.GetSmServiceCredentialsSecretMetadataSourceServiceIamRole[];
+    /**
+     * The IAM serviceid for the generated service credentials.
+     */
+    serviceids: outputs.GetSmServiceCredentialsSecretMetadataSourceServiceIamServiceid[];
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceServiceIamApikey {
+    /**
+     * The IAM API key description for the generated service credentials.
+     */
+    description: string;
+    /**
+     * The IAM API key name for the generated service credentials.
+     */
+    name: string;
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceServiceIamRole {
+    /**
+     * The IAM role CRN assigned to the generated service credentials.
+     */
+    crn: string;
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceServiceIamServiceid {
+    /**
+     * The IAM Service ID CRN.
+     */
+    crn: string;
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceServiceInstance {
+    /**
+     * A CRN that uniquely identifies a service credentials target.
+     */
+    crn: string;
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceServiceResourceKey {
+    /**
+     * The resource key CRN of the generated service credentials.
+     */
+    crn: string;
+    /**
+     * The resource key name of the generated service credentials.
+     */
+    name: string;
+}
+
+export interface GetSmServiceCredentialsSecretMetadataSourceServiceRole {
+    /**
+     * The CRN role identifier for creating a service-id.
+     */
+    crn: string;
+}
+
+export interface GetSmServiceCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmServiceCredentialsSecretSourceService {
+    /**
+     * The source service IAM data is returned in case IAM credentials where created for this secret.
+     */
+    iams: outputs.GetSmServiceCredentialsSecretSourceServiceIam[];
+    /**
+     * The source service instance identifier.
+     */
+    instances: outputs.GetSmServiceCredentialsSecretSourceServiceInstance[];
+    /**
+     * The collection of parameters for the service credentials target.
+     */
+    parameters: {[key: string]: string};
+    /**
+     * The source service resource key data of the generated service credentials.
+     */
+    resourceKeys: outputs.GetSmServiceCredentialsSecretSourceServiceResourceKey[];
+    /**
+     * The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+     */
+    roles: outputs.GetSmServiceCredentialsSecretSourceServiceRole[];
+}
+
+export interface GetSmServiceCredentialsSecretSourceServiceIam {
+    /**
+     * The IAM apikey metadata for the IAM credentials that were generated.
+     */
+    apikeys: outputs.GetSmServiceCredentialsSecretSourceServiceIamApikey[];
+    /**
+     * The IAM role for the generate service credentials.
+     */
+    roles: outputs.GetSmServiceCredentialsSecretSourceServiceIamRole[];
+    /**
+     * The IAM serviceid for the generated service credentials.
+     */
+    serviceids: outputs.GetSmServiceCredentialsSecretSourceServiceIamServiceid[];
+}
+
+export interface GetSmServiceCredentialsSecretSourceServiceIamApikey {
+    /**
+     * The IAM API key description for the generated service credentials.
+     */
+    description: string;
+    /**
+     * The IAM API key name for the generated service credentials.
+     */
+    name: string;
+}
+
+export interface GetSmServiceCredentialsSecretSourceServiceIamRole {
+    /**
+     * The IAM role CRN assigned to the generated service credentials.
+     */
+    crn: string;
+}
+
+export interface GetSmServiceCredentialsSecretSourceServiceIamServiceid {
+    /**
+     * The IAM Service ID CRN.
+     */
+    crn: string;
+}
+
+export interface GetSmServiceCredentialsSecretSourceServiceInstance {
+    /**
+     * A CRN that uniquely identifies a service credentials target.
+     */
+    crn: string;
+}
+
+export interface GetSmServiceCredentialsSecretSourceServiceResourceKey {
+    /**
+     * The resource key CRN of the generated service credentials.
+     */
+    crn: string;
+    /**
+     * The resource key name of the generated service credentials.
+     */
+    name: string;
+}
+
+export interface GetSmServiceCredentialsSecretSourceServiceRole {
+    /**
+     * The CRN role identifier for creating a service-id.
+     */
+    crn: string;
+}
+
+export interface GetSmUsernamePasswordSecretMetadataPasswordGenerationPolicy {
+    /**
+     * Include digits in auto-generated passwords.
+     */
+    includeDigits: boolean;
+    /**
+     * Include symbols in auto-generated passwords.
+     */
+    includeSymbols: boolean;
+    /**
+     * Include uppercase letters in auto-generated passwords.
+     */
+    includeUppercase: boolean;
+    /**
+     * The length of auto-generated passwords.
+     */
+    length: number;
+}
+
+export interface GetSmUsernamePasswordSecretMetadataRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface GetSmUsernamePasswordSecretPasswordGenerationPolicy {
+    /**
+     * Include digits in auto-generated passwords.
+     */
+    includeDigits: boolean;
+    /**
+     * Include symbols in auto-generated passwords.
+     */
+    includeSymbols: boolean;
+    /**
+     * Include uppercase letters in auto-generated passwords.
+     */
+    includeUppercase: boolean;
+    /**
+     * The length of auto-generated passwords.
+     */
+    length: number;
+}
+
+export interface GetSmUsernamePasswordSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
 export interface GetTgConnectionPrefixFiltersPrefixFilter {
     /**
      * Whether to permit or deny the prefix filter
@@ -32102,11 +39830,11 @@ export interface IamAccountSettingsUserMfa {
     /**
      * The iamId of the user.
      */
-    iamId: string;
+    iamId?: string;
     /**
      * Defines the MFA requirement for the user. Valid values:  * NONE - No MFA trait set  * TOTP - For all non-federated IBMId users  * TOTP4ALL - For all users  * LEVEL1 - Email-based MFA for all users  * LEVEL2 - TOTP-based MFA for all users  * LEVEL3 - U2F MFA for all users.
      */
-    mfa: string;
+    mfa?: string;
     /**
      * name of the user account.
      */
@@ -41212,6 +48940,669 @@ export interface PiVolumeOnboardingResultsVolumeOnboardingFailure {
 export interface ResourceInstancePlanHistory {
     resourcePlanId: string;
     startDate: string;
+}
+
+export interface SmCustomCredentialsConfigurationCodeEngine {
+    /**
+     * The name of the Code Engine Job.
+     */
+    jobName: string;
+    /**
+     * The ID of the Code Engine project.
+     */
+    projectId: string;
+    /**
+     * The region of the Code Engine project.
+     */
+    region: string;
+}
+
+export interface SmCustomCredentialsConfigurationSchema {
+    /**
+     * The schema of the credentials.
+     */
+    credentials: outputs.SmCustomCredentialsConfigurationSchemaCredential[];
+    /**
+     * The schema of the input parameters.
+     */
+    parameters: outputs.SmCustomCredentialsConfigurationSchemaParameter[];
+}
+
+export interface SmCustomCredentialsConfigurationSchemaCredential {
+    /**
+     * The format of the credential, for example 'required:true, type:string'
+     */
+    format: string;
+    /**
+     * The name of the credential.
+     */
+    name: string;
+}
+
+export interface SmCustomCredentialsConfigurationSchemaParameter {
+    /**
+     * The name of the environment variable associated with the configuration schema parameter.
+     */
+    envVariableName: string;
+    /**
+     * The format of the parameter, for example 'required:true, type:string', 'type:int, required:false', 'type:enum[val1|val2|val3], required:true', 'required:true, type:boolean'
+     */
+    format: string;
+    /**
+     * The name of the parameter.
+     */
+    name: string;
+}
+
+export interface SmCustomCredentialsSecretCredentialsContent {
+    /**
+     * Credentials that have boolean values.
+     */
+    booleanValues: {[key: string]: boolean};
+    /**
+     * Credentials that have integer values.
+     */
+    integerValues: {[key: string]: number};
+    /**
+     * Credentials that have string values.
+     */
+    stringValues: {[key: string]: string};
+}
+
+export interface SmCustomCredentialsSecretParameters {
+    /**
+     * Pararmeters that have boolean values.
+     */
+    booleanValues?: {[key: string]: boolean};
+    /**
+     * Pararmeters that have integer values.
+     */
+    integerValues?: {[key: string]: number};
+    /**
+     * Pararmeters that have string values.
+     */
+    stringValues?: {[key: string]: string};
+}
+
+export interface SmCustomCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate?: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface SmIamCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface SmImportedCertificateManagedCsr {
+    /**
+     * With the Subject Alternative Name field, you can specify additional hostnames to be protected by a single SSL certificate.
+     */
+    altNames?: string;
+    /**
+     * This field indicates whether certificate is flagged for client use.
+     */
+    clientFlag?: boolean;
+    /**
+     * This field indicates whether certificate is flagged for code signing use.
+     */
+    codeSigningFlag?: boolean;
+    /**
+     * The Common Name (CN) represents the server name protected by the SSL certificate.
+     */
+    commonName?: string;
+    /**
+     * The Country (C) values to define in the subject field of the resulting certificate.
+     */
+    countries: string[];
+    /**
+     * The certificate signing request.
+     */
+    csr: string;
+    /**
+     * This field indicates whether certificate is flagged for email protection use.
+     */
+    emailProtectionFlag?: boolean;
+    /**
+     * This parameter controls whether the common name is excluded from Subject Alternative Names (SANs).
+     */
+    excludeCnFromSans?: boolean;
+    /**
+     * The allowed extended key usage constraint on certificate, in a comma-delimited list.
+     */
+    extKeyUsage?: string;
+    /**
+     * A comma-delimited list of extended key usage Object Identifiers (OIDs).
+     */
+    extKeyUsageOids?: string;
+    /**
+     * The IP Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    ipSans?: string;
+    /**
+     * The number of bits to use to generate the private key.
+     */
+    keyBits: number;
+    /**
+     * The type of private key to generate.
+     */
+    keyType?: string;
+    /**
+     * The allowed key usage constraint to define for certificate, in a comma-delimited list.
+     */
+    keyUsage?: string;
+    /**
+     * The Locality (L) values to define in the subject field of the resulting certificate.
+     */
+    localities: string[];
+    /**
+     * The Organization (O) values to define in the subject field of the resulting certificate.
+     */
+    organizations: string[];
+    /**
+     * The custom Object Identifier (OID) or UTF8-string Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    otherSans?: string;
+    /**
+     * The Organizational Unit (OU) values to define in the subject field of the resulting certificate.
+     */
+    ous: string[];
+    /**
+     * A comma-delimited list of policy Object Identifiers (OIDs).
+     */
+    policyIdentifiers?: string;
+    /**
+     * The postal code values to define in the subject field of the resulting certificate.
+     */
+    postalCodes: string[];
+    /**
+     * The Province (ST) values to define in the subject field of the resulting certificate.
+     */
+    provinces: string[];
+    /**
+     * If set to false, makes the commonName field optional while generating a certificate.
+     */
+    requireCn?: boolean;
+    /**
+     * This field indicates whether the private key will be rotated.
+     */
+    rotateKeys?: boolean;
+    /**
+     * This field indicates whether certificate is flagged for server use.
+     */
+    serverFlag?: boolean;
+    /**
+     * The street address values to define in the subject field of the resulting certificate.
+     */
+    streetAddresses: string[];
+    /**
+     * The URI Subject Alternative Names to define for the certificate, in a comma-delimited list.
+     */
+    uriSans?: string;
+    /**
+     * Specifies the list of requested User ID (OID 0.9.2342.19200300.100.1.1) Subject values to be placed on the signed certificate.
+     */
+    userIds?: string;
+}
+
+export interface SmImportedCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface SmPrivateCertificateConfigurationActionSignCsrData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains: string[];
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate: string;
+    /**
+     * The certificate expiration time.
+     */
+    expiration: number;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa: string;
+}
+
+export interface SmPrivateCertificateConfigurationIntermediateCaCryptoKey {
+    /**
+     * The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+     */
+    allowGenerateKey: boolean;
+    /**
+     * The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+     */
+    id: string;
+    /**
+     * The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+     */
+    label: string;
+    /**
+     * The data that is associated with a cryptographic provider.
+     */
+    provider: outputs.SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProvider;
+}
+
+export interface SmPrivateCertificateConfigurationIntermediateCaCryptoKeyProvider {
+    /**
+     * The HPCS instance CRN.
+     */
+    instanceCrn: string;
+    /**
+     * The secret Id of iam credentials with api key to access HPCS instance.
+     */
+    pinIamCredentialsSecretId: string;
+    /**
+     * The HPCS private key store space id.
+     */
+    privateKeystoreId: string;
+    /**
+     * The type of cryptographic provider.
+     */
+    type: string;
+}
+
+export interface SmPrivateCertificateConfigurationIntermediateCaData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains: string[];
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate: string;
+    /**
+     * The certificate signing request.
+     */
+    csr: string;
+    /**
+     * The certificate expiration time.
+     */
+    expiration: number;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa: string;
+    /**
+     * (Optional) The PEM-encoded private key to associate with the certificate.
+     */
+    privateKey: string;
+    /**
+     * The type of private key to generate.
+     */
+    privateKeyType: string;
+}
+
+export interface SmPrivateCertificateConfigurationRootCaCryptoKey {
+    /**
+     * The indication of whether a new key is generated by the crypto provider if the given key name cannot be found.
+     */
+    allowGenerateKey: boolean;
+    /**
+     * The ID of a PKCS#11 key to use. If the key does not exist and generation is enabled, this ID is given to the generated key. If the key exists, and generation is disabled, then this ID is used to look up the key. This value or the crypto key label must be specified.
+     */
+    id: string;
+    /**
+     * The label of the key to use. If the key does not exist and generation is enabled, this field is the label that is given to the generated key. If the key exists, and generation is disabled, then this label is used to look up the key. This value or the crypto key ID must be specified.
+     */
+    label: string;
+    /**
+     * The data that is associated with a cryptographic provider.
+     */
+    provider: outputs.SmPrivateCertificateConfigurationRootCaCryptoKeyProvider;
+}
+
+export interface SmPrivateCertificateConfigurationRootCaCryptoKeyProvider {
+    /**
+     * The HPCS instance CRN.
+     */
+    instanceCrn: string;
+    /**
+     * The secret Id of iam credentials with api key to access HPCS instance.
+     */
+    pinIamCredentialsSecretId: string;
+    /**
+     * The HPCS private key store space id.
+     */
+    privateKeystoreId: string;
+    /**
+     * The type of cryptographic provider.
+     */
+    type: string;
+}
+
+export interface SmPrivateCertificateConfigurationRootCaData {
+    /**
+     * The chain of certificate authorities that are associated with the certificate.
+     */
+    caChains: string[];
+    /**
+     * The PEM-encoded contents of your certificate.
+     */
+    certificate: string;
+    /**
+     * The certificate signing request.
+     */
+    csr: string;
+    /**
+     * The certificate expiration time.
+     */
+    expiration: number;
+    /**
+     * The PEM-encoded certificate of the certificate authority that signed and issued this certificate.
+     */
+    issuingCa: string;
+    /**
+     * (Optional) The PEM-encoded private key to associate with the certificate.
+     */
+    privateKey: string;
+    /**
+     * The type of private key to generate.
+     */
+    privateKeyType: string;
+}
+
+export interface SmPrivateCertificateRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface SmPrivateCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface SmPublicCertificateAkamai {
+    /**
+     * Akamai credentials
+     */
+    config?: outputs.SmPublicCertificateAkamaiConfig;
+    /**
+     * Akamai credentials
+     */
+    edgerc?: outputs.SmPublicCertificateAkamaiEdgerc;
+}
+
+export interface SmPublicCertificateAkamaiConfig {
+    accessToken?: string;
+    clientSecret?: string;
+    clientToken?: string;
+    host?: string;
+}
+
+export interface SmPublicCertificateAkamaiEdgerc {
+    /**
+     * The section of the edgerc file to use for configuration.
+     */
+    configSection?: string;
+    /**
+     * Path to Akamai's configuration file.
+     */
+    pathToEdgerc?: string;
+}
+
+export interface SmPublicCertificateIssuanceInfo {
+    /**
+     * Indicates whether the issued certificate is configured with an automatic rotation policy.
+     */
+    autoRotated: boolean;
+    /**
+     * The set of challenges. It is returned only when ordering public certificates by using manual DNS configuration.
+     */
+    challenges: outputs.SmPublicCertificateIssuanceInfoChallenge[];
+    /**
+     * The date that a user requests to validate DNS challenges for certificates that are ordered with a manual DNS provider. The date format follows RFC 3339.
+     */
+    dnsChallengeValidationTime: string;
+    /**
+     * A code that identifies an issuance error.This field, along with `errorMessage`, is returned when Secrets Manager successfully processes your request, but the certificate authority is unable to issue a certificate.
+     */
+    errorCode: string;
+    /**
+     * A human-readable message that provides details about the issuance error.
+     */
+    errorMessage: string;
+    /**
+     * The date when the certificate is ordered. The date format follows RFC 3339.
+     */
+    orderedOn: string;
+    /**
+     * The secret state that is based on NIST SP 800-57. States are integers and correspond to the `Pre-activation = 0`, `Active = 1`,  `Suspended = 2`, `Deactivated = 3`, and `Destroyed = 5` values.
+     */
+    state: number;
+    /**
+     * A text representation of the secret state.
+     */
+    stateDescription: string;
+}
+
+export interface SmPublicCertificateIssuanceInfoChallenge {
+    /**
+     * The challenge domain.
+     */
+    domain: string;
+    /**
+     * The challenge expiration date. The date format follows RFC 3339.
+     */
+    expiration: string;
+    /**
+     * The challenge status.
+     */
+    status: string;
+    /**
+     * The TXT record name.
+     */
+    txtRecordName: string;
+    /**
+     * The TXT record value.
+     */
+    txtRecordValue: string;
+}
+
+export interface SmPublicCertificateRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your certificate 31 days before it expires.
+     */
+    autoRotate: boolean;
+    /**
+     * Determines whether Secrets Manager rotates the private key for your public certificate automatically.Default is `false`. If it is set to `true`, the service generates and stores a new private key for your rotated certificate.
+     */
+    rotateKeys: boolean;
+}
+
+export interface SmPublicCertificateValidity {
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notAfter: string;
+    /**
+     * The date-time format follows RFC 3339.
+     */
+    notBefore: string;
+}
+
+export interface SmServiceCredentialsSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
+}
+
+export interface SmServiceCredentialsSecretSourceService {
+    /**
+     * The source service IAM data is returned in case IAM credentials where created for this secret.
+     */
+    iams: outputs.SmServiceCredentialsSecretSourceServiceIam[];
+    /**
+     * The source service instance identifier.
+     */
+    instance: outputs.SmServiceCredentialsSecretSourceServiceInstance;
+    /**
+     * The collection of parameters for the service credentials target.
+     */
+    parameters?: {[key: string]: string};
+    /**
+     * The source service resource key data of the generated service credentials.
+     */
+    resourceKeys: outputs.SmServiceCredentialsSecretSourceServiceResourceKey[];
+    /**
+     * The service-specific custom role object, CRN role is accepted. Refer to the service’s documentation for supported roles.
+     */
+    role: outputs.SmServiceCredentialsSecretSourceServiceRole;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIam {
+    /**
+     * The IAM apikey metadata for the IAM credentials that were generated.
+     */
+    apikeys: outputs.SmServiceCredentialsSecretSourceServiceIamApikey[];
+    /**
+     * The IAM role for the generate service credentials.
+     */
+    roles: outputs.SmServiceCredentialsSecretSourceServiceIamRole[];
+    /**
+     * The IAM serviceid for the generated service credentials.
+     */
+    serviceids: outputs.SmServiceCredentialsSecretSourceServiceIamServiceid[];
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIamApikey {
+    /**
+     * The IAM API key description for the generated service credentials.
+     */
+    description: string;
+    /**
+     * The IAM API key name for the generated service credentials.
+     */
+    name: string;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIamRole {
+    /**
+     * The IAM role CRN assigned to the generated service credentials.
+     */
+    crn: string;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceIamServiceid {
+    /**
+     * The IAM Service ID CRN.
+     */
+    crn: string;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceInstance {
+    /**
+     * A CRN that uniquely identifies a service credentials target.
+     */
+    crn: string;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceResourceKey {
+    /**
+     * The resource key CRN of the generated service credentials.
+     */
+    crn: string;
+    /**
+     * The resource key name of the generated service credentials.
+     */
+    name: string;
+}
+
+export interface SmServiceCredentialsSecretSourceServiceRole {
+    /**
+     * The CRN role identifier for creating a service-id.
+     */
+    crn: string;
+}
+
+export interface SmUsernamePasswordSecretPasswordGenerationPolicy {
+    /**
+     * Include digits in auto-generated passwords.
+     */
+    includeDigits?: boolean;
+    /**
+     * Include symbols in auto-generated passwords.
+     */
+    includeSymbols?: boolean;
+    /**
+     * Include uppercase letters in auto-generated passwords.
+     */
+    includeUppercase?: boolean;
+    /**
+     * The length of auto-generated passwords.
+     */
+    length?: number;
+}
+
+export interface SmUsernamePasswordSecretRotation {
+    /**
+     * Determines whether Secrets Manager rotates your secret automatically.Default is `false`. If `autoRotate` is set to `true` the service rotates your secret based on the defined interval.
+     */
+    autoRotate?: boolean;
+    /**
+     * The length of the secret rotation time interval.
+     */
+    interval: number;
+    /**
+     * The units for the secret rotation time interval.
+     */
+    unit: string;
 }
 
 export interface TgConnectionTunnel {
