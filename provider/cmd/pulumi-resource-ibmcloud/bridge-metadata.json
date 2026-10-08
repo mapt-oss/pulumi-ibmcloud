@@ -5614,6 +5614,462 @@
                     }
                 }
             },
+            "ibm_sm_admin_token": {
+                "current": "ibmcloud:index/smAdminToken:SmAdminToken"
+            },
+            "ibm_sm_arbitrary_secret": {
+                "current": "ibmcloud:index/smArbitrarySecret:SmArbitrarySecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_custom_credentials_configuration": {
+                "current": "ibmcloud:index/smCustomCredentialsConfiguration:SmCustomCredentialsConfiguration",
+                "fields": {
+                    "code_engine": {
+                        "maxItemsOne": true
+                    },
+                    "schema": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "credentials": {
+                                    "maxItemsOne": false
+                                },
+                                "parameters": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_sm_custom_credentials_secret": {
+                "current": "ibmcloud:index/smCustomCredentialsSecret:SmCustomCredentialsSecret",
+                "fields": {
+                    "credentials_content": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "parameters": {
+                        "maxItemsOne": true
+                    },
+                    "rotation": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
+            "ibm_sm_en_registration": {
+                "current": "ibmcloud:index/smEnRegistration:SmEnRegistration"
+            },
+            "ibm_sm_iam_credentials_configuration": {
+                "current": "ibmcloud:index/smIamCredentialsConfiguration:SmIamCredentialsConfiguration"
+            },
+            "ibm_sm_iam_credentials_secret": {
+                "current": "ibmcloud:index/smIamCredentialsSecret:SmIamCredentialsSecret",
+                "fields": {
+                    "access_groups": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
+            "ibm_sm_imported_certificate": {
+                "current": "ibmcloud:index/smImportedCertificate:SmImportedCertificate",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "managed_csr": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "country": {
+                                    "maxItemsOne": false
+                                },
+                                "locality": {
+                                    "maxItemsOne": false
+                                },
+                                "organization": {
+                                    "maxItemsOne": false
+                                },
+                                "ou": {
+                                    "maxItemsOne": false
+                                },
+                                "postal_code": {
+                                    "maxItemsOne": false
+                                },
+                                "province": {
+                                    "maxItemsOne": false
+                                },
+                                "street_address": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_kv_secret": {
+                "current": "ibmcloud:index/smKvSecret:SmKvSecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate": {
+                "current": "ibmcloud:index/smPrivateCertificate:SmPrivateCertificate",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "ca_chain": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": true
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_configuration_action_set_signed": {
+                "current": "ibmcloud:index/smPrivateCertificateConfigurationActionSetSigned:SmPrivateCertificateConfigurationActionSetSigned"
+            },
+            "ibm_sm_private_certificate_configuration_action_sign_csr": {
+                "current": "ibmcloud:index/smPrivateCertificateConfigurationActionSignCsr:SmPrivateCertificateConfigurationActionSignCsr",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "country": {
+                        "maxItemsOne": false
+                    },
+                    "data": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "ca_chain": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "locality": {
+                        "maxItemsOne": false
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "ou": {
+                        "maxItemsOne": false
+                    },
+                    "permitted_dns_domains": {
+                        "maxItemsOne": false
+                    },
+                    "postal_code": {
+                        "maxItemsOne": false
+                    },
+                    "province": {
+                        "maxItemsOne": false
+                    },
+                    "street_address": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_configuration_intermediate_ca": {
+                "current": "ibmcloud:index/smPrivateCertificateConfigurationIntermediateCa:SmPrivateCertificateConfigurationIntermediateCa",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "country": {
+                        "maxItemsOne": false
+                    },
+                    "crypto_key": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "provider": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "data": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "ca_chain": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "locality": {
+                        "maxItemsOne": false
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "ou": {
+                        "maxItemsOne": false
+                    },
+                    "permitted_dns_domains": {
+                        "maxItemsOne": false
+                    },
+                    "postal_code": {
+                        "maxItemsOne": false
+                    },
+                    "province": {
+                        "maxItemsOne": false
+                    },
+                    "street_address": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_configuration_root_ca": {
+                "current": "ibmcloud:index/smPrivateCertificateConfigurationRootCa:SmPrivateCertificateConfigurationRootCa",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "country": {
+                        "maxItemsOne": false
+                    },
+                    "crypto_key": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "provider": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "data": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "ca_chain": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "locality": {
+                        "maxItemsOne": false
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "ou": {
+                        "maxItemsOne": false
+                    },
+                    "permitted_dns_domains": {
+                        "maxItemsOne": false
+                    },
+                    "postal_code": {
+                        "maxItemsOne": false
+                    },
+                    "province": {
+                        "maxItemsOne": false
+                    },
+                    "street_address": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_configuration_template": {
+                "current": "ibmcloud:index/smPrivateCertificateConfigurationTemplate:SmPrivateCertificateConfigurationTemplate",
+                "fields": {
+                    "allowed_domains": {
+                        "maxItemsOne": false
+                    },
+                    "allowed_other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "allowed_uri_sans": {
+                        "maxItemsOne": false
+                    },
+                    "country": {
+                        "maxItemsOne": false
+                    },
+                    "ext_key_usage": {
+                        "maxItemsOne": false
+                    },
+                    "ext_key_usage_oids": {
+                        "maxItemsOne": false
+                    },
+                    "key_usage": {
+                        "maxItemsOne": false
+                    },
+                    "locality": {
+                        "maxItemsOne": false
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "ou": {
+                        "maxItemsOne": false
+                    },
+                    "policy_identifiers": {
+                        "maxItemsOne": false
+                    },
+                    "postal_code": {
+                        "maxItemsOne": false
+                    },
+                    "province": {
+                        "maxItemsOne": false
+                    },
+                    "street_address": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_public_certificate": {
+                "current": "ibmcloud:index/smPublicCertificate:SmPublicCertificate",
+                "fields": {
+                    "akamai": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "config": {
+                                    "maxItemsOne": true
+                                },
+                                "edgerc": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    },
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "issuance_info": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "challenges": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": true
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_public_certificate_action_validate_manual_dns": {
+                "current": "ibmcloud:index/smPublicCertificateActionValidateManualDns:SmPublicCertificateActionValidateManualDns"
+            },
+            "ibm_sm_public_certificate_configuration_ca_lets_encrypt": {
+                "current": "ibmcloud:index/smPublicCertificateConfigurationCaLetsEncrypt:SmPublicCertificateConfigurationCaLetsEncrypt"
+            },
+            "ibm_sm_public_certificate_configuration_dns_cis": {
+                "current": "ibmcloud:index/smPublicCertificateConfigurationDnsCis:SmPublicCertificateConfigurationDnsCis"
+            },
+            "ibm_sm_public_certificate_configuration_dns_classic_infrastructure": {
+                "current": "ibmcloud:index/smPublicCertificateConfigurationDnsClassicInfrastructure:SmPublicCertificateConfigurationDnsClassicInfrastructure"
+            },
+            "ibm_sm_secret_group": {
+                "current": "ibmcloud:index/smSecretGroup:SmSecretGroup"
+            },
+            "ibm_sm_service_credentials_secret": {
+                "current": "ibmcloud:index/smServiceCredentialsSecret:SmServiceCredentialsSecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": true
+                    },
+                    "source_service": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "iam": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "apikey": {
+                                                "maxItemsOne": false
+                                            },
+                                            "role": {
+                                                "maxItemsOne": false
+                                            },
+                                            "serviceid": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "instance": {
+                                    "maxItemsOne": true
+                                },
+                                "resource_key": {
+                                    "maxItemsOne": false
+                                },
+                                "role": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_sm_username_password_secret": {
+                "current": "ibmcloud:index/smUsernamePasswordSecret:SmUsernamePasswordSecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "password_generation_policy": {
+                        "maxItemsOne": true
+                    },
+                    "rotation": {
+                        "maxItemsOne": true
+                    }
+                }
+            },
             "ibm_tg_connection": {
                 "current": "ibmcloud:index/tgConnection:TgConnection",
                 "fields": {
@@ -17064,6 +17520,705 @@
                 "current": "ibmcloud:index/getResourceTag:getResourceTag",
                 "fields": {
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_arbitrary_secret": {
+                "current": "ibmcloud:index/getSmArbitrarySecret:getSmArbitrarySecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_arbitrary_secret_metadata": {
+                "current": "ibmcloud:index/getSmArbitrarySecretMetadata:getSmArbitrarySecretMetadata",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_configurations": {
+                "current": "ibmcloud:index/getSmConfigurations:getSmConfigurations",
+                "fields": {
+                    "configurations": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "crypto_key": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "provider": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "secret_types": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_custom_credentials_configuration": {
+                "current": "ibmcloud:index/getSmCustomCredentialsConfiguration:getSmCustomCredentialsConfiguration",
+                "fields": {
+                    "code_engine": {
+                        "maxItemsOne": false
+                    },
+                    "schema": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "credentials": {
+                                    "maxItemsOne": false
+                                },
+                                "parameters": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_sm_custom_credentials_secret": {
+                "current": "ibmcloud:index/getSmCustomCredentialsSecret:getSmCustomCredentialsSecret",
+                "fields": {
+                    "credentials_content": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "parameters": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_custom_credentials_secret_metadata": {
+                "current": "ibmcloud:index/getSmCustomCredentialsSecretMetadata:getSmCustomCredentialsSecretMetadata",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "parameters": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_en_registration": {
+                "current": "ibmcloud:index/getSmEnRegistration:getSmEnRegistration"
+            },
+            "ibm_sm_iam_credentials_configuration": {
+                "current": "ibmcloud:index/getSmIamCredentialsConfiguration:getSmIamCredentialsConfiguration"
+            },
+            "ibm_sm_iam_credentials_secret": {
+                "current": "ibmcloud:index/getSmIamCredentialsSecret:getSmIamCredentialsSecret",
+                "fields": {
+                    "access_groups": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_iam_credentials_secret_metadata": {
+                "current": "ibmcloud:index/getSmIamCredentialsSecretMetadata:getSmIamCredentialsSecretMetadata",
+                "fields": {
+                    "access_groups": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_imported_certificate": {
+                "current": "ibmcloud:index/getSmImportedCertificate:getSmImportedCertificate",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "managed_csr": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "country": {
+                                    "maxItemsOne": false
+                                },
+                                "locality": {
+                                    "maxItemsOne": false
+                                },
+                                "organization": {
+                                    "maxItemsOne": false
+                                },
+                                "ou": {
+                                    "maxItemsOne": false
+                                },
+                                "postal_code": {
+                                    "maxItemsOne": false
+                                },
+                                "province": {
+                                    "maxItemsOne": false
+                                },
+                                "street_address": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_imported_certificate_metadata": {
+                "current": "ibmcloud:index/getSmImportedCertificateMetadata:getSmImportedCertificateMetadata",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "managed_csr": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "country": {
+                                    "maxItemsOne": false
+                                },
+                                "locality": {
+                                    "maxItemsOne": false
+                                },
+                                "organization": {
+                                    "maxItemsOne": false
+                                },
+                                "ou": {
+                                    "maxItemsOne": false
+                                },
+                                "postal_code": {
+                                    "maxItemsOne": false
+                                },
+                                "province": {
+                                    "maxItemsOne": false
+                                },
+                                "street_address": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_instance": {
+                "current": "ibmcloud:index/getSmInstance:getSmInstance",
+                "fields": {
+                    "encryption": {
+                        "maxItemsOne": false
+                    },
+                    "endpoints": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "private": {
+                                    "maxItemsOne": false
+                                },
+                                "public": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "vault_cluster": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_kv_secret": {
+                "current": "ibmcloud:index/getSmKvSecret:getSmKvSecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_kv_secret_metadata": {
+                "current": "ibmcloud:index/getSmKvSecretMetadata:getSmKvSecretMetadata",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate": {
+                "current": "ibmcloud:index/getSmPrivateCertificate:getSmPrivateCertificate",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "ca_chain": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_configuration_intermediate_ca": {
+                "current": "ibmcloud:index/getSmPrivateCertificateConfigurationIntermediateCa:getSmPrivateCertificateConfigurationIntermediateCa",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "country": {
+                        "maxItemsOne": false
+                    },
+                    "crypto_key": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "provider": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "data": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "ca_chain": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "locality": {
+                        "maxItemsOne": false
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "ou": {
+                        "maxItemsOne": false
+                    },
+                    "postal_code": {
+                        "maxItemsOne": false
+                    },
+                    "province": {
+                        "maxItemsOne": false
+                    },
+                    "street_address": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_configuration_root_ca": {
+                "current": "ibmcloud:index/getSmPrivateCertificateConfigurationRootCa:getSmPrivateCertificateConfigurationRootCa",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "country": {
+                        "maxItemsOne": false
+                    },
+                    "crypto_key": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "provider": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "data": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "ca_chain": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "locality": {
+                        "maxItemsOne": false
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "ou": {
+                        "maxItemsOne": false
+                    },
+                    "permitted_dns_domains": {
+                        "maxItemsOne": false
+                    },
+                    "postal_code": {
+                        "maxItemsOne": false
+                    },
+                    "province": {
+                        "maxItemsOne": false
+                    },
+                    "street_address": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_configuration_template": {
+                "current": "ibmcloud:index/getSmPrivateCertificateConfigurationTemplate:getSmPrivateCertificateConfigurationTemplate",
+                "fields": {
+                    "allowed_domains": {
+                        "maxItemsOne": false
+                    },
+                    "allowed_other_sans": {
+                        "maxItemsOne": false
+                    },
+                    "allowed_uri_sans": {
+                        "maxItemsOne": false
+                    },
+                    "country": {
+                        "maxItemsOne": false
+                    },
+                    "ext_key_usage": {
+                        "maxItemsOne": false
+                    },
+                    "ext_key_usage_oids": {
+                        "maxItemsOne": false
+                    },
+                    "key_usage": {
+                        "maxItemsOne": false
+                    },
+                    "locality": {
+                        "maxItemsOne": false
+                    },
+                    "organization": {
+                        "maxItemsOne": false
+                    },
+                    "ou": {
+                        "maxItemsOne": false
+                    },
+                    "policy_identifiers": {
+                        "maxItemsOne": false
+                    },
+                    "postal_code": {
+                        "maxItemsOne": false
+                    },
+                    "province": {
+                        "maxItemsOne": false
+                    },
+                    "street_address": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_private_certificate_metadata": {
+                "current": "ibmcloud:index/getSmPrivateCertificateMetadata:getSmPrivateCertificateMetadata",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_public_certificate": {
+                "current": "ibmcloud:index/getSmPublicCertificate:getSmPublicCertificate",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "issuance_info": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "challenges": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_public_certificate_configuration_ca_lets_encrypt": {
+                "current": "ibmcloud:index/getSmPublicCertificateConfigurationCaLetsEncrypt:getSmPublicCertificateConfigurationCaLetsEncrypt"
+            },
+            "ibm_sm_public_certificate_configuration_dns_cis": {
+                "current": "ibmcloud:index/getSmPublicCertificateConfigurationDnsCis:getSmPublicCertificateConfigurationDnsCis"
+            },
+            "ibm_sm_public_certificate_configuration_dns_classic_infrastructure": {
+                "current": "ibmcloud:index/getSmPublicCertificateConfigurationDnsClassicInfrastructure:getSmPublicCertificateConfigurationDnsClassicInfrastructure"
+            },
+            "ibm_sm_public_certificate_metadata": {
+                "current": "ibmcloud:index/getSmPublicCertificateMetadata:getSmPublicCertificateMetadata",
+                "fields": {
+                    "alt_names": {
+                        "maxItemsOne": false
+                    },
+                    "issuance_info": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "challenges": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    },
+                    "validity": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_secret_group": {
+                "current": "ibmcloud:index/getSmSecretGroup:getSmSecretGroup"
+            },
+            "ibm_sm_secret_groups": {
+                "current": "ibmcloud:index/getSmSecretGroups:getSmSecretGroups",
+                "fields": {
+                    "secret_groups": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_secrets": {
+                "current": "ibmcloud:index/getSmSecrets:getSmSecrets",
+                "fields": {
+                    "match_all_labels": {
+                        "maxItemsOne": false
+                    },
+                    "secret_types": {
+                        "maxItemsOne": false
+                    },
+                    "secrets": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "access_groups": {
+                                    "maxItemsOne": false
+                                },
+                                "alt_names": {
+                                    "maxItemsOne": false
+                                },
+                                "issuance_info": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "challenges": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "labels": {
+                                    "maxItemsOne": false
+                                },
+                                "rotation": {
+                                    "maxItemsOne": false
+                                },
+                                "source_service": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "iam": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "apikey": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "role": {
+                                                            "maxItemsOne": false
+                                                        },
+                                                        "serviceid": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "instance": {
+                                                "maxItemsOne": false
+                                            },
+                                            "resource_key": {
+                                                "maxItemsOne": false
+                                            },
+                                            "role": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "validity": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_sm_service_credentials_secret": {
+                "current": "ibmcloud:index/getSmServiceCredentialsSecret:getSmServiceCredentialsSecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    },
+                    "source_service": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "iam": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "apikey": {
+                                                "maxItemsOne": false
+                                            },
+                                            "role": {
+                                                "maxItemsOne": false
+                                            },
+                                            "serviceid": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "instance": {
+                                    "maxItemsOne": false
+                                },
+                                "resource_key": {
+                                    "maxItemsOne": false
+                                },
+                                "role": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_sm_service_credentials_secret_metadata": {
+                "current": "ibmcloud:index/getSmServiceCredentialsSecretMetadata:getSmServiceCredentialsSecretMetadata",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    },
+                    "source_service": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "iam": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "apikey": {
+                                                "maxItemsOne": false
+                                            },
+                                            "role": {
+                                                "maxItemsOne": false
+                                            },
+                                            "serviceid": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                },
+                                "instance": {
+                                    "maxItemsOne": false
+                                },
+                                "resource_key": {
+                                    "maxItemsOne": false
+                                },
+                                "role": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "ibm_sm_username_password_secret": {
+                "current": "ibmcloud:index/getSmUsernamePasswordSecret:getSmUsernamePasswordSecret",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "password_generation_policy": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "ibm_sm_username_password_secret_metadata": {
+                "current": "ibmcloud:index/getSmUsernamePasswordSecretMetadata:getSmUsernamePasswordSecretMetadata",
+                "fields": {
+                    "labels": {
+                        "maxItemsOne": false
+                    },
+                    "password_generation_policy": {
+                        "maxItemsOne": false
+                    },
+                    "rotation": {
                         "maxItemsOne": false
                     }
                 }
